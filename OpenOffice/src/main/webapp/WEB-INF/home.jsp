@@ -7,6 +7,7 @@
 <title>Open Office</title>
 </head>
 <body>
-<h1>Open Office</h1>
+<h1 >Open Office</h1>
+${SMOKETEST}
 </body>
 </html>

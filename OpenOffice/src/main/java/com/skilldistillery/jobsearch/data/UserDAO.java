@@ -1,5 +1,7 @@
 package com.skilldistillery.jobsearch.data;
 
-public interface UserDAO {
+import com.skilldistillery.jobsearch.entities.User;
 
+public interface UserDAO {
+	User findById(int userId);
 }
