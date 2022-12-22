@@ -2,6 +2,7 @@ package com.skilldistillery.jobsearch.entities;
 
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,54 +20,157 @@ public class User {
 	private String password;
 
 	private Boolean enabled;
+	
+	@Column(name="first_name")
+	private String firstName;
+
+	@Column(name="last_name")
+	private String lastName;
 
 	private String role;
+	
+	private String email;
+	
+	@Column(name="img_url")
+	private String imgUrl;
+	
+	private String description;
+	
+	public User() {}
+
+	
 
 	public int getId() {
 		return id;
 	}
 
+
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
+
 
 	public String getUsername() {
 		return username;
 	}
 
+
+
 	public void setUsername(String username) {
 		this.username = username;
 	}
+
+
 
 	public String getPassword() {
 		return password;
 	}
 
+
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+
 
 	public Boolean getEnabled() {
 		return enabled;
 	}
 
+
+
 	public void setEnabled(Boolean enabled) {
 		this.enabled = enabled;
 	}
+
+
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+
+
+	public String getLastName() {
+		return lastName;
+	}
+
+
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+
 
 	public String getRole() {
 		return role;
 	}
 
+
+
 	public void setRole(String role) {
 		this.role = role;
 	}
 
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+
+	public String getImgUrl() {
+		return imgUrl;
+	}
+
+
+
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
+
+
+
+	public String getDescription() {
+		return description;
+	}
+
+
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+
+
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + ", enabled=" + enabled
-				+ ", role=" + role + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("User [id=").append(id).append(", username=").append(username).append(", password=")
+				.append(password).append(", enabled=").append(enabled).append(", firstName=").append(firstName)
+				.append(", lastName=").append(lastName).append(", role=").append(role).append(", email=").append(email)
+				.append(", imgUrl=").append(imgUrl).append(", description=").append(description).append("]");
+		return builder.toString();
 	}
+
+
 
 	@Override
 	public int hashCode() {
@@ -85,8 +189,5 @@ public class User {
 		return id == other.id;
 	}
 
-	public User() {
-		super();
-	}
 
 }

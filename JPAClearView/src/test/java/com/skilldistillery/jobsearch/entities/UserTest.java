@@ -40,11 +40,18 @@ class UserTest {
 	}
 
 	@Test
-	void test() {
+	void test_user_password_id_and_role() {
 		assertNotNull(user);
 		assertEquals(1, user.getId());
 		assertEquals("openadmin", user.getPassword());
 		assertEquals("admin", user.getRole());
+	}
+
+	@Test
+	void test_user_firstName_and_lastName() {
+		assertNotNull(user);
+		assertEquals("Johnny", user.getFirstName());
+		assertEquals("Doughboy", user.getLastName());
 	}
 
 }

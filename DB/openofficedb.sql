@@ -353,7 +353,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `open_officedb`;
-INSERT INTO `user` (`id`, `username`, `password`, `enabled`, `first_name`, `last_name`, `role`, `email`, `img_url`, `description`) VALUES (1, 'openadmin', 'openadmin', 1, 'open', 'admin', 'admin', 'blah@blah.com', 'https://i.redd.it/tye3sd6w7it51.jpg', 'look at me i\'m pretty');
+INSERT INTO `user` (`id`, `username`, `password`, `enabled`, `first_name`, `last_name`, `role`, `email`, `img_url`, `description`) VALUES (1, 'openadmin', 'openadmin', 1, 'Johnny', 'Doughboy', 'admin', 'blah@blah.com', 'https://i.redd.it/tye3sd6w7it51.jpg', 'look at me i\'m pretty');
 
 COMMIT;
 
