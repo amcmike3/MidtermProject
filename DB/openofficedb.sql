@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `first_name` VARCHAR(45) NULL DEFAULT 'Johnny',
   `last_name` VARCHAR(45) NULL DEFAULT 'Doughboy',
   `role` VARCHAR(45) NULL DEFAULT 'USER',
-  `email` VARCHAR(45) NULL,
+  `email` VARCHAR(45) NOT NULL,
   `img_url` VARCHAR(200) NULL,
   `description` TEXT NULL,
   PRIMARY KEY (`id`),
@@ -394,7 +394,7 @@ COMMIT;
 START TRANSACTION;
 USE `open_officedb`;
 INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (1, '401k matching 100%', '401k', 0);
-INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (2, '', 'on site gym', 1);
+INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (2, 'honestly, this gym is only slightly better than a hotel gym', 'on site gym', 1);
 
 COMMIT;
 
