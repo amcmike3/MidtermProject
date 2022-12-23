@@ -194,11 +194,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `company_has_benefit...`
+-- Table `company_has_benefit`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `company_has_benefit...` ;
+DROP TABLE IF EXISTS `company_has_benefit` ;
 
-CREATE TABLE IF NOT EXISTS `company_has_benefit...` (
+CREATE TABLE IF NOT EXISTS `company_has_benefit` (
   `company_id` INT NOT NULL,
   `benefit..._id` INT NOT NULL,
   PRIMARY KEY (`company_id`, `benefit..._id`),
@@ -400,12 +400,12 @@ COMMIT;
 
 
 -- -----------------------------------------------------
--- Data for table `company_has_benefit...`
+-- Data for table `company_has_benefit`
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `open_officedb`;
-INSERT INTO `company_has_benefit...` (`company_id`, `benefit..._id`) VALUES (1, 1);
-INSERT INTO `company_has_benefit...` (`company_id`, `benefit..._id`) VALUES (1, 2);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit..._id`) VALUES (1, 1);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit..._id`) VALUES (1, 2);
 
 COMMIT;
 
