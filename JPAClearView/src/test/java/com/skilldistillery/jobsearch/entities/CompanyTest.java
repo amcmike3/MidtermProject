@@ -46,5 +46,17 @@ class CompanyTest {
 		assertEquals("The good company", company.getName());
 		assertEquals("we are wherever you are", company.getLocation());
 	}
+	
+	@Test
+	void test_Company_User_many_to_many_mapping() {
+		assertNotNull(company);
+		assertTrue(company.getUsers().size() > 0);
+	}
+	
+	@Test
+	void test_Company_Benefit_many_to_many_mapping() {
+		assertNotNull(company);
+		assertTrue(company.getBenefits().size() > 0);
+	}
 
 }

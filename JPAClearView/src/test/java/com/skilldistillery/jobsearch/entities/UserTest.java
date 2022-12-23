@@ -59,5 +59,11 @@ class UserTest {
 		assertNotNull(user);
 		assertTrue(user.getArticles().size() > 0);
 	}
+	
+	@Test
+	void test_User_Company_many_to_many_mapping() {
+		assertNotNull(user);
+		assertTrue(user.getCompanies().size() > 0);
+	}
 
 }

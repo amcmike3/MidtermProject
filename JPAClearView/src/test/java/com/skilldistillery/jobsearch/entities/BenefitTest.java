@@ -46,5 +46,11 @@ class BenefitTest {
 		assertEquals("401k", benefit.getName());
 		assertEquals("401k matching 100%", benefit.getDescription());
 	}
+	
+	@Test
+	void test_Benefit_Company_many_to_many_mapping() {
+		assertNotNull(benefit);
+		assertTrue(benefit.getCompanies().size() > 0);
+	}
 
 }

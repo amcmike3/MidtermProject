@@ -9,6 +9,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -41,10 +44,43 @@ public class User {
 
 	@OneToMany(mappedBy = "user")
 	private List<Article> articles;
+	
+	@ManyToMany
+	@JoinTable(name="user_subscribed_to_company",		
+	joinColumns=@JoinColumn(name="user_id"),
+	inverseJoinColumns=@JoinColumn(name="company_id"))
+	private List<Company> companies;
+
 
 	public User() {
 	}
 
+	public List<Company> getCompanies() {
+		return companies;
+	}
+	
+	public void setCompanies(List<Company> companies) {
+		this.companies = companies;
+	}
+	
+	public void addCompany(Company company) {
+		if(companies == null) {
+			companies = new ArrayList<>();
+		}
+		if (! companies.contains(company)) {
+			companies.add(company);
+			company.addUser(this);
+		}
+	}
+	
+	public void removeCompany(Company company) {
+		if (companies != null && companies.contains(company)) {
+			companies.remove(company);
+			company.removeUser(this);
+		}
+	}
+	
+	
 	public List<Article> getArticles() {
 		return articles;
 	}
