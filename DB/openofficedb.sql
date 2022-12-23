@@ -200,9 +200,9 @@ DROP TABLE IF EXISTS `company_has_benefit` ;
 
 CREATE TABLE IF NOT EXISTS `company_has_benefit` (
   `company_id` INT NOT NULL,
-  `benefit..._id` INT NOT NULL,
-  PRIMARY KEY (`company_id`, `benefit..._id`),
-  INDEX `fk_company_has_benefit..._benefit...1_idx` (`benefit..._id` ASC),
+  `benefit_id` INT NOT NULL,
+  PRIMARY KEY (`company_id`, `benefit_id`),
+  INDEX `fk_company_has_benefit..._benefit...1_idx` (`benefit_id` ASC),
   INDEX `fk_company_has_benefit..._company1_idx` (`company_id` ASC),
   CONSTRAINT `fk_company_has_benefit..._company1`
     FOREIGN KEY (`company_id`)
@@ -210,7 +210,7 @@ CREATE TABLE IF NOT EXISTS `company_has_benefit` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_company_has_benefit..._benefit...1`
-    FOREIGN KEY (`benefit..._id`)
+    FOREIGN KEY (`benefit_id`)
     REFERENCES `benefit` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -404,8 +404,8 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `open_officedb`;
-INSERT INTO `company_has_benefit` (`company_id`, `benefit..._id`) VALUES (1, 1);
-INSERT INTO `company_has_benefit` (`company_id`, `benefit..._id`) VALUES (1, 2);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (1, 1);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (1, 2);
 
 COMMIT;
 
