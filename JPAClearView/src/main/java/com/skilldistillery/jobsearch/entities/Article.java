@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Article {
@@ -25,7 +27,36 @@ public class Article {
 	@Column(name="date_posted")
 	private LocalDateTime datePosted;
 	
+	@ManyToOne
+	@JoinColumn(name="industry_id")
+	private Industry industry;
+	
+	@ManyToOne
+	@JoinColumn(name="user_id")
+	private User user;
+	
 	public Article() {}
+
+	
+	public User getUser() {
+		return user;
+	}
+
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+
+	public Industry getIndustry() {
+		return industry;
+	}
+
+
+	public void setIndustry(Industry industry) {
+		this.industry = industry;
+	}
+
 
 	public int getId() {
 		return id;

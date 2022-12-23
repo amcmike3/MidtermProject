@@ -1,11 +1,16 @@
 package com.skilldistillery.jobsearch.entities;
 
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
 
 @Entity
 public class Industry {
@@ -16,7 +21,40 @@ public class Industry {
 	
 	private String name;
 	
+	@OneToMany(mappedBy="industry")
+	private List<Article> articles; 
+	
+	
+	
 	public Industry() {}
+	
+
+	public List<Article> getArticles() {
+		return articles;
+	}
+
+
+	public void setArticles(List<Article> articles) {
+		this.articles = articles;
+	}
+
+	public void addArticle(Article article) {
+		if (articles == null ) {
+			articles = new ArrayList<>();
+		}
+		if (! articles.contains(article)) {
+			articles.add(article);
+			article.getIndustry().removeArticle(article);
+		}
+		article.setIndustry(this);
+	}
+	
+	public void removeArticle(Article article) {
+		if (articles != null && articles.contains(article)) {
+			articles.remove(article);
+			article.setIndustry(null);
+		}
+	}
 
 	public int getId() {
 		return id;

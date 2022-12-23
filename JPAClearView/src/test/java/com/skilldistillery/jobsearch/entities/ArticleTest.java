@@ -45,4 +45,17 @@ class ArticleTest {
 		assertEquals(1, article.getId());
 		assertEquals("the effects of frolicking on mental health", article.getTitle());
 	}
+
+	@Test
+	void test_Article_industry_many_to_one_mapping() {
+		assertNotNull(article);
+		assertEquals(1, article.getIndustry().getId());
+	}
+	@Test
+	void test_Article_User_many_to_one_mapping() {
+		assertNotNull(article);
+		assertEquals(1, article.getUser().getId());
+	}
+	
+	
 }

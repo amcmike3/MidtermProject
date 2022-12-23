@@ -45,6 +45,12 @@ class IndustryTest {
 		assertEquals(1, industry.getId());
 		assertEquals("textile", industry.getName());
 	}
+	
+	@Test
+	void test_industry_article_one_to_many_mapping() {
+		assertNotNull(industry);
+		assertTrue(industry.getArticles().size() > 0);
+	}
 
 
 }

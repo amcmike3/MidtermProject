@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `company` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NULL,
   `location` VARCHAR(500) NULL,
-  `enabled` TINYINT NULL DEFAULT 1,
+  `enabled` TINYINT NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `job` (
   `certifications` VARCHAR(200) NULL,
   `company_id` INT NOT NULL,
   `industry_id` INT NOT NULL,
-  `enabled` TINYINT NULL DEFAULT 1,
+  `enabled` TINYINT NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
   INDEX `fk_job_company1_idx` (`company_id` ASC),
   INDEX `fk_job_industry1_idx` (`industry_id` ASC),
