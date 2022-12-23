@@ -33,8 +33,20 @@ public class Interview {
 	@ManyToOne
 	@JoinColumn(name="user_id")
 	private User user;
+
+	@ManyToOne
+	@JoinColumn(name="job_id")
+	private Job job;
 	
 	public Interview() {}
+
+	public Job getJob() {
+		return job;
+	}
+
+	public void setJob(Job job) {
+		this.job = job;
+	}
 
 	public User getUser() {
 		return user;

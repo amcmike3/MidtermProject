@@ -1,5 +1,7 @@
 package com.skilldistillery.jobsearch.entities;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -9,7 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.xml.ws.soap.MTOM;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Job {
@@ -17,41 +19,69 @@ public class Job {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
-	private Integer salary;
-	
-	@Column(name="years_experience")
-	private Integer yearsExperience;
-	
-	private String skills;
-	
-	private String education;
-	
-	private String certifications;
-	
-	private boolean enabled;
-	
-	@ManyToOne
-	@JoinColumn(name="industry_id")
-	private Industry industry;
-	
-	@ManyToOne
-	@JoinColumn(name="company_id")
-	private Company company;
-	
-	//methods start
-	public Job() {}
 
-	
+	private Integer salary;
+
+	@Column(name = "years_experience")
+	private Integer yearsExperience;
+
+	private String skills;
+
+	private String education;
+
+	private String certifications;
+
+	private boolean enabled;
+
+	@ManyToOne
+	@JoinColumn(name = "industry_id")
+	private Industry industry;
+
+	@ManyToOne
+	@JoinColumn(name = "company_id")
+	private Company company;
+
+	@OneToMany
+	@JoinColumn(name = "job_id")
+	private List<Interview> interviews;
+
+	// methods start
+	public Job() {
+	}
+
+	public List<Interview> getInterviews() {
+		return interviews;
+	}
+
+	public void setInterviews(List<Interview> interviews) {
+		this.interviews = interviews;
+	}
+
+	public void addInterview(Interview interview) {
+		if (interviews == null) {
+			interviews = new ArrayList<>();
+		}
+		if (!interviews.contains(interview)) {
+			interviews.add(interview);
+			interview.getUser().removeInterview(interview);
+		}
+		interview.setJob(this);
+	}
+
+	public void removeInterview(Interview interview) {
+		if (interviews != null && interviews.contains(interview)) {
+			interviews.remove(interview);
+			interview.setJob(null);
+		}
+	}
+
 	public Company getCompany() {
 		return company;
 	}
 
-
 	public void setCompany(Company company) {
 		this.company = company;
 	}
-
 
 	public Industry getIndustry() {
 		return industry;
@@ -142,6 +172,5 @@ public class Job {
 		Job other = (Job) obj;
 		return id == other.id;
 	}
-	
-	
+
 }

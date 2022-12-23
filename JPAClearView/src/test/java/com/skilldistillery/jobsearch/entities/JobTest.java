@@ -57,4 +57,9 @@ class JobTest {
 		assertNotNull(job);
 		assertEquals(1, job.getCompany().getId());
 	}
+	@Test
+	void test_Job_Interview_many_to_one_mapping() {
+		assertNotNull(job);
+		assertTrue(job.getInterviews().size() > 0);
+	}
 }

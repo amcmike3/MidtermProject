@@ -52,4 +52,10 @@ class InterviewTest {
 		assertEquals(1, interview.getUser().getId());
 	}
 
+	@Test
+	void test_Job_interview_one_to_many_mapping() {
+		assertNotNull(interview);
+		assertEquals(1, interview.getJob().getId());
+	}
+
 }
