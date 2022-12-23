@@ -52,5 +52,10 @@ class CompanyReviewTest {
 		assertNotNull(review);
 		assertEquals(1, review.getCompany().getId());
 	}
+	@Test
+	void test_User_CompanyReview_one_to_many_mapping() {
+		assertNotNull(review);
+		assertEquals(1, review.getUser().getId());
+	}
 
 }

@@ -44,6 +44,9 @@ public class User {
 
 	@OneToMany(mappedBy = "user")
 	private List<Article> articles;
+
+	@OneToMany(mappedBy = "user")
+	private List<CompanyReview> reviews;
 	
 	@ManyToMany
 	@JoinTable(name="user_subscribed_to_company",		
@@ -55,6 +58,32 @@ public class User {
 	public User() {
 	}
 
+	public List<CompanyReview> getReviews() {
+		return reviews;
+	}
+
+	public void setReviews(List<CompanyReview> reviews) {
+		this.reviews = reviews;
+	}
+
+	public void addReview(CompanyReview review) {
+		if (reviews == null) {
+			reviews = new ArrayList<>();
+		}
+		if (!reviews.contains(review)) {
+			reviews.add(review);
+			review.getCompany().removeReview(review);
+		}
+		review.setUser(this);
+	}
+
+	public void removeReview(CompanyReview review) {
+		if (reviews != null && reviews.contains(review)) {
+			reviews.remove(review);
+			review.setUser(null);
+		}
+	}
+	
 	public List<Company> getCompanies() {
 		return companies;
 	}

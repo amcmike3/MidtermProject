@@ -66,4 +66,10 @@ class UserTest {
 		assertTrue(user.getCompanies().size() > 0);
 	}
 
+	@Test
+	void test_User_CompanyReview_one_to_many_mapping() {
+		assertNotNull(user);
+		assertTrue(user.getReviews().size() > 0);
+	}
+
 }
