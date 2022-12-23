@@ -51,6 +51,12 @@ class IndustryTest {
 		assertNotNull(industry);
 		assertTrue(industry.getArticles().size() > 0);
 	}
+	
+	@Test
+	void test_User_Article_one_to_many_mapping() {
+		assertNotNull(industry);
+		assertTrue(industry.getArticles().size() > 0);
+	}
 
 
 }

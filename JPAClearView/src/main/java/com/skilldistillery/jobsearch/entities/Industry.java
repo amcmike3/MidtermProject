@@ -25,9 +25,38 @@ public class Industry {
 	private List<Article> articles; 
 	
 	
+	@OneToMany(mappedBy="industry")
+	private List<Job> jobs;
 	
 	public Industry() {}
 	
+
+	public List<Job> getJobs() {
+		return jobs;
+	}
+
+
+	public void setJobs(List<Job> jobs) {
+		this.jobs = jobs;
+	}
+
+	public void addJob(Job job) {
+		if (jobs == null ) {
+			jobs = new ArrayList<>();
+		}
+		if (! jobs.contains(job)) {
+			jobs.add(job);
+			job.getIndustry().removeJob(job);
+		}
+		job.setIndustry(this);
+	}
+	
+	public void removeJob(Job job) {
+		if (jobs != null && jobs.contains(job)) {
+			jobs.remove(job);
+			job.setIndustry(null);
+		}
+	}
 
 	public List<Article> getArticles() {
 		return articles;

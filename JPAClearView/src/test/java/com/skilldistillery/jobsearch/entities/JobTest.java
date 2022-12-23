@@ -46,4 +46,10 @@ class JobTest {
 		assertEquals(89999, job.getSalary());
 		assertEquals("Administration", job.getSkills());
 	}
+	
+	@Test
+	void test_Job_Industry_one_to_many_mapping() {
+		assertNotNull(job);
+		assertEquals(1, job.getIndustry().getId());
+	}
 }
