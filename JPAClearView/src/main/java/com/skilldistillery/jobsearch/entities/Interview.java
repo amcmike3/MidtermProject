@@ -1,6 +1,8 @@
 package com.skilldistillery.jobsearch.entities;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -9,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -38,7 +41,35 @@ public class Interview {
 	@JoinColumn(name="job_id")
 	private Job job;
 	
+	@ManyToMany(mappedBy="interviews")
+	private List<InterviewQuestion> interviewQuestions;
+	
 	public Interview() {}
+
+	public List<InterviewQuestion> getInterviewQuestions() {
+		return interviewQuestions;
+	}
+
+	public void setInterviewQuestions(List<InterviewQuestion> interviewQuestions) {
+		this.interviewQuestions = interviewQuestions;
+	}
+	
+	public void addInterviewQuestion(InterviewQuestion interviewQuestion) {
+		if(interviewQuestions == null) {
+			interviewQuestions = new ArrayList<>();
+		}
+		if (! interviewQuestions.contains(interviewQuestion)) {
+			interviewQuestions.add(interviewQuestion);
+			interviewQuestion.addInterview(this);
+		}
+	}
+	
+	public void removeInterviewQuestion(InterviewQuestion interviewQuestion) {
+		if (interviewQuestions != null && interviewQuestions.contains(interviewQuestion)) {
+			interviewQuestions.remove(interviewQuestion);
+			interviewQuestion.removeInterview(this);
+		}
+	}
 
 	public Job getJob() {
 		return job;

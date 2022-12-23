@@ -58,4 +58,10 @@ class InterviewTest {
 		assertEquals(1, interview.getJob().getId());
 	}
 
+	@Test
+	void test_Interview_InterveiwQuestion_many_to_many_mapping() {
+		assertNotNull(interview);
+		assertTrue(interview.getInterviewQuestions().size() > 0);
+	}
+
 }

@@ -2,6 +2,7 @@ package com.skilldistillery.jobsearch.entities;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -46,6 +47,12 @@ class InterviewQuestionTest {
 		assertEquals(1, interview.getId());
 		assertEquals("Two Sum", interview.getTitle());
 		assertEquals("Two Sum", interview.getName());
+	}
+	
+	@Test
+	void test_Interview_InterveiwQuestion_many_to_many_mapping() {
+		assertNotNull(interview);
+		assertTrue(interview.getInterviews().size() > 0);
 	}
 
 }

@@ -1,11 +1,16 @@
 package com.skilldistillery.jobsearch.entities;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 @Entity
 @Table(name="interview_question")
@@ -21,7 +26,40 @@ public class InterviewQuestion {
 	
 	private String description;
 	
+	@ManyToMany
+	@JoinTable(name="interview_has_interview_question",
+	joinColumns=@JoinColumn(name="interview_question_id"),
+	inverseJoinColumns=@JoinColumn(name="interview_id")
+	)
+	private List<Interview> interviews;
+	
 	public InterviewQuestion() {}
+	
+	public List<Interview> getInterviews() {
+		return interviews;
+	}
+
+	public void setInterviews(List<Interview> interviews) {
+		this.interviews = interviews;
+	}
+	
+	public void addInterview(Interview interview) {
+		if(interviews == null) {
+			interviews = new ArrayList<>();
+		}
+		if (! interviews.contains(interview)) {
+			interviews.add(interview);
+			interview.addInterviewQuestion(this);
+		}
+	}
+	
+	public void removeInterview(Interview interview) {
+		if (interviews != null && interviews.contains(interview)) {
+			interviews.remove(interview);
+			interview.removeInterviewQuestion(this);
+		}
+	}
+	
 
 	public int getId() {
 		return id;
