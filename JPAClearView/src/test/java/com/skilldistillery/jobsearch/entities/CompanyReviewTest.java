@@ -46,5 +46,11 @@ class CompanyReviewTest {
 		assertEquals("Sarcasm 101", review.getTitle());
 		assertEquals("keep humor in the company culture", review.getAdvice());
 	}
+	
+	@Test
+	void test_Company_CompanyReview_one_to_many_mapping() {
+		assertNotNull(review);
+		assertEquals(1, review.getCompany().getId());
+	}
 
 }

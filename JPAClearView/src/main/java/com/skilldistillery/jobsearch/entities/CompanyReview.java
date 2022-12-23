@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 @Entity
 @Table(name="company_review")
@@ -33,9 +35,24 @@ public class CompanyReview {
 	private String title;
 	
 	private String advice;
+	
+	@ManyToOne
+	@JoinColumn(name="company_id")
+	private Company company;
 
 	public CompanyReview() {}
 	
+	
+	public Company getCompany() {
+		return company;
+	}
+
+
+	public void setCompany(Company company) {
+		this.company = company;
+	}
+
+
 	public int getId() {
 		return id;
 	}

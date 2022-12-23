@@ -42,7 +42,36 @@ public class Company {
 	@OneToMany(mappedBy="company")
 	private List<Job> jobs;
 
+	@OneToMany(mappedBy="company")
+	private List<CompanyReview> reviews;
+
 	public Company() {}
+
+	public List<CompanyReview> getReviews() {
+		return reviews;
+	}
+
+	public void setReviews(List<CompanyReview> reviews) {
+		this.reviews = reviews;
+	}
+	
+	public void addReview(CompanyReview review) {
+		if (reviews == null) {
+			reviews = new ArrayList<>();
+		}
+		if (!reviews.contains(review)) {
+			reviews.add(review);
+			review.getCompany().removeReview(review);
+		}
+		review.setCompany(this);
+	}
+
+	public void removeReview(CompanyReview review) {
+		if (reviews != null && reviews.contains(review)) {
+			reviews.remove(review);
+			review.setCompany(null);
+		}
+	}
 
 	public List<Job> getJobs() {
 		return jobs;
