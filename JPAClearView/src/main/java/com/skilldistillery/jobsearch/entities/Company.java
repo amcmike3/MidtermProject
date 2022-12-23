@@ -38,8 +38,37 @@ public class Company {
 	
 	@OneToMany(mappedBy="company")
 	private List<CompanyImage> images;
+	
+	@OneToMany(mappedBy="company")
+	private List<Job> jobs;
 
 	public Company() {}
+
+	public List<Job> getJobs() {
+		return jobs;
+	}
+	
+	public void addJob(Job job) {
+		if (jobs == null) {
+			jobs = new ArrayList<>();
+		}
+		if (!jobs.contains(job)) {
+			jobs.add(job);
+			job.getCompany().removeJob(job);
+		}
+		job.setCompany(this);
+	}
+
+	public void removeJob(Job job) {
+		if (jobs != null && jobs.contains(job)) {
+			jobs.remove(job);
+			job.setCompany(null);
+		}
+	}
+
+	public void setJobs(List<Job> jobs) {
+		this.jobs = jobs;
+	}
 
 	public List<CompanyImage> getImages() {
 		return images;
@@ -47,6 +76,24 @@ public class Company {
 
 	public void setImages(List<CompanyImage> images) {
 		this.images = images;
+	}
+	
+	public void addImage(CompanyImage image) {
+		if (images == null) {
+			images = new ArrayList<>();
+		}
+		if (!images.contains(image)) {
+			images.add(image);
+			image.getCompany().removeImage(image);
+		}
+		image.setCompany(this);
+	}
+
+	public void removeImage(CompanyImage image) {
+		if (images != null && images.contains(image)) {
+			images.remove(image);
+			image.setCompany(null);
+		}
 	}
 
 	public List<Benefit> getBenefits() {

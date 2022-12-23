@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.xml.ws.soap.MTOM;
 
 @Entity
 public class Job {
@@ -30,13 +31,27 @@ public class Job {
 	
 	private boolean enabled;
 	
-	@ManyToOne()
+	@ManyToOne
 	@JoinColumn(name="industry_id")
 	private Industry industry;
 	
+	@ManyToOne
+	@JoinColumn(name="company_id")
+	private Company company;
 	
 	//methods start
 	public Job() {}
+
+	
+	public Company getCompany() {
+		return company;
+	}
+
+
+	public void setCompany(Company company) {
+		this.company = company;
+	}
+
 
 	public Industry getIndustry() {
 		return industry;

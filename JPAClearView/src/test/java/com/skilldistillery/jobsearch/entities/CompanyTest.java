@@ -64,6 +64,11 @@ class CompanyTest {
 		assertNotNull(company);
 		assertTrue(company.getImages().size() > 0);
 	}
+	@Test
+	void test_Company_Job_one_to_many_mapping() {
+		assertNotNull(company);
+		assertTrue(company.getJobs().size() > 0);
+	}
 
 
 }

@@ -52,4 +52,9 @@ class JobTest {
 		assertNotNull(job);
 		assertEquals(1, job.getIndustry().getId());
 	}
+	@Test
+	void test_Job_Company_one_to_many_mapping() {
+		assertNotNull(job);
+		assertEquals(1, job.getCompany().getId());
+	}
 }

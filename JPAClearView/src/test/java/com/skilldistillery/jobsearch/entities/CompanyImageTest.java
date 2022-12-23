@@ -2,6 +2,7 @@ package com.skilldistillery.jobsearch.entities;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDateTime;
 
@@ -49,6 +50,12 @@ class CompanyImageTest {
 		assertEquals(1, img.getId());
 		assertEquals("The good company", img.getImgDescription());
 		assertEquals(2000, img.getDateCreated().getYear());
+	}
+	
+	@Test
+	void test_CompanyImage_Comppany_one_to_many_mapping() {
+		assertNotNull(img);
+		assertEquals(1, img.getCompany().getId());
 	}
 
 }
