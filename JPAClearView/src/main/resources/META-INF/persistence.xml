@@ -10,7 +10,17 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 		<!-- begin entities -->
+		<class>com.skilldistillery.jobsearch.entities.Article</class>
+		<class>com.skilldistillery.jobsearch.entities.Benefit</class>
+		<class>com.skilldistillery.jobsearch.entities.Company</class>
+		<class>com.skilldistillery.jobsearch.entities.CompanyImage</class>
+		<class>com.skilldistillery.jobsearch.entities.CompanyReview</class>
+		<class>com.skilldistillery.jobsearch.entities.Industry</class>
+		<class>com.skilldistillery.jobsearch.entities.Interview</class>
+		<class>com.skilldistillery.jobsearch.entities.InterviewQuestion</class>
+		<class>com.skilldistillery.jobsearch.entities.Job</class>
 		<class>com.skilldistillery.jobsearch.entities.User</class>
+
 
 
 		<!-- end entities -->

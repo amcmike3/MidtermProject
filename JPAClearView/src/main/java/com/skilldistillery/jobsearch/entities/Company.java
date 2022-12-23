@@ -1,5 +1,6 @@
 package com.skilldistillery.jobsearch.entities;
 
+import java.awt.Image;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -11,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Company {
@@ -33,9 +35,20 @@ public class Company {
 	joinColumns=@JoinColumn(name="company_id"),
 	inverseJoinColumns=@JoinColumn(name="benefit_id"))
 	private List<Benefit> benefits;
+	
+	@OneToMany(mappedBy="company")
+	private List<CompanyImage> images;
 
 	public Company() {}
-	
+
+	public List<CompanyImage> getImages() {
+		return images;
+	}
+
+	public void setImages(List<CompanyImage> images) {
+		this.images = images;
+	}
+
 	public List<Benefit> getBenefits() {
 		return benefits;
 	}
