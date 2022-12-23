@@ -47,6 +47,9 @@ public class User {
 
 	@OneToMany(mappedBy = "user")
 	private List<CompanyReview> reviews;
+
+	@OneToMany(mappedBy = "user")
+	private List<Interview> interviews;
 	
 	@ManyToMany
 	@JoinTable(name="user_subscribed_to_company",		
@@ -56,6 +59,34 @@ public class User {
 
 
 	public User() {
+	}
+	
+
+	public List<Interview> getInterviews() {
+		return interviews;
+	}
+
+
+	public void setInterviews(List<Interview> interviews) {
+		this.interviews = interviews;
+	}
+	
+	public void addInterview(Interview interview) {
+		if (interviews == null) {
+			interviews = new ArrayList<>();
+		}
+		if (!interviews.contains(interview)) {
+			interviews.add(interview);
+			interview.getUser().removeInterview(interview);
+		}
+		interview.setUser(this);
+	}
+
+	public void removeInterview(Interview interview) {
+		if (interviews != null && interviews.contains(interview)) {
+			interviews.remove(interview);
+			interview.setUser(null);
+		}
 	}
 
 	public List<CompanyReview> getReviews() {

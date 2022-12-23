@@ -46,6 +46,10 @@ class InterviewTest {
 		assertEquals("What are data structures and algorithms?...", interview.getTitle());
 		assertEquals("Two Sum, Regex matching, Binary Search", interview.getQuestions());
 	}
-
+	@Test
+	void test_User_interview_one_to_many_mapping() {
+		assertNotNull(interview);
+		assertEquals(1, interview.getUser().getId());
+	}
 
 }

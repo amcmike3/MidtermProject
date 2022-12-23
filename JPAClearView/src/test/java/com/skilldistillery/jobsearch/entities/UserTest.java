@@ -71,5 +71,10 @@ class UserTest {
 		assertNotNull(user);
 		assertTrue(user.getReviews().size() > 0);
 	}
+	@Test
+	void test_User_interview_one_to_many_mapping() {
+		assertNotNull(user);
+		assertTrue(user.getInterviews().size() > 0);
+	}
 
 }
