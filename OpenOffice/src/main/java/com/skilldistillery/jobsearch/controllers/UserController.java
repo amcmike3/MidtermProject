@@ -12,10 +12,17 @@ public class UserController {
 	
 	@Autowired
 	private UserDAO userDao;
-	@RequestMapping(path = {"/", "home.do"})
+	
+	@RequestMapping(path = {"/", "home"})
 	public String home(Model model) {
+		
 		model.addAttribute("SMOKETEST", userDao.findById(1));
 		return "home";
 	}
-
+	
+	@RequestMapping("login")
+	public String sendToLoginPage() {
+		
+		return "login";
+	}
 }
