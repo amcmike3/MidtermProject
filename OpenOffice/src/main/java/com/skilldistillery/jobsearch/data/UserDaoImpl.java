@@ -20,4 +20,11 @@ public class UserDaoImpl implements UserDAO {
 		return em.find(User.class, userId);
 	}
 
+	@Override
+	public User login(String username, String password) {
+		// TODO make this method check db if there is user with username and password
+		// if there is return the user otherwise return null;
+		return null;
+	}
+
 }
