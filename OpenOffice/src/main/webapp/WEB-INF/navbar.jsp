@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <nav class="navbar navbar-expand-sm sticky-top navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="#">Open Office</a>
+        <a class="navbar-brand" href="home">Open Office</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar1">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -26,11 +26,6 @@
                 </li>
             	</c:otherwise>
             </c:choose>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="home">home</a>
-                </li>
             </ul>
         </div>
     </div>
