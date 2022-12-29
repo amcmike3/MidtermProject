@@ -11,17 +11,6 @@
 
 <body>
 	<%@include file="navbar.jsp"%>
-	<h1>Login Page Test Make Me Pretty!!</h1>
-	<form action="loggingIn" method="post">
-		<input type="text" placeholder="username" name="username"> <br>
-		<input type="password" placeholder="password" name="password">
-		<br> <input type="submit" value="Log In"> <br> 
-		<a
-			href="register">
-			<h5>register</h5>
-		</a>
-
-	</form>
 
 
 	<%@include file="footer.jsp"%>

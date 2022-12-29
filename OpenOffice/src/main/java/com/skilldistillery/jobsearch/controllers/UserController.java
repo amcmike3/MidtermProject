@@ -42,4 +42,9 @@ public class UserController {
 		
 		return ans;
 	}
+	
+	@RequestMapping("register")
+	public String sendToRegisterPage() {	
+		return "register";
+	}
 }
