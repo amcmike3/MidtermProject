@@ -20,6 +20,7 @@
 	</form>
 
 
+	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
 </body>
 </html>

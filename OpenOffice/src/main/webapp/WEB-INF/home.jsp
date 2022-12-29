@@ -75,6 +75,7 @@
 	</div>
 	<!--container-->
 
+	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
 
 </body>
