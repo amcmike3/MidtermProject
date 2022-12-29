@@ -52,7 +52,7 @@ public class UserController {
 	public String register(User user, Model model, HttpSession session) {	
 		String ans = "";
 		//if username is unique and email is unique then register user otherwise 
-		//refresh register page with form pre-filled except wrong input
+		//refresh register page with form pre-filled except for respective not unique input
 		if ( ! dao.isEmailUnique(user.getEmail())) {
 			model.addAttribute("notUniqueEmail", true);			
 			model.addAttribute("user", user);			
