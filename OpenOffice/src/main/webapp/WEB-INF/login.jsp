@@ -16,12 +16,11 @@
 		<input type="text" placeholder="username" name="username"> <br>
 		<input type="password" placeholder="password" name="password">
 		<br> <input type="submit" value="Log In"> <br> 
-		<a
-			href="register">
-			<h5>register</h5>
-		</a>
 
 	</form>
+	<a href="register">
+		<h5>register</h5>
+	</a>
 
 
 	<%@include file="footer.jsp"%>

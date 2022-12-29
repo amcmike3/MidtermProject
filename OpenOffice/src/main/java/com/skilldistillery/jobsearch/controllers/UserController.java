@@ -30,7 +30,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(path = "loggingIn", method = RequestMethod.POST)
-	public String loginPage(String username, String password, HttpSession session) {	
+	public String login(String username, String password, HttpSession session) {	
 		String ans = "";
 		User user = dao.login(username, password);
 		if (user == null) {
@@ -47,4 +47,28 @@ public class UserController {
 	public String sendToRegisterPage() {	
 		return "register";
 	}
+
+	@RequestMapping("registering")
+	public String register(User user, Model model, HttpSession session) {	
+		String ans = "";
+		//if username is unique and email is unique then register user otherwise 
+		//refresh register page with form pre-filled except wrong input
+		if( ! dao.isUsernameUnique(user.getUsername())) {
+			user.setUsername(null);
+			model.addAttribute("user", user);
+			ans = "registering";
+		} else if ( ! dao.isEmailUnique(user.getEmail())) {
+			user.setEmail(null);
+			model.addAttribute("user", user);			
+			ans = "registering";
+		} else {
+			dao.register(user);			
+			session.setAttribute("user", user);
+			ans = "login";
+		}
+		
+		return ans;
+	}
+	
+	
 }
