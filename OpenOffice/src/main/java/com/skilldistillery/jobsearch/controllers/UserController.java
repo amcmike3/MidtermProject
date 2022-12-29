@@ -53,14 +53,15 @@ public class UserController {
 		String ans = "";
 		//if username is unique and email is unique then register user otherwise 
 		//refresh register page with form pre-filled except wrong input
-		if( ! dao.isUsernameUnique(user.getUsername())) {
-			user.setUsername(null);
-			model.addAttribute("user", user);
-			ans = "registering";
-		} else if ( ! dao.isEmailUnique(user.getEmail())) {
-			user.setEmail(null);
+		if ( ! dao.isEmailUnique(user.getEmail())) {
+			model.addAttribute("notUniqueEmail", true);			
 			model.addAttribute("user", user);			
-			ans = "registering";
+			ans = "register";
+			
+		} else if( ! dao.isUsernameUnique(user.getUsername())) {
+			model.addAttribute("notUniqueUsername", true);
+			model.addAttribute("user", user);
+			ans = "register";
 		} else {
 			dao.register(user);			
 			session.setAttribute("user", user);
