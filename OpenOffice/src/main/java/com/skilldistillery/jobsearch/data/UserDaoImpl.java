@@ -41,36 +41,29 @@ public class UserDaoImpl implements UserDAO {
 
 	@Override
 	public boolean isUsernameUnique(String username) {
-		// TODO Auto-generated method stub
-		// return true if email is unique
-		// create jpql query to search for user with username passed in if result set is
-		// empty return true
-		// else return false
+		// return true if email is unique else return false
 		boolean ans = false;
 		String jpql = "select user.username from User user where user.username = :blah";
-			List<String> dbUsernames = em.createQuery(jpql, String.class).setParameter("blah", username).getResultList();
+		List<String> dbUsernames = em.createQuery(jpql, String.class).setParameter("blah", username).getResultList();
 
-			if (dbUsernames.size() < 1) {
-				ans = true;
-			}
+		if (dbUsernames.size() < 1) {
+			ans = true;
+		}
 
 		return ans;
 	}
 
 	@Override
 	public boolean isEmailUnique(String email) {
-		// TODO Auto-generated method stub
 		/*
-		 * return true if email is unique 
-		 * create jpql query to search for user with
-		 * email passed in if result set is empty return true else return false
+		 * return true if email is unique else return false
 		 */
 
 		boolean ans = false;
 		String jpql = "select user.email from User user where user.email = :blah";
-		
+
 		List<String> dbEmails = em.createQuery(jpql, String.class).setParameter("blah", email).getResultList();
-		
+
 		if (dbEmails.size() < 1) {
 			ans = true;
 		}
