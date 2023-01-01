@@ -54,7 +54,6 @@ public class UserDaoImpl implements UserDAO {
 				ans = true;
 			}
 
-		System.out.println("-----------isUsernameUnique does not work--------------");
 		return ans;
 	}
 
@@ -76,7 +75,6 @@ public class UserDaoImpl implements UserDAO {
 			ans = true;
 		}
 
-		System.out.println("-----------isEmailUnique does not work--------------");
 		return ans;
 	}
 
