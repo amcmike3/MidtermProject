@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
+import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
@@ -27,8 +28,21 @@ public class UserDaoImpl implements UserDAO {
 	public User login(String username, String password) {
 		// TODO make this method check db if there is user with username and password
 		// if there is return the user otherwise return null;
+		User ans = null;
+		String jpql = "select user from User user where user.username = :username and user.password = :password";
+		List<User> dbUser = em.createQuery(jpql, User.class)
+				.setParameter("username", username)
+				.setParameter("password", password)
+				.getResultList();
+
+		if (dbUser.size() > 0) {
+			ans = dbUser.get(0);
+		}
+		
+
+		System.out.println(ans);
 		System.out.println("-----------login does not work--------------");
-		return null;
+		return ans;
 	}
 
 	@Override

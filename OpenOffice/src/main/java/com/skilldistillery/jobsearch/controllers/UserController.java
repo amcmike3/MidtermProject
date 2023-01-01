@@ -33,6 +33,7 @@ public class UserController {
 	public String login(String username, String password, HttpSession session) {	
 		String ans = "";
 		User user = dao.login(username, password);
+		System.out.println(user);
 		if (user == null) {
 			ans = "login";
 		} else {
