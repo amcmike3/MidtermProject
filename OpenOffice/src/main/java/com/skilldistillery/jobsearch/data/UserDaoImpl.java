@@ -45,10 +45,19 @@ public class UserDaoImpl implements UserDAO {
 
 	@Override
 	public User register(User user) {
-		// TODO
 		// persist a newly registered user to the database
-		System.out.println("-----------register does not work--------------");
-		return null;
+		User dbUser = null;
+		
+		if (user.getPassword() == null || user.getPassword().equals("")) {
+			
+		} else if (user.getUsername() == null || user.getUsername().equals("")) {
+			
+		} else {
+			em.persist(user);
+			dbUser = em.find(User.class, user.getId());
+		}
+		
+		return dbUser;
 	}
 
 	@Override
