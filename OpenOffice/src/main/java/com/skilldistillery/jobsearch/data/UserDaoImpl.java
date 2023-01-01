@@ -26,8 +26,7 @@ public class UserDaoImpl implements UserDAO {
 
 	@Override
 	public User login(String username, String password) {
-		// TODO make this method check db if there is user with username and password
-		// if there is return the user otherwise return null;
+		// if there is user with username and password return the user otherwise return null;
 		User ans = null;
 		String jpql = "select user from User user where user.username = :username and user.password = :password";
 		List<User> dbUser = em.createQuery(jpql, User.class)
@@ -41,7 +40,6 @@ public class UserDaoImpl implements UserDAO {
 		
 
 		System.out.println(ans);
-		System.out.println("-----------login does not work--------------");
 		return ans;
 	}
 
