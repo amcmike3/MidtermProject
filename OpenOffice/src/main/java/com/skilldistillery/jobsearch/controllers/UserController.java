@@ -43,6 +43,12 @@ public class UserController {
 		return ans;
 	}
 	
+	@RequestMapping(path = "loggingOut.do")
+	public String logout(HttpSession session) {
+		session.removeAttribute("user");
+		return "redirect:home";
+	}
+	
 	@RequestMapping("register")
 	public String sendToRegisterPage() {	
 		return "register";

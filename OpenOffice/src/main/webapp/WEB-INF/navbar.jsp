@@ -10,7 +10,7 @@
             <c:choose>
             	<c:when test="${sessionScope.user != null }">
             	 <li class="nav-item active">
-                    <a class="nav-link" href="login">Logout</a>
+                    <a class="nav-link" href="loggingOut.do">Logout</a>
                 </li>
                  <li class="nav-item active">
                     <a class="nav-link" href="user"><img src="${user.imgUrl }"></a>
