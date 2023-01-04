@@ -169,14 +169,14 @@ public class UserController {
 		mv.addObject("company", company);
 		return mv;
 	}
-<<<<<<< HEAD
+
 	@RequestMapping("deleteReview.do")
 	public String deleteReview(Integer reviewId) {
 		dao.deleteReview(reviewId);
 		
 		return "successfullyDeletedPage";
 }
-=======
+
 	
 	@RequestMapping("allReviews")
 	public String allReviews(Integer companyId, Model model) {
@@ -193,5 +193,4 @@ public class UserController {
 
 		return mv;
 	}
->>>>>>> 02e8f632d7e234b8061d852b59be109420d39451
 }

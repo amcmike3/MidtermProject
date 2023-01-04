@@ -20,11 +20,7 @@ public interface UserDAO {
 	List<User> findUsers(String username);
 	List<Job> findJobs(String title);
 	Company findCompanyById(Integer companyId);
-<<<<<<< HEAD
 	boolean deleteReview(Integer reviewId);
-	
-	
-=======
 	CompanyReview createUserReview(CompanyReview companyReview);
->>>>>>> 02e8f632d7e234b8061d852b59be109420d39451
+
 }

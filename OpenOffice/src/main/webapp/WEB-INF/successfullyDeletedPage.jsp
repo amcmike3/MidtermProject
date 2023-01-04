@@ -10,6 +10,6 @@
 	<%@include file="navbar.jsp"%>
 <h1>Successfully Deleted Your Review!</h1>
 <%@include file="footer.jsp"%>
-	<%@ include file="bootstrapFoot.jsp"%>
+<%@ include file="bootstrapFoot.jsp"%>
 </body>
 </html>

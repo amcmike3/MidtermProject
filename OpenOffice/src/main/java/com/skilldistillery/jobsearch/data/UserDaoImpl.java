@@ -145,11 +145,9 @@ public class UserDaoImpl implements UserDAO {
 	}
 
 	@Override
-<<<<<<< HEAD
 	public boolean deleteReview(Integer reviewId) {
-		em.getTransaction().begin();
 		boolean isDeleted = false;
-
+		System.out.println("Inside delete review");
 		CompanyReview cr = em.find(CompanyReview.class, reviewId);
 
 		if (cr != null) {
@@ -159,9 +157,8 @@ public class UserDaoImpl implements UserDAO {
 				isDeleted = true;
 			}
 		}
-		em.getTransaction().commit();
 		return isDeleted;
-=======
+	}
 	public CompanyReview createUserReview(CompanyReview companyReview){
 	    CompanyReview review = null;
 	    int userId = companyReview.getUser().getId();
@@ -183,6 +180,5 @@ public class UserDaoImpl implements UserDAO {
 	        review.setCompany(company);
 	    }
 	    return review;
->>>>>>> 02e8f632d7e234b8061d852b59be109420d39451
 	}
 }

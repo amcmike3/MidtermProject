@@ -24,7 +24,11 @@
 						${review.user.username }</a> rated this company ${review.rating } out
 					of 10 <br> this is what they had to say about ${company.name}:
 					<br> ${review.content }
-				</p>
+<!-- 					if review.user.id == user.id then a delete button 
+ -->				
+ <form action="deleteReview.do" method="post">
+	<button type="submit" name="id" value="${review.id}">Delete</button>
+ </p>
 			</div>
 		</c:forEach>
 	</div>
