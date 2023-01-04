@@ -85,6 +85,7 @@ public class Benefit {
 		this.perk = perk;
 	}
 
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
