@@ -56,6 +56,7 @@ CREATE TABLE IF NOT EXISTS `job` (
   `company_id` INT NOT NULL,
   `industry_id` INT NOT NULL,
   `enabled` TINYINT NOT NULL DEFAULT 1,
+  `title` VARCHAR(99) NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_job_company1_idx` (`company_id` ASC),
   INDEX `fk_job_industry1_idx` (`industry_id` ASC),
@@ -343,7 +344,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `open_officedb`;
-INSERT INTO `job` (`id`, `salary`, `years_experience`, `skills`, `education`, `certifications`, `company_id`, `industry_id`, `enabled`) VALUES (1, 89999, 25, 'Administration', 'Doctorates in website administration', 'Expert Administration from the institute the adminsters the certifications for administering administration expertly.', 1, 1, 1);
+INSERT INTO `job` (`id`, `salary`, `years_experience`, `skills`, `education`, `certifications`, `company_id`, `industry_id`, `enabled`, `title`) VALUES (1, 89999, 25, 'Administration', 'Doctorates in website administration', 'Expert Administration from the institute the adminsters the certifications for administering administration expertly.', 1, 1, 1, 'administrator of adminstration');
 
 COMMIT;
 

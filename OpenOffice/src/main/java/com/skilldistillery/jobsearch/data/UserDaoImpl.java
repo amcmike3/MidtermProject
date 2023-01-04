@@ -29,18 +29,16 @@ public class UserDaoImpl implements UserDAO {
 
 	@Override
 	public User login(String username, String password) {
-		// if there is user with username and password return the user otherwise return null;
+		// if there is user with username and password return the user otherwise return
+		// null;
 		User ans = null;
 		String jpql = "select user from User user where user.username = :username and user.password = :password";
-		List<User> dbUser = em.createQuery(jpql, User.class)
-				.setParameter("username", username)
-				.setParameter("password", password)
-				.getResultList();
+		List<User> dbUser = em.createQuery(jpql, User.class).setParameter("username", username)
+				.setParameter("password", password).getResultList();
 
 		if (dbUser.size() > 0) {
 			ans = dbUser.get(0);
 		}
-		
 
 		System.out.println(ans);
 		return ans;
@@ -50,16 +48,16 @@ public class UserDaoImpl implements UserDAO {
 	public User register(User user) {
 		// persist a newly registered user to the database
 		User dbUser = null;
-		
+
 		if (user.getPassword() == null || user.getPassword().equals("")) {
-			
+
 		} else if (user.getUsername() == null || user.getUsername().equals("")) {
-			
+
 		} else {
 			em.persist(user);
 			dbUser = em.find(User.class, user.getId());
 		}
-		
+
 		return dbUser;
 	}
 
@@ -113,6 +111,32 @@ public class UserDaoImpl implements UserDAO {
 		return em.createQuery(jpql, Company.class).getResultList();
 	}
 
+	public List<Company> findCompanies(String name) {
+		List<Company> ans = new ArrayList<>();
+		String jpql = "select company from Company company where company.name like :name";
 
+		ans = em.createQuery(jpql, Company.class).setParameter("name", "%" + name + "%").getResultList();
 
+		return ans;
+	}
+
+	@Override
+	public List<User> findUsers(String username) {
+		List<User> ans = new ArrayList<>();
+		String jpql = "select user from User user where user.username like :name";
+
+		ans = em.createQuery(jpql, User.class).setParameter("name", "%" + username + "%").getResultList();
+		return ans;
+	}
+
+	@Override
+	public List<Job> findJobs(String title) {
+
+		List<Job> ans = new ArrayList<>();
+		String jpql = "select job from Job job where job.title like :title";
+
+		ans = em.createQuery(jpql, Job.class).setParameter("title", "%" + title + "%").getResultList();
+		return ans;
+
+	}
 }
