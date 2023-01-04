@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS `company` (
   `name` VARCHAR(100) NULL,
   `location` VARCHAR(500) NULL,
   `enabled` TINYINT NOT NULL DEFAULT 1,
+  `description` VARCHAR(100) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -324,7 +325,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `open_officedb`;
-INSERT INTO `company` (`id`, `name`, `location`, `enabled`) VALUES (1, 'The good company', 'we are wherever you are', 1);
+INSERT INTO `company` (`id`, `name`, `location`, `enabled`, `description`) VALUES (1, 'The good company', 'we are wherever you are', 1, 'some random stuff i guess I don\'t know we will fill this stuff in later');
 
 COMMIT;
 
