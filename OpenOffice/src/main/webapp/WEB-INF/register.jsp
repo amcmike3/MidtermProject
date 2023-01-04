@@ -43,7 +43,6 @@
 		<c:otherwise>
 
 
-
 			<form action="registering" method="post">
 				<input type="text" placeholder="email" name="email"> <br>
 				<input type="text" placeholder="username" name="username"> <br>
