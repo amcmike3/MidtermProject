@@ -10,7 +10,7 @@
 <body>
 	<%@include file="navbar.jsp"%>
 
-	<form action="allUsers.do" method="GET">
+	<form action="allUser.do" method="GET">
   		<input id="btnDisplay" class="btn" type="submit" value="Show Users"/>
 	</form>
 		<form action="allCompanies.do" method="GET">

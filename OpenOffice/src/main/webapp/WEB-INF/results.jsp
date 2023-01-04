@@ -23,7 +23,7 @@
 						<c:forEach var="user" items="${userList}">
 							<tr>
 								<td>${user.id}</td>
-								<td><a href="allUsers.do?userId=${user.id}">${user.username}</a></td>
+								<td><a href="allUser.do?userId=${user.id}">${user.username}</a></td>
 							</tr>
 						</c:forEach>
 					</tbody>
