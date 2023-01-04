@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,30 +7,68 @@
 <title>Open Office Results</title>
 </head>
 <body>
-<div>
-<c:choose>
-	<c:when test="${empty users}">
-	<h2>No users found</h2>
-	</c:when>
-	<c:otherwise>
-		<table class="table table-striped table-hover">
-			<thead>
-				<tr>
-					<th>ID</th>
-					<th>Username</th>
-				</tr>
-			</thead>
-			<tbody>
-			<c:forEach var="user" items="${users}">
-			<tr>
-				<td>${user.id}</td>
-				<td><a href="allUsers.do?userId=${user.id}">${user.username}</a></td>
-			</tr>
-			</c:forEach>
-			</tbody>
-		</table>
-	</c:otherwise>
-</c:choose>
-</div>
+	<div>
+		<c:choose>
+			<c:when test="${userList != null}">
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>User ID</th>
+							<th>Username</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="user" items="${userList}">
+							<tr>
+								<td>${user.id}</td>
+								<td><a href="allUsers.do?userId=${user.id}">${user.username}</a></td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</c:when>
+			<c:when test="${jobList != null}">
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>Job ID</th>
+							<th>Job Title</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="job" items="${jobList}">
+							<tr>
+								<td>${user.id}</td>
+								<td><a href="allJobs.do?jobId=${job.id}">${job.title}</a></td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</c:when>
+			<c:when test="${companyList != null}">
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>Company ID</th>
+							<th>Company Name</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="company" items="${companyList}">
+							<tr>
+								<td>${user.id}</td>
+								<td><a href="allCompanies.do?companyId=${company.id}">${company.name}</a></td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</c:when>
+			<c:otherwise>
+				<h2>No results found</h2>
+			</c:otherwise>
+		</c:choose>
+	</div>
 </body>
 </html>
