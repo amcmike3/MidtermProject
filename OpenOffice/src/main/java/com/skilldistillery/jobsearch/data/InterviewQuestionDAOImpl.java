@@ -1,7 +1,17 @@
 package com.skilldistillery.jobsearch.data;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 
-public interface InterviewQuestionDAOImpl {
+import org.springframework.stereotype.Service;
 
+@Service
+@Transactional
+public class InterviewQuestionDAOImpl implements InterviewQuestionDAO{
+
+	@PersistenceContext
+	private EntityManager em;
+	
 	
 }
