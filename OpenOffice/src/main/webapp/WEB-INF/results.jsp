@@ -7,6 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Open Office Results</title>
+<%@ include file="bootstrapHead.jsp"%>
+
 </head>
 <body>
 	<div>
@@ -19,6 +21,7 @@
 							<th>Username</th>
 							<th>First Name</th>
 							<th>Last Name</th>
+							<th>Description</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -26,6 +29,9 @@
 							<tr>
 								<td>${user.id}</td>
 								<td><a href="allUser.do?userId=${user.id}">${user.username}</a></td>
+								<td>${user.firstName}</td>
+								<td>${user.lastName}</td>
+								<td>${user.description}</td>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -37,6 +43,7 @@
 						<tr>
 							<th>Job ID</th>
 							<th>Job Title</th>
+							<th>Salary</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -44,6 +51,7 @@
 							<tr>
 								<td>${job.id}</td>
 								<td><a href="allJobs.do?jobId=${job.id}">${job.title}</a></td>
+								<td>${job.salary}</td>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -55,6 +63,7 @@
 						<tr>
 							<th>Company ID</th>
 							<th>Company Name</th>
+							<th>Location</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -62,6 +71,7 @@
 							<tr>
 								<td>${company.id}</td>
 								<td><a href="companyBio?companyId=${company.id}">${company.name}</a></td>
+
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -72,5 +82,8 @@
 			</c:otherwise>
 		</c:choose>
 	</div>
+	
+	<%@include file="footer.jsp"%>
+	<%@include file="bootstrapFoot.jsp"%>
 </body>
 </html>
