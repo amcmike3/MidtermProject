@@ -176,4 +176,12 @@ public class UserController {
 		
 		return "allReviews";
 	}
+	
+	@RequestMapping("user")
+	public ModelAndView userBio(Integer userId) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("userBio");
+
+		return mv;
+	}
 }
