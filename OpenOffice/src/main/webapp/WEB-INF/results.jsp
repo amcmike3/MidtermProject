@@ -7,6 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Open Office Results</title>
+<%@ include file="bootstrapHead.jsp"%>
+
 </head>
 <body>
 	<div>
@@ -80,5 +82,8 @@
 			</c:otherwise>
 		</c:choose>
 	</div>
+	
+	<%@include file="footer.jsp"%>
+	<%@include file="bootstrapFoot.jsp"%>
 </body>
 </html>
