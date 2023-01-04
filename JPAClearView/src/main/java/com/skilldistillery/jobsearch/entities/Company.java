@@ -44,6 +44,8 @@ public class Company {
 
 	@OneToMany(mappedBy="company")
 	private List<CompanyReview> reviews;
+	
+	private String description;
 
 	public Company() {}
 
@@ -208,12 +210,24 @@ public class Company {
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
+	
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Company [id=").append(id).append(", name=").append(name).append(", location=").append(location)
-				.append(", enabled=").append(enabled).append("]");
+				.append(", enabled=").append(enabled).append(", users=").append(users).append(", benefits=")
+				.append(benefits).append(", images=").append(images).append(", jobs=").append(jobs).append(", reviews=")
+				.append(reviews).append(", description=").append(description).append("]");
 		return builder.toString();
 	}
 
