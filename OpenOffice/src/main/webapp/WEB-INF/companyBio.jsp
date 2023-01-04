@@ -11,20 +11,37 @@
 
 <body>
 	<%@include file="navbar.jsp"%>
-	<div>
-	<h1>${company.name }</h1>
-	<p>${company.description }
-	<br>
-	</p>
-	<c:forEach var="review" items="${company.reviews }">
-		<p>${review.id }</p>
-	</c:forEach>
-	
-	
-	
-	
-	
-	
+	<div class="container">
+		<div class="row col card text-center">
+			<h1>${company.name }</h1>
+			<p>${company.description }
+				<br>
+			</p>
+		</div>
+		<div class="row">
+			<div class="col card text-center">
+				<a href="companyJobs?companyId=${company.id }">${company.name}
+					Jobs </a>
+			</div>
+			<div class="col card text-center">
+				<a href="review.do?companyId=${company.id }">Leave a review of
+					${company.name } </a>
+			</div>
+		</div>
+		<div class="row col">
+			<img alt="A fancy company picture should be here" src="${company.images.get(0).imgUrl }">
+		</div>
+		<c:forEach var="review" items="${company.reviews }">
+			<div class="row col card">
+				<p>
+					<a href="userBio?userId=${review.user.id }">
+						${review.user.username }</a> rated this company ${review.rating } out
+					of 10 <br> this is what they had to say about ${company.name}:
+					<br> ${review.content }
+				</p>
+			</div>
+		</c:forEach>
+
 	</div>
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
