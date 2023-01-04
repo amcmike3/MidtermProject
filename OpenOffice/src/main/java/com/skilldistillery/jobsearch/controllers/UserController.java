@@ -23,23 +23,6 @@ public class UserController {
 	@Autowired
 	private UserDAO dao;
 
-	@RequestMapping(path = { "/", "home" })
-	public String home(Model model) {
-
-		model.addAttribute("SMOKETEST", dao.findById(1));
-		return "home";
-	}
-
-	@RequestMapping("login")
-	public String sendToLoginPage() {
-		return "login";
-	}
-	
-	@RequestMapping("search")
-	public String sendToSearchPage() {
-		return "search";
-	}
-	
 
 	@RequestMapping(path = "loggingIn", method = RequestMethod.POST)
 	public String login(String username, String password, HttpSession session) {
@@ -55,16 +38,6 @@ public class UserController {
 		return ans;
 	}
 
-	@RequestMapping(path = "loggingOut.do")
-	public String logout(HttpSession session) {
-		session.removeAttribute("user");
-		return "redirect:home";
-	}
-
-	@RequestMapping("register")
-	public String sendToRegisterPage() {
-		return "register";
-	}
 
 	@RequestMapping("registering")
 	public String register(User user, Model model, HttpSession session) {
@@ -177,11 +150,5 @@ public class UserController {
 		return "allReviews";
 	}
 	
-	@RequestMapping("user")
-	public ModelAndView userBio(Integer userId) {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("userBio");
 
-		return mv;
-	}
 }
