@@ -61,7 +61,7 @@
 						<c:forEach var="company" items="${companyList}">
 							<tr>
 								<td>${company.id}</td>
-								<td><a href="allCompanies.do?companyId=${company.id}">${company.name}</a></td>
+								<td><a href="companyBio?companyId=${company.id}">${company.name}</a></td>
 							</tr>
 						</c:forEach>
 					</tbody>

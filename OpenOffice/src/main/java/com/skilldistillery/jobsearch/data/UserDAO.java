@@ -18,4 +18,5 @@ public interface UserDAO {
 	List<Company> findCompanies(String name);
 	List<User> findUsers(String username);
 	List<Job> findJobs(String title);
+	Company findCompanyById(Integer companyId);
 }

@@ -139,4 +139,9 @@ public class UserDaoImpl implements UserDAO {
 		return ans;
 
 	}
+
+	@Override
+	public Company findCompanyById(Integer companyId) {
+		return em.find(Company.class, companyId);
+	}
 }
