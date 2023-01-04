@@ -32,6 +32,12 @@ public class UserController {
 	public String sendToLoginPage() {
 		return "login";
 	}
+	
+	@RequestMapping("search")
+	public String sendToSearchPage() {
+		return "search";
+	}
+	
 
 	@RequestMapping(path = "loggingIn", method = RequestMethod.POST)
 	public String login(String username, String password, HttpSession session) {
