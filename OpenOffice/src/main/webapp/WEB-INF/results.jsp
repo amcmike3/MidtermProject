@@ -40,7 +40,7 @@
 					<tbody>
 						<c:forEach var="job" items="${jobList}">
 							<tr>
-								<td>${user.id}</td>
+								<td>${job.id}</td>
 								<td><a href="allJobs.do?jobId=${job.id}">${job.title}</a></td>
 							</tr>
 						</c:forEach>
@@ -58,7 +58,7 @@
 					<tbody>
 						<c:forEach var="company" items="${companyList}">
 							<tr>
-								<td>${user.id}</td>
+								<td>${company.id}</td>
 								<td><a href="allCompanies.do?companyId=${company.id}">${company.name}</a></td>
 							</tr>
 						</c:forEach>
