@@ -100,11 +100,6 @@ public class UserDaoImpl implements UserDAO {
 		return em.createQuery(jpql, User.class).getResultList();
 	}
 
-	@Override
-	public List<Job> findAllJobs() {
-		String jpql = "SELECT job FROM Job job";
-		return em.createQuery(jpql, Job.class).getResultList();
-	}
 
 
 	@Override
@@ -116,16 +111,7 @@ public class UserDaoImpl implements UserDAO {
 		return ans;
 	}
 
-	@Override
-	public List<Job> findJobs(String title) {
 
-		List<Job> ans = new ArrayList<>();
-		String jpql = "select job from Job job where job.title like :title";
-
-		ans = em.createQuery(jpql, Job.class).setParameter("title", "%" + title + "%").getResultList();
-		return ans;
-
-	}
 
 
 

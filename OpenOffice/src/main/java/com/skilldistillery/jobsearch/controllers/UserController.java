@@ -75,32 +75,15 @@ public class UserController {
 
 	}
 
-	
-
-	@RequestMapping("getJob.do")
-	public String getJobByKeyword( String title, Model model) {
-		List<Job> job = dao.findJobs(title);
-		model.addAttribute("jobList", job);
-		return "results";
-
-	}
-
 	@RequestMapping("allUser.do")
 	public String getAllUsers(Model model) {
 		List<User> users = dao.findAllUsers();
 		model.addAttribute("userList", users);
 		return "results";
-
+		
 	}
+	
 
-
-	@RequestMapping("allJobs.do")
-	public String getAllJobs(Model model) {
-		List<Job> job = dao.findAllJobs();
-		model.addAttribute("jobList", job);
-		return "results";
-
-	}
 
 	
 

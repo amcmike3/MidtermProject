@@ -14,7 +14,5 @@ public interface UserDAO {
 	boolean isUsernameUnique(String username);
 	boolean isEmailUnique(String email);
 	List<User> findAllUsers();
-	List<Job> findAllJobs();
 	List<User> findUsers(String username);
-	List<Job> findJobs(String title);
 }
