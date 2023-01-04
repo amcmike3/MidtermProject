@@ -13,11 +13,12 @@
 	<%@include file="navbar.jsp"%>
 	<div>
 	<h1>${company.name }</h1>
-	<p>${company.description }
 	<br>
 	<!-- <c:forEach var="user" items="${userList}"> -->
-	<c:forEach var="review" items="${company.reviews }">
-		<p>${review.id }</p>
+	<c:forEach var="review" items="${company.reviews}">
+		<p>${review.id}</p>
+		
+		
 	</c:forEach>
 	
 	
