@@ -1,5 +1,6 @@
 package com.skilldistillery.jobsearch.data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -10,6 +11,8 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+import com.skilldistillery.jobsearch.entities.Company;
+import com.skilldistillery.jobsearch.entities.Job;
 import com.skilldistillery.jobsearch.entities.User;
 
 @Service
@@ -90,6 +93,30 @@ public class UserDaoImpl implements UserDAO {
 		}
 
 		return ans;
+	}
+
+	@Override
+	public List<Company> findCompanies(String name) {
+		List<Company> ans = new ArrayList<>();
+		String jpql = "select company from Company company where company.name like :name";
+
+		ans = em.createQuery(jpql, Company.class).setParameter("name", "%" + name + "%").getResultList();
+	
+		return ans;
+	}
+
+	@Override
+	public List<User> findUsers(String username) {
+		List<User> ans = new ArrayList<>();
+		String jpql = "select user from User user where user.username like :name";
+
+		ans = em.createQuery(jpql, User.class).setParameter("name", "%" + username + "%").getResultList();		
+		return ans;
+	}
+
+	@Override
+	public List<Job> findJobs(String title) {
+	return null; //Fix me
 	}
 
 }

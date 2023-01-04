@@ -1,5 +1,9 @@
 package com.skilldistillery.jobsearch.data;
 
+import java.util.List;
+
+import com.skilldistillery.jobsearch.entities.Company;
+import com.skilldistillery.jobsearch.entities.Job;
 import com.skilldistillery.jobsearch.entities.User;
 
 public interface UserDAO {
@@ -8,4 +12,7 @@ public interface UserDAO {
 	User register(User user);
 	boolean isUsernameUnique(String username);
 	boolean isEmailUnique(String email);
-}
+	List<Company> findCompanies(String name);
+	List<User> findUsers(String username);
+	List<Job> findJobs(String title);
+ }
