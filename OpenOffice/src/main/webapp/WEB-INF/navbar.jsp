@@ -24,6 +24,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="login">Sign Up</a>
                 </li>
+                <li class="nav-item">
+                	<a class="nav-link" href="search">Search</a>
+                </li>
             	</c:otherwise>
             </c:choose>
             </ul>
