@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +12,7 @@
 <body>
 	<%@include file="navbar.jsp"%>
 
-	<form action="allUsers.do" method="GET">
+	<form action="allUser.do" method="GET">
   		<input id="btnDisplay" class="btn" type="submit" value="Show Users"/>
 	</form>
 		<form action="allCompanies.do" method="GET">

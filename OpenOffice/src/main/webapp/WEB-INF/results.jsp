@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +25,7 @@
 						<c:forEach var="user" items="${userList}">
 							<tr>
 								<td>${user.id}</td>
-								<td><a href="allUsers.do?userId=${user.id}">${user.username}</a></td>
+								<td><a href="allUser.do?userId=${user.id}">${user.username}</a></td>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -40,7 +42,7 @@
 					<tbody>
 						<c:forEach var="job" items="${jobList}">
 							<tr>
-								<td>${user.id}</td>
+								<td>${job.id}</td>
 								<td><a href="allJobs.do?jobId=${job.id}">${job.title}</a></td>
 							</tr>
 						</c:forEach>
@@ -58,7 +60,7 @@
 					<tbody>
 						<c:forEach var="company" items="${companyList}">
 							<tr>
-								<td>${user.id}</td>
+								<td>${company.id}</td>
 								<td><a href="allCompanies.do?companyId=${company.id}">${company.name}</a></td>
 							</tr>
 						</c:forEach>
