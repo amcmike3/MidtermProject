@@ -75,13 +75,7 @@ public class UserController {
 
 	}
 
-	@RequestMapping("getCompany.do")
-	public String getCompanyByKeyword(String name, Model model) {
-		List<Company> company = dao.findCompanies(name);
-		model.addAttribute("companyList", company);
-		return "results";
-
-	}
+	
 
 	@RequestMapping("getJob.do")
 	public String getJobByKeyword( String title, Model model) {
@@ -99,12 +93,6 @@ public class UserController {
 
 	}
 
-	@RequestMapping("allCompanies.do")
-	public String getAllCompanies(Model model) {
-		List<Company> company = dao.findAllCompanies();
-		model.addAttribute("companyList", company);
-		return "results";
-	}
 
 	@RequestMapping("allJobs.do")
 	public String getAllJobs(Model model) {
@@ -113,42 +101,7 @@ public class UserController {
 		return "results";
 
 	}
-	
-	@RequestMapping("companyBio")
-	public ModelAndView companyBio(Integer companyId) {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("companyBio");
-		Company company = dao.findCompanyById(companyId);
-		mv.addObject("company", company);
-		return mv;
-	}
-	
-	@RequestMapping("companyJobs")
-	public ModelAndView companyJobs(Integer companyId) {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("companyJobs");
-		Company company = dao.findCompanyById(companyId);
-		List<Job> jobs = new ArrayList<>();
-		int index = 0;
-		for (Job job : company.getJobs()) {
-			if (index > 4) {
-				break;
-			}
-			jobs.add(job);
-			index++;
-		}
-		mv.addObject("companyJobs", jobs);
-		mv.addObject("company", company);
-		return mv;
-	}
-	
-	@RequestMapping("allReviews")
-	public String allReviews(Integer companyId, Model model) {
-		Company company = dao.findCompanyById(companyId);
-		model.addAttribute("company", company);
-		
-		return "allReviews";
-	}
+
 	
 
 }
