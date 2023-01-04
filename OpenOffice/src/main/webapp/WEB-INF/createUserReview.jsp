@@ -10,6 +10,8 @@
 <%@ include file="bootstrapHead.jsp"%>
 </head>
 <body>
+	<%@include file="navbar.jsp"%>
+
 	<div>
 		<form action="createUserReview.do" method="POST">
 			<div>
