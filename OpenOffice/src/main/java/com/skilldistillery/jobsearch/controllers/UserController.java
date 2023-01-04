@@ -149,4 +149,14 @@ public class UserController {
 		mv.addObject("company", company);
 		return mv;
 	}
+	
+	@RequestMapping("companyJobs")
+	public ModelAndView companyJobs(Integer companyId) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("companyJobs");
+		Company company = dao.findCompanyById(companyId);
+		mv.addObject("companyJobs", company.getJobs());
+		mv.addObject("company", company);
+		return mv;
+	}
 }
