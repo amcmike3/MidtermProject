@@ -98,26 +98,7 @@ public class UserDaoImpl implements UserDAO {
 		return em.createQuery(jpql, User.class).getResultList();
 	}
 
-	@Override
-	public List<Job> findAllJobs() {
-		String jpql = "SELECT job FROM Job job";
-		return em.createQuery(jpql, Job.class).getResultList();
-	}
 
-	@Override
-	public List<Company> findAllCompanies() {
-		String jpql = "SELECT company FROM Company company";
-		return em.createQuery(jpql, Company.class).getResultList();
-	}
-
-	public List<Company> findCompanies(String name) {
-		List<Company> ans = new ArrayList<>();
-		String jpql = "select company from Company company where company.name like :name";
-
-		ans = em.createQuery(jpql, Company.class).setParameter("name", "%" + name + "%").getResultList();
-
-		return ans;
-	}
 
 	@Override
 	public List<User> findUsers(String username) {
@@ -128,22 +109,11 @@ public class UserDaoImpl implements UserDAO {
 		return ans;
 	}
 
-	@Override
-	public List<Job> findJobs(String title) {
 
-		List<Job> ans = new ArrayList<>();
-		String jpql = "select job from Job job where job.title like :title";
 
-		ans = em.createQuery(jpql, Job.class).setParameter("title", "%" + title + "%").getResultList();
-		return ans;
 
-	}
 
-	@Override
-	public Company findCompanyById(Integer companyId) {
-		return em.find(Company.class, companyId);
-	}
-
+<<<<<<< HEAD
 	@Override
 	public boolean deleteReview(Integer reviewId) {
 		boolean isDeleted = false;
@@ -181,4 +151,7 @@ public class UserDaoImpl implements UserDAO {
 	    }
 	    return review;
 	}
+=======
+	
+>>>>>>> fae3606ac81837c65e4e17a9329f1c1818dc178f
 }

@@ -24,23 +24,6 @@ public class UserController {
 	@Autowired
 	private UserDAO dao;
 
-	@RequestMapping(path = { "/", "home" })
-	public String home(Model model) {
-
-		model.addAttribute("SMOKETEST", dao.findById(1));
-		return "home";
-	}
-
-	@RequestMapping("login")
-	public String sendToLoginPage() {
-		return "login";
-	}
-	
-	@RequestMapping("search")
-	public String sendToSearchPage() {
-		return "search";
-	}
-	
 
 	@RequestMapping(path = "loggingIn", method = RequestMethod.POST)
 	public String login(String username, String password, HttpSession session) {
@@ -56,16 +39,6 @@ public class UserController {
 		return ans;
 	}
 
-	@RequestMapping(path = "loggingOut.do")
-	public String logout(HttpSession session) {
-		session.removeAttribute("user");
-		return "redirect:home";
-	}
-
-	@RequestMapping("register")
-	public String sendToRegisterPage() {
-		return "register";
-	}
 
 	@RequestMapping("registering")
 	public String register(User user, Model model, HttpSession session) {
@@ -103,43 +76,17 @@ public class UserController {
 
 	}
 
-	@RequestMapping("getCompany.do")
-	public String getCompanyByKeyword(String name, Model model) {
-		List<Company> company = dao.findCompanies(name);
-		model.addAttribute("companyList", company);
-		return "results";
-
-	}
-
-	@RequestMapping("getJob.do")
-	public String getJobByKeyword( String title, Model model) {
-		List<Job> job = dao.findJobs(title);
-		model.addAttribute("jobList", job);
-		return "results";
-
-	}
-
 	@RequestMapping("allUser.do")
 	public String getAllUsers(Model model) {
 		List<User> users = dao.findAllUsers();
 		model.addAttribute("userList", users);
 		return "results";
-
+		
 	}
+	
 
-	@RequestMapping("allCompanies.do")
-	public String getAllCompanies(Model model) {
-		List<Company> company = dao.findAllCompanies();
-		model.addAttribute("companyList", company);
-		return "results";
-	}
 
-	@RequestMapping("allJobs.do")
-	public String getAllJobs(Model model) {
-		List<Job> job = dao.findAllJobs();
-		model.addAttribute("jobList", job);
-		return "results";
-
+<<<<<<< HEAD
 	}
 	
 	@RequestMapping("companyBio")
@@ -177,20 +124,8 @@ public class UserController {
 		return "successfullyDeletedPage";
 }
 
+=======
+>>>>>>> fae3606ac81837c65e4e17a9329f1c1818dc178f
 	
-	@RequestMapping("allReviews")
-	public String allReviews(Integer companyId, Model model) {
-		Company company = dao.findCompanyById(companyId);
-		model.addAttribute("company", company);
-		
-		return "allReviews";
-	}
-	
-	@RequestMapping("user")
-	public ModelAndView userBio(Integer userId) {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("userBio");
 
-		return mv;
-	}
 }
