@@ -84,6 +84,10 @@ public class UserController {
 		
 	}
 	
+	@RequestMapping("updateUser")
+	public String sendToUpdateUser(){
+		return "updateUser";
+	}
 
 
 	
