@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.jobsearch.data.UserDAO;
 import com.skilldistillery.jobsearch.entities.Company;
@@ -110,7 +112,7 @@ public class UserController {
 	}
 
 	@RequestMapping("getJob.do")
-	public String getJobByKeyword(String title, Model model) {
+	public String getJobByKeyword( String title, Model model) {
 		List<Job> job = dao.findJobs(title);
 		model.addAttribute("jobList", job);
 		return "results";
@@ -139,4 +141,29 @@ public class UserController {
 		return "results";
 
 	}
+	
+	@RequestMapping("companyBio")
+	public ModelAndView companyBio(Integer companyId) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("companyBio");
+		Company company = dao.findCompanyById(companyId);
+		mv.addObject("company", company);
+		return mv;
+	}
+	
+	@RequestMapping("companyJobs")
+	public ModelAndView companyJobs(Integer companyId) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("companyJobs");
+		Company company = dao.findCompanyById(companyId);
+		mv.addObject("companyJobs", company.getJobs());
+		mv.addObject("company", company);
+		return mv;
+	}
+	@RequestMapping("deleteReview.do")
+	public String deleteReview(Integer reviewId) {
+		dao.deleteReview(reviewId);
+		
+		return "successfullyDeletedPage";
+}
 }

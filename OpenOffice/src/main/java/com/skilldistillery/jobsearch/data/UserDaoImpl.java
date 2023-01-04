@@ -4,14 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
-import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.jobsearch.entities.Company;
+import com.skilldistillery.jobsearch.entities.CompanyReview;
 import com.skilldistillery.jobsearch.entities.Job;
 import com.skilldistillery.jobsearch.entities.User;
 
@@ -138,5 +137,28 @@ public class UserDaoImpl implements UserDAO {
 		ans = em.createQuery(jpql, Job.class).setParameter("title", "%" + title + "%").getResultList();
 		return ans;
 
+	}
+
+	@Override
+	public Company findCompanyById(Integer companyId) {
+		return em.find(Company.class, companyId);
+	}
+
+	@Override
+	public boolean deleteReview(Integer reviewId) {
+		em.getTransaction().begin();
+		boolean isDeleted = false;
+
+		CompanyReview cr = em.find(CompanyReview.class, reviewId);
+
+		if (cr != null) {
+			em.remove(cr);
+			em.flush();
+			if (!em.contains(cr)) {
+				isDeleted = true;
+			}
+		}
+		em.getTransaction().commit();
+		return isDeleted;
 	}
 }

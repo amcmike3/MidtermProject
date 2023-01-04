@@ -221,13 +221,12 @@ public class Company {
 	}
 
 
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Company [id=").append(id).append(", name=").append(name).append(", location=").append(location)
-				.append(", enabled=").append(enabled).append(", users=").append(users).append(", benefits=")
-				.append(benefits).append(", images=").append(images).append(", jobs=").append(jobs).append(", reviews=")
-				.append(reviews).append(", description=").append(description).append("]");
+				.append(", enabled=").append(enabled).append(", description=").append(description).append("]");
 		return builder.toString();
 	}
 

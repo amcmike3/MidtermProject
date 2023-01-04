@@ -247,15 +247,18 @@ public class User {
 		this.description = description;
 	}
 
+	
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("User [id=").append(id).append(", username=").append(username).append(", password=")
 				.append(password).append(", enabled=").append(enabled).append(", firstName=").append(firstName)
 				.append(", lastName=").append(lastName).append(", role=").append(role).append(", email=").append(email)
-				.append(", imgUrl=").append(imgUrl).append(", description=").append(description).append("]");
+				.append(", imgUrl=").append(imgUrl).append("]");
 		return builder.toString();
 	}
+
 
 	@Override
 	public int hashCode() {

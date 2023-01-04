@@ -98,6 +98,8 @@ public class Article {
 		this.datePosted = datePosted;
 	}
 
+	
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -106,6 +108,7 @@ public class Article {
 				.append(datePosted).append("]");
 		return builder.toString();
 	}
+
 
 	@Override
 	public int hashCode() {

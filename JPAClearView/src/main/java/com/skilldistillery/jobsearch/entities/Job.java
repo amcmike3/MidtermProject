@@ -32,6 +32,8 @@ public class Job {
 	private String certifications;
 
 	private boolean enabled;
+	
+	private String description;
 
 	@ManyToOne
 	@JoinColumn(name = "industry_id")
@@ -156,12 +158,21 @@ public class Job {
 		this.title = title;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	@Override
 	public String toString() {
-		return "Job [id=" + id + ", salary=" + salary + ", yearsExperience=" + yearsExperience + ", skills=" + skills
-				+ ", education=" + education + ", certifications=" + certifications + ", enabled=" + enabled
-				+ ", industry=" + industry + ", company=" + company + ", interviews=" + interviews + ", title=" + title
-				+ "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Job [id=").append(id).append(", salary=").append(salary).append(", yearsExperience=")
+				.append(yearsExperience).append(", skills=").append(skills).append(", education=").append(education)
+				.append(", certifications=").append(certifications).append(", enabled=").append(enabled).append("]");
+		return builder.toString();
 	}
 
 	@Override
