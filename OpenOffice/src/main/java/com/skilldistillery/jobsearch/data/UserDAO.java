@@ -3,6 +3,7 @@ package com.skilldistillery.jobsearch.data;
 import java.util.List;
 
 import com.skilldistillery.jobsearch.entities.Company;
+import com.skilldistillery.jobsearch.entities.CompanyReview;
 import com.skilldistillery.jobsearch.entities.Job;
 import com.skilldistillery.jobsearch.entities.User;
 
@@ -19,4 +20,5 @@ public interface UserDAO {
 	List<User> findUsers(String username);
 	List<Job> findJobs(String title);
 	Company findCompanyById(Integer companyId);
+	CompanyReview createUserReview(CompanyReview companyReview);
 }

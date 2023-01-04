@@ -12,6 +12,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.jobsearch.entities.Company;
+import com.skilldistillery.jobsearch.entities.CompanyReview;
 import com.skilldistillery.jobsearch.entities.Job;
 import com.skilldistillery.jobsearch.entities.User;
 
@@ -143,5 +144,11 @@ public class UserDaoImpl implements UserDAO {
 	@Override
 	public Company findCompanyById(Integer companyId) {
 		return em.find(Company.class, companyId);
+	}
+
+	@Override
+	public CompanyReview createUserReview(CompanyReview review) {
+		CompanyReview companyReview = new CompanyReview();
+		return review;
 	}
 }
