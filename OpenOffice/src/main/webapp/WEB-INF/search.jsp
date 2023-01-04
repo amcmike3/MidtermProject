@@ -10,6 +10,15 @@
 <body>
 	<%@include file="navbar.jsp"%>
 
+	<form action="allUsers.do" method="GET">
+  		<input id="btnDisplay" class="btn" type="submit" value="Show Users"/>
+	</form>
+		<form action="allCompanies.do" method="GET">
+  		<input id="btnDisplay" class="btn" type="submit" value="Show Companies"/>
+	</form>
+		<form action="allJobs.do" method="GET">
+  		<input id="btnDisplay" class="btn" type="submit" value="Show Jobs"/>
+	</form>
 	<form action="getUser.do" method="GET">
   		Find by Username: <input type="text" name="username" required/>
   		<input id="btnDisplay" class="btn" type="submit" value="Show User"/>
@@ -22,7 +31,6 @@
   		Find by Job: <input type="text" name="title" required/>
   		<input id="btnDisplay" class="btn" type="submit" value="Show Job"/>
 	</form>
-
 
 	<%@include file="footer.jsp"%>
 	<%@include file="bootstrapFoot.jsp"%>
