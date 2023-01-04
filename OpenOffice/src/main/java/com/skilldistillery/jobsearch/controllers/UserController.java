@@ -31,6 +31,7 @@ public class UserController {
 		if (user == null) {
 			ans = "login";
 		} else {
+			user.getReviews().size();
 			session.setAttribute("user", user);
 			ans = "home";
 		}

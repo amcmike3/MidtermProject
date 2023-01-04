@@ -24,7 +24,6 @@ public class JobController {
 	}
 
 
-
 	@RequestMapping("allJobs.do")
 	public String getAllJobs(Model model) {
 		List<Job> job = dao.findAllJobs();

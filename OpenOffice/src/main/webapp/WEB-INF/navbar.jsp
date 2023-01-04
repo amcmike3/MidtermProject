@@ -13,7 +13,7 @@
                     <a class="nav-link" href="loggingOut.do">Logout</a>
                 </li>
                  <li class="nav-item active">
-                    <a class="nav-link" href="user?userId=${sessionScope.user.id }"><img src="${user.imgUrl }"></a>
+                    <a class="nav-link" href="user?userId=${sessionScope.user.id }"><img style="width: 40px; height: auto; !important" src="${user.imgUrl }"></a>
                 </li>
             	</c:when>
             	<c:otherwise>
