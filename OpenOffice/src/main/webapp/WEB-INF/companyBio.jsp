@@ -28,16 +28,16 @@
 					${company.name } </a>
 			</div>
 		</div>
-		<div class="row col">
+		<div class="row col yellow-containers">
 			<img alt="A fancy company picture should be here"
 				src="${company.images.get(0).imgUrl }">
 		</div>
-		<div class="row col card text-center">
+		<div class="row col card text-center yellow-containers">
 			<h1>Reviews:</h1>
 		</div>
 		<c:forEach var="review" items="${company.reviews }">
 			<div class="row">
-				<div class="col card">
+				<div class="col card yellow-containers">
 
 					<p>
 						<a href="userBio?userId=${review.user.id }">
@@ -53,7 +53,7 @@
 			<a href="allReviews?companyId=${company.id }"> See all reviews of
 				${company.name }</a>
 		</div>
-		<div class="row col card text-center">
+		<div class="row col card text-center yellow-containers">
 			<h1>Jobs:</h1>
 		</div>
 
@@ -61,7 +61,7 @@
 			<div class="row">
 				<c:forEach var="job" items="${company.jobs }" begin="${i }"
 					end="${i + 3 }">
-					<div class="col card">
+					<div class="col card yellow-containers">
 						<p>
 							<a href="jobBio?jobId=${job.id}"> ${job.title }</a>
 						</p>
