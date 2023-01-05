@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
-import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
@@ -111,9 +109,56 @@ public class UserDaoImpl implements UserDAO {
 		return ans;
 	}
 
-
-
-
-
+//	@Override
+//	public boolean deleteReview(Integer reviewId) {
+//		boolean isDeleted = false;
+//		System.out.println("Inside delete review");
+//		CompanyReview cr = em.find(CompanyReview.class, reviewId);
+//
+//		if (cr != null) {
+//			em.remove(cr);
+//			em.flush();
+//			if (!em.contains(cr)) {
+//				isDeleted = true;
+//			}
+//		}
+//		return isDeleted;
+//	}
 	
+	public CompanyReview createUserReview(CompanyReview companyReview){
+	    CompanyReview review = null;
+	    int userId = companyReview.getUser().getId();
+	    User user = findById(userId);
+	    int companyId = companyReview.getCompany().getId();
+	    Company company = findCompanyById(companyId);
+	    
+	    if(user != null && company != null){
+	        review = new CompanyReview();
+	        review.setContent(companyReview.getContent());
+	        review.setReviewDate(companyReview.getReviewDate());
+	        review.setUser(user);
+	        review.setRecommendation(companyReview.isRecommendation());
+	        review.setRating(companyReview.getRating());
+	        review.setPros(companyReview.getPros());
+	        review.setCons(companyReview.getCons());
+	        review.setTitle(companyReview.getTitle());
+	        review.setAdvice(companyReview.getAdvice());
+	        review.setCompany(company);
+	    }
+	    return review;
+	}
+
+	@Override
+	public List<Job> findJobs(String title) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Company findCompanyById(Integer companyId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 }

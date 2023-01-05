@@ -16,6 +16,12 @@ public class CompanyReviewController {
 	@Autowired
 	private CompanyReviewDAO dao;
 	
+//	@RequestMapping("deleteReview.do")
+//	public String deleteReview(Integer reviewId) {
+//		dao.deleteReview(reviewId);
+//
+//		return "successfullyDeletedPage";
+//	}
 	@RequestMapping("review.do")
 	public String create() {
 
@@ -42,5 +48,4 @@ public class CompanyReviewController {
 		return mv;
 
 	}
-
 }

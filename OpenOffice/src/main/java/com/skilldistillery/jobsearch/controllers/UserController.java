@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -23,7 +24,6 @@ public class UserController {
 	@Autowired
 	private UserDAO dao;
 
-
 	@RequestMapping(path = "loggingIn", method = RequestMethod.POST)
 	public String login(String username, String password, HttpSession session) {
 		String ans = "";
@@ -38,7 +38,6 @@ public class UserController {
 
 		return ans;
 	}
-
 
 	@RequestMapping("registering")
 	public String register(User user, Model model, HttpSession session) {
@@ -81,7 +80,7 @@ public class UserController {
 		List<User> users = dao.findAllUsers();
 		model.addAttribute("userList", users);
 		return "results";
-		
+
 	}
 	
 	@RequestMapping("updateUser")
@@ -90,6 +89,38 @@ public class UserController {
 	}
 
 
-	
+//	@RequestMapping("companyBio")
+//	public ModelAndView companyBio(Integer companyId) {
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("companyBio");
+//		Company company = dao.findCompanyById(companyId);
+//		mv.addObject("company", company);
+//		return mv;
+//	}
 
+//	@RequestMapping("companyJobs")
+//	public ModelAndView companyJobs(Integer companyId) {
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("companyJobs");
+//		Company company = dao.findCompanyById(companyId);
+//		List<Job> jobs = new ArrayList<>();
+//		int index = 0;
+//		for (Job job : company.getJobs()) {
+//			if (index > 4) {
+//				break;
+//			}
+//			jobs.add(job);
+//			index++;
+//		}
+//		mv.addObject("companyJobs", jobs);
+//		mv.addObject("company", company);
+//		return mv;
+//	}
+
+//	@RequestMapping("deleteReview.do")
+//	public String deleteReview(Integer reviewId) {
+//		dao.deleteReview(reviewId);
+//
+//		return "successfullyDeletedPage";
+//	}
 }
