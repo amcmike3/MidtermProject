@@ -23,7 +23,7 @@
 				<input type="text" name="content" required>
 			</div>
 
-			<label for="cars">Rating:</label> <select id="rating" name="rating">
+			<label for="rating">Rating:</label> <select id="rating" name="rating">
 				<option value="1">1</option>
 				<option value="2">2</option>
 				<option value="3">3</option>

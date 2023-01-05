@@ -37,18 +37,9 @@ public class CompanyReviewDAOImpl implements CompanyReviewDAO {
 
 		if (user != null && company != null) {
 			review = new CompanyReview();
-			review.setContent(companyReview.getContent());
-			review.setReviewDate(companyReview.getReviewDate());
-			review.setUser(user);
-			review.setRecommendation(companyReview.isRecommendation());
-			review.setRating(companyReview.getRating());
-			review.setPros(companyReview.getPros());
-			review.setCons(companyReview.getCons());
-			review.setTitle(companyReview.getTitle());
-			review.setAdvice(companyReview.getAdvice());
-			review.setCompany(company);
+			em.persist(companyReview);
 		}
-		return review;
+		return companyReview;
 	}
 
 
@@ -83,6 +74,7 @@ public class CompanyReviewDAOImpl implements CompanyReviewDAO {
 		return isDeleted;
 
 	}
+
 
 	@Override
 	public CompanyReview createUserReview(CompanyReview companyReview) {
