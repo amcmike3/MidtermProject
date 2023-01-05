@@ -57,19 +57,22 @@
 			<h1>Jobs:</h1>
 		</div>
 
-		<c:forEach var="i" begin="0" end="5" step="3">
-			<div class="row">
-				<c:forEach var="job" items="${company.jobs }" begin="${i }"
-					end="${i + 3 }">
-					<div class="col card yellow-containers">
-						<p>
-							<a href="jobBio?jobId=${job.id}"> ${job.title }</a>
-						</p>
-					</div>
-				</c:forEach>
-			</div>
-		</c:forEach>
+		<div class="row col card text-center yellow-containers">
 
+			<c:forEach var="i" begin="0" end="5" step="3">
+				<div class="row">
+					<c:forEach var="job" items="${company.jobs }" begin="${i }"
+						end="${i + 3 }">
+						<div class="col card containers">
+							<p>
+								<a href="jobBio?jobId=${job.id}"> ${job.title }</a>
+							</p>
+						</div>
+					</c:forEach>
+				</div>
+			</c:forEach>
+
+		</div>
 	</div>
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>

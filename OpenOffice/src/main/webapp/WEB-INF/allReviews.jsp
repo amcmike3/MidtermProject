@@ -27,7 +27,7 @@
 <!-- 					if review.user.id == user.id then a delete button 
  -->	
 <c:choose>
- 	<c:when test="${sessionScope.user != null}">
+ 	<c:when test="${sessionScope.user.id == review.user.id}">
  <form action="deleteReview.do" method="POST">
  	<input name="userId" value="${sessionScope.user.id}" type="hidden"/>
 	<button type="submit" name="reviewId" value="${review.id}">Delete</button>
@@ -35,7 +35,7 @@
  	</c:when>	
  	</c:choose>	
  	<c:choose>
- 	<c:when test="${sessionScope.user != null}">
+ 	<c:when test="${sessionScope.user.id == review.user.id}">
  <form action="updateCompanyReview.do" method="post">
  <input type="hidden" name="companyId" value="${company.id }">
 	<button type="submit" name="reviewId" value="${review.id}">Update</button>

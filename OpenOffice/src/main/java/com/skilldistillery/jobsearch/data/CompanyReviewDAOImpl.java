@@ -94,23 +94,6 @@ public class CompanyReviewDAOImpl implements CompanyReviewDAO {
 	}
 
 
-//	@Override
-//	public CompanyReview updateUserReview(int companyId, CompanyReview companyReview) {
-//		
-//		CompanyReview reviewUpdate = em.find(Company.class, companyReview);
-//		
-//		reviewUpdate.setContent(companyReview.getContent());
-//		reviewUpdate.setReviewDate(companyReview.getReviewDate());
-//		reviewUpdate.setRecommendation(companyReview.isRecommendation());
-//		reviewUpdate.setRating(companyReview.getRating());
-//		reviewUpdate.setPros(companyReview.getPros());
-//		reviewUpdate.setCons(companyReview.getCons());
-//		reviewUpdate.setTitle(companyReview.getTitle());
-//		reviewUpdate.setAdvice(companyReview.getAdvice());
-//		
-//		return review;
-//	}
-
 	@Override
 	public CompanyReview createUserReview(CompanyReview companyReview) {
 		// TODO Auto-generated method stub
