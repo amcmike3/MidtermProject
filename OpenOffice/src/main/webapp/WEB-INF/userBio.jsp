@@ -30,12 +30,11 @@
 					<h3>Description:</h3>
 					<br>
 					<c:choose>
-						<c:when test="${empty session.user.description}">
-							<a href="updateUser">Add a description</a>
+						<c:when test="${sessionScope.user.description != null}">
+							<p>${sessionScope.user.description}</p>
 						</c:when>
-
 						<c:otherwise>
-							<p>${session.user.description }</p>
+							<a href="updateUser">Add a description</a>
 						</c:otherwise>
 					</c:choose>
 				</div>
@@ -47,7 +46,7 @@
 							<p>
 								<a href="userBio?userId=${review.user.id }">
 									${review.company.name }</a> rating: ${review.rating } out of 10 <br>
-								you said: ${company.name}: <br> ${review.content }
+								you said: <br> ${review.content }
 							</p>
 						</div>
 

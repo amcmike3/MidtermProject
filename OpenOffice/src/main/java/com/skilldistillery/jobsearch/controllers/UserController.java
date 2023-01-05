@@ -88,6 +88,14 @@ public class UserController {
 		return "updateUser";
 	}
 
+	@RequestMapping("updatingUser")
+	public String updateUser(User user, HttpSession session, Model model){
+		String ans = "updateUser";
+		
+		//TODO fix me
+		
+		return ans;
+	}
 
 //	@RequestMapping("companyBio")
 //	public ModelAndView companyBio(Integer companyId) {
