@@ -6,6 +6,12 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+import com.skilldistillery.jobsearch.entities.Company;
+import com.skilldistillery.jobsearch.entities.CompanyReview;
+import com.skilldistillery.jobsearch.entities.Interview;
+import com.skilldistillery.jobsearch.entities.InterviewQuestion;
+import com.skilldistillery.jobsearch.entities.User;
+
 @Service
 @Transactional
 public class InterviewDAOImpl implements InterviewDAO {
@@ -13,6 +19,34 @@ public class InterviewDAOImpl implements InterviewDAO {
 	
 	@PersistenceContext
 	private EntityManager em;
+
+	@Override
+	public User findById(int userId) {
+		return em.find(User.class, userId);
+	}
+
+	@Override
+	public Company findCompanyById(Integer companyId) {
+		return em.find(Company.class, companyId);
+	}
+
+	@Override
+	public Interview findInterviewById(Integer interviewId) {
+		return em.find(Interview.class, interviewId);
+	}
+
+	@Override
+	public Interview updateInterview(int interviewId, Interview interview) {
+
+			Interview interviewUpdate = em.find(Interview.class, interviewId);
+
+			interviewUpdate.setTitle(interview.getTitle());
+			interviewUpdate.setProcess(interview.getProcess());
+			interviewUpdate.setJobOffered(interview.getJobOffered());
+			interviewUpdate.setQuestions(interview.getQuestions());
+
+			return interviewUpdate;
+	}
 	
 	
 }
