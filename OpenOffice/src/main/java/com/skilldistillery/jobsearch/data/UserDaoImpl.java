@@ -111,6 +111,12 @@ public class UserDaoImpl implements UserDAO {
 		return ans;
 	}
 
+	@Override
+	public User update(User newUser, User oldUser) {
+		//TODO fix this garbage
+		return oldUser;
+	}
+
 
 
 
