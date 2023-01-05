@@ -1,5 +1,7 @@
 package com.skilldistillery.jobsearch.controllers;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,7 +10,9 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.skilldistillery.jobsearch.data.CompanyReviewDAO;
+import com.skilldistillery.jobsearch.entities.Company;
 import com.skilldistillery.jobsearch.entities.CompanyReview;
+import com.skilldistillery.jobsearch.entities.User;
 
 @Controller
 public class CompanyReviewController {
@@ -17,27 +21,29 @@ public class CompanyReviewController {
 	private CompanyReviewDAO dao;
 	
 	@RequestMapping("review.do")
-	public String create() {
-
+	public String create(HttpSession session, Integer companyId) {
+		session.setAttribute("companyId", companyId);
 		return "createUserReview";
 		
 	}
 	
 	@RequestMapping(path = "createUserReview.do", method = RequestMethod.POST)
-	public String create(CompanyReview companyReview, RedirectAttributes redir) {
-		ModelAndView mv = new ModelAndView();
+	public String create(CompanyReview companyReview, RedirectAttributes redir, HttpSession session) {
+		
+		companyReview.setUser((User) session.getAttribute("user"));
+		Company company = new Company();
+		company.setId((int) session.getAttribute("companyId"));
+		companyReview.setCompany(company);
+		
 		CompanyReview review = dao.create(companyReview);
-		mv.addObject("review", review);
-		mv.setViewName("added");
-		redir.addFlashAttribute("review", review);
+		redir.addFlashAttribute("companyReview", review);
 		return "redirect:added.do";
 
 	}
 	
 	@RequestMapping("added.do")
-	public ModelAndView addedReview(CompanyReview companyReview) {
+	public ModelAndView addedReview() {
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("review", companyReview);
 		mv.setViewName("added");
 		return mv;
 
