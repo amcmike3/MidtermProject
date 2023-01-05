@@ -1,82 +1,76 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Update</title>
-</head>
 <%@ include file="bootstrapHead.jsp"%>
+</head>
 <body>
-	<form action="updateComment.do" method="POST"
-		modelAttribute="CompanyReview"></form>
-	<div class="row">
-<<<<<<< HEAD
-		<div>
-			<form:label path="rating">Rating</form:label>
-			<form:input type="text" class="form-control" path="CompanyReview"
-				placeholder="${review.rating }" />
-		</div>
-		<form:label path="content">Review</form:label>
-		<form:input type="text" class="form-control" path="CompanyReview"
-			placeholder="${review.content}" />
-		<br> <br>
-		<button type="submit" class="btn btn-success">Submit</button>
-
+	<%@include file="navbar.jsp"%>
 	<div>
-	<form:label path="content">Content</form:label>
-							<form:input type="text" class="form-control" path="CompanyReview"
-								placeholder="${review.content}" />
-	</div>
-	<br>
-	<div>
-	<form:label path="recommendation">Recommendation</form:label>
-							<form:input type="text" class="form-control" path="CompanyReview"
-								placeholder="${review.recommendation }" />
-	</div>
-	<br>
-	<div>
-	<form:label path="rating">Rating</form:label>
-							<form:input type="text" class="form-control" path="CompanyReview"
-								placeholder="${review.rating }" />
-	</div>
-	<br>
-	<div>
-	<form:label path="pros">PROs</form:label>
-							<form:input type="text" class="form-control" path="CompanyReview"
-								placeholder="${review.pros}" />
-	</div>
-	<br>
-	<div>
-	<form:label path="cons">CONs</form:label>
-							<form:input type="text" class="form-control" path="CompanyReview"
-								placeholder="${review.cons}" />
-	</div>
-	<br>
-	<div>
-	<form:label path="title">Title</form:label>
-							<form:input type="text" class="form-control" path="CompanyReview"
-								placeholder="${review.title}" />
-	</div>
-	<br>
-	<div>
-	<form:label path="content">Review</form:label>
-							<form:input type="text" class="form-control" path="CompanyReview"
-								placeholder="${review.content}" />
-								<br>
-								<br>
-								<button type="submit" class="btn btn-success">Submit</button>
-
+		<form action="updateComp.do" method="POST">
+			<div>
+				<label>Title</label> <input type="text" name="title"
+					placeholder="${review.title}" />
+			</div>
+			<label for="cars">Rating:</label> <select id="rating" name="rating">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+			</select>
+			<div>
+			<label>Review</label> <input type="text" name="review"
+				placeholder="${review.content}" /> <br>
 	</div>
 
-	<button type="submit" class="btn btn-success">Submit</button>
+			<div>
+				<label>Content</label> <input type="text" name="content"
+					placeholder="${review.content}" />
+			</div>
+			<br>
+			<label for="recommendation">Recommended:</label> <select
+				id="recommendation" name="recommendation">
+				<option value="true">Yes</option>
+				<option value="false">No</option>
+			</select>
+			<br>
 
 
 
-		<%@include file="footer.jsp"%>
-		<%@ include file="bootstrapFoot.jsp"%>
-	</form>
-</body>
+			<div>
+				<label>PROs</label> <input type="text" name="pros"
+					placeholder="${review.pros}" />
+			</div>
+			<br>
+			<div>
+				<label>CONs</label> <input type="text" name="cons"
+					placeholder="${review.cons}" />
+			</div>
+			<br>
+			<div>
+				<br>
+				<div>
+
+					<br>
+
+					<button type="submit" class="btn btn-success">Submit</button>
+
+				</div>
+			</div>
+		</form>
+	</div>
+	<%@include file="footer.jsp"%>
+	<%@ include file="bootstrapFoot.jsp"%>
 </html>
 
 

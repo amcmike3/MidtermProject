@@ -110,35 +110,51 @@ public class UserDaoImpl implements UserDAO {
 	}
 
 	@Override
-	public User update(User newUser, User oldUser) {
-		//TODO fix this garbage
+	public User update(User user) {
+		User oldUser = em.find(User.class, user.getId());
+		
+		if (user.getDescription() != null && user.getDescription() != "") {
+			oldUser.setDescription(user.getDescription());
+		}
+		if (user.getFirstName() != null && user.getFirstName() != "") {
+			oldUser.setFirstName(user.getFirstName());
+		}
+		if (user.getLastName() != null && user.getLastName() != "") {
+			oldUser.setLastName(user.getLastName());
+		}
+		if ( user.getEmail() != null && user.getEmail() != "" && isEmailUnique(user.getEmail())) {
+			oldUser.setEmail(user.getEmail());
+		}
+		if (user.getUsername() != null && user.getUsername() != "" && isUsernameUnique(user.getUsername())) {
+			oldUser.setUsername(user.getUsername());
+		}
+		if (user.getImgUrl() != null && user.getImgUrl() != "") {
+			oldUser.setImgUrl(user.getImgUrl());
+		}
+		oldUser.getReviews().size();
+		
 		return oldUser;
 	}
 
-	
-	public CompanyReview createUserReview(CompanyReview companyReview){
-	    CompanyReview review = null;
-	    int userId = companyReview.getUser().getId();
-	    User user = findById(userId);
-	    int companyId = companyReview.getCompany().getId();
-	    CompanyDAO compDao = new CompanyDAOImpl();
-	    Company company = compDao.findCompanyById(companyId);
-	    
-	    if(user != null && company != null){
-	        review = new CompanyReview();
-	        review.setContent(companyReview.getContent());
-	        review.setReviewDate(companyReview.getReviewDate());
-	        review.setUser(user);
-	        review.setRecommendation(companyReview.isRecommendation());
-	        review.setRating(companyReview.getRating());
-	        review.setPros(companyReview.getPros());
-	        review.setCons(companyReview.getCons());
-	        review.setTitle(companyReview.getTitle());
-	        review.setAdvice(companyReview.getAdvice());
-	        review.setCompany(company);
-	    }
-	    return review;
+	@Override
+	public CompanyReview createUserReview(CompanyReview companyReview) {
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+	@Override
+	public boolean deleteUser(Integer id) {
+		User user = em.find(User.class, id);
+		boolean ans = false;
+		
+		user.setEnabled(false);
+		if (!user.getEnabled()) {
+			ans = true;
+		}
+		
+		return ans;
+	}
+
 
 
 

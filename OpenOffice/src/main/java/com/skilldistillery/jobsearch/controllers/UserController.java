@@ -91,10 +91,22 @@ public class UserController {
 
 	@RequestMapping("updatingUser")
 	public String updateUser(User user, HttpSession session, Model model){
-		String ans = "updateUser";
 		
-		//TODO fix me
+		session.setAttribute("user", dao.update(user));
 		
-		return ans;
+		return "userBio";
 	}
+	
+	@RequestMapping("deleteUser")
+	public String deleteUser(Integer id, Model model, HttpSession session) {
+		
+		boolean success = dao.deleteUser(id);
+		if (success) {
+			session.invalidate();
+		}
+		model.addAttribute("success", success);
+		
+		return "userDelete";
+	}
+
 }
