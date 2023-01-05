@@ -31,6 +31,7 @@ public class UserController {
 		if (user == null) {
 			ans = "login";
 		} else {
+			user.getReviews().size();
 			session.setAttribute("user", user);
 			ans = "home";
 		}
@@ -83,6 +84,10 @@ public class UserController {
 		
 	}
 	
+	@RequestMapping("updateUser")
+	public String sendToUpdateUser(){
+		return "updateUser";
+	}
 
 
 	

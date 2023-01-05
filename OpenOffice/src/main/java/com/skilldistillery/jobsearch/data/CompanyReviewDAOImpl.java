@@ -27,7 +27,7 @@ public class CompanyReviewDAOImpl implements CompanyReviewDAO {
 	}
 
 	@Override
-	public CompanyReview createUserReview(CompanyReview companyReview) {
+	public CompanyReview create(CompanyReview companyReview) {
 		CompanyReview review = null;
 		int userId = companyReview.getUser().getId();
 		User user = findById(userId);
