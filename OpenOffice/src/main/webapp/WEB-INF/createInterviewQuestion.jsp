@@ -18,8 +18,10 @@
 			<br/>
 			Title:
 			<input type="text" name="title" value="${question.title }"/>
+			<br/>
 			Question:
 			<input type="text" name="name" value="${question.name }"/>
+			<br/>
 			Description:
 			<input type="text" name="description" value="${question.description }"/>
 			<br/>
