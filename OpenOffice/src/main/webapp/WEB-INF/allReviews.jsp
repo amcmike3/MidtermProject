@@ -32,7 +32,6 @@
 	<button type="submit" name="id" value="${review.id}">Delete</button>
  	</form>
  	</c:when>
- 	
  </c:choose>			
  </p>
 			</div>
