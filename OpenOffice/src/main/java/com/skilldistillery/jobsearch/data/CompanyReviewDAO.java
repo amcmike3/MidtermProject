@@ -11,7 +11,7 @@ public interface CompanyReviewDAO {
 
 	CompanyReview createUserReview(CompanyReview companyReview);
 	boolean deleteReview(Integer reviewId);
-	CompanyReview updateUserReview(int companyId, CompanyReview companyReview);
+	//CompanyReview updateUserReview(int companyId, CompanyReview companyReview);
 	CompanyReview create(CompanyReview companyReview);
 	
 }

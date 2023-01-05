@@ -89,33 +89,33 @@ public class UserController {
 	}
 
 
-	@RequestMapping("companyBio")
-	public ModelAndView companyBio(Integer companyId) {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("companyBio");
-		Company company = dao.findCompanyById(companyId);
-		mv.addObject("company", company);
-		return mv;
-	}
+//	@RequestMapping("companyBio")
+//	public ModelAndView companyBio(Integer companyId) {
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("companyBio");
+//		Company company = dao.findCompanyById(companyId);
+//		mv.addObject("company", company);
+//		return mv;
+//	}
 
-	@RequestMapping("companyJobs")
-	public ModelAndView companyJobs(Integer companyId) {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("companyJobs");
-		Company company = dao.findCompanyById(companyId);
-		List<Job> jobs = new ArrayList<>();
-		int index = 0;
-		for (Job job : company.getJobs()) {
-			if (index > 4) {
-				break;
-			}
-			jobs.add(job);
-			index++;
-		}
-		mv.addObject("companyJobs", jobs);
-		mv.addObject("company", company);
-		return mv;
-	}
+//	@RequestMapping("companyJobs")
+//	public ModelAndView companyJobs(Integer companyId) {
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("companyJobs");
+//		Company company = dao.findCompanyById(companyId);
+//		List<Job> jobs = new ArrayList<>();
+//		int index = 0;
+//		for (Job job : company.getJobs()) {
+//			if (index > 4) {
+//				break;
+//			}
+//			jobs.add(job);
+//			index++;
+//		}
+//		mv.addObject("companyJobs", jobs);
+//		mv.addObject("company", company);
+//		return mv;
+//	}
 
 //	@RequestMapping("deleteReview.do")
 //	public String deleteReview(Integer reviewId) {
