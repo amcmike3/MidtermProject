@@ -53,7 +53,7 @@ public class CompanyReviewDAOImpl implements CompanyReviewDAO {
 	@Override
 	public CompanyReview updateUserReview(int companyId, CompanyReview companyReview) {
 		
-		CompanyReview reviewUpdate = em.find(Company.class, companyReview);
+		CompanyReview reviewUpdate = em.find(CompanyReview.class, companyId );
 		
 		reviewUpdate.setContent(companyReview.getContent());
 		reviewUpdate.setReviewDate(companyReview.getReviewDate());
@@ -64,6 +64,6 @@ public class CompanyReviewDAOImpl implements CompanyReviewDAO {
 		reviewUpdate.setTitle(companyReview.getTitle());
 		reviewUpdate.setAdvice(companyReview.getAdvice());
 		
-		return review;
+		return reviewUpdate;
 	}
 }
