@@ -42,23 +42,22 @@ public class CompanyReviewDAOImpl implements CompanyReviewDAO {
 		return companyReview;
 	}
 
-
 	@Override
-	public CompanyReview updateUserReview(int companyId, CompanyReview companyReview) {
-		
-		CompanyReview reviewUpdate = em.find(CompanyReview.class, companyId );
-		
+	public CompanyReview updateCompanyReview(int companyId, CompanyReview companyReview) {
+
+		CompanyReview reviewUpdate = em.find(CompanyReview.class, companyId);
+
+		reviewUpdate.setTitle(companyReview.getTitle());
 		reviewUpdate.setContent(companyReview.getContent());
-		reviewUpdate.setReviewDate(companyReview.getReviewDate());
-		reviewUpdate.setRecommendation(companyReview.isRecommendation());
 		reviewUpdate.setRating(companyReview.getRating());
 		reviewUpdate.setPros(companyReview.getPros());
 		reviewUpdate.setCons(companyReview.getCons());
-		reviewUpdate.setTitle(companyReview.getTitle());
+		reviewUpdate.setRecommendation(companyReview.isRecommendation());
 		reviewUpdate.setAdvice(companyReview.getAdvice());
-		
+
 		return reviewUpdate;
 	}
+
 	public boolean deleteReview(Integer reviewId) {
 		boolean isDeleted = false;
 		System.out.println("Inside delete review");
@@ -75,11 +74,16 @@ public class CompanyReviewDAOImpl implements CompanyReviewDAO {
 
 	}
 
-
 	@Override
 	public CompanyReview createUserReview(CompanyReview companyReview) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public CompanyReview findReviewById(Integer reviewId) {
+		return em.find(CompanyReview.class, reviewId);
+
 	}
 
 }
