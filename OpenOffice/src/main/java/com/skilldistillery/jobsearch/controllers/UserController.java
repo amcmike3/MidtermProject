@@ -24,7 +24,6 @@ public class UserController {
 	@Autowired
 	private UserDAO dao;
 
-
 	@RequestMapping(path = "loggingIn", method = RequestMethod.POST)
 	public String login(String username, String password, HttpSession session) {
 		String ans = "";
@@ -38,7 +37,6 @@ public class UserController {
 
 		return ans;
 	}
-
 
 	@RequestMapping("registering")
 	public String register(User user, Model model, HttpSession session) {
@@ -81,14 +79,9 @@ public class UserController {
 		List<User> users = dao.findAllUsers();
 		model.addAttribute("userList", users);
 		return "results";
-		
-	}
-	
 
-
-<<<<<<< HEAD
 	}
-	
+
 	@RequestMapping("companyBio")
 	public ModelAndView companyBio(Integer companyId) {
 		ModelAndView mv = new ModelAndView();
@@ -97,7 +90,7 @@ public class UserController {
 		mv.addObject("company", company);
 		return mv;
 	}
-	
+
 	@RequestMapping("companyJobs")
 	public ModelAndView companyJobs(Integer companyId) {
 		ModelAndView mv = new ModelAndView();
@@ -117,15 +110,10 @@ public class UserController {
 		return mv;
 	}
 
-	@RequestMapping("deleteReview.do")
-	public String deleteReview(Integer reviewId) {
-		dao.deleteReview(reviewId);
-		
-		return "successfullyDeletedPage";
-}
-
-=======
->>>>>>> fae3606ac81837c65e4e17a9329f1c1818dc178f
-	
-
+//	@RequestMapping("deleteReview.do")
+//	public String deleteReview(Integer reviewId) {
+//		dao.deleteReview(reviewId);
+//
+//		return "successfullyDeletedPage";
+//	}
 }

@@ -9,6 +9,7 @@ public interface CompanyReviewDAO {
 	User findById(int userId);
 	Company findCompanyById(Integer companyId);
 	CompanyReview createUserReview(CompanyReview companyReview);
+	boolean deleteReview(Integer reviewId);
 
 	
 }

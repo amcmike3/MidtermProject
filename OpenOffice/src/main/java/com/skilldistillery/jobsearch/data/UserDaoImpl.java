@@ -109,26 +109,22 @@ public class UserDaoImpl implements UserDAO {
 		return ans;
 	}
 
-
-
-
-
-<<<<<<< HEAD
-	@Override
-	public boolean deleteReview(Integer reviewId) {
-		boolean isDeleted = false;
-		System.out.println("Inside delete review");
-		CompanyReview cr = em.find(CompanyReview.class, reviewId);
-
-		if (cr != null) {
-			em.remove(cr);
-			em.flush();
-			if (!em.contains(cr)) {
-				isDeleted = true;
-			}
-		}
-		return isDeleted;
-	}
+//	@Override
+//	public boolean deleteReview(Integer reviewId) {
+//		boolean isDeleted = false;
+//		System.out.println("Inside delete review");
+//		CompanyReview cr = em.find(CompanyReview.class, reviewId);
+//
+//		if (cr != null) {
+//			em.remove(cr);
+//			em.flush();
+//			if (!em.contains(cr)) {
+//				isDeleted = true;
+//			}
+//		}
+//		return isDeleted;
+//	}
+	
 	public CompanyReview createUserReview(CompanyReview companyReview){
 	    CompanyReview review = null;
 	    int userId = companyReview.getUser().getId();
@@ -151,7 +147,6 @@ public class UserDaoImpl implements UserDAO {
 	    }
 	    return review;
 	}
-=======
-	
->>>>>>> fae3606ac81837c65e4e17a9329f1c1818dc178f
+
+
 }

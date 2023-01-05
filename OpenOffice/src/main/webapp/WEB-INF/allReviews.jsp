@@ -25,9 +25,15 @@
 					of 10 <br> this is what they had to say about ${company.name}:
 					<br> ${review.content }
 <!-- 					if review.user.id == user.id then a delete button 
- -->				
+ -->	
+ <c:choose>
+ 	<c:when test="${user.id}">
  <form action="deleteReview.do" method="post">
 	<button type="submit" name="id" value="${review.id}">Delete</button>
+ 	</form>
+ 	</c:when>
+ 	
+ </c:choose>			
  </p>
 			</div>
 		</c:forEach>

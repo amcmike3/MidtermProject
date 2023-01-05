@@ -5,6 +5,7 @@ import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.skilldistillery.jobsearch.entities.Company;
 import com.skilldistillery.jobsearch.entities.CompanyReview;
@@ -49,4 +50,21 @@ public class CompanyReviewDAOImpl implements CompanyReviewDAO {
 		}
 		return review;
 	}
+
+	@Override
+	public boolean deleteReview(Integer reviewId) {
+		boolean isDeleted = false;
+		System.out.println("Inside delete review");
+		CompanyReview cr = em.find(CompanyReview.class, reviewId);
+
+		if (cr != null) {
+			em.remove(cr);
+			em.flush();
+			if (!em.contains(cr)) {
+				isDeleted = true;
+			}
+		}
+		return isDeleted;
+	}
+
 }
