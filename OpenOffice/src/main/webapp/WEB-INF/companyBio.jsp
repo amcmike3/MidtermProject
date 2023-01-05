@@ -48,16 +48,13 @@
 				</div>
 			</div>
 		</c:forEach>
-		<div class="row col card text-center">
+
+		<div class="row col card yellow-containers">
 			<a href="allReviews?companyId=${company.id }"> See all reviews of
 				${company.name }</a>
 		</div>
 		<div class="row col card text-center">
 			<h1>Jobs:</h1>
-		</div>
-		<div class="row col card yellow-containers">
-			<a href="allReviews?companyId=${company.id }"> See all reviews of
-				${company.name }</a>
 		</div>
 
 		<c:forEach var="i" begin="0" end="5" step="3">
