@@ -9,6 +9,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.skilldistillery.jobsearch.data.CompanyReviewDAO;
 import com.skilldistillery.jobsearch.entities.CompanyReview;
+import com.skilldistillery.jobsearch.entities.User;
 
 @Controller
 public class CompanyReviewController {
@@ -22,6 +23,7 @@ public class CompanyReviewController {
 		return "createUserReview";
 		
 	}
+
 	
 	@RequestMapping(path = "createUserReview.do", method = RequestMethod.POST)
 	public String create(CompanyReview companyReview, RedirectAttributes redir) {
@@ -42,9 +44,10 @@ public class CompanyReviewController {
 		return mv;
 
 	}
-	@RequestMapping("deleteReview.do")
-	public String deleteReview(Integer reviewId) {
-		dao.deleteReview(reviewId);
+	@RequestMapping(path = "deleteReview.do", method = RequestMethod.POST)
+	public String deleteReview(Integer userId, Integer reviewId) {
+	System.out.println("userid: " + userId);
+		dao.deleteReview(userId, reviewId);
 		return "successfullyDeletedPage";
 }
 }
