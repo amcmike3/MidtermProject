@@ -136,6 +136,12 @@ public class UserDaoImpl implements UserDAO {
 		return oldUser;
 	}
 
+	@Override
+	public CompanyReview createUserReview(CompanyReview companyReview) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 
 
