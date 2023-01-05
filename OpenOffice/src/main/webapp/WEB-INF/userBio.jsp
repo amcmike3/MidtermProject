@@ -44,7 +44,7 @@
 					<c:forEach var="review" items="${sessionScope.user.reviews }">
 						<div class="card yellow-containers">
 							<p>
-								<a href="userBio?userId=${review.user.id }">
+								<a href="companyBio?companyId=${review.company.id }">
 									${review.company.name }</a> rating: ${review.rating } out of 10 <br>
 								you said: <br> ${review.content }
 							</p>

@@ -52,7 +52,7 @@
 						<c:forEach var="job" items="${jobList}">
 							<tr>
 								<td>${job.id}</td>
-								<td><a href="allJobs.do?jobId=${job.id}">${job.title}</a></td>
+								<td><a href="jobBio?jobId=${job.id}">${job.title}</a></td>
 								<td>${job.salary}</td>
 							</tr>
 						</c:forEach>

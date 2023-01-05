@@ -34,42 +34,42 @@
 		</div>
 		<div class="row col card text-center">
 			<h1>Reviews:</h1>
-		</div>
-		<c:forEach var="review" items="${company.reviews }">
-			<div class="row">
-				<div class="col card">
-
-					<p>
-						<a href="userBio?userId=${review.user.id }">
-							${review.user.username }</a> rated this company ${review.rating } out
-						of 10 <br> this is what they had to say about
-						${company.name}: <br> ${review.content }
-					</p>
-				</div>
-			</div>
-		</c:forEach>
-
-		<div class="row col card yellow-containers">
-			<a href="allReviews?companyId=${company.id }"> See all reviews of
-				${company.name }</a>
-		</div>
-		<div class="row col card text-center">
-			<h1>Jobs:</h1>
-		</div>
-
-		<c:forEach var="i" begin="0" end="5" step="3">
-			<div class="row">
-				<c:forEach var="job" items="${company.jobs }" begin="${i }"
-					end="${i + 3 }">
+			<c:forEach var="review" items="${company.reviews }">
+				<div class="row">
 					<div class="col card">
+
 						<p>
-							<a href="jobBio?jobId=${job.id}"> ${job.title }</a>
+							<a href="userBio?userId=${review.user.id }">
+								${review.user.username }</a> rated this company ${review.rating }
+							out of 10 <br> this is what they had to say about
+							${company.name}: <br> ${review.content }
 						</p>
 					</div>
-				</c:forEach>
-			</div>
-		</c:forEach>
+				</div>
+			</c:forEach>
+		</div>
 
+			<div class="row col card yellow-containers">
+				<a href="allReviews?companyId=${company.id }"> See all reviews
+					of ${company.name }</a>
+			</div>
+		<div class="row col card text-center">
+			<h1>Jobs:</h1>
+
+			<c:forEach var="i" begin="0" end="5" step="3">
+				<div class="row">
+					<c:forEach var="job" items="${company.jobs }" begin="${i }"
+						end="${i + 3 }">
+						<div class="col card">
+							<p>
+								<a href="jobBio?jobId=${job.id}"> ${job.title }</a>
+							</p>
+						</div>
+					</c:forEach>
+				</div>
+			</c:forEach>
+
+		</div>
 	</div>
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
