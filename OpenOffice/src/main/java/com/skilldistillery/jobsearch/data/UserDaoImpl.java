@@ -142,6 +142,19 @@ public class UserDaoImpl implements UserDAO {
 		return null;
 	}
 
+	@Override
+	public boolean deleteUser(Integer id) {
+		User user = em.find(User.class, id);
+		boolean ans = false;
+		
+		user.setEnabled(false);
+		if (!user.getEnabled()) {
+			ans = true;
+		}
+		
+		return ans;
+	}
+
 
 
 

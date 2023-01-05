@@ -17,5 +17,6 @@ public interface UserDAO {
 	List<User> findUsers(String username);
 	User update(User newUser);
 	CompanyReview createUserReview(CompanyReview companyReview);
+	boolean deleteUser(Integer id);
 
 }

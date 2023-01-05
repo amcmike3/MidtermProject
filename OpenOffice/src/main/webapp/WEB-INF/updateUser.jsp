@@ -37,6 +37,14 @@
 			</form>
 			</div>
 		</div>
+		<div>
+			<div class="col card card-body text-center bg-danger text-danger">
+				<form action="deleteUser">
+				<input type="submit" value="Delete My Profile"/>
+				<input type="hidden" name="id" value="${sessionScope.user.id }"/>
+				</form>
+			</div>
+		</div>
 	</div>
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>

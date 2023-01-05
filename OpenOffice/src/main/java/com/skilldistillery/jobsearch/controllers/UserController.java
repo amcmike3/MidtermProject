@@ -96,4 +96,17 @@ public class UserController {
 		
 		return "userBio";
 	}
+	
+	@RequestMapping("deleteUser")
+	public String deleteUser(Integer id, Model model, HttpSession session) {
+		
+		boolean success = dao.deleteUser(id);
+		if (success) {
+			session.invalidate();
+		}
+		model.addAttribute("success", success);
+		
+		return "userDelete";
+	}
+
 }
