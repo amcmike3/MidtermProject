@@ -6,17 +6,16 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbar1">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ms-auto">
             <c:choose>
             	<c:when test="${sessionScope.user != null }">
+                 <li class="nav-item active">
+                    <a class="nav-link" id="user-profile-pic" href="user?userId=${sessionScope.user.id }"><img style="width: 40px; height: auto; !important" src="${user.imgUrl }"></a>
+                     <li class="nav-item">
             	 <li class="nav-item active">
                     <a class="nav-link" href="loggingOut.do">Logout</a>
                 </li>
-                 <li class="nav-item active">
-                    <a class="nav-link" href="user?userId=${sessionScope.user.id }"><img style="width: 40px; height: auto; !important" src="${user.imgUrl }"></a>
-                     <li class="nav-item">
                 	<a class="nav-link" href="search">Search</a>
-                </li>
                 </li>
             	</c:when>
             	<c:otherwise>
