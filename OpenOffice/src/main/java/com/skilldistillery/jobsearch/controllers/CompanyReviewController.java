@@ -33,5 +33,14 @@ public class CompanyReviewController {
 		return "redirect:added.do";
 
 	}
+	
+	@RequestMapping("added.do")
+	public ModelAndView addedReview(CompanyReview companyReview) {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("review", companyReview);
+		mv.setViewName("added");
+		return mv;
+
+	}
 
 }
