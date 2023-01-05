@@ -33,6 +33,10 @@ public class JobDAOImpl implements JobDAO{
 		return ans;
 
 	}
+	@Override
+	public Job findJobById(Integer jobId) {
+		return em.find(Job.class, jobId);
+	}
 	
 }
 

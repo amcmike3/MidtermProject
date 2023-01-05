@@ -10,6 +10,8 @@ public interface JobDAO {
 
 	List<Job> findAllJobs();
 
+	Job findJobById(Integer jobId);
+
 
 }
 
