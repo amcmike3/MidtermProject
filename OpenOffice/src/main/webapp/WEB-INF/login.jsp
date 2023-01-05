@@ -11,6 +11,7 @@
 
 <body>
 	<%@include file="navbar.jsp"%>
+	<div class="containers">
 	<h1>Login Page Test Make Me Pretty!!</h1>
 	<form action="loggingIn" method="post">
 		<input type="text" placeholder="username" name="username"> <br>
@@ -21,7 +22,7 @@
 	<a href="register">
 		<h5>register</h5>
 	</a>
-
+	</div>
 
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
