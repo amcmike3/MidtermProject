@@ -11,29 +11,29 @@
 
 <body>
 	<%@include file="navbar.jsp"%>
-	<div class="container">
-		<div class="row col card text-center">
+	<div class="containers">
+		<div class="row col card text-center yellow-containers">
 			<h1>${company.name }</h1>
 			<p>${company.description }
 				<br>
 			</p>
 		</div>
 		<div class="row">
-			<div class="col card text-center">
+			<div class="col card text-center yellow-containers">
 				<a href="companyJobs?companyId=${company.id }">${company.name}
 					Jobs </a>
 			</div>
-			<div class="col card text-center">
+			<div class="col card text-center yellow-containers">
 				<a href="review.do?companyId=${company.id }">Leave a review of
 					${company.name } </a>
 			</div>
 		</div>
-		<div class="row col">
+		<div class="row col company-pic">
 			<img alt="A fancy company picture should be here" src="${company.images.get(0).imgUrl }">
 		</div>
 		<div class="row">
 			<c:forEach var="review" items="${company.reviews }">
-				<div class="col card">
+				<div class="col card yellow-containers">
 					<p>
 						<a href="userBio?userId=${review.user.id }">
 							${review.user.username }</a> rated this company ${review.rating } out
@@ -43,7 +43,7 @@
 				</div>
 			</c:forEach>
 		</div>
-		<div class="row col card">
+		<div class="row col card yellow-containers">
 			<a href="allReviews?companyId=${company.id }"> See all reviews of ${company.name }</a>
 		</div>
 

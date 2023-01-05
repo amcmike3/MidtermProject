@@ -25,6 +25,8 @@ body {
 
 .navbar-custom {
 	background-color: #3D405B;
+	display: flex;
+	border: 2px solid;
 }
 
 .navbar-brand,
@@ -49,16 +51,31 @@ body {
   	box-shadow: 5px 10px 18px #888888;	
 }
 
+.yellow-containers {
+	background-color: #F2CC8F;
+	margin: 25px 25px 25px 25px;
+  	border: 1px solid;
+  	padding: 10px;
+  	box-shadow: 5px 10px 18px #888888;	
+}
+
+.company-pic {
+	margin: 25px 25px 25px 25px;
+}
+
 input[type="text"], textarea {
-  background-color : #E07A5F;
+  background-color: #E07A5F;
+  color: white;
 }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
+input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px #E07A5F inset !important;
 }
+
+
 
 
 
