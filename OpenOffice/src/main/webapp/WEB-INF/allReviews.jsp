@@ -33,6 +33,13 @@
  	</form>
  	</c:when>	
  	</c:choose>	
+ 	<c:choose>
+ 	<c:when test="${sessionScope.user != null}">
+ <form action="updateComp.do" method="post">
+	<button type="submit" name="reviewId" value="${review.id}">Update</button>
+ 	</form>
+ 	</c:when>	
+ 	</c:choose>	
 
 			</div>
 		</c:forEach>
