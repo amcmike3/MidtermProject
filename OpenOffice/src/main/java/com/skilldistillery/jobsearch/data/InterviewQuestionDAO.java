@@ -12,4 +12,5 @@ public interface InterviewQuestionDAO {
 	Interview findInterviewById(Integer interviewId);
 	InterviewQuestion findInterviewQuestionById(Integer interviewQuestionId);
 	InterviewQuestion updateInterviewQuestion(int interviewQuestionId, InterviewQuestion interviewQuestion);
+	InterviewQuestion addInterviewQuestion(InterviewQuestion question, Integer interviewId);
 }
