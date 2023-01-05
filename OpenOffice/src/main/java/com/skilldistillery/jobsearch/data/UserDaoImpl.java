@@ -110,9 +110,49 @@ public class UserDaoImpl implements UserDAO {
 	}
 
 	@Override
-	public User update(User newUser, User oldUser) {
-		//TODO fix this garbage
+	public User update(User user) {
+		User oldUser = em.find(User.class, user.getId());
+		
+		if (user.getDescription() != null && user.getDescription() != "") {
+			oldUser.setDescription(user.getDescription());
+		}
+		if (user.getFirstName() != null && user.getFirstName() != "") {
+			oldUser.setFirstName(user.getFirstName());
+		}
+		if (user.getLastName() != null && user.getLastName() != "") {
+			oldUser.setLastName(user.getLastName());
+		}
+		if ( user.getEmail() != null && user.getEmail() != "" && isEmailUnique(user.getEmail())) {
+			oldUser.setEmail(user.getEmail());
+		}
+		if (user.getUsername() != null && user.getUsername() != "" && isUsernameUnique(user.getUsername())) {
+			oldUser.setUsername(user.getUsername());
+		}
+		if (user.getImgUrl() != null && user.getImgUrl() != "") {
+			oldUser.setImgUrl(user.getImgUrl());
+		}
+		oldUser.getReviews().size();
+		
 		return oldUser;
+	}
+
+	@Override
+	public CompanyReview createUserReview(CompanyReview companyReview) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean deleteUser(Integer id) {
+		User user = em.find(User.class, id);
+		boolean ans = false;
+		
+		user.setEnabled(false);
+		if (!user.getEnabled()) {
+			ans = true;
+		}
+		
+		return ans;
 	}
 
 

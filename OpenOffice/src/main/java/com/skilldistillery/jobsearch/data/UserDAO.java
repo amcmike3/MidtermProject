@@ -15,6 +15,8 @@ public interface UserDAO {
 	boolean isEmailUnique(String email);
 	List<User> findAllUsers();
 	List<User> findUsers(String username);
-	User update(User newUser, User oldUser);
+	User update(User newUser);
+	CompanyReview createUserReview(CompanyReview companyReview);
+	boolean deleteUser(Integer id);
 
 }
