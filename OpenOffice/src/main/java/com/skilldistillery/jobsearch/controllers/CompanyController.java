@@ -40,6 +40,7 @@ public class CompanyController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("companyBio");
 		Company company = dao.findCompanyById(companyId);
+		company.getJobs().size();
 		mv.addObject("company", company);
 		return mv;
 	}

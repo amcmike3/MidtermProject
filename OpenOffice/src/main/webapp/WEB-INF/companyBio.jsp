@@ -28,12 +28,17 @@
 					${company.name } </a>
 			</div>
 		</div>
-		<div class="row col company-pic">
-			<img alt="A fancy company picture should be here" src="${company.images.get(0).imgUrl }">
+		<div class="row col">
+			<img alt="A fancy company picture should be here"
+				src="${company.images.get(0).imgUrl }">
 		</div>
-		<div class="row">
-			<c:forEach var="review" items="${company.reviews }">
-				<div class="col card yellow-containers">
+		<div class="row col card text-center">
+			<h1>Reviews:</h1>
+		</div>
+		<c:forEach var="review" items="${company.reviews }">
+			<div class="row">
+				<div class="col card">
+
 					<p>
 						<a href="userBio?userId=${review.user.id }">
 							${review.user.username }</a> rated this company ${review.rating } out
@@ -41,11 +46,29 @@
 						${company.name}: <br> ${review.content }
 					</p>
 				</div>
-			</c:forEach>
-		</div>
+			</div>
+		</c:forEach>
+
 		<div class="row col card yellow-containers">
-			<a href="allReviews?companyId=${company.id }"> See all reviews of ${company.name }</a>
+			<a href="allReviews?companyId=${company.id }"> See all reviews of
+				${company.name }</a>
 		</div>
+		<div class="row col card text-center">
+			<h1>Jobs:</h1>
+		</div>
+
+		<c:forEach var="i" begin="0" end="5" step="3">
+			<div class="row">
+				<c:forEach var="job" items="${company.jobs }" begin="${i }"
+					end="${i + 3 }">
+					<div class="col card">
+						<p>
+							<a href="jobBio?jobId=${job.id}"> ${job.title }</a>
+						</p>
+					</div>
+				</c:forEach>
+			</div>
+		</c:forEach>
 
 	</div>
 	<%@include file="footer.jsp"%>

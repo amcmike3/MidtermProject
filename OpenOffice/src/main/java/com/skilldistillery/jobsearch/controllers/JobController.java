@@ -31,6 +31,14 @@ public class JobController {
 		return "results";
 
 	}
+	
+	@RequestMapping("jobBio")
+	public String jobBio(Integer jobId, Model model) {
+		Job job = dao.findJobById(jobId);
+		job.getInterviews().size();
+		model.addAttribute("job", job);
+		return "jobBio";
+	}
 
 
 }
