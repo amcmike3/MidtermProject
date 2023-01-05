@@ -26,15 +26,14 @@
 					<br> ${review.content }
 <!-- 					if review.user.id == user.id then a delete button 
  -->	
- <c:choose>
- 	<c:when test="${user.id}">
+<c:choose>
+ 	<c:when test="${sessionScope.user != null}">
  <form action="deleteReview.do" method="post">
-	<button type="submit" name="id" value="${review.id}">Delete</button>
+	<button type="submit" name="reviewId" value="${review.id}">Delete</button>
  	</form>
- 	</c:when>
- 	
- </c:choose>			
- </p>
+ 	</c:when>	
+ 	</c:choose>	
+
 			</div>
 		</c:forEach>
 	</div>

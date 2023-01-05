@@ -22,7 +22,7 @@
 			placeholder="${review.content}" />
 		<br> <br>
 		<button type="submit" class="btn btn-success">Submit</button>
-=======
+
 	<div>
 	<form:label path="content">Content</form:label>
 							<form:input type="text" class="form-control" path="CompanyReview"
@@ -66,7 +66,7 @@
 								<br>
 								<br>
 								<button type="submit" class="btn btn-success">Submit</button>
->>>>>>> 226fed42c689fadde09339128d278a404d795433
+
 	</div>
 
 	<button type="submit" class="btn btn-success">Submit</button>

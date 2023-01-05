@@ -14,6 +14,9 @@
                 </li>
                  <li class="nav-item active">
                     <a class="nav-link" href="user?userId=${sessionScope.user.id }"><img style="width: 40px; height: auto; !important" src="${user.imgUrl }"></a>
+                     <li class="nav-item">
+                	<a class="nav-link" href="search">Search</a>
+                </li>
                 </li>
             	</c:when>
             	<c:otherwise>
