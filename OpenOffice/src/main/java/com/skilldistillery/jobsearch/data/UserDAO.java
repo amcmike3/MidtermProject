@@ -16,4 +16,6 @@ public interface UserDAO {
 	List<User> findAllUsers();
 	List<User> findUsers(String username);
 	User update(User newUser, User oldUser);
+	CompanyReview createUserReview(CompanyReview companyReview);
+
 }

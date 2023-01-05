@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
-import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
@@ -117,9 +115,31 @@ public class UserDaoImpl implements UserDAO {
 		return oldUser;
 	}
 
-
-
-
-
 	
+	public CompanyReview createUserReview(CompanyReview companyReview){
+	    CompanyReview review = null;
+	    int userId = companyReview.getUser().getId();
+	    User user = findById(userId);
+	    int companyId = companyReview.getCompany().getId();
+	    CompanyDAO compDao = new CompanyDAOImpl();
+	    Company company = compDao.findCompanyById(companyId);
+	    
+	    if(user != null && company != null){
+	        review = new CompanyReview();
+	        review.setContent(companyReview.getContent());
+	        review.setReviewDate(companyReview.getReviewDate());
+	        review.setUser(user);
+	        review.setRecommendation(companyReview.isRecommendation());
+	        review.setRating(companyReview.getRating());
+	        review.setPros(companyReview.getPros());
+	        review.setCons(companyReview.getCons());
+	        review.setTitle(companyReview.getTitle());
+	        review.setAdvice(companyReview.getAdvice());
+	        review.setCompany(company);
+	    }
+	    return review;
+	}
+
+
+
 }
