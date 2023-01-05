@@ -148,5 +148,17 @@ public class UserDaoImpl implements UserDAO {
 	    return review;
 	}
 
+	@Override
+	public List<Job> findJobs(String title) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Company findCompanyById(Integer companyId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

@@ -28,7 +28,7 @@ public class CompanyReviewDAOImpl implements CompanyReviewDAO {
 	}
 
 	@Override
-	public CompanyReview createUserReview(CompanyReview companyReview) {
+	public CompanyReview create(CompanyReview companyReview) {
 		CompanyReview review = null;
 		int userId = companyReview.getUser().getId();
 		User user = findById(userId);
@@ -51,6 +51,7 @@ public class CompanyReviewDAOImpl implements CompanyReviewDAO {
 		return review;
 	}
 
+
 	@Override
 	public boolean deleteReview(Integer reviewId) {
 		boolean isDeleted = false;
@@ -65,6 +66,31 @@ public class CompanyReviewDAOImpl implements CompanyReviewDAO {
 			}
 		}
 		return isDeleted;
+	}
+
+
+	
+	@Override
+	public CompanyReview updateUserReview(int companyId, CompanyReview companyReview) {
+		
+		CompanyReview reviewUpdate = em.find(Company.class, companyReview);
+		
+		reviewUpdate.setContent(companyReview.getContent());
+		reviewUpdate.setReviewDate(companyReview.getReviewDate());
+		reviewUpdate.setRecommendation(companyReview.isRecommendation());
+		reviewUpdate.setRating(companyReview.getRating());
+		reviewUpdate.setPros(companyReview.getPros());
+		reviewUpdate.setCons(companyReview.getCons());
+		reviewUpdate.setTitle(companyReview.getTitle());
+		reviewUpdate.setAdvice(companyReview.getAdvice());
+		
+		return review;
+	}
+
+	@Override
+	public CompanyReview createUserReview(CompanyReview companyReview) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
