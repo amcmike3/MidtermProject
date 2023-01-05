@@ -4,8 +4,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.skilldistillery.jobsearch.entities.Company;
 import com.skilldistillery.jobsearch.entities.CompanyReview;
@@ -17,6 +17,9 @@ public class CompanyReviewDAOImpl implements CompanyReviewDAO {
 	@PersistenceContext
 	private EntityManager em;
 
+	@Autowired
+	public UserDAO userDao;
+
 	@Override
 	public User findById(int userId) {
 		return em.find(User.class, userId);
@@ -25,6 +28,11 @@ public class CompanyReviewDAOImpl implements CompanyReviewDAO {
 	@Override
 	public Company findCompanyById(Integer companyId) {
 		return em.find(Company.class, companyId);
+	}
+
+	@Override
+	public CompanyReview findReviewById(Integer reviewId) {
+		return em.find(CompanyReview.class, reviewId);
 	}
 
 	@Override
@@ -42,44 +50,70 @@ public class CompanyReviewDAOImpl implements CompanyReviewDAO {
 		return companyReview;
 	}
 
-
 	@Override
 	public CompanyReview updateUserReview(int companyId, CompanyReview companyReview) {
-		
-		CompanyReview reviewUpdate = em.find(CompanyReview.class, companyId );
-		
+		CompanyReview reviewUpdate = em.find(CompanyReview.class, companyId);
+		return reviewUpdate;
+	}
+	public CompanyReview updateCompanyReview(int companyId, CompanyReview companyReview) {
+
+		CompanyReview reviewUpdate = em.find(CompanyReview.class, companyId);
+
+		reviewUpdate.setTitle(companyReview.getTitle());
 		reviewUpdate.setContent(companyReview.getContent());
-		reviewUpdate.setReviewDate(companyReview.getReviewDate());
-		reviewUpdate.setRecommendation(companyReview.isRecommendation());
 		reviewUpdate.setRating(companyReview.getRating());
 		reviewUpdate.setPros(companyReview.getPros());
 		reviewUpdate.setCons(companyReview.getCons());
-		reviewUpdate.setTitle(companyReview.getTitle());
+		reviewUpdate.setRecommendation(companyReview.isRecommendation());
 		reviewUpdate.setAdvice(companyReview.getAdvice());
-		
+
 		return reviewUpdate;
 	}
-	public boolean deleteReview(Integer reviewId) {
-		boolean isDeleted = false;
-		System.out.println("Inside delete review");
-		CompanyReview cr = em.find(CompanyReview.class, reviewId);
 
-		if (cr != null) {
-			em.remove(cr);
-			em.flush();
-			if (!em.contains(cr)) {
-				isDeleted = true;
+	@Override
+	public boolean deleteReview(Integer userId, Integer reviewId) {
+		boolean isDeleted = false;
+		User loggedInUser = userDao.findById(userId);
+		CompanyReview review = findReviewById(reviewId);
+
+		if (loggedInUser != null && loggedInUser.getId() == review.getUser().getId()
+				&& loggedInUser.getEnabled() == true) {
+			System.out.println("Inside delete review");
+			CompanyReview cr = em.find(CompanyReview.class, reviewId);
+
+			if (cr != null) {
+				em.remove(cr);
+				em.flush();
+				if (!em.contains(cr)) {
+					isDeleted = true;
+				}
 			}
+
 		}
 		return isDeleted;
-
 	}
 
+
+//	@Override
+//	public CompanyReview updateUserReview(int companyId, CompanyReview companyReview) {
+//		
+//		CompanyReview reviewUpdate = em.find(Company.class, companyReview);
+//		
+//		reviewUpdate.setContent(companyReview.getContent());
+//		reviewUpdate.setReviewDate(companyReview.getReviewDate());
+//		reviewUpdate.setRecommendation(companyReview.isRecommendation());
+//		reviewUpdate.setRating(companyReview.getRating());
+//		reviewUpdate.setPros(companyReview.getPros());
+//		reviewUpdate.setCons(companyReview.getCons());
+//		reviewUpdate.setTitle(companyReview.getTitle());
+//		reviewUpdate.setAdvice(companyReview.getAdvice());
+//		
+//		return review;
+//	}
 
 	@Override
 	public CompanyReview createUserReview(CompanyReview companyReview) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }
