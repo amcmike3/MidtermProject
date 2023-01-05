@@ -70,4 +70,18 @@ public class CompanyController {
 		
 		return "allReviews";
 	}
+	@RequestMapping("pageForInterviewJobType.do")
+	public String gotToInterviewJobType(Integer companyId, Model model) {
+		Company company = dao.findCompanyById(companyId);
+		model.addAttribute("company", company);
+		return "pageForInterviewJobType";
+		
+	}
 }
+
+
+
+
+
+
+

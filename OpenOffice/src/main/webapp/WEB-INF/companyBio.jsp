@@ -46,6 +46,9 @@
 		<div class="row col card">
 			<a href="allReviews?companyId=${company.id }"> See all reviews of ${company.name }</a>
 		</div>
+		<div class="row col card">
+			<a href="pageForInterviewJobType.do?companyId=${company.id }"> Tell us about your interview experience with ${company.name }</a>
+		</div>
 
 	</div>
 	<%@include file="footer.jsp"%>
