@@ -15,7 +15,7 @@
 <div>
 <h2><strong>Company Review Added</strong></h2>
 </div>
-<div>
+<div class="containers">
  <c:choose>
     <c:when test="${! empty companyReview}">
       <ul style="list-style-type: square;">

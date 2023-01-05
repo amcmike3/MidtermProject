@@ -11,7 +11,9 @@
 
 </head>
 <body>
-	<div>
+	<%@include file="navbar.jsp"%>
+
+	<div class="containers">
 		<c:choose>
 			<c:when test="${userList != null}">
 				<table class="table table-striped table-hover">

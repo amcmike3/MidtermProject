@@ -11,7 +11,10 @@
 
 <body>
 	<%@include file="navbar.jsp"%>
+	<div class="containers">
 	<h1>Register Test Make me pretty!!</h1>
+	</div>
+	<div>
 	<c:choose>
 		<c:when test="${notUniqueUsername}">
 			<form action="registering" method="post">
@@ -57,6 +60,7 @@
 
 		</c:otherwise>
 	</c:choose>
+	</div>
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
 </body>

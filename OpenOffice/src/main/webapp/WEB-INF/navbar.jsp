@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<nav class="navbar navbar-expand-sm sticky-top navbar-light bg-light">
+<nav class="navbar navbar-expand-sm sticky-top navbar-custom">
     <div class="container">
-        <a class="navbar-brand" href="home">Open Office</a>
+        <a class="navbar-brand zoom" href="home">Open Office</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar1">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -10,24 +10,25 @@
             <c:choose>
             	<c:when test="${sessionScope.user != null }">
                  <li class="nav-item active">
-                    <a class="nav-link" id="user-profile-pic" href="user?userId=${sessionScope.user.id }"><img style="width: 40px; height: auto; !important" src="${user.imgUrl }"></a>
+                    <a class="nav-link zoom" href="user?userId=${sessionScope.user.id }"><img style="width: 40px; height: auto; !important" src="${user.imgUrl }"></a>
                      <li class="nav-item">
             	 <li class="nav-item active">
-                    <a class="nav-link" href="loggingOut.do">Logout</a>
+                    <a class="nav-link zoom" href="loggingOut.do">Logout</a>
                 </li>
-                	<a class="nav-link" href="search">Search</a>
+                <li>
+                	<a class="nav-link zoom" href="search">Search</a>
                 </li>
             	</c:when>
             	<c:otherwise>
                 <li class="nav-item active">
-                    <a class="nav-link" href="login">Login</a>
+                    <a class="nav-link zoom" href="login">Login</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="register">Sign Up</a>
+                    <a class="nav-link zoom" href="register">Sign Up</a>
                 </li>
                 <li class="nav-item">
-                	<a class="nav-link" href="search">Search</a>
+                	<a class="nav-link zoom" href="search">Search</a>
                 </li>
             	</c:otherwise>
             </c:choose>

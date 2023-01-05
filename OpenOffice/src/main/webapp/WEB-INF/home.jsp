@@ -13,7 +13,7 @@
 	<%@include file="navbar.jsp"%>
 
 
-	<div class="container">
+	<div class="containers">
 		<div class="row">
 			<div class="col-12 py-4">
 				<h2>Random Content...</h2>

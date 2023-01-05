@@ -1,16 +1,18 @@
 
-.wrapper
-{
+body {
+	background-color: #F4F1DE;
+}
+
+.wrapper {
 	padding-bottom: 90px;
 }
-.divider
-{
+
+.divider {
 	position: relative;
 	margin-top: 90px;
 	height: 1px;
 }
-.div-transparent:before
-{
+.div-transparent:before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -20,5 +22,44 @@
 	height: 1px;
 	background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
 }
+
+.navbar-custom {
+	background-color: #3D405B;
+}
+
+.navbar-brand,
+.nav-link {
+	color: white;
+}
+
+.zoom {
+  transition: transform .2s; /* Animation */
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(1.15); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.containers {
+	background-color: #81B29A;
+	margin: 25px 25px 25px 25px;
+  	border: 1px solid;
+  	padding: 10px;
+  	box-shadow: 5px 10px 18px #888888;	
+}
+
+input[type="text"], textarea {
+  background-color : #E07A5F;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #E07A5F inset !important;
+}
+
+
 
 

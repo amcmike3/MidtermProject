@@ -11,7 +11,7 @@
 </head>
 <body>
 	<%@include file="navbar.jsp"%>
-
+	<div class="containers">
 	<form action="allUser.do" method="GET">
   		<input id="btnDisplay" class="btn" type="submit" value="Show Users"/>
 	</form>
@@ -33,7 +33,7 @@
   		Find by Job: <input type="text" name="title" required/>
   		<input id="btnDisplay" class="btn" type="submit" value="Show Job"/>
 	</form>
-
+	</div>
 	<%@include file="footer.jsp"%>
 	<%@include file="bootstrapFoot.jsp"%>
 </body>
