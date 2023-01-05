@@ -90,11 +90,10 @@ public class UserController {
 
 	@RequestMapping("updatingUser")
 	public String updateUser(User user, HttpSession session, Model model){
-		String ans = "updateUser";
 		
-		//TODO fix me
+		session.setAttribute("user", dao.update(user));
 		
-		return ans;
+		return "userBio";
 	}
 
 //	@RequestMapping("companyBio")

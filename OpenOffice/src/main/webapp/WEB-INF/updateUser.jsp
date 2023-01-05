@@ -14,23 +14,25 @@
 		<div class="row">
 			<div class="col card card-body text-center">
 			<form action="updatingUser">
+			<input type="hidden" name="id" value="${sessionScope.user.id }"/>
 			Description:
-			<input type="text" placeholder="${sessionScope.user.description }"/>
+			<input type="text" name="description" placeholder="${sessionScope.user.description }"/>
 			<br/>
 			First Name:
-			<input type="text" placeholder="${sessionScope.user.firstName }"/>
+			<input type="text" name="firstName" placeholder="${sessionScope.user.firstName }"/>
 			<br/>
 			Last Name:
-			<input type="text" placeholder="${sessionScope.user.lastName }"/>
+			<input type="text" name="lastName" placeholder="${sessionScope.user.lastName }"/>
 			<br/>
 			UserName:
-			<input type="text" placeholder="${sessionScope.user.username }"/>
+			<input type="text" name="username" placeholder="${sessionScope.user.username }"/>
 			<br/>
 			Email:
-			<input type="text" placeholder="${sessionScope.user.email }"/>
+			<input type="text" name="email" placeholder="${sessionScope.user.email }"/>
 			<br/>
 			Profile Picture:(image url)
-			<input type="text" placeholder="${sessionScope.user.imgUrl }"/>
+			<input type="text" name="imgUrl" placeholder="${sessionScope.user.imgUrl }"/>
+			<br/>
 			<input type="submit" value="Update"/>
 			</form>
 			</div>
