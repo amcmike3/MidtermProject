@@ -52,16 +52,19 @@ public class CompanyReviewDAOImpl implements CompanyReviewDAO {
 
 	@Override
 	public CompanyReview updateUserReview(int companyId, CompanyReview companyReview) {
+		CompanyReview reviewUpdate = em.find(CompanyReview.class, companyId);
+		return reviewUpdate;
+	}
+	public CompanyReview updateCompanyReview(int companyId, CompanyReview companyReview) {
 
 		CompanyReview reviewUpdate = em.find(CompanyReview.class, companyId);
 
+		reviewUpdate.setTitle(companyReview.getTitle());
 		reviewUpdate.setContent(companyReview.getContent());
-		reviewUpdate.setReviewDate(companyReview.getReviewDate());
-		reviewUpdate.setRecommendation(companyReview.isRecommendation());
 		reviewUpdate.setRating(companyReview.getRating());
 		reviewUpdate.setPros(companyReview.getPros());
 		reviewUpdate.setCons(companyReview.getCons());
-		reviewUpdate.setTitle(companyReview.getTitle());
+		reviewUpdate.setRecommendation(companyReview.isRecommendation());
 		reviewUpdate.setAdvice(companyReview.getAdvice());
 
 		return reviewUpdate;
@@ -69,9 +72,6 @@ public class CompanyReviewDAOImpl implements CompanyReviewDAO {
 
 	@Override
 	public boolean deleteReview(Integer userId, Integer reviewId) {
-		System.out.println(" Inside deleteReview ********************");
-		System.out.println(userId);
-		System.out.println(reviewId);
 		boolean isDeleted = false;
 		User loggedInUser = userDao.findById(userId);
 		CompanyReview review = findReviewById(reviewId);
@@ -93,7 +93,7 @@ public class CompanyReviewDAOImpl implements CompanyReviewDAO {
 		return isDeleted;
 	}
 
-<<<<<<< HEAD
+
 //	@Override
 //	public CompanyReview updateUserReview(int companyId, CompanyReview companyReview) {
 //		
@@ -110,13 +110,10 @@ public class CompanyReviewDAOImpl implements CompanyReviewDAO {
 //		
 //		return review;
 //	}
-=======
->>>>>>> 6685f18fd1ada7c5ac3909eab96305bdf6aee71a
 
 	@Override
 	public CompanyReview createUserReview(CompanyReview companyReview) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }
