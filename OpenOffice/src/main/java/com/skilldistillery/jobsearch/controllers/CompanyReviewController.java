@@ -19,14 +19,14 @@ public class CompanyReviewController {
 
 	@Autowired
 	private CompanyReviewDAO dao;
-	
+
 	@RequestMapping("review.do")
 	public String create(HttpSession session, Integer companyId) {
 		session.setAttribute("companyId", companyId);
 		return "createUserReview";
-		
+
 	}
-	
+
 	@RequestMapping(path = "createUserReview.do", method = RequestMethod.POST)
 	public String create(CompanyReview companyReview, RedirectAttributes redir, HttpSession session) {
 		
@@ -40,7 +40,7 @@ public class CompanyReviewController {
 		return "redirect:added.do";
 
 	}
-	
+
 	@RequestMapping("added.do")
 	public ModelAndView addedReview() {
 		ModelAndView mv = new ModelAndView();
@@ -48,9 +48,17 @@ public class CompanyReviewController {
 		return mv;
 
 	}
+
 	@RequestMapping("deleteReview.do")
 	public String deleteReview(Integer reviewId) {
 		dao.deleteReview(reviewId);
 		return "successfullyDeletedPage";
-}
+	}
+
+	@RequestMapping("updateComp.do")
+	public String updateComp() {
+		return null;
+
+	}
+
 }
