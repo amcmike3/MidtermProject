@@ -109,28 +109,20 @@ public class UserDaoImpl implements UserDAO {
 		return ans;
 	}
 
-//	@Override
-//	public boolean deleteReview(Integer reviewId) {
-//		boolean isDeleted = false;
-//		System.out.println("Inside delete review");
-//		CompanyReview cr = em.find(CompanyReview.class, reviewId);
-//
-//		if (cr != null) {
-//			em.remove(cr);
-//			em.flush();
-//			if (!em.contains(cr)) {
-//				isDeleted = true;
-//			}
-//		}
-//		return isDeleted;
-//	}
+	@Override
+	public User update(User newUser, User oldUser) {
+		//TODO fix this garbage
+		return oldUser;
+	}
+
 	
 	public CompanyReview createUserReview(CompanyReview companyReview){
 	    CompanyReview review = null;
 	    int userId = companyReview.getUser().getId();
 	    User user = findById(userId);
 	    int companyId = companyReview.getCompany().getId();
-	    Company company = findCompanyById(companyId);
+	    CompanyDAO compDao = new CompanyDAOImpl();
+	    Company company = compDao.findCompanyById(companyId);
 	    
 	    if(user != null && company != null){
 	        review = new CompanyReview();
@@ -148,17 +140,6 @@ public class UserDaoImpl implements UserDAO {
 	    return review;
 	}
 
-	@Override
-	public List<Job> findJobs(String title) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Company findCompanyById(Integer companyId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 
 }
