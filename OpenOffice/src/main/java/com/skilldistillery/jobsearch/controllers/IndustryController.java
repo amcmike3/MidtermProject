@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import com.skilldistillery.jobsearch.data.IndustryDAO;
 
 @Controller
-public class IndustryContoller {
+public class IndustryController {
 
 	@Autowired
 	private IndustryDAO dao;
