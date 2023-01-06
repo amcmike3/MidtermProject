@@ -35,6 +35,8 @@ public class InterviewDAOImpl implements InterviewDAO {
 	public Interview findInterviewById(Integer interviewId) {
 		return em.find(Interview.class, interviewId);
 	}
+	
+
 
 	@Override
 	public Interview updateInterview(int interviewId, Interview interview) {
@@ -62,6 +64,8 @@ public class InterviewDAOImpl implements InterviewDAO {
 		em.persist(interview);
 		return interview;
 	}
+
+	
 	
 	
 	

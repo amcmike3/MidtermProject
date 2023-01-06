@@ -5,13 +5,29 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Open Office Baseline</title>
+<title>All Interviews</title>
 <%@ include file="bootstrapHead.jsp"%>
 </head>
 
 <body>
 	<%@include file="navbar.jsp"%>
-	<h1>Fix me! allInterviews.jsp</h1>
+	<h1>All Interview Experiences for ${job.title }</h1>
+	<c:forEach var="interview" items="${interviews }">
+		<div class="row">
+			<div class="col card">
+
+				<div class="card-title">
+					<h3>
+						<a href="">${question.title }</a>
+					</h3>
+				</div>
+				<p>
+					${question.name } <br> ${question.description }
+
+				</p>
+			</div>
+		</div>
+	</c:forEach>
 
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.skilldistillery.jobsearch.entities.Company;
 import com.skilldistillery.jobsearch.entities.Interview;
+import com.skilldistillery.jobsearch.entities.Job;
 import com.skilldistillery.jobsearch.entities.User;
 
 public interface InterviewDAO {

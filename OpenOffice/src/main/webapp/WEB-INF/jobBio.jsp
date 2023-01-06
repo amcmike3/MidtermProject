@@ -24,7 +24,7 @@
 					Interview experiences </a>
 			</div>
 			<div class="col card text-center">
-				<a href="createInterview?jobId=${job.id }">Leave an interview experience at
+				<a href="sendToCreateInterview?jobId=${job.id }">Leave an interview experience at
 					${job.company.name } </a>
 			</div>
 		</div>

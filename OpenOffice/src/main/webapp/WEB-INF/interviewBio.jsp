@@ -25,7 +25,7 @@
 				<div class="col card">
 				
 				<div class="card-title">
-					<h3>${question.title }</h3>
+					<h3><a href="">${question.title }</a></h3>
 				</div>
 					<p>
 					${question.name }
