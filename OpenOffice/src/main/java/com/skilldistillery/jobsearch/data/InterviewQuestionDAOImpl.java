@@ -50,5 +50,12 @@ public class InterviewQuestionDAOImpl implements InterviewQuestionDAO{
 		return em.find(Interview.class, interviewId);
 
 	}
+
+	@Override
+	public InterviewQuestion addInterviewQuestion(InterviewQuestion question, Integer interviewId) {
+		em.persist(question);
+		question.addInterview(em.find(Interview.class, interviewId));
+		return question;
+	}
 	
 }
