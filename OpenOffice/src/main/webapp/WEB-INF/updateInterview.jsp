@@ -11,7 +11,7 @@
 <body>
 	<%@include file="navbar.jsp"%>
 	<div>
-	<form action="updateInterviewQuestion.do" method="POST">
+	<form action="updatingInterviewQuestion.do" method="POST">
 	<input type="hidden" name="interviewQuestionId" value="${interviewQuestionId}">
 	<div>
 	<label>Title</label>
