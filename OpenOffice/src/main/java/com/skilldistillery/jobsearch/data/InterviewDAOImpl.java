@@ -1,5 +1,7 @@
 package com.skilldistillery.jobsearch.data;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -47,6 +49,11 @@ public class InterviewDAOImpl implements InterviewDAO {
 
 			return interviewUpdate;
 	}
-	
+
+	@Override
+	public List<Interview> userInterviewsForCompany(int companyId, int userId) {
+		String jpql = "SELECT i FROM Interview i WHERE i.job.company.id = :cid AND i.user.id = :uid";
+		return em.createQuery(jpql, Interview.class).setParameter("cid", companyId).setParameter("uid", userId).getResultList();
+	}
 	
 }

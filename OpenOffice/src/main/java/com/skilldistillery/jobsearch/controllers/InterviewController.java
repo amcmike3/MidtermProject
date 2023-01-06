@@ -2,10 +2,13 @@ package com.skilldistillery.jobsearch.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.jobsearch.data.InterviewDAO;
+import com.skilldistillery.jobsearch.entities.CompanyReview;
+import com.skilldistillery.jobsearch.entities.Interview;
 
 @Controller
 public class InterviewController {
@@ -31,5 +34,23 @@ public class InterviewController {
 	public String createInterview(Integer jobId) {
 		
 		return "createInterview";
+	}
+	
+	@RequestMapping("updateInterview.do")
+	public String updateInterview(Integer companyId, Integer interviewId, Model model) {
+		Interview interview = dao.findInterviewById(interviewId);
+		model.addAttribute("interview", interview);
+		model.addAttribute("companyId", companyId);
+		
+		return "updateInterview";
+
+	}
+	
+	@RequestMapping("updatingInterview.do")
+	public String updatingInterview(Integer companyId, Interview interview, Model model) {
+		dao.updateInterview(companyId, interview);
+		model.addAttribute("company", dao.findCompanyById(companyId));
+		
+		return "companyBio";
 	}
 }
