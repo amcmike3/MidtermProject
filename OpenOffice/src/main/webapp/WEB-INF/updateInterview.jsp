@@ -5,33 +5,54 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>UpdateInterview</title>
+<title>Update Interview Experience</title>
 <%@ include file="bootstrapHead.jsp"%>
 </head>
 <body>
 	<%@include file="navbar.jsp"%>
-	<div>
-	<form action="updateInterviewQuestion.do" method="POST">
-	<input type="hidden" name="interviewQuestionId" value="${interviewQuestionId}">
-	<div>
-	<label>Title</label>
-	<input type="text" name="title" value="${interviewQuestion.title}">
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col card card-body text-center">
+				<form action="updatingInterview">
+					<input type="hidden" name="companyId" value="${companyId }" /> <br />
+					Title: <input type="text" name="title" value="${interview.title}" />
+					<br /> What was their interview process like? <input type="text"
+						name="process" value="${interview.process}" /> <br /> Did you get
+					a job offer? <select id="jobOffered" name="jobOffered">
+						<option value="false"
+							${interview.jobOffered == 'false' ? 'select="selected"' : '' }>No</option>
+						<option value="true"
+							${interview.jobOffered == 'true' ? 'select="selected"' : '' }>Yes</option>
+					</select> <br /> <input type="submit" value="Next" />
+				</form>
+			</div>
+		</div>
+
+		<c:forEach var="question" items="${interview.interviewQuestions }">
+			<div class="row">
+				<div class="col card">
+
+					<div class="card-title">
+						<h3>${question.title }</h3>
+					</div>
+					<p>
+						${question.name } <br> ${question.description }
+
+					</p>
+					<form action="updateInterviewQuestion?questionId=${question.id }">
+						<input type="hidden" name="interviewId" value="${interview.id }">
+						<input type="submit" value="update">
+						<input name="questionId" type="hidden" value="${question.id }">
+					</form>
+				</div>
+			</div>
+		</c:forEach>
 	</div>
-	<div>
-	<label>Name</label>
-	<input type="text" name="name" value="${interviewQuestion.name}">
-	</div>
-	<div>
-	<label>Description</label>
-	<input type="text" name="description" value="${interviewQuestion.description}">
-	</div>
-	
-	
-	
-	<button type="submit" class="btn btn-success">Submit</button>
-	</form>
-</div>
-</body>
+
+
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
+</body>
 </html>

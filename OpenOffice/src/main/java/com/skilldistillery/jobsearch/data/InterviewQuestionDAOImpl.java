@@ -34,7 +34,7 @@ public class InterviewQuestionDAOImpl implements InterviewQuestionDAO{
 	}
 
 	@Override
-	public InterviewQuestion updateInterviewQuestion(int interviewQuestionId, InterviewQuestion interviewQuestion) {
+	public InterviewQuestion updateInterviewQuestion(Integer interviewQuestionId, InterviewQuestion interviewQuestion) {
 
 			InterviewQuestion interviewQuestionUpdate = em.find(InterviewQuestion.class, interviewQuestionId);
 

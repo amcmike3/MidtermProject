@@ -76,6 +76,31 @@
 			</c:forEach>
 
 		</div>
+		<div class="row col card text-center yellow-containers">
+			<h1>Interviews:</h1>
+		</div>
+
+		<c:forEach var="job" items="${company.jobs }">
+			<h3>
+				<a href="jobBio?jobId=${job.id}">${job.title }</a>
+			</h3>
+			<c:forEach var="interview" items="${job.interviews }">
+				<div class="col card containers">
+					<p>
+						<a href="interviewBio?interviewId=${interview.id}">${interview.title }</a>
+						<c:if test="${interview.user.id == sessionScope.user.id }">
+							<form
+								action="updateInterview?interviewId=${interview.id}&companyId=${company.id}">
+								<input type="hidden" name="interviewId" value="${interview.id }">
+								<input type="hidden" name="companyId" value="${company.id }">
+								<input type="submit" value="update">
+							</form>
+						</c:if>
+					</p>
+				</div>
+			</c:forEach>
+		</c:forEach>
+
 	</div>
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>

@@ -5,12 +5,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <title>Add Interview Experience</title>
 <%@ include file="bootstrapHead.jsp"%>
 </head>
-
 <body>
 	<%@include file="navbar.jsp"%>
+
 		<div class="container">
 		<div class="row">
 			<div class="col card card-body text-center">
