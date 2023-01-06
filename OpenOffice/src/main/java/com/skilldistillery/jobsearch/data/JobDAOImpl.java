@@ -42,8 +42,12 @@ public class JobDAOImpl implements JobDAO {
 
 	@Override
 	public Job createJob(Job job) {
-		System.out.println(job);
+
 		em.persist(job);
+		
+		job = em.find(Job.class, job.getId());
+		
+		
 		return job;
 
 	}

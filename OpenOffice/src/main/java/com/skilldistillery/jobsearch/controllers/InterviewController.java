@@ -1,5 +1,7 @@
 package com.skilldistillery.jobsearch.controllers;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.jobsearch.data.InterviewDAO;
 import com.skilldistillery.jobsearch.entities.Interview;
+import com.skilldistillery.jobsearch.entities.User;
 
 @Controller
 public class InterviewController {
@@ -31,8 +34,8 @@ public class InterviewController {
 	}
 	
 	@RequestMapping("createInterview")
-	public String createInterview(Integer jobId, Interview interview, Model model) {
-			interview = dao.createInterview(jobId, interview);
+	public String createInterview(Integer jobId, Interview interview, Model model, HttpSession session) {
+			interview = dao.createInterview(jobId, interview, (User)session.getAttribute("user"));
 			model.addAttribute("interviewId", interview.getId());
 			return "createInterviewQuestion";
 	}
@@ -46,6 +49,7 @@ public class InterviewController {
 		
 		return "updateInterview";
 		
+
 	}
 	
 	@RequestMapping("updatingInterview")

@@ -13,7 +13,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col card card-body text-center">
-			<form action="updatingInterviewQuestion">
+			<form action="createInterviewQuestion">
 			<input type="hidden" name="interviewId" value="${interviewId }"/>
 			<br/>
 			Title:

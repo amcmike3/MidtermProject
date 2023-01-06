@@ -54,31 +54,29 @@ public class JobController {
 	@PostMapping("createJob.do")
 	public ModelAndView jobTypeCreatedForInterview(Job job, Integer companyId, Integer industryId) {
 		ModelAndView mv = new ModelAndView();
-		Industry industry = null;
-		Company company = null;
+		Industry industry = inDao.findById(industryId);
+		Company company = compDao.findCompanyById(companyId);
+		// find the company that the job is created for
 		// get the list of jobs for that company
-		List<Job> jobs = dao.findAllJobsWithinASpecificCompany(companyId);
-		System.out.println(jobs.toString());
-		Job newJob = job;
+//		List<Job> jobs = dao.findAllJobsWithinASpecificCompany(companyId);
+		job.setCompany(company);
+		// once the back end has the industry the user picked, set it to the new job
+		job.setIndustry(industry);
+		
+		
+		
+		Job newJob = dao.createJob(job);
+		// actually create the job with the info from the form and the company and list
+		// set
 		// find the industry that the user picked in the drop down to assign it to the
 		// job(join column)
 		industry = inDao.findById(industryId);
-		// once the back end has the industry the user picked, set it to the new job
-		newJob.setIndustry(industry);
 		// add the job to the pre existing list of jobs that a company has
-		jobs.add(newJob);
-		// find the company that the job is created for
-		company = compDao.findCompanyById(companyId);
-		// set the list "jobs" to the companies list of jobs . A Company HAS A list of
-		// jobs
-		company.setJobs(jobs);
+		company.addJob(newJob);
 		// set the company to the job that was created.. because a Job HAS A Company.
 		newJob.setCompany(company);
-		// actually create the job with the info from the form and the company and list
-		// set
-		dao.createJob(newJob);
 
-		mv.addObject("Job", newJob);
+		mv.addObject("jobId", newJob.getId());
 		mv.setViewName("createInterview");
 		return mv;
 	}

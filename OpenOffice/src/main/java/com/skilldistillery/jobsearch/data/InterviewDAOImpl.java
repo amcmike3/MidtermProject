@@ -56,9 +56,10 @@ public class InterviewDAOImpl implements InterviewDAO {
 	}
 
 	@Override
-	public Interview createInterview(Integer jobId, Interview interview) {
-		em.persist(interview);
+	public Interview createInterview(Integer jobId, Interview interview, User user) {
 		interview.setJob(em.find(Job.class, jobId));
+		interview.setUser(user);
+		em.persist(interview);
 		return interview;
 	}
 	

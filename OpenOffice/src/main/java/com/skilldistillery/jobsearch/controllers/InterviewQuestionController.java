@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.skilldistillery.jobsearch.data.InterviewDAO;
 import com.skilldistillery.jobsearch.data.InterviewQuestionDAO;
 import com.skilldistillery.jobsearch.entities.InterviewQuestion;
 
@@ -14,9 +15,16 @@ public class InterviewQuestionController {
 	@Autowired
 	private InterviewQuestionDAO dao;
 	
+	@Autowired
+	private InterviewDAO interviewDao;
+	
+	
 	@RequestMapping("createInterviewQuestion")
-	public String createInterviewQuestion() {
-		return "createInterviewQuestion";
+	public String createInterviewQuestion(InterviewQuestion question, Integer interviewId, Model model) {
+		dao.addInterviewQuestion(question, interviewId);
+		model.addAttribute("interview", interviewDao.findInterviewById(interviewId));
+		
+		return"interviewBio";
 	}
 	
 	@RequestMapping("updateInterviewQuestion")

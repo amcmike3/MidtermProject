@@ -13,6 +13,6 @@ public interface InterviewDAO {
 	Interview findInterviewById(Integer interviewId);
 	Interview updateInterview(int interviewId, Interview interview);
 	List<Interview> userInterviewsForCompany(int companyId, int userId);
-	Interview createInterview(Integer jobId, Interview interview);
+	Interview createInterview(Integer jobId, Interview interview, User user);
 	
 }

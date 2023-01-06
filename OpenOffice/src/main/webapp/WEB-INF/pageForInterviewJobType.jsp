@@ -16,6 +16,7 @@
 
 <form action="createJob.do" method="POST">
 
+<input type="hidden" name="companyId" value="${company.id }">
 
   <label for="title">What is the title of the job you are applying for?</label><br>
   
@@ -41,15 +42,15 @@
   
   <input type="text" name="certifications"><br>
  
-  <label for="enabled">Is this company active?</label><br>
+<!--   <label for="enabled">Is this company active?</label><br>
   
-  <input type="text" name="enabled"><br>
+  <input type="text" name="enabled"><br> -->
   
   <label for="description">Please provide a brief description of job being offered.</label><br>
   
   <input type="text" name="description"><br>
   
-  <select name="industry">
+  <select name="industryId">
   <c:forEach var="industry" items="${industryList }">
     <option value="${industry.id}">"${industry.name }"</option>
     <!-- <option value="industry.id">name</option>

@@ -53,8 +53,8 @@ public class InterviewQuestionDAOImpl implements InterviewQuestionDAO{
 
 	@Override
 	public InterviewQuestion addInterviewQuestion(InterviewQuestion question, Integer interviewId) {
-		em.persist(question);
 		question.addInterview(em.find(Interview.class, interviewId));
+		em.persist(question);
 		return question;
 	}
 	
