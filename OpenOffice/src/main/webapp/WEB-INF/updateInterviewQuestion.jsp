@@ -11,22 +11,21 @@
 <body>
 	<%@include file="navbar.jsp"%>
 	<div>
-	<form action="updatingInterviewQuestion.do" method="POST">
-	<input type="hidden" name="interviewQuestionId" value="${interviewQuestionId}">
+	<form action="updatingInterviewQuestion" method="POST">
+	<input type="hidden" name="id" value="${question.id}">
+	<input type="hidden" name="interviewId" value="${interviewId }">
 	<div>
 	<label>Title</label>
-	<input type="text" name="title" value="${interviewQuestion.title}">
+	<input type="text" name="title" value="${question.title}">
 	</div>
 	<div>
 	<label>Name</label>
-	<input type="text" name="name" value="${interviewQuestion.name}">
+	<input type="text" name="name" value="${question.name}">
 	</div>
 	<div>
 	<label>Description</label>
-	<input type="text" name="description" value="${interviewQuestion.description}">
+	<input type="text" name="description" value="${question.description}">
 	</div>
-	
-	
 	
 	<button type="submit" class="btn btn-success">Submit</button>
 	</form>

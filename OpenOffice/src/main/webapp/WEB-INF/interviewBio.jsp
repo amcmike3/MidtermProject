@@ -38,8 +38,6 @@
 		</c:forEach>
 	</div>
 	
-	
-	
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
 </body>

@@ -86,7 +86,12 @@
 					<p>
 						<a href="interviewBio?interviewId=${interview.id}">${interview.title }</a>
 						<c:if test="${interview.user.id == sessionScope.user.id }">
-							<input type="submit" formAction="updateInterview?interviewId=${interview.id }" value="update">
+							<form
+								action="updateInterview?interviewId=${interview.id}&companyId=${company.id}">
+								<input type="hidden" name="interviewId" value="${interview.id }">
+								<input type="hidden" name="companyId" value="${company.id }">
+								<input type="submit" value="update">
+							</form>
 						</c:if>
 					</p>
 				</div>

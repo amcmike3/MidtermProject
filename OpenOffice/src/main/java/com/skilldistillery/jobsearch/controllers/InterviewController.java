@@ -37,19 +37,20 @@ public class InterviewController {
 			return "createInterviewQuestion";
 	}
 	
-	@RequestMapping("updateInterview.do")
-	public String updateInterview(Integer companyId, Integer interviewId, Model model) {
+	@RequestMapping("updateInterview")
+	public String updateInterview(Integer companyId, Integer interviewId, Model model) {		
+		
 		Interview interview = dao.findInterviewById(interviewId);
 		model.addAttribute("interview", interview);
 		model.addAttribute("companyId", companyId);
 		
 		return "updateInterview";
-
+		
 	}
 	
-	@RequestMapping("updatingInterview.do")
+	@RequestMapping("updatingInterview")
 	public String updatingInterview(Integer companyId, Interview interview, Model model) {
-		dao.updateInterview(companyId, interview);
+		dao.updateInterview(interview.getId(), interview);
 		model.addAttribute("company", dao.findCompanyById(companyId));
 		
 		return "companyBio";
