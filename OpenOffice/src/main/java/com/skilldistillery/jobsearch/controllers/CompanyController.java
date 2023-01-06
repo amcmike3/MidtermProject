@@ -49,11 +49,6 @@ public class CompanyController {
 		Company company = dao.findCompanyById(companyId);
 		company.getJobs().size();
 		mv.addObject("company", company);
-		User user = (User) session.getAttribute("user");
-		if(user != null) {
-			mv.addObject("userInterviews", interviewDao.userInterviewsForCompany(companyId, user.getId()));
-			
-		}
 		return mv;
 	}
 	
