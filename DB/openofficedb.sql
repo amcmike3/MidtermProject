@@ -23,19 +23,19 @@ DROP TABLE IF EXISTS `company` ;
 CREATE TABLE IF NOT EXISTS `company` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NULL,
-  `location` VARCHAR(500) NULL,
+  `location` VARCHAR(100) NULL,
   `enabled` TINYINT NOT NULL DEFAULT 1,
-  `description` VARCHAR(100) NULL,
+  `description` VARCHAR(500) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `industry`
+-- Table `i`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `industry` ;
+DROP TABLE IF EXISTS `i` ;
 
-CREATE TABLE IF NOT EXISTS `industry` (
+CREATE TABLE IF NOT EXISTS `i` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `job` (
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_job_industry1`
     FOREIGN KEY (`industry_id`)
-    REFERENCES `industry` (`id`)
+    REFERENCES `i` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -267,7 +267,7 @@ CREATE TABLE IF NOT EXISTS `article` (
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_article_industry1`
     FOREIGN KEY (`industry_id`)
-    REFERENCES `industry` (`id`)
+    REFERENCES `i` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -327,16 +327,34 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 START TRANSACTION;
 USE `open_officedb`;
 INSERT INTO `company` (`id`, `name`, `location`, `enabled`, `description`) VALUES (1, 'The good company', 'we are wherever you are', 1, 'some random stuff i guess I don\'t know we will fill this stuff in later');
+INSERT INTO `company` (`id`, `name`, `location`, `enabled`, `description`) VALUES (2, 'Billy Bob\'s Art Gallery', 'Inside Bobs Head', 1, 'This Art Gallery is filled with paintings of Billy Bobs most treasured life moments these memories are priceless but Billy Bob would probably sell his soul for the low price of $19.99');
+INSERT INTO `company` (`id`, `name`, `location`, `enabled`, `description`) VALUES (3, 'Daytona 500 gear', 'Kentucky', 1, 'We have all the Daytona 500 gear you could possibly need. This is also the headquarters for the committee to move the Daytona 500 to Kentucky.');
+INSERT INTO `company` (`id`, `name`, `location`, `enabled`, `description`) VALUES (4, 'Always Late Construction', 'Inside Cheap Liqour', 1, 'Never on time, Probably charge to much, but we don\'t care as long as we can drink on the job.');
+INSERT INTO `company` (`id`, `name`, `location`, `enabled`, `description`) VALUES (5, 'Shirtless Pool Cleaners', 'Hopefully somehwere warm..', 1, 'We might not look pretty but we\'re shirtless and know how to clean pools.');
+INSERT INTO `company` (`id`, `name`, `location`, `enabled`, `description`) VALUES (6, 'Happy Planters', 'Rooted in your hometown', 1, 'We are happy so we can give your plants the love they have been missing.');
+INSERT INTO `company` (`id`, `name`, `location`, `enabled`, `description`) VALUES (7, 'Cracked Pipe Plumbing', 'In someones basement', 1, 'We don\'t just fix cracked pipes we also give you a complimentary plumbers crack showcase.');
+INSERT INTO `company` (`id`, `name`, `location`, `enabled`, `description`) VALUES (8, 'Coin Laundry', 'Across the street from Bobs Art Gallery', 1, 'Bring your own clothes, clean them yourself, fold them yourself, and pay us to do it.');
+INSERT INTO `company` (`id`, `name`, `location`, `enabled`, `description`) VALUES (9, 'Cheap Liquor', 'Next to Coin Laundry', 1, 'The only thing we gaurantee is that the older you get the worse the hangovers get. Drink Responsibly.');
+INSERT INTO `company` (`id`, `name`, `location`, `enabled`, `description`) VALUES (10, 'Resellers R Us', 'Confidential.. we don\'t want you to find us.', 1, 'We find things on clearance and then sell them to you for more on the internet!');
 
 COMMIT;
 
 
 -- -----------------------------------------------------
--- Data for table `industry`
+-- Data for table `i`
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `open_officedb`;
-INSERT INTO `industry` (`id`, `name`) VALUES (1, 'textile');
+INSERT INTO `i` (`id`, `name`) VALUES (1, 'textile');
+INSERT INTO `i` (`id`, `name`) VALUES (2, 'Technology');
+INSERT INTO `i` (`id`, `name`) VALUES (3, 'Construction');
+INSERT INTO `i` (`id`, `name`) VALUES (4, 'Arts');
+INSERT INTO `i` (`id`, `name`) VALUES (5, 'Manufacturing');
+INSERT INTO `i` (`id`, `name`) VALUES (6, 'Retail');
+INSERT INTO `i` (`id`, `name`) VALUES (7, 'Sports');
+INSERT INTO `i` (`id`, `name`) VALUES (8, 'Landscaping');
+INSERT INTO `i` (`id`, `name`) VALUES (9, 'Food services');
+INSERT INTO `i` (`id`, `name`) VALUES (10, 'Nursing');
 
 COMMIT;
 
@@ -346,7 +364,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `open_officedb`;
-INSERT INTO `job` (`id`, `salary`, `years_experience`, `skills`, `education`, `certifications`, `company_id`, `industry_id`, `enabled`, `title`, `description`) VALUES (1, 89999, 25, 'Administration', 'Doctorates in website administration', 'Expert Administration from the institute the adminsters the certifications for administering administration expertly.', 1, 1, 1, 'administrator of adminstration', 'blah blah this is an extremely detailed description');
+INSERT INTO `job` (`id`, `salary`, `years_experience`, `skills`, `education`, `certifications`, `company_id`, `industry_id`, `enabled`, `title`, `description`) VALUES (1, 89999, 25, 'Administration', 'Doctorates in website administration', 'Expert Administration from the institute the adminsters the certifications for administering administration expertly.', 1, 1, 1, 'administrator of adminstration', NULL);
 
 COMMIT;
 
