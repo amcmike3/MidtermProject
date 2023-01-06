@@ -31,11 +31,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `i`
+-- Table `industry`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `i` ;
+DROP TABLE IF EXISTS `industry` ;
 
-CREATE TABLE IF NOT EXISTS `i` (
+CREATE TABLE IF NOT EXISTS `industry` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `job` (
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_job_industry1`
     FOREIGN KEY (`industry_id`)
-    REFERENCES `i` (`id`)
+    REFERENCES `industry` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -267,7 +267,7 @@ CREATE TABLE IF NOT EXISTS `article` (
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_article_industry1`
     FOREIGN KEY (`industry_id`)
-    REFERENCES `i` (`id`)
+    REFERENCES `industry` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -341,20 +341,20 @@ COMMIT;
 
 
 -- -----------------------------------------------------
--- Data for table `i`
+-- Data for table `industry`
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `open_officedb`;
-INSERT INTO `i` (`id`, `name`) VALUES (1, 'textile');
-INSERT INTO `i` (`id`, `name`) VALUES (2, 'Technology');
-INSERT INTO `i` (`id`, `name`) VALUES (3, 'Construction');
-INSERT INTO `i` (`id`, `name`) VALUES (4, 'Arts');
-INSERT INTO `i` (`id`, `name`) VALUES (5, 'Manufacturing');
-INSERT INTO `i` (`id`, `name`) VALUES (6, 'Retail');
-INSERT INTO `i` (`id`, `name`) VALUES (7, 'Sports');
-INSERT INTO `i` (`id`, `name`) VALUES (8, 'Landscaping');
-INSERT INTO `i` (`id`, `name`) VALUES (9, 'Food services');
-INSERT INTO `i` (`id`, `name`) VALUES (10, 'Nursing');
+INSERT INTO `industry` (`id`, `name`) VALUES (1, 'textile');
+INSERT INTO `industry` (`id`, `name`) VALUES (2, 'Technology');
+INSERT INTO `industry` (`id`, `name`) VALUES (3, 'Construction');
+INSERT INTO `industry` (`id`, `name`) VALUES (4, 'Arts');
+INSERT INTO `industry` (`id`, `name`) VALUES (5, 'Manufacturing');
+INSERT INTO `industry` (`id`, `name`) VALUES (6, 'Retail');
+INSERT INTO `industry` (`id`, `name`) VALUES (7, 'Sports');
+INSERT INTO `industry` (`id`, `name`) VALUES (8, 'Landscaping');
+INSERT INTO `industry` (`id`, `name`) VALUES (9, 'Food services');
+INSERT INTO `industry` (`id`, `name`) VALUES (10, 'Nursing');
 
 COMMIT;
 
@@ -415,7 +415,16 @@ COMMIT;
 START TRANSACTION;
 USE `open_officedb`;
 INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (1, '401k matching 100%', '401k', 0);
-INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (2, 'honestly, this gym is only slightly better than a hotel gym', 'on site gym', 1);
+INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (2, 'Health Insurance', 'Health', 0);
+INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (3, 'Denatal Insurance', 'Dental', 0);
+INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (4, 'Match 100% up to 6% of salary', '401k Matching', 0);
+INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (5, '$100,000 benefit', 'Life Insurance', 0);
+INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (6, '$45,000 benefit', 'Disability Insurance', 0);
+INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (7, '4 weeks per year', 'Paid time off', 0);
+INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (8, '10 days per year', 'Sick Leave', 0);
+INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (9, '4 month paid at full time rate', 'Paternity Leave', 0);
+INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (10, 'all inclusive gym weights, treadmills, sauna, hot tub', 'On-Site Gym', 1);
+INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (11, 'Breakfast, Lunch, and Dinner', 'On-site meals', 1);
 
 COMMIT;
 
