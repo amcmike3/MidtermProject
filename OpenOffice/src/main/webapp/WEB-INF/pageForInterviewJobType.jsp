@@ -49,17 +49,25 @@
   
   <input type="text" name="description"><br>
   
-  <label for="industry">Industry type?</label><br>
+  <select name="industry">
+  <c:forEach var="industry" items="${industryList }">
+    <option value="${industry.id}">"${industry.name }"</option>
+    <!-- <option value="industry.id">name</option>
+    <option value="industry.id">name</option> -->
+  </c:forEach>
+</select> <br>
   
-  <input type="text" name="industry"><br>
+ <%--  <label for="name">Industry type?</label><br>
+  
+  <input type="text" name="${industry.name }"><br> --%>
 
- <input type="submit">
+  <input id="companyId" value="${company.id}" type="hidden">
+  
+  <button type="submit">Submit</button>
 
 </form>
-	
-
-		</div>
-			<%@include file="footer.jsp"%>
+</div>
+	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
 </body>
 </html>

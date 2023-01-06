@@ -9,10 +9,15 @@ public interface JobDAO {
 	List<Job> findJobs(String title);
 
 	List<Job> findAllJobs();
-
+	
+	List<Job> findAllJobsWithinASpecificCompany(Integer companyId)
+;
 	Job findJobById(Integer jobId);
 
+	Job createJob(Job job);
 
+
+		
 }
 
 

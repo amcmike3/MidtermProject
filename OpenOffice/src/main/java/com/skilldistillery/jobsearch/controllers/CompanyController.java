@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.jobsearch.data.CompanyDAO;
+import com.skilldistillery.jobsearch.data.IndustryDAO;
 import com.skilldistillery.jobsearch.data.InterviewDAO;
 import com.skilldistillery.jobsearch.entities.Company;
+import com.skilldistillery.jobsearch.entities.Industry;
 import com.skilldistillery.jobsearch.entities.Job;
 import com.skilldistillery.jobsearch.entities.User;
 
@@ -25,6 +27,9 @@ public class CompanyController {
 	
 	@Autowired
 	private InterviewDAO interviewDao;
+	
+	@Autowired 
+	private IndustryDAO inDao;
 	
 	@RequestMapping("getCompany.do")
 	public String getCompanyByKeyword(String name, Model model) {
@@ -86,6 +91,8 @@ public class CompanyController {
 	@RequestMapping("pageForInterviewJobType.do")
 	public String gotToInterviewJobType(Integer companyId, Model model) {
 		Company company = dao.findCompanyById(companyId);
+		List<Industry> industryList = inDao.getAll();
+		model.addAttribute("industryList", industryList);
 		model.addAttribute("company", company);
 		return "pageForInterviewJobType";
 		
