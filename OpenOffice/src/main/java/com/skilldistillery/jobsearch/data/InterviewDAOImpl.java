@@ -1,5 +1,7 @@
 package com.skilldistillery.jobsearch.data;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -7,9 +9,8 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.jobsearch.entities.Company;
-import com.skilldistillery.jobsearch.entities.CompanyReview;
 import com.skilldistillery.jobsearch.entities.Interview;
-import com.skilldistillery.jobsearch.entities.InterviewQuestion;
+import com.skilldistillery.jobsearch.entities.Job;
 import com.skilldistillery.jobsearch.entities.User;
 
 @Service
@@ -43,10 +44,24 @@ public class InterviewDAOImpl implements InterviewDAO {
 			interviewUpdate.setTitle(interview.getTitle());
 			interviewUpdate.setProcess(interview.getProcess());
 			interviewUpdate.setJobOffered(interview.getJobOffered());
-			interviewUpdate.setQuestions(interview.getQuestions());
+			interviewUpdate.setInterviewQuestions(interview.getInterviewQuestions());
 
 			return interviewUpdate;
 	}
+
+	@Override
+	public List<Interview> userInterviewsForCompany(int companyId, int userId) {
+		String jpql = "SELECT i FROM Interview i WHERE i.job.company.id = :cid AND i.user.id = :uid";
+		return em.createQuery(jpql, Interview.class).setParameter("cid", companyId).setParameter("uid", userId).getResultList();
+	}
+
+	@Override
+	public Interview createInterview(Integer jobId, Interview interview) {
+		em.persist(interview);
+		interview.setJob(em.find(Job.class, jobId));
+		return interview;
+	}
+	
 	
 	
 }

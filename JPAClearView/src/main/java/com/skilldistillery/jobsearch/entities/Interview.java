@@ -31,8 +31,6 @@ public class Interview {
 	@Column(name="job_offered")
 	private Boolean jobOffered;
 	
-	private String questions;
-	
 	@ManyToOne
 	@JoinColumn(name="user_id")
 	private User user;
@@ -127,20 +125,13 @@ public class Interview {
 		this.jobOffered = jobOffered;
 	}
 
-	public String getQuestions() {
-		return questions;
-	}
-
-	public void setQuestions(String questions) {
-		this.questions = questions;
-	}
 
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Interview [id=").append(id).append(", process=").append(process).append(", commentDate=")
 				.append(commentDate).append(", title=").append(title).append(", jobOffered=").append(jobOffered)
-				.append(", questions=").append(questions).append("]");
+				.append("]");
 		return builder.toString();
 	}
 
