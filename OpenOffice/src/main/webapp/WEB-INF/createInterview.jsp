@@ -5,14 +5,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
+=======
 
+>>>>>>> 1cfd985f6f6bd05922cf712c787f03f339ca9676
 <title>Add Interview Experience</title>
 <%@ include file="bootstrapHead.jsp"%>
 </head>
-
 <body>
 	<%@include file="navbar.jsp"%>
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 1cfd985f6f6bd05922cf712c787f03f339ca9676
 		<div class="container">
 		<div class="row">
 			<div class="col card card-body text-center">
@@ -39,6 +45,10 @@
 		</div>
 	</div>
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 1cfd985f6f6bd05922cf712c787f03f339ca9676
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
 </body>

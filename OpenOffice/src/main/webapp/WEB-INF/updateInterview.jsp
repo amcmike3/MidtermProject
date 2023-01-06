@@ -5,33 +5,41 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>UpdateInterview</title>
+<title>Update Interview Experience</title>
 <%@ include file="bootstrapHead.jsp"%>
 </head>
 <body>
 	<%@include file="navbar.jsp"%>
-	<div>
-	<form action="updatingInterviewQuestion.do" method="POST">
-	<input type="hidden" name="interviewQuestionId" value="${interviewQuestionId}">
-	<div>
-	<label>Title</label>
-	<input type="text" name="title" value="${interviewQuestion.title}">
+
+
+		<div class="container">
+		<div class="row">
+			<div class="col card card-body text-center">
+			<form action="updateInterview">
+			<input type="hidden" name="jobId" value="${jobId }"/>
+			<br/>
+			Title:
+			<input type="text" name="title" value="${interview.title}"/>
+			<br/>
+			What was their interview process like?
+			<input type="text" name="process" value="${interview.process}"/>
+			<br/>
+			Did you get a job offer?
+			<select
+					id="jobOffered" name="jobOffered">
+					<option value="false">No</option>
+					<option value="true">Yes</option>
+				</select>
+			
+			<br/>
+			<input type="submit" value="Next"/>
+			</form>
+			</div>
+		</div>
 	</div>
-	<div>
-	<label>Name</label>
-	<input type="text" name="name" value="${interviewQuestion.name}">
-	</div>
-	<div>
-	<label>Description</label>
-	<input type="text" name="description" value="${interviewQuestion.description}">
-	</div>
-	
-	
-	
-	<button type="submit" class="btn btn-success">Submit</button>
-	</form>
-</div>
-</body>
+
+
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
+</body>
 </html>
