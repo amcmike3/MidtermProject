@@ -85,6 +85,9 @@
 				<div class="col card containers">
 					<p>
 						<a href="interviewBio?interviewId=${interview.id}">${interview.title }</a>
+						<c:if test="${interview.user.id == sessionScope.user.id }">
+							<input type="submit" formAction="updateInterview?interviewId=${interview.id }" value="update">
+						</c:if>
 					</p>
 				</div>
 			</c:forEach>
