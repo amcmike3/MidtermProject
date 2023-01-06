@@ -76,28 +76,22 @@
 		<div class="row col card text-center yellow-containers">
 			<h1>Interviews:</h1>
 		</div>
-		<c:choose>
-			<c:when test="${! empty userInterviews}">
-				<c:forEach var="i" begin="0" end="5" step="3">
-					<div class="row">
-						<c:forEach var="interview" items="${userInterviews }"
-							begin="${i }" end="${i + 3 }">
-							<div class="col card containers">
-								<p>
-									<a href="interviewBio?interviewId=${interview.id}">${interview.title }</a>
-								</p>
-							</div>
-						</c:forEach>
-					</div>
-				</c:forEach>
 
-			</c:when>
-			<c:otherwise>
-			<div>
-				<h3>No interviews have been published for this company</h3>
-			</div>
-			</c:otherwise>
-		</c:choose>
+		<c:forEach var="job" items="${company.jobs }">
+			<h3>
+				<a href="jobBio?jobId=${job.id}">${job.title }</a>
+			</h3>
+			<c:forEach var="interview" items="${job.interviews }">
+				<div class="col card containers">
+					<p>
+						<a href="interviewBio?interviewId=${interview.id}">${interview.title }</a>
+						<c:if test="${interview.user.id == sessionScope.user.id }">
+							<input type="submit" formAction="updateInterview?interviewId=${interview.id }" value="update">
+						</c:if>
+					</p>
+				</div>
+			</c:forEach>
+		</c:forEach>
 
 	</div>
 	<%@include file="footer.jsp"%>

@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.jobsearch.data.InterviewDAO;
-import com.skilldistillery.jobsearch.entities.CompanyReview;
 import com.skilldistillery.jobsearch.entities.Interview;
 
 @Controller
@@ -17,9 +16,10 @@ public class InterviewController {
 	private InterviewDAO dao;
 
 	@RequestMapping("interviewBio")
-	public ModelAndView interviewBio(Integer jobId) {
+	public ModelAndView interviewBio(Integer interviewId) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("interviewBio");
+		mv.addObject("interview", dao.findInterviewById(interviewId));
 		return mv;
 	}
 
