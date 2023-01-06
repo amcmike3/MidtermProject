@@ -93,10 +93,4 @@ public class CompanyReviewDAOImpl implements CompanyReviewDAO {
 		return isDeleted;
 	}
 
-
-	@Override
-	public CompanyReview createUserReview(CompanyReview companyReview) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }
