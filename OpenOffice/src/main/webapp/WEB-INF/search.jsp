@@ -41,21 +41,21 @@
 				</div>
 			</form>
 		</div>
-		<div class="row card matcha" >
-			<div class="yellow-containers text-center btn">
+		<div class="row card yellow-containers">
+			<div class="containers btn text-center ">
 				<form action="allUser.do" method="GET">
 					<input id="btnDisplay" class="btn" type="submit"
 						value="Show All Users" />
 				</form>
 			</div>
-			<div class="yellow-containers text-center btn">
+			<div class="containers btn text-center ">
 
 				<form action="allCompanies.do" method="GET">
 					<input id="btnDisplay" class="btn" type="submit"
 						value="Show All Companies" />
 				</form>
 			</div>
-			<div class="yellow-containers text-center btn">
+			<div class="containers text-center btn show-all-btn">
 
 				<form action="allJobs.do" method="GET">
 					<input id="btnDisplay" class="btn" type="submit"
