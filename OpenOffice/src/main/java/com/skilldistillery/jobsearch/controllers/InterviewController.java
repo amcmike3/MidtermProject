@@ -31,9 +31,10 @@ public class InterviewController {
 	}
 	
 	@RequestMapping("createInterview")
-	public String createInterview(Integer jobId) {
-		
-		return "createInterview";
+	public String createInterview(Integer jobId, Interview interview, Model model) {
+			interview = dao.createInterview(jobId, interview);
+			model.addAttribute("interviewId", interview.getId());
+			return "createInterviewQuestion";
 	}
 	
 	@RequestMapping("updateInterview.do")
@@ -53,4 +54,5 @@ public class InterviewController {
 		
 		return "companyBio";
 	}
+	
 }

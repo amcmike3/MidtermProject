@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>UpdateComapnyReview</title>
+<title>UpdateCompanyReview</title>
 <%@ include file="bootstrapHead.jsp"%>
 </head>
 <body>

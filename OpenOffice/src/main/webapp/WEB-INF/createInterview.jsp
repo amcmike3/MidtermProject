@@ -5,13 +5,37 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Open Office Baseline</title>
+<title>Add Interview Experience</title>
 <%@ include file="bootstrapHead.jsp"%>
 </head>
 
 <body>
 	<%@include file="navbar.jsp"%>
-	<h1>Fix ME! createInterview.jsp</h1>
+		<div class="container">
+		<div class="row">
+			<div class="col card card-body text-center">
+			<form action="createInterview">
+			<input type="hidden" name="jobId" value="${jobId }"/>
+			<br/>
+			Title:
+			<input type="text" name="title""/>
+			<br/>
+			What was their interview process like?
+			<input type="text" name="process"/>
+			<br/>
+			Did you get a job offer?
+			<select
+					id="jobOffered" name="jobOffered">
+					<option value="false">No</option>
+					<option value="true">Yes</option>
+				</select>
+			
+			<br/>
+			<input type="submit" value="Next"/>
+			</form>
+			</div>
+		</div>
+	</div>
 
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
