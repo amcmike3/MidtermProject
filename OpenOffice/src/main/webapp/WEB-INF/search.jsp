@@ -11,45 +11,57 @@
 </head>
 <body>
 	<%@include file="navbar.jsp"%>
-	<div class="containers">
-		<div class="yellow-containers">
-			<form action="allUser.do" method="GET">
-				<input id="btnDisplay" class="btn" type="submit" value="Show Users" />
-			</form>
-		</div>
-		<div class="yellow-containers">
-
-			<form action="allCompanies.do" method="GET">
-				<input id="btnDisplay" class="btn" type="submit"
-					value="Show Companies" />
-			</form>
-		</div>
-		<div class="yellow-containers">
-
-			<form action="allJobs.do" method="GET">
-				<input id="btnDisplay" class="btn" type="submit" value="Show Jobs" />
-			</form>
-		</div>
-		<div class="yellow-containers">
+	<div class="containers ">
+		
+		<div class="yellow-containers text-center">
 
 			<form action="getUser.do" method="GET">
-				Find by Username: <input type="text" name="username" required /> <input
-					id="btnDisplay" class="btn" type="submit" value="Show User" />
+				Find Users by Username: <input type="text" name="username" required />
+				<div class="btn">
+					<input id="btnDisplay" type="submit" value="Show User" />
+				</div>
 			</form>
 		</div>
-		<div class="yellow-containers">
+		<div class="yellow-containers text-center">
 
 			<form action="getCompany.do" method="GET">
-				Find by Company: <input type="text" name="name" required /> <input
-					id="btnDisplay" class="btn" type="submit" value="Show Company" />
+				Find Companies by Name: <input type="text" name="name" required />
+				<div class="btn">
+					<input id="btnDisplay"  type="submit"
+						value="Show Company" />
+				</div>
 			</form>
 		</div>
-		<div class="yellow-containers">
+		<div class="yellow-containers text-center">
 
 			<form action="getJob.do" method="GET">
-				Find by Job: <input type="text" name="title" required /> <input
-					id="btnDisplay" class="btn" type="submit" value="Show Job" />
+				Find Jobs by Title: <input type="text" name="title" required />
+				<div class="btn">
+					<input id="btnDisplay" type="submit" value="Show Job" />
+				</div>
 			</form>
+		</div>
+		<div class="row card matcha" >
+			<div class="yellow-containers text-center btn">
+				<form action="allUser.do" method="GET">
+					<input id="btnDisplay" class="btn" type="submit"
+						value="Show All Users" />
+				</form>
+			</div>
+			<div class="yellow-containers text-center btn">
+
+				<form action="allCompanies.do" method="GET">
+					<input id="btnDisplay" class="btn" type="submit"
+						value="Show All Companies" />
+				</form>
+			</div>
+			<div class="yellow-containers text-center btn">
+
+				<form action="allJobs.do" method="GET">
+					<input id="btnDisplay" class="btn" type="submit"
+						value="Show All Jobs" />
+				</form>
+			</div>
 		</div>
 	</div>
 	<%@include file="footer.jsp"%>

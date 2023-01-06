@@ -76,6 +76,32 @@
 			</c:forEach>
 
 		</div>
+		<div class="row col card text-center yellow-containers">
+			<h1>Interviews:</h1>
+		</div>
+		<c:choose>
+			<c:when test="${! empty userInterviews}">
+				<c:forEach var="i" begin="0" end="5" step="3">
+					<div class="row">
+						<c:forEach var="interview" items="${userInterviews }"
+							begin="${i }" end="${i + 3 }">
+							<div class="col card containers">
+								<p>
+									<a href="interviewBio?interviewId=${interview.id}">${interview.title }</a>
+								</p>
+							</div>
+						</c:forEach>
+					</div>
+				</c:forEach>
+
+			</c:when>
+			<c:otherwise>
+			<div>
+				<h3>No interviews have been published for this company</h3>
+			</div>
+			</c:otherwise>
+		</c:choose>
+
 	</div>
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>

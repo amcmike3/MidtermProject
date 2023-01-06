@@ -3,6 +3,8 @@ package com.skilldistillery.jobsearch.controllers;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,14 +12,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.jobsearch.data.CompanyDAO;
+import com.skilldistillery.jobsearch.data.InterviewDAO;
 import com.skilldistillery.jobsearch.entities.Company;
 import com.skilldistillery.jobsearch.entities.Job;
+import com.skilldistillery.jobsearch.entities.User;
 
 @Controller
 public class CompanyController {
 
 	@Autowired
 	private CompanyDAO dao;
+	
+	@Autowired
+	private InterviewDAO interviewDao;
 	
 	@RequestMapping("getCompany.do")
 	public String getCompanyByKeyword(String name, Model model) {
@@ -36,12 +43,17 @@ public class CompanyController {
 
 	
 	@RequestMapping("companyBio")
-	public ModelAndView companyBio(Integer companyId) {
+	public ModelAndView companyBio(Integer companyId, HttpSession session) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("companyBio");
 		Company company = dao.findCompanyById(companyId);
 		company.getJobs().size();
 		mv.addObject("company", company);
+		User user = (User) session.getAttribute("user");
+		if(user != null) {
+			mv.addObject("userInterviews", interviewDao.userInterviewsForCompany(companyId, user.getId()));
+			
+		}
 		return mv;
 	}
 	

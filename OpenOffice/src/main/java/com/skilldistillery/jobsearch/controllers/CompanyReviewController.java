@@ -56,7 +56,7 @@ public class CompanyReviewController {
 	}
 
 	@RequestMapping("updateCompanyReview.do")
-	public String updateCompany(Integer companyId, Integer reviewId ,Model model) {
+	public String updateCompany(Integer companyId, Integer reviewId, Model model) {
 		CompanyReview review = dao.findReviewById(reviewId);
 		model.addAttribute("review", review);
 		model.addAttribute("companyId", companyId);
