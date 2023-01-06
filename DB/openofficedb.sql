@@ -23,9 +23,9 @@ DROP TABLE IF EXISTS `company` ;
 CREATE TABLE IF NOT EXISTS `company` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NULL,
-  `location` VARCHAR(500) NULL,
+  `location` VARCHAR(100) NULL,
   `enabled` TINYINT NOT NULL DEFAULT 1,
-  `description` VARCHAR(100) NULL,
+  `description` VARCHAR(500) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -327,6 +327,15 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 START TRANSACTION;
 USE `open_officedb`;
 INSERT INTO `company` (`id`, `name`, `location`, `enabled`, `description`) VALUES (1, 'The good company', 'we are wherever you are', 1, 'some random stuff i guess I don\'t know we will fill this stuff in later');
+INSERT INTO `company` (`id`, `name`, `location`, `enabled`, `description`) VALUES (2, 'Billy Bob\'s Art Gallery', 'Inside Bobs Head', 1, 'This Art Gallery is filled with paintings of Billy Bobs most treasured life moments these memories are priceless but Billy Bob would probably sell his soul for the low price of $19.99');
+INSERT INTO `company` (`id`, `name`, `location`, `enabled`, `description`) VALUES (3, 'Daytona 500 gear', 'Kentucky', 1, 'We have all the Daytona 500 gear you could possibly need. This is also the headquarters for the committee to move the Daytona 500 to Kentucky.');
+INSERT INTO `company` (`id`, `name`, `location`, `enabled`, `description`) VALUES (4, 'Always Late Construction', 'Inside Cheap Liqour', 1, 'Never on time, Probably charge to much, but we don\'t care as long as we can drink on the job.');
+INSERT INTO `company` (`id`, `name`, `location`, `enabled`, `description`) VALUES (5, 'Shirtless Pool Cleaners', 'Hopefully somehwere warm..', 1, 'We might not look pretty but we\'re shirtless and know how to clean pools.');
+INSERT INTO `company` (`id`, `name`, `location`, `enabled`, `description`) VALUES (6, 'Happy Planters', 'Rooted in your hometown', 1, 'We are happy so we can give your plants the love they have been missing.');
+INSERT INTO `company` (`id`, `name`, `location`, `enabled`, `description`) VALUES (7, 'Cracked Pipe Plumbing', 'In someones basement', 1, 'We don\'t just fix cracked pipes we also give you a complimentary plumbers crack showcase.');
+INSERT INTO `company` (`id`, `name`, `location`, `enabled`, `description`) VALUES (8, 'Coin Laundry', 'Across the street from Bobs Art Gallery', 1, 'Bring your own clothes, clean them yourself, fold them yourself, and pay us to do it.');
+INSERT INTO `company` (`id`, `name`, `location`, `enabled`, `description`) VALUES (9, 'Cheap Liquor', 'Next to Coin Laundry', 1, 'The only thing we gaurantee is that the older you get the worse the hangovers get. Drink Responsibly.');
+INSERT INTO `company` (`id`, `name`, `location`, `enabled`, `description`) VALUES (10, 'Resellers R Us', 'Confidential.. we don\'t want you to find us.', 1, 'We find things on clearance and then sell them to you for more on the internet!');
 
 COMMIT;
 
@@ -337,6 +346,15 @@ COMMIT;
 START TRANSACTION;
 USE `open_officedb`;
 INSERT INTO `industry` (`id`, `name`) VALUES (1, 'textile');
+INSERT INTO `industry` (`id`, `name`) VALUES (2, 'Technology');
+INSERT INTO `industry` (`id`, `name`) VALUES (3, 'Construction');
+INSERT INTO `industry` (`id`, `name`) VALUES (4, 'Arts');
+INSERT INTO `industry` (`id`, `name`) VALUES (5, 'Manufacturing');
+INSERT INTO `industry` (`id`, `name`) VALUES (6, 'Retail');
+INSERT INTO `industry` (`id`, `name`) VALUES (7, 'Sports');
+INSERT INTO `industry` (`id`, `name`) VALUES (8, 'Landscaping');
+INSERT INTO `industry` (`id`, `name`) VALUES (9, 'Food services');
+INSERT INTO `industry` (`id`, `name`) VALUES (10, 'Nursing');
 
 COMMIT;
 
@@ -346,7 +364,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `open_officedb`;
-INSERT INTO `job` (`id`, `salary`, `years_experience`, `skills`, `education`, `certifications`, `company_id`, `industry_id`, `enabled`, `title`, `description`) VALUES (1, 89999, 25, 'Administration', 'Doctorates in website administration', 'Expert Administration from the institute the adminsters the certifications for administering administration expertly.', 1, 1, 1, 'administrator of adminstration', 'blah blah this is an extremely detailed description');
+INSERT INTO `job` (`id`, `salary`, `years_experience`, `skills`, `education`, `certifications`, `company_id`, `industry_id`, `enabled`, `title`, `description`) VALUES (1, 89999, 25, 'Administration', 'Doctorates in website administration', 'Expert Administration from the institute the adminsters the certifications for administering administration expertly.', 1, 1, 1, 'administrator of adminstration', NULL);
 
 COMMIT;
 
@@ -377,6 +395,15 @@ COMMIT;
 START TRANSACTION;
 USE `open_officedb`;
 INSERT INTO `company_image` (`id`, `img_url`, `date_created`, `img_description`, `company_id`) VALUES (1, 'https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/51keG5vVCNL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg', '2000-01-01 00:00:00', 'The good company', 1);
+INSERT INTO `company_image` (`id`, `img_url`, `date_created`, `img_description`, `company_id`) VALUES (2, 'https://media.istockphoto.com/id/1340257709/photo/big-idea-concept-the-woman-open-the-door-in-the-maze-shaped-brain.jpg?s=612x612&w=is&k=20&c=mav7jGk4OxWEVzCTPe_-jGlrbgMH215injoARqKJ0BY=', '2000-01-01 0:00:00', 'Inside Bobs Head', 2);
+INSERT INTO `company_image` (`id`, `img_url`, `date_created`, `img_description`, `company_id`) VALUES (3, 'https://media.istockphoto.com/id/153829591/photo/nascar-illustration-black-and-white.jpg?s=612x612&w=is&k=20&c=KJR9WxO42amXsdsGt9jOhGuGAkN6fODzfmilrW5Zi6I=', '2000-01-02 0:00:00', 'Nascar Fastcar', 3);
+INSERT INTO `company_image` (`id`, `img_url`, `date_created`, `img_description`, `company_id`) VALUES (4, 'https://images.unsplash.com/photo-1613667240983-f71f399bf430?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bGlxdW9yfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60', '2000-01-03 0:00:00', 'Inside Cheap Liqour', 4);
+INSERT INTO `company_image` (`id`, `img_url`, `date_created`, `img_description`, `company_id`) VALUES (5, 'https://images.unsplash.com/photo-1486655643111-5a1741acd481?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cG9vbCUyMGJveXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60', '2000-01-04 0:00:00', 'Hopefully somehwere warm..', 5);
+INSERT INTO `company_image` (`id`, `img_url`, `date_created`, `img_description`, `company_id`) VALUES (6, 'https://images.unsplash.com/photo-1586280268958-9483002d016a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Z2FyZGVuZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60', '2000-01-05 0:00:00', 'Rooted in your hometown', 6);
+INSERT INTO `company_image` (`id`, `img_url`, `date_created`, `img_description`, `company_id`) VALUES (7, 'https://plus.unsplash.com/premium_photo-1664301132849-f52af765df79?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGx1bWJlcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60', '2000-01-06 0:00:00', 'In someones basement', 7);
+INSERT INTO `company_image` (`id`, `img_url`, `date_created`, `img_description`, `company_id`) VALUES (8, 'https://plus.unsplash.com/premium_photo-1663036970563-99624abc950e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y29pbiUyMGxhdW5kcnl8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60', '2000-01-07 0:00:00', 'Across the street from Bobs Art Gallery', 8);
+INSERT INTO `company_image` (`id`, `img_url`, `date_created`, `img_description`, `company_id`) VALUES (9, 'https://images.unsplash.com/photo-1630382716699-a1bcd2d3b143?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bGlxdW9yJTIwc3RvcmV8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60', '2000-01-08 0:00:00', 'Next to Coin Laundry', 9);
+INSERT INTO `company_image` (`id`, `img_url`, `date_created`, `img_description`, `company_id`) VALUES (10, 'https://images.unsplash.com/photo-1594718166882-f000754d52db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y29uZmlkZW50aWFsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60', '2000-01-09 0:00:00', 'Confidential.. we don\'t want you to find us.', 10);
 
 COMMIT;
 
@@ -397,7 +424,16 @@ COMMIT;
 START TRANSACTION;
 USE `open_officedb`;
 INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (1, '401k matching 100%', '401k', 0);
-INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (2, 'honestly, this gym is only slightly better than a hotel gym', 'on site gym', 1);
+INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (2, 'Health Insurance', 'Health', 0);
+INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (3, 'Denatal Insurance', 'Dental', 0);
+INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (4, 'Match 100% up to 6% of salary', '401k Matching', 0);
+INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (5, '$100,000 benefit', 'Life Insurance', 0);
+INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (6, '$45,000 benefit', 'Disability Insurance', 0);
+INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (7, '4 weeks per year', 'Paid time off', 0);
+INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (8, '10 days per year', 'Sick Leave', 0);
+INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (9, '4 month paid at full time rate', 'Paternity Leave', 0);
+INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (10, 'all inclusive gym weights, treadmills, sauna, hot tub', 'On-Site Gym', 1);
+INSERT INTO `benefit` (`id`, `description`, `name`, `perk`) VALUES (11, 'Breakfast, Lunch, and Dinner', 'On-site meals', 1);
 
 COMMIT;
 
@@ -409,6 +445,40 @@ START TRANSACTION;
 USE `open_officedb`;
 INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (1, 1);
 INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (1, 2);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (1, 6);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (1, 9);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (1, 4);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (2, 1);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (2, 8);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (2, 10);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (2, 2);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (2, 4);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (3, 2);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (3, 9);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (3, 6);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (3, 8);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (4, 2);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (4, 6);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (4, 3);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (5, 3);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (5, 10);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (5, 7);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (6, 6);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (6, 3);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (6, 7);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (7, 2);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (7, 3);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (7, 7);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (7, 6);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (8, 3);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (8, 1);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (8, 2);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (9, 7);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (9, 10);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (9, 3);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (9, 8);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (10, 8);
+INSERT INTO `company_has_benefit` (`company_id`, `benefit_id`) VALUES (10, 3);
 
 COMMIT;
 
