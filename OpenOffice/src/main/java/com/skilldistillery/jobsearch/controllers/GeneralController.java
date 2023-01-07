@@ -37,12 +37,6 @@ public class GeneralController {
 		return "register";
 	}
 	
-	@RequestMapping("user")
-	public ModelAndView userBio(Integer userId) {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("userBio");
 
-		return mv;
-	}
 
 }

@@ -32,7 +32,7 @@
 			<div class="row">
 				<div class="col card">
 					<p>
-						<a href="interviewBio?jobId=${interview.job.id }">
+						<a href="interviewBio?interviewId=${interview.id }">
 							${interview.title }</a> 
 					</p>
 				</div>

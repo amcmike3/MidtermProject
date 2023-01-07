@@ -66,6 +66,21 @@ public class UserController {
 
 		return ans;
 	}
+	
+	@RequestMapping("userBio")
+	public ModelAndView userBio(Integer userId) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("userBio");
+
+		return mv;
+	}
+	@RequestMapping("userSessionBio")
+	public ModelAndView userSessionBio(Integer userId) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("userSessionBio");
+		
+		return mv;
+	}
 
 	@RequestMapping("getUser.do")
 	public String getUsersByKeyword(String username, Model model) {
