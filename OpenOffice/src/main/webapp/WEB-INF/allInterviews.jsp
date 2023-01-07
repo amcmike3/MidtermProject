@@ -18,7 +18,7 @@
 
 				<div class="card-title">
 					<h3>
-					${interview.user.username } wrote:
+					<a href="userBio?userId=${ interview.user.id}">${interview.user.username }</a> wrote:
 					<br>
 						<a href="interviewBio?interviewId=${interview.id }">${interview.title }</a>
 					</h3>

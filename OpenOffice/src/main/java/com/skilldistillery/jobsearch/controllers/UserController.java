@@ -71,9 +71,10 @@ public class UserController {
 	public ModelAndView userBio(Integer userId) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("userBio");
-
+		mv.addObject("user", dao.findById(userId));
 		return mv;
 	}
+	
 	@RequestMapping("userSessionBio")
 	public ModelAndView userSessionBio(Integer userId) {
 		ModelAndView mv = new ModelAndView();
