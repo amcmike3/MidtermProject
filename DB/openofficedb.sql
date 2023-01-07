@@ -253,7 +253,7 @@ CREATE TABLE IF NOT EXISTS `article` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(100) NOT NULL,
   `description` TEXT NOT NULL,
-  `article_url` VARCHAR(200) NULL,
+  `article_url` TEXT NULL,
   `date_posted` DATETIME NULL,
   `user_id` INT NOT NULL,
   `industry_id` INT NOT NULL,
@@ -280,8 +280,8 @@ DROP TABLE IF EXISTS `interview_question` ;
 
 CREATE TABLE IF NOT EXISTS `interview_question` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `title` VARCHAR(45) NULL,
-  `name` VARCHAR(45) NULL,
+  `title` VARCHAR(200) NULL,
+  `name` TEXT NULL,
   `description` TEXT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
@@ -365,6 +365,15 @@ COMMIT;
 START TRANSACTION;
 USE `open_officedb`;
 INSERT INTO `job` (`id`, `salary`, `years_experience`, `skills`, `education`, `certifications`, `company_id`, `industry_id`, `enabled`, `title`, `description`) VALUES (1, 89999, 25, 'Administration', 'Doctorates in website administration', 'Expert Administration from the institute the adminsters the certifications for administering administration expertly.', 1, 1, 1, 'administrator of adminstration', NULL);
+INSERT INTO `job` (`id`, `salary`, `years_experience`, `skills`, `education`, `certifications`, `company_id`, `industry_id`, `enabled`, `title`, `description`) VALUES (2, 120000, 1, 'writing code', 'Bachelors degree in computer science', 'CompTIA network+', 9, 2, 1, 'developer', 'develops software');
+INSERT INTO `job` (`id`, `salary`, `years_experience`, `skills`, `education`, `certifications`, `company_id`, `industry_id`, `enabled`, `title`, `description`) VALUES (3, 115000, 2, 'building stuff', 'Bachelors degree in computer science', 'none', 4, 3, 1, 'heavy equipment', 'operates earthmovers');
+INSERT INTO `job` (`id`, `salary`, `years_experience`, `skills`, `education`, `certifications`, `company_id`, `industry_id`, `enabled`, `title`, `description`) VALUES (4, 95000, 4, 'staying with in lines', 'Masters degree in underwater basket weaving', 'Divers certificate', 2, 4, 1, 'apraiser', 'looks at art');
+INSERT INTO `job` (`id`, `salary`, `years_experience`, `skills`, `education`, `certifications`, `company_id`, `industry_id`, `enabled`, `title`, `description`) VALUES (5, 100000, 1, 'making usable stuff', 'Bachelors degree in computer science', 'none', 7, 5, 1, 'miller', 'mills parts');
+INSERT INTO `job` (`id`, `salary`, `years_experience`, `skills`, `education`, `certifications`, `company_id`, `industry_id`, `enabled`, `title`, `description`) VALUES (6, 85000, 0, 'selling stuff', 'high school diploma', 'none', 10, 6, 1, 'clerk', 'runs register');
+INSERT INTO `job` (`id`, `salary`, `years_experience`, `skills`, `education`, `certifications`, `company_id`, `industry_id`, `enabled`, `title`, `description`) VALUES (7, 200000, 6, 'keeping your eye on the goal', 'high school diploma', 'Skill Distillery Bootcamp certification', 3, 7, 1, 'driver', 'racecar driver');
+INSERT INTO `job` (`id`, `salary`, `years_experience`, `skills`, `education`, `certifications`, `company_id`, `industry_id`, `enabled`, `title`, `description`) VALUES (8, 75000, 2, 'making things grow', 'high school diploma', 'Certified green thumb', 6, 8, 1, 'lawncare specialist', 'cuts grass, ensures growth');
+INSERT INTO `job` (`id`, `salary`, `years_experience`, `skills`, `education`, `certifications`, `company_id`, `industry_id`, `enabled`, `title`, `description`) VALUES (9, 85000, 0, 'making food edible', 'high school diploma', 'none', 10, 9, 1, 'frycook', 'deep fries oreos and cheesecake');
+INSERT INTO `job` (`id`, `salary`, `years_experience`, `skills`, `education`, `certifications`, `company_id`, `industry_id`, `enabled`, `title`, `description`) VALUES (10, 90500, 2, 'lifesaving, patience', 'Bachelors degree in computer science', 'none', 10, 10, 1, 'nurse', 'keeps people from dying');
 
 COMMIT;
 
@@ -394,6 +403,16 @@ COMMIT;
 START TRANSACTION;
 USE `open_officedb`;
 INSERT INTO `interview` (`id`, `process`, `comment_date`, `user_id`, `title`, `job_offered`, `questions`, `job_id`) VALUES (1, 'I applied for an administration job at the good company and they emailed me, to schedule a phone interview. After the phone interview we had 18 rounds of whiteboard interviews asking incredibly in depth data structure and algorithm questions. ', NULL, 1, 'What are data structures and algorithms?...', 1, 'Two Sum, Regex matching, Binary Search', 1);
+INSERT INTO `interview` (`id`, `process`, `comment_date`, `user_id`, `title`, `job_offered`, `questions`, `job_id`) VALUES (2, 'I applied for an administration job at the good company and they emailed me, to schedule a phone interview. After the phone interview we had 18 rounds of whiteboard interviews asking incredibly in depth data structure and algorithm questions.', '2000-01-01 0:00:00', 1, 'What are data structures and algorithms?...', 1, 'Two Sum, Regex matching, Binary Search', 1);
+INSERT INTO `interview` (`id`, `process`, `comment_date`, `user_id`, `title`, `job_offered`, `questions`, `job_id`) VALUES (3, 'I applied for a developer job at a big tech company and they reached out by email to schedule a phone interview. I felt like I passed the phone interview with flying colors and was scheduled a whiteboard interview shortly after. I was asked about the four pillars of object oriented programming and nearly had a nervous breakdown. It was my first whiteboard interview, so naturally, I completely bombed and they never followed up with me. ', '2001-01-01 0:00:00', 2, 'What are the 4 pillars of OOP?', 0, 'Abstraction, Encapsulation, Inheritance, Polymorphism', 2);
+INSERT INTO `interview` (`id`, `process`, `comment_date`, `user_id`, `title`, `job_offered`, `questions`, `job_id`) VALUES (4, 'I know a guy that knows a guy that works as a hiring manager at Google. Despite having connections, a phone interview was scheduled via email and the interview process began shortly after. The phone interview was a breeze, however the follow-up whiteboard interview was more challenging than expected. Going into incredibly deep programming concepts that only an expert programmer like myself would be able to answer.', '2002-01-01 0:00:00', 3, 'What are 3 commonly used data structures?', 1, 'Arrays, Linked Lists, Hash Tables', 3);
+INSERT INTO `interview` (`id`, `process`, `comment_date`, `user_id`, `title`, `job_offered`, `questions`, `job_id`) VALUES (5, 'What more can I say? My interview was a complete disaster. The phone interview went well enough, but boy oh boy was I not ready for the whiteboard interview. The interviewer had me attempt to write out a nested for loop which of course I forgot the syntax for. I was then asked to talk them through one of my previous projects, but of course that\'s the project that Alex McMichael solo carried our team on. It was a complete nightmare. Reminder to remove that project from my GitHub before next interview.', '2003-01-01 0:00:00', 4, 'What are data structures and algorithms?...', 0, 'Two Sum, Regex matching, Binary Search', 4);
+INSERT INTO `interview` (`id`, `process`, `comment_date`, `user_id`, `title`, `job_offered`, `questions`, `job_id`) VALUES (6, 'Today was my day. After aceing the phone interview, I found myself in an office room with three senior developers hammering me with questions. The last question regarding conditionals, tasked me with converting an if statement to a ternary. It was at that moment, the heavenly rays sent down from God himself enveloped my person and a vision came to me. I was reminded of Alex and his obsession early on in our coding bootcamp with ternaries. 16 weeks of arduous training and incessant dad jokes had brought me here, and I was ready. After receiving a standing ovation for my exemplary performance, I was offered a position starting at 6 figures.', '2004-01-01 0:00:00', 5, 'What are data structures and algorithms?...', 1, 'Two Sum, Regex matching, Binary Search', 5);
+INSERT INTO `interview` (`id`, `process`, `comment_date`, `user_id`, `title`, `job_offered`, `questions`, `job_id`) VALUES (7, '10 rounds of whiteboard interviews... 10 rounds... I was almost there. The interviewers asked me everything from hashmaps to arraylists, loops to arrays. Ultimately I was rejected because I am currently living in China.', '2005-01-01 0:00:00', 6, 'What are data structures and algorithms?...', 0, 'Two Sum, Regex matching, Binary Search', 6);
+INSERT INTO `interview` (`id`, `process`, `comment_date`, `user_id`, `title`, `job_offered`, `questions`, `job_id`) VALUES (8, 'I applied for an entry level software developer position that required 0-3 years experience and only really asked for a bachelors degree and working knowledge of some basic programming languages. I passed the first round of interviews and I just finished the second round. The email they sent me said that it was going to be a coding/problem solving interview and I should come with my favorite text editor(IDE) pulled up and my programming language of my choice which is java. They asked me about the 4 pillars of Object-Oriented Programming which was good to have studied before the exam. Naturally, as a graduate of Skill Distillery, I had no problem answering this question and was offered a position several days later.', '2006-01-01 0:00:00', 7, 'What are data structures and algorithms?...', 1, 'Two Sum, Regex matching, Binary Search', 7);
+INSERT INTO `interview` (`id`, `process`, `comment_date`, `user_id`, `title`, `job_offered`, `questions`, `job_id`) VALUES (9, 'After making it through the phone interview, I was sent a short technical scenario. A fictitious set of requirements to code a solution to at home with whatever resources I wanted and then submit it the following day. After submitting the technical piece, I was scheduled a formal interview and asked how to find the missing number in an array from 1 to 100. After proving my resourcefulness and problem-solving skills, I was able to impress the interviewer and later joined the company as a junior developer.', '2007-01-01 0:00:00', 8, 'What are data structures and algorithms?...', 1, 'Two Sum, Regex matching, Binary Search', 8);
+INSERT INTO `interview` (`id`, `process`, `comment_date`, `user_id`, `title`, `job_offered`, `questions`, `job_id`) VALUES (10, 'I applied for an administration job at the good company and they emailed me, to schedule a phone interview. After the phone interview we had 18 rounds of whiteboard interviews asking incredibly in depth data structure and algorithm questions.', '2008-01-01 0:00:00', 9, 'What are data structures and algorithms?...', 1, 'Two Sum, Regex matching, Binary Search', 9);
+INSERT INTO `interview` (`id`, `process`, `comment_date`, `user_id`, `title`, `job_offered`, `questions`, `job_id`) VALUES (11, 'What more can I say? My interview was a complete success. The phone interview went well enough, and boy oh boy was I ready for the whiteboard interview. The interviewer had me write out a nested for loop which of course I fremembered the syntax for. I was then asked to talk them through one of my previous projects, and luckily that\'s the project that Alex McMichael helped our team on every step of the way. It was a wonderful experience. Reminder to sticky that project to my GitHub front page before next interview.', '2009-01-01 0:00:00', 10, 'What are data structures and algorithms?...', 1, 'Two Sum, Regex matching, Binary Search', 10);
 
 COMMIT;
 
@@ -532,6 +551,17 @@ COMMIT;
 START TRANSACTION;
 USE `open_officedb`;
 INSERT INTO `article` (`id`, `title`, `description`, `article_url`, `date_posted`, `user_id`, `industry_id`) VALUES (1, 'the effects of frolicking on mental health', '\"tip-toeing through the tulips\" is often seen as a practice for those who are insane but does it have mental health benefits?', 'https://www.foxnews.com/lifestyle/twitter-user-discovers-frolicking-viral', '2000-01-01 00:00:00', 1, 1);
+INSERT INTO `article` (`id`, `title`, `description`, `article_url`, `date_posted`, `user_id`, `industry_id`) VALUES (2, 'develop softwere happienes', 'the first ever developer happines report', 'https://www.globenewswire.com/en/news-release/2022/09/28/2524236/0/en/Zenhub-Releases-the-Industry-s-First-Software-Developer-Happiness-Report.html', '2001-01-01 0:00:00', 3, 2);
+INSERT INTO `article` (`id`, `title`, `description`, `article_url`, `date_posted`, `user_id`, `industry_id`) VALUES (3, 'constuction employment increase', 'constuction employment to increase in 27 states', 'https://mecktimes.com/news/2022/12/20/construction-employment-increases-in-27-states/', '2002-01-01 0:00:00', 4, 3);
+INSERT INTO `article` (`id`, `title`, `description`, `article_url`, `date_posted`, `user_id`, `industry_id`) VALUES (4, 'art apraiser finds hidden message', 'an antique roadshow guest was left open-mouthed after an expert revealed the hidden message in a statue.', 'https://www.the-sun.com/entertainment/tv/4941657/antiques-roadshow-guest-shocked-hidden-message-statue-mother/', '2003-01-01 0:00:00', 7, 4);
+INSERT INTO `article` (`id`, `title`, `description`, `article_url`, `date_posted`, `user_id`, `industry_id`) VALUES (5, 'u.s. factories strong', 'its been a very good year for U.S. manufacturing ', 'https://www.npr.org/2022/10/20/1130021630/factories-factory-industrial-production-employment-jobs-economy', '2004-01-01 0:00:00', 2, 5);
+INSERT INTO `article` (`id`, `title`, `description`, `article_url`, `date_posted`, `user_id`, `industry_id`) VALUES (6, 'work saves lives', 'worker saves lives by hiding guest and coworkers in freezer', 'https://www.msn.com/en-us/news/crime/tops-worker-saved-lives-hiding-customers-colleagues-in-freezer/ar-AA145sjD', '2005-01-01 0:00:00', 10, 6);
+INSERT INTO `article` (`id`, `title`, `description`, `article_url`, `date_posted`, `user_id`, `industry_id`) VALUES (7, 'how i cheated on a race', 'crazy wall move wins race, why? SCIENCE', 'https://www.iflscience.com/nascar-driver-beats-other-racers-using-insane-physics-trick-he-saw-in-a-videogame-66033', '2006-01-01 0:00:00', 8, 7);
+INSERT INTO `article` (`id`, `title`, `description`, `article_url`, `date_posted`, `user_id`, `industry_id`) VALUES (8, 'landscapers move to 4-10s', 'landscapers happier with improved schedule', 'https://www.totallandscapecare.com/business/article/15114437/landscapers-move-to-a-410-work-week-makes-everyone-happier', '2007-01-01 0:00:00', 9, 8);
+INSERT INTO `article` (`id`, `title`, `description`, `article_url`, `date_posted`, `user_id`, `industry_id`) VALUES (9, 'the man the can the legend', 'fictional chef or a real live person, chef boyardee', 'https://www.npr.org/2011/05/17/136398042/the-man-the-can-recipes-of-the-real-chef-boyardee#:~:text=Stewart%2C%20Tabori%20%26%20Chang-,Unlike%20the%20friendly%20but%20fictional%20food%20faces%20of%20Betty%20Crocker,immigrated%20to%20America%20from%20Italy.', '2008-01-01 0:00:00', 6, 9);
+INSERT INTO `article` (`id`, `title`, `description`, `article_url`, `date_posted`, `user_id`, `industry_id`) VALUES (10, 'nursing takes to the seas', 'nursing on the high seas. meet new people, travell and get paid for it.', 'ajc.com/pulse/why-becoming-a-cruise-ship-nurse-might-be-the-job-for-you/ZGZ7XLLZL5DAFOVDFQQIEZK3PU/', '2009-01-01 0:00:00', 5, 10);
+INSERT INTO `article` (`id`, `title`, `description`, `article_url`, `date_posted`, `user_id`, `industry_id`) VALUES (11, 'guy happy for once', 'trollolo', 'https://youtu.be/oavMtUWDBTM', '2010-01-01 0:00:00', 4, 4);
+INSERT INTO `article` (`id`, `title`, `description`, `article_url`, `date_posted`, `user_id`, `industry_id`) VALUES (12, 'this guy got famous for this', 'here how to live forever. ', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', '2011-01-01 0:00:00', 5, 2);
 
 COMMIT;
 
@@ -544,6 +574,17 @@ USE `open_officedb`;
 INSERT INTO `interview_question` (`id`, `title`, `name`, `description`) VALUES (1, 'Two Sum', 'Two Sum', 'Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.\n\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\n\nYou can return the answer in any order.');
 INSERT INTO `interview_question` (`id`, `title`, `name`, `description`) VALUES (2, 'Regex Matching', 'Regex Matching', 'Given an input string s and a pattern p, implement regular expression matching with support for \'.\' and \'*\' where:\n\n\'.\' Matches any single character.​​​​\n\'*\' Matches zero or more of the preceding element.\nThe matching should cover the entire input string (not partial).');
 INSERT INTO `interview_question` (`id`, `title`, `name`, `description`) VALUES (3, 'Binary Search', 'Binary Search', 'Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.\n\nYou must write an algorithm with O(log n) runtime complexity.');
+INSERT INTO `interview_question` (`id`, `title`, `name`, `description`) VALUES (4, 'Rude they scheduled an interview and then said they weren\'t hiring', 'Who are you? we aren\'t hiring...', 'This company basically told me to screw off I even wore my bussines sweatpants and wife beater.... ');
+INSERT INTO `interview_question` (`id`, `title`, `name`, `description`) VALUES (5, 'Basic interview question', 'Tell us about yourself', 'just a basic question I think they were looking for me to sell them on why I am a good fit');
+INSERT INTO `interview_question` (`id`, `title`, `name`, `description`) VALUES (6, 'Basic interview question', 'Tell us about a time you failed', 'I told them how I used to fail at showing up on time but now I set 13 alarms to make sure I get up and get to work on time. Pretty sure they liked my answer!! still waiting to hear back...');
+INSERT INTO `interview_question` (`id`, `title`, `name`, `description`) VALUES (7, 'Basic interview question', 'Tell us about a time you had a disagreement with a co-worker', 'Told them about when I had a disagreement and resolved it through mediation');
+INSERT INTO `interview_question` (`id`, `title`, `name`, `description`) VALUES (8, 'Basic interview question', 'Why should we hire you?', 'Told them I was the best thing since sliced bread and they hired me on the spot');
+INSERT INTO `interview_question` (`id`, `title`, `name`, `description`) VALUES (9, 'Pretty sure this question is illegal....', 'What is your political affliation?', 'I mean I don\'t even know who the president is how would I know what political party I belong to');
+INSERT INTO `interview_question` (`id`, `title`, `name`, `description`) VALUES (10, 'Stay Away they want you to work 24/7', 'Do you have a problem working nights and weekends?', 'I said yes expecting them to be reasonable and in the job offer they wanted me to work 168 hours per week.');
+INSERT INTO `interview_question` (`id`, `title`, `name`, `description`) VALUES (11, 'Straight and to the point, I like it!', 'What are your salary expectations?', 'I told them as much as possible.');
+INSERT INTO `interview_question` (`id`, `title`, `name`, `description`) VALUES (12, 'This question made me cry...', 'When can you start?', 'I really needed this job I am so thankful and I love my boss!!');
+INSERT INTO `interview_question` (`id`, `title`, `name`, `description`) VALUES (13, 'This company expects you to be a genius', 'If you had to build facebook how would you do it? ', 'If I knew how to build facebook I probably wouldn\'t be at this interview....');
+INSERT INTO `interview_question` (`id`, `title`, `name`, `description`) VALUES (14, 'inappropriate question', 'What are some good stocks I should buy?', 'Definitely buy an S&P 500 ETF index fund but what does that have to do with a janitor position?..');
 
 COMMIT;
 
@@ -556,6 +597,30 @@ USE `open_officedb`;
 INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (1, 1);
 INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (1, 2);
 INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (1, 3);
+INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (1, 8);
+INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (10, 4);
+INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (2, 1);
+INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (2, 4);
+INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (3, 1);
+INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (4, 2);
+INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (4, 6);
+INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (4, 7);
+INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (4, 8);
+INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (5, 10);
+INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (5, 4);
+INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (5, 6);
+INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (5, 7);
+INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (5, 8);
+INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (5, 9);
+INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (6, 5);
+INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (6, 9);
+INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (7, 10);
+INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (7, 3);
+INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (7, 5);
+INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (7, 6);
+INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (8, 1);
+INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (8, 6);
+INSERT INTO `interview_has_interview_question` (`interview_id`, `interview_question_id`) VALUES (9, 5);
 
 COMMIT;
 

@@ -12,23 +12,24 @@
 	<%@include file="navbar.jsp"%>
 	<div class="container">
 		<div class="row">
-			<div class="col card card-body text-center">
-			<form action="createInterviewQuestion">
-			<input type="hidden" name="interviewId" value="${interviewId }"/>
-			<br/>
-			Title:
-			<input type="text" name="title" value="${question.title }"/>
-			<br/>
-			Question:
-			<input type="text" name="name" value="${question.name }"/>
-			<br/>
-			Description:
-			<input type="text" name="description" value="${question.description }"/>
-			<br/>
-			<input type="submit" value="Finish"/>
-			<br/>
-			<input type="submit" formaction="addAnotherInterviewQuestion" value="Add Another Question"/>
-			</form>
+			<div class="col card text-center">
+				<div class="card-title">
+					<h3>Interview:</h3>
+					<h5>Step 2/3</h5>
+				</div>
+				<div class="card-body">
+					<form action="createInterviewQuestion">
+						<input type="hidden" name="interviewId" value="${interviewId }" />
+						<br /> Title: <br /> <input type="text" name="title"
+							value="${question.title }" /> <br /> Question: <br /> <input
+							type="text" name="name" value="${question.name }" /> <br />
+						Description: <br /> <input type="text" name="description"
+							value="${question.description }" /> <br /> <input type="submit"
+							value="Finish" /> <br /> <input type="submit"
+							formaction="addAnotherInterviewQuestion"
+							value="Add Another Question" />
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>

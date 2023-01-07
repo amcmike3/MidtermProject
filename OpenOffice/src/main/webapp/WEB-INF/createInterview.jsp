@@ -12,28 +12,25 @@
 <body>
 	<%@include file="navbar.jsp"%>
 
-		<div class="container">
+	<div class="container">
 		<div class="row">
-			<div class="col card card-body text-center">
-			<form action="createInterview">
-			<input type="hidden" name="jobId" value="${jobId }"/>
-			<br/>
-			Title:
-			<input type="text" name="title""/>
-			<br/>
-			What was their interview process like?
-			<input type="text" name="process"/>
-			<br/>
-			Did you get a job offer?
-			<select
-					id="jobOffered" name="jobOffered">
-					<option value="false">No</option>
-					<option value="true">Yes</option>
-				</select>
-			
-			<br/>
-			<input type="submit" value="Next"/>
-			</form>
+			<div class="col card text-center">
+				<div class="card-title">
+					<h3>Interview:</h3>
+					<h5>Step 2/3</h5>
+				</div>
+				<div class="card-body">
+					<form action="createInterview">
+						<input type="hidden" name="jobId" value="${jobId }" /> <br />
+						Title: <br> <input type="text" name="title" /> <br /> What
+						was their interview process like? <br> <input type="text"
+							name="process" /> <br /> Did you get a job offer? <br /> <select
+							id="jobOffered" name="jobOffered">
+							<option value="false">No</option>
+							<option value="true">Yes</option>
+						</select> <br /> <input type="submit" value="Next" />
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>

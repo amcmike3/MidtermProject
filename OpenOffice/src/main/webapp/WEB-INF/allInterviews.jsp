@@ -18,12 +18,14 @@
 
 				<div class="card-title">
 					<h3>
-						<a href="">${question.title }</a>
+					${interview.user.username } wrote:
+					<br>
+						<a href="interviewBio?interviewId=${interview.id }">${interview.title }</a>
 					</h3>
 				</div>
+				<div class="card-body"></div>
 				<p>
-					${question.name } <br> ${question.description }
-
+				 ${interview.process }
 				</p>
 			</div>
 		</div>
