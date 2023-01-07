@@ -12,10 +12,10 @@
 		<div class="col containers">
 			<h5>Contributors with link to their github:</h5>
 			<ul>
+			<li><a href="https://github.com/amcmike3">Alex McMichael</a></li>
 			<li><a href="https://github.com/mdharr">Michael Harrington</a></li>
 			<li><a href="https://github.com/SandraLeAnn">Sandra Harpole</a></li>
 			<li><a href="https://github.com/djlynchy">Derek Lynch</a></li>
-			<li><a href="https://github.com/amcmike3">Alex McMichael</a></li>
 		
 			</ul>
 
