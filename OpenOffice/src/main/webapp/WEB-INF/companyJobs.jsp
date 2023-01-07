@@ -18,7 +18,7 @@
 	
 	<c:forEach var="job" items="${ companyJobs}">
 		<div class="row col card">
-			<h3>${job.title }</h3>
+			<h3><a href="jobBio?jobId=${job.id }">${job.title }</a></h3>
 			<p>${ job.description }</p>
 		</div>
 	</c:forEach>

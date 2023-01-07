@@ -15,7 +15,7 @@
 			<div class="col card text-center">
 				<div class="card-title">
 					<h3>Interview:</h3>
-					<h5>Step 2/3</h5>
+					<h5>Step 3/3</h5>
 				</div>
 				<div class="card-body">
 					<form action="createInterviewQuestion">
