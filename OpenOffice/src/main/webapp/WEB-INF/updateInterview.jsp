@@ -17,6 +17,7 @@
 		<div class="row">
 			<div class="col card card-body text-center">
 				<form action="updatingInterview">
+					<input type="hidden" name="id" value="${interview.id }">
 					<input type="hidden" name="companyId" value="${companyId }" /> <br />
 					Title: <input type="text" name="title" value="${interview.title}" />
 					<br /> What was their interview process like? <input type="text"
@@ -43,6 +44,7 @@
 
 					</p>
 					<form action="updateInterviewQuestion?questionId=${question.id }">
+						<input type="hidden" name="companyId" value="${companyId }">
 						<input type="hidden" name="interviewId" value="${interview.id }">
 						<input type="submit" value="update">
 						<input name="questionId" type="hidden" value="${question.id }">

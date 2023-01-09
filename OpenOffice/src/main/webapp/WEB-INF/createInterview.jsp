@@ -13,14 +13,16 @@
 <body>
 	<%@include file="navbar.jsp"%>
 
-	<div class="container">
+	<div class="containers text-center">
 		<div class="row">
-			<div class="col card text-center">
+			<div class="col title-container text-center">
 				<div class="card-title">
 					<h3>Interview:</h3>
 					<h5>Step 2/3</h5>
 				</div>
-				<div class="card-body">
+							</div>
+							<hr>
+				<div class="yellow-containers" style="width: 500px; margin: 0 auto;">
 					<form action="createInterview">
 						<input type="hidden" name="jobId" value="${jobId }" /> <br />
 						Title: <br> <input type="text" name="title" /> <br /> What
@@ -32,7 +34,7 @@
 						</select> <br /> <input type="submit" value="Next" />
 					</form>
 				</div>
-			</div>
+
 		</div>
 	</div>
 
