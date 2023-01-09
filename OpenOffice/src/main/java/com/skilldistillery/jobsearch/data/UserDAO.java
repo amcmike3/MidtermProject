@@ -18,5 +18,7 @@ public interface UserDAO {
 	User update(User newUser);
 	CompanyReview createUserReview(CompanyReview companyReview);
 	boolean deleteUser(Integer id);
+	User addSubscrCompToUserBio(Integer companyId, Integer userId);
+	
 
 }

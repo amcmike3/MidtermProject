@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.skilldistillery.jobsearch.data.CompanyDAO;
 import com.skilldistillery.jobsearch.data.UserDAO;
 import com.skilldistillery.jobsearch.entities.Company;
 import com.skilldistillery.jobsearch.entities.Job;
@@ -23,6 +24,9 @@ public class UserController {
 
 	@Autowired
 	private UserDAO dao;
+	
+	@Autowired
+	private CompanyDAO compDao;
 
 	@RequestMapping(path = "loggingIn", method = RequestMethod.POST)
 	public String login(String username, String password, HttpSession session) {
@@ -124,5 +128,23 @@ public class UserController {
 		
 		return "userDelete";
 	}
+	@RequestMapping("subscribe.do")
+	public ModelAndView subscribeToCompany(Integer companyId, Integer userId) {
+		ModelAndView mv = new ModelAndView();
+		User user = dao.addSubscrCompToUserBio(companyId, userId);
+		mv.addObject("user", user);
+		mv.setViewName("userBio");
+		return mv;
+	}
+	@RequestMapping(path = {"viewSubscription.do"})
+	public ModelAndView goToViewSubscriptions( Integer userId, HttpSession session) {
+		System.out.println(userId + " user id here!!!!!!!!!!!!!!!!!!!!!");
+		ModelAndView mv = new ModelAndView();
+		User user = dao.findById(userId);
+		mv.addObject("user", user);
+		session.setAttribute("user", user);
+		mv.setViewName("viewSubscription");
+		return mv;
 
+}
 }

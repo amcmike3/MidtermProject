@@ -125,6 +125,17 @@
 		</c:forEach>
 
 	</div>
+	<div class="white-containers text-center">
+		<c:choose>
+			<c:when test="${sessionScope.user.id == user.id}">
+				<form action="subscribe.do" method="GET">
+					<input name="userId" value="${user.id}" type="hidden" />
+					<input name="companyId" value="${company.id}" type="hidden" />
+					<button type="submit" >Subscribe</button>
+				</form>
+			</c:when>
+		</c:choose>
+	</div>
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
 </body>

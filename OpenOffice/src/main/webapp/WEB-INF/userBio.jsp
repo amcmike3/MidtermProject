@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,13 +13,12 @@
 <body>
 	<%@include file="navbar.jsp"%>
 	<div class="containers text-center">
-		<div class="row text-center" >
+		<div class="row text-center">
 			<div class="col-3" id="user-profile-pic-container">
 				<div class="card-title" style="padding: 0;">${user.firstName }
 					${user.lastName }</div>
 				<div class="card-body text-center">
-					<img class="user-bio-pic zoom"
-						src="${user.imgUrl }">
+					<img class="user-bio-pic zoom" src="${user.imgUrl }">
 				</div>
 
 			</div>
@@ -49,6 +48,24 @@
 						</div>
 
 					</c:forEach>
+				</div>
+				<div class="card-body title-container">
+					<h3>Subscription:</h3>
+					<br>
+					<c:forEach var="company" items="${user.companies}">
+						<div class="card white-containers">
+							<p>
+								<a href="companyBio?companyId=${company.id}">${company.name }</a>
+							</p>
+						</div>
+					</c:forEach>
+					<form action="viewSubscription.do" method="get">
+						<input type="hidden" name="userId" value="${user.id }">
+						<input type="hidden" name="companyId" value="${company.id }">
+						<button type="submit" >View
+							Subscriptions</button>
+					</form>
+
 				</div>
 			</div>
 		</div>
