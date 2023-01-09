@@ -30,6 +30,18 @@
 			</div>
 		</div>
 		<hr>
+			<div class="white-containers text-center">
+		<c:choose>
+			<c:when test="${sessionScope.user.id == user.id}">
+				<form action="subscribe.do" method="GET">
+					<input name="userId" value="${user.id}" type="hidden" />
+					<input name="companyId" value="${company.id}" type="hidden" />
+					<button type="submit" >Subscribe</button>
+				</form>
+			</c:when>
+		</c:choose>
+	</div>
+		<hr>
 		<div class="row col">
 			<img class="company-pic" alt="A fancy company picture should be here"
 				src="${company.images.get(0).imgUrl }">
@@ -143,7 +155,7 @@
 		</c:forEach>
 
 	</div>
-	<div class="white-containers text-center">
+<%-- 	<div class="white-containers text-center">
 		<c:choose>
 			<c:when test="${sessionScope.user.id == user.id}">
 				<form action="subscribe.do" method="GET">
@@ -153,7 +165,7 @@
 				</form>
 			</c:when>
 		</c:choose>
-	</div>
+	</div> --%>
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
 </body>
