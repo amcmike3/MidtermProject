@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <!DOCTYPE html>
 <html>
@@ -12,50 +13,57 @@
 <body>
 	<%@include file="navbar.jsp"%>
 	<div class="containers ">
-		
-		<div class="yellow-containers text-center">
+		<div class="title-container text-center">
+			<h1>SEARCH BY USER, COMPANY, OR JOB</h1>
+		</div>
+		<hr>
+		<div class="yellow-containers" style="width: 600px; margin: 0 auto;">
+		<div style="margin-left: 100px;">
 
 			<form action="getUser.do" method="GET">
-				Find Users by Username: <input type="text" name="username" required />
+				<input type="text" placeholder="search by username" name="username"
+					required />
 				<div class="btn">
 					<input id="btnDisplay" type="submit" value="Show User" />
 				</div>
 			</form>
 		</div>
-		<div class="yellow-containers text-center">
-
+		<div style="margin-left: 100px;">
 			<form action="getCompany.do" method="GET">
-				Find Companies by Name: <input type="text" name="name" required />
+				<input type="text" placeholder="search by company" name="name"
+					required />
 				<div class="btn">
-					<input id="btnDisplay"  type="submit"
-						value="Show Company" />
+					<input id="btnDisplay" type="submit" value="Show Company" />
 				</div>
 			</form>
 		</div>
-		<div class="yellow-containers text-center">
+		<div style="margin-left: 100px;">
 
 			<form action="getJob.do" method="GET">
-				Find Jobs by Title: <input type="text" name="title" required />
+				<input type="text" placeholder="search by job title" name="title"
+					required />
 				<div class="btn">
 					<input id="btnDisplay" type="submit" value="Show Job" />
 				</div>
 			</form>
 		</div>
-		<div class="row card yellow-containers">
-			<div class="containers btn text-center ">
+		</div>
+		<hr>
+		<div class="" id="show-all-btn-container" style="width: 700px; margin: 0 auto;">
+			<div class="">
 				<form action="allUser.do" method="GET">
 					<input id="btnDisplay" class="btn" type="submit"
 						value="Show All Users" />
 				</form>
 			</div>
-			<div class="containers btn text-center ">
+			<div class="">
 
 				<form action="allCompanies.do" method="GET">
 					<input id="btnDisplay" class="btn" type="submit"
 						value="Show All Companies" />
 				</form>
 			</div>
-			<div class="containers text-center btn show-all-btn">
+			<div class="">
 
 				<form action="allJobs.do" method="GET">
 					<input id="btnDisplay" class="btn" type="submit"

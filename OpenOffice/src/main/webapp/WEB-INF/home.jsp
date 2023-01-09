@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,14 +17,11 @@
 	<div class="containers">
 		<div class="row">
 			<div class="col-12 py-4">
-			<div class="yellow-containers">
-				<h2>Random Content...</h2>
-				<h5>Scroll down to see the Navbar stick</h5>
-				<h1>Open Office</h1>
-				${SMOKETEST}
+			<div class="title-container" style="text-align: center;">
+				<h1>WELCOME TO OPEN OFFICE</h1>
 			</div>
 				<hr>
-				<div class="yellow-containers">
+				<div class="white-containers">
 				<p>Sriracha biodiesel taxidermy organic post-ironic,
 					Intelligentsia salvia mustache 90's code editing brunch. Butcher
 					polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal
@@ -36,7 +34,7 @@
 					Williamsburg master cleanse hella DIY 90's blog.</p>
 				</div>
 				<hr>
-				<div class="yellow-containers">
+				<div class="white-containers">
 
 				<p>Ethical Kickstarter PBR asymmetrical lo-fi. Dreamcatcher
 					street art Carles, stumptown gluten-free Kickstarter artisan Wes
@@ -49,7 +47,7 @@
 					occupy YOLO Pitchfork fixie iPhone fanny pack art party Portland.</p>
 				</div>
 				<hr>
-				<div class="yellow-containers">
+				<div class="white-containers">
 
 				<p>Sriracha biodiesel taxidermy organic post-ironic,
 					Intelligentsia salvia mustache 90's code editing brunch. Butcher
@@ -63,7 +61,7 @@
 					Williamsburg master cleanse hella DIY 90's blog.</p>
 				</div>
 				<hr>
-				<div class="yellow-containers">
+				<div class="white-containers">
 
 				<p>Ethical Kickstarter PBR asymmetrical lo-fi. Dreamcatcher
 					street art Carles, stumptown gluten-free Kickstarter artisan Wes

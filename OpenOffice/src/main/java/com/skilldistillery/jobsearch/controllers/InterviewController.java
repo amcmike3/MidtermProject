@@ -40,13 +40,14 @@ public class InterviewController {
 	}
 	
 	@RequestMapping("sendToCreateInterview")
-	public String sendToCreateInterview(Integer jobId) {
-		return "createInterviewQuestion";
+	public String sendToCreateInterview(Integer jobId, Model model) {
+		model.addAttribute("jobId", jobId);
+		return "createInterview";
 	}
 	
 	@RequestMapping("createInterview")
 	public String createInterview(Integer jobId, Interview interview, Model model, HttpSession session) {
-			interview = dao.createInterview(jobId, interview, (User)session.getAttribute("user"));
+			interview = dao.createInterview(jobId, interview, (User) session.getAttribute("user"));
 			model.addAttribute("interviewId", interview.getId());
 			return "createInterviewQuestion";
 	}

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +16,7 @@
 			<div class="col card text-center">
 				<div class="card-title">
 					<h3>Interview:</h3>
-					<h5>Step 2/3</h5>
+					<h5>Step 3/3</h5>
 				</div>
 				<div class="card-body">
 					<form action="createInterviewQuestion">
