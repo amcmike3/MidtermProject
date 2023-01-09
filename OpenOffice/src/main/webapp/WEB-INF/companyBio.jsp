@@ -38,19 +38,32 @@
 		<div class="row col card text-center title-container">
 			<h1>Reviews</h1>
 		</div>
-		<c:forEach var="review" items="${company.reviews }">
-			<div class="row">
-				<div class="col card white-containers">
+		<c:choose>
+			<c:when test="${!empty company.reviews }]">
 
-					<p>
-						<a href="userBio?userId=${review.user.id }">
-							${review.user.username }</a> rated this company ${review.rating } out
-						of 10 <br> this is what they had to say about
-						${company.name}: <br> ${review.content }
-					</p>
-				</div>
-			</div>
-		</c:forEach>
+				<c:forEach var="review" items="${company.reviews }">
+					<div class="row">
+						<div class="col card white-containers">
+
+							<p>
+								<a href="userBio?userId=${review.user.id }">
+									${review.user.username }</a> rated this company ${review.rating }
+								out of 10 <br> this is what they had to say about
+								${company.name}: <br> ${review.content }
+							</p>
+						</div>
+					</div>
+				</c:forEach>
+			</c:when>
+			<c:otherwise>
+			<div class="row">
+						<div class="col card white-containers">
+						<p><a href="review.do?companyId=${company.id }">Be the first to contribute</a></p>
+						</div></div>
+
+			</c:otherwise>
+
+		</c:choose>
 
 		<hr>
 

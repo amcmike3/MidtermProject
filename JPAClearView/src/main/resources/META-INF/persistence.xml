@@ -6,7 +6,6 @@
 	<persistence-unit name="JPAOpenOffice">
 
 
-
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 		<!-- begin entities -->
