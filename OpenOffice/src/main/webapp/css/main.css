@@ -3,8 +3,6 @@ peach #E07A5F;
 navy blue #3D405B; 
 matcha #81B29A; 
 bland mustard #F2CC8F; */
-
-
 body {
 	background-color: #F4F1DE;
 	font-family: monospace, sans-serif;
@@ -177,11 +175,27 @@ button:hover {
 
 #show-all-btn-container {
 	display: flex;
+	flex-wrap: wrap;
 	background-color: #81B29A;
 	border: 1px solid;
 	box-shadow: 5px 10px 18px #888888;
 	padding: 25px;
 	justify-content: space-evenly;
+}
+
+@media screen and (max-width: 500px) {
+  #show-all-btn-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #search-form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
 }
 
 #site-logo {
@@ -192,7 +206,7 @@ button:hover {
 }
 
 .user-profile-pic {
-	width: auto; 
+	width: auto;
 	height: 44px;
 	border: 1px solid #ddd;
 	border-radius: 4px;
@@ -201,11 +215,13 @@ button:hover {
 }
 
 .user-bio-pic {
-	width: 200px; 
+
 	border: 1px solid #3D405B;
 	border-radius: 4px;
 	padding: 5px;
 	margin-top: 25px;
+	height: auto;
+	max-width: 100%;
 }
 
 .matcha {
@@ -228,23 +244,29 @@ button:hover {
 	padding: 50px;
 	margin-top: 25px !important;
 	text-align: center;
+	min-width: 175px;
+	max-height: 600px;
+	height: 500px;
 }
 
-.nav li{margin:0;}
+.nav li {
+	margin: 0;
+}
 
-.nav a {padding: 10px 10px; display:inline-block;}
+.nav a {
+	padding: 10px 10px;
+	display: inline-block;
+}
 
 tbody tr:hover {
 	color: white !important;
 	background-color: #F2CC8F;
 }
 
-
-
 hr {
-  margin: 50px;
-  border-width: 1px;
-  border-color:#333;
+	margin: 50px;
+	border-width: 1px;
+	border-color: #333;
 }
 
 company-bio-hr {
@@ -252,4 +274,3 @@ company-bio-hr {
 	border-width: 1px;
 	border-color: #333;
 }
-

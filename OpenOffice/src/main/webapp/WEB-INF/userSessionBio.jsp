@@ -27,7 +27,7 @@
 
 			</div>
 			<div class="col">
-				<div class="card-body title-container">
+				<div class="card-body title-container" style="min-width: 210px;">
 					<h3>Description:</h3>
 					<br>
 					<c:choose>
@@ -39,7 +39,7 @@
 						</c:otherwise>
 					</c:choose>
 				</div>
-				<div class="card-body title-container">
+				<div class="card-body title-container" style="min-width: 210px;">
 					<h3>Contributions:</h3>
 					<br>
 					<c:forEach var="review" items="${sessionScope.user.reviews }">
@@ -51,6 +51,16 @@
 							</p>
 						</div>
 
+					</c:forEach>
+				<input type="submit" formaction="createArticle" value="Add Article" />
+					<h4>Articles written by ${sessionScope.user.username}</h4>
+					<c:forEach var="article" items="${sessionScope.user.articles }">
+						<div class="card yellow-containers">
+							<p>
+								<a href="articleBio?articleId=${article.id }">
+									${article.title }</a>
+							</p>
+						</div>
 					</c:forEach>
 				</div>
 			</div>

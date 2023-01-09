@@ -38,19 +38,37 @@
 		<div class="row col card text-center title-container">
 			<h1>Reviews</h1>
 		</div>
-		<c:forEach var="review" items="${company.reviews }">
-			<div class="row">
-				<div class="col card white-containers">
-
-					<p>
-						<a href="userBio?userId=${review.user.id }">
-							${review.user.username }</a> rated this company ${review.rating } out
-						of 10 <br> this is what they had to say about
-						${company.name}: <br> ${review.content }
-					</p>
+		<c:choose>
+			<c:when test="${empty company.reviews }">
+				<div class="row">
+					<div class="col card white-containers">
+						<p>
+							<a href="review.do?companyId=${company.id }">Be the first to
+								contribute</a>
+						</p>
+					</div>
 				</div>
-			</div>
-		</c:forEach>
+
+			</c:when>
+			<c:otherwise>
+
+
+				<c:forEach var="review" items="${company.reviews }">
+					<div class="row">
+						<div class="col card white-containers">
+
+							<p>
+								<a href="userBio?userId=${review.user.id }">
+									${review.user.username }</a> rated this company ${review.rating }
+								out of 10 <br> this is what they had to say about
+								${company.name}: <br> ${review.content }
+							</p>
+						</div>
+					</div>
+				</c:forEach>
+			</c:otherwise>
+
+		</c:choose>
 
 		<hr>
 
@@ -66,7 +84,7 @@
 
 		<div class="row col card text-center white-containers">
 			<c:choose>
-				<c:when test="${company.jobs != null }">
+				<c:when test="${!empty company.jobs}">
 					<c:forEach var="i" begin="0" end="5" step="3">
 						<div class="row">
 							<c:forEach var="job" items="${company.jobs }" begin="${i }"
