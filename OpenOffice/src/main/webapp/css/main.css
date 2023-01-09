@@ -234,14 +234,12 @@ button:hover {
 
 .nav a {padding: 10px 10px; display:inline-block;}
 
-tbody tr :hover {
+tbody tr:hover {
 	color: white !important;
 	background-color: #F2CC8F;
 }
 
-table tr:hover {
-	background-color: #E07A5F;
-}
+
 
 hr {
   margin: 50px;
