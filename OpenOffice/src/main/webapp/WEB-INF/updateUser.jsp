@@ -32,7 +32,7 @@
 			<input type="text" name="email" placeholder="${sessionScope.user.email }"/>
 			<br>
 			Profile Picture:(image url) <br>
-			<input type="text" name="imgUrl" placeholder="${sessionScope.user.imgUrl }"/>
+			<input type="text" name="imgUrl" value="${sessionScope.user.imgUrl }"/>
 			<br>
 			<input type="submit" value="Update"/>
 			</form>

@@ -107,10 +107,9 @@ public class UserController {
 
 	@RequestMapping("updatingUser")
 	public String updateUser(User user, HttpSession session, Model model){
-		
 		session.setAttribute("user", dao.update(user));
 		
-		return "userBio";
+		return "userSessionBio";
 	}
 	
 	@RequestMapping("deleteUser")

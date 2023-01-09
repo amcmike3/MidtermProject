@@ -53,6 +53,8 @@ public class CompanyController {
 		mv.setViewName("companyBio");
 		Company company = dao.findCompanyById(companyId);
 		company.getJobs().size();
+		System.out.println("-------------------------" + company.getReviews());
+		company.getReviews().size();
 		mv.addObject("company", company);
 		return mv;
 	}
