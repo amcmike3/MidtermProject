@@ -13,12 +13,12 @@
 <body>
 	<%@include file="navbar.jsp"%>
 	<div class="containers ">
-		<div class="title-container text-center">
+		<div class="title-container text-center" style="max-width: 1000px; min-width: 300px; margin: 0 auto;">
 			<h1>SEARCH BY USER, COMPANY, OR JOB</h1>
 		</div>
 		<hr>
-		<div class="yellow-containers" style="width: 600px; margin: 0 auto;">
-		<div style="margin-left: 100px;">
+		<div class="yellow-containers" style="width: 600px; min-height: 100px; margin: 0 auto;">
+		<div id="search-form" style="margin-left: 100px;">
 
 			<form action="getUser.do" method="GET">
 				<input type="text" placeholder="search by username" name="username"

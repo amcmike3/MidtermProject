@@ -13,11 +13,11 @@
 <body>
 	<%@include file="navbar.jsp"%>
 	<div class="containers text-center">
-		<div class="title-container text-center">
+		<div class="title-container text-center" style="max-width: 1000px; min-width: 300px; margin: 0 auto;">
 			<h1>REGISTER A NEW ACCOUNT</h1>
 		</div>
 		<hr>
-		<div class="yellow-containers" style="width: 500px; margin: 0 auto;">
+		<div class="yellow-containers" style="max-width: 500px; min-width: 250px; min-height: 100px; margin: 0 auto;">
 			<c:choose>
 				<c:when test="${notUniqueUsername}">
 					<form action="registering" method="post">
