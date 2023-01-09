@@ -52,6 +52,7 @@
 						</div>
 
 					</c:forEach>
+				<input type="submit" formaction="createArticle" value="Add Article" />
 					<h4>Articles written by ${sessionScope.user.username}</h4>
 					<c:forEach var="article" items="${sessionScope.user.articles }">
 						<div class="card yellow-containers">

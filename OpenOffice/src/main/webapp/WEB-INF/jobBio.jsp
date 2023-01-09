@@ -51,6 +51,7 @@
 				</div>
 			</div>
 		</c:forEach>
+		<input type="submit" formaction="createArticle" value="Add Article" />
 		<hr>
 	</div>
 
