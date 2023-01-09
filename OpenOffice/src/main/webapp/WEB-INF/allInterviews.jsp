@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +15,7 @@
 	<h1>All Interview Experiences for ${job.title }</h1>
 	<c:forEach var="interview" items="${interviews }">
 		<div class="row">
-			<div class="col card">
+			<div class="col card matcha">
 
 				<div class="card-title">
 					<h3>

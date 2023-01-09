@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 	
 <!DOCTYPE html>
 <html>
@@ -30,7 +31,7 @@
 						<c:forEach var="user" items="${userList}">
 							<tr>
 								<td>${user.id}</td>
-								<td><a href="allUser.do?userId=${user.id}">${user.username}</a></td>
+								<td><a href="userBio?userId=${user.id}">${user.username}</a></td>
 								<td>${user.firstName}</td>
 								<td>${user.lastName}</td>
 								<td>${user.description}</td>
@@ -73,7 +74,7 @@
 							<tr>
 								<td>${company.id}</td>
 								<td><a href="companyBio?companyId=${company.id}">${company.name}</a></td>
-
+								<td>${company.location }</td>
 							</tr>
 						</c:forEach>
 					</tbody>

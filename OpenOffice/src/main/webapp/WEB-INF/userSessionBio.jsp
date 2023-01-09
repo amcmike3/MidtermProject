@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,23 +11,23 @@
 </head>
 <body>
 	<%@include file="navbar.jsp"%>
-	<div class="containers">
-		<div class="row">
-			<div class="col-3 card yellow-containers">
+	<div class="containers text-center">
+		<div class="row text-center">
+			<div class="col-3" id="user-profile-pic-container">
 				<div class="card-title">${sessionScope.user.firstName }
 					${sessionScope.user.lastName }</div>
 				<div class="card-body">
-					<img style="width: 100px; height: auto; !important"
+					<img class="user-bio-pic zoom"
 						src="${user.imgUrl }">
 				</div>
-				<div class="card card-body containers">
-					<a href="updateUser">Update Profile</a>
+				<div class="card-body yellow" style="margin-top: 40px;">
+					<a href="updateUser"><button class="button" style="color: white;">Update Profile</button></a>
 				</div>
 
 
 			</div>
-			<div class="col card yellow-containers">
-				<div class="card-body containers">
+			<div class="col">
+				<div class="card-body title-container">
 					<h3>Description:</h3>
 					<br>
 					<c:choose>
@@ -38,7 +39,7 @@
 						</c:otherwise>
 					</c:choose>
 				</div>
-				<div class="card-body containers">
+				<div class="card-body title-container">
 					<h3>Contributions:</h3>
 					<br>
 					<c:forEach var="review" items="${sessionScope.user.reviews }">

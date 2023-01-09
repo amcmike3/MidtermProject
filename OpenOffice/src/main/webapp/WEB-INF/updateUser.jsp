@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,33 +13,33 @@
 	<%@include file="navbar.jsp"%>
 	<div class="container">
 		<div class="row">
-			<div class="col card card-body text-center">
+			<div class="col card card-body matcha">
 			<form action="updatingUser">
 			<input type="hidden" name="id" value="${sessionScope.user.id }"/>
-			Description:
+			Description: <br>
 			<input type="text" name="description" placeholder="${sessionScope.user.description }"/>
-			<br/>
-			First Name:
+			<br>
+			First Name: <br>
 			<input type="text" name="firstName" placeholder="${sessionScope.user.firstName }"/>
-			<br/>
-			Last Name:
+			<br>
+			Last Name: <br>
 			<input type="text" name="lastName" placeholder="${sessionScope.user.lastName }"/>
-			<br/>
-			UserName:
+			<br>
+			UserName: <br>
 			<input type="text" name="username" placeholder="${sessionScope.user.username }"/>
-			<br/>
-			Email:
+			<br>
+			Email: <br>
 			<input type="text" name="email" placeholder="${sessionScope.user.email }"/>
-			<br/>
-			Profile Picture:(image url)
+			<br>
+			Profile Picture:(image url) <br>
 			<input type="text" name="imgUrl" placeholder="${sessionScope.user.imgUrl }"/>
-			<br/>
+			<br>
 			<input type="submit" value="Update"/>
 			</form>
 			</div>
 		</div>
 		<div>
-			<div class="col card card-body text-center bg-danger text-danger">
+			<div class="col card-body text-center cream" style="margin-top: 75px;">
 				<form action="deleteUser">
 				<input type="submit" value="Delete My Profile"/>
 				<input type="hidden" name="id" value="${sessionScope.user.id }"/>
