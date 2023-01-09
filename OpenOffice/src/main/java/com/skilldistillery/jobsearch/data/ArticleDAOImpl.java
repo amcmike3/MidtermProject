@@ -41,6 +41,26 @@ public class ArticleDAOImpl implements ArticleDAO {
 		ans = em.createQuery(jpql, Article.class).setParameter("title", "%" + title + "%").getResultList();
 		return ans;
 	}
+
+	@Override
+	public Article updateArticle(Article article) {
+		Article updateArticle = em.find(Article.class, article.getId());
+		System.out.println("--------------------------------------" + article);
+		System.out.println("--------------------------------------" + updateArticle);
+		updateArticle.setTitle(article.getTitle());
+		updateArticle.setDescription(article.getDescription());
+		
+		return updateArticle;
+	}
+
+	@Override
+	public boolean deleteArticle(Integer articleId) {
+		em.remove(findArticleById(articleId));
+		if(findArticleById(articleId) == null) {
+			return true;
+		}
+		return false;
+	}
 	
 	
 }

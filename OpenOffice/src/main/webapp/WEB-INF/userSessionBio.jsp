@@ -52,6 +52,15 @@
 						</div>
 
 					</c:forEach>
+					<h4>Articles written by ${sessionScope.user.username}</h4>
+					<c:forEach var="article" items="${sessionScope.user.articles }">
+						<div class="card yellow-containers">
+							<p>
+								<a href="articleBio?articleId=${article.id }">
+									${article.title }</a>
+							</p>
+						</div>
+					</c:forEach>
 				</div>
 			</div>
 		</div>

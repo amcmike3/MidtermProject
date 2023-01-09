@@ -12,5 +12,9 @@ public interface ArticleDAO {
 	List<Article> findArticle(String article);
 
 	List<Article> findAllArticles();
+
+	Article updateArticle(Article article);
+	
+	boolean deleteArticle(Integer articleId);
  
 }
