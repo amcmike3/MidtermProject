@@ -80,6 +80,26 @@
 					</tbody>
 				</table>
 			</c:when>
+			<c:when test="${articles != null }">
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>Article ID</th>
+							<th>Article Title</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="article" items="${articles}">
+							<tr>
+								<td>${article.id}</td>
+								<td><a href="articleBio?articleId=${article.id}">${article.title}</a></td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			
+			</c:when>
+			
 			<c:otherwise>
 				<h2>No results found</h2>
 			</c:otherwise>

@@ -27,7 +27,7 @@
 
 			</div>
 			<div class="col">
-				<div class="card-body title-container">
+				<div class="card-body title-container" style="min-width: 210px;">
 					<h3>Description:</h3>
 					<br>
 					<c:choose>
@@ -39,7 +39,7 @@
 						</c:otherwise>
 					</c:choose>
 				</div>
-				<div class="card-body title-container">
+				<div class="card-body title-container" style="min-width: 210px;">
 					<h3>Contributions:</h3>
 					<br>
 					<c:forEach var="review" items="${sessionScope.user.reviews }">
