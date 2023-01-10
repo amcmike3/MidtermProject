@@ -58,13 +58,13 @@ public class UserController {
 		} else {
 			User daoUser = dao.register(user);
 			if (daoUser != null) {
+				System.out.println("-----------------" + daoUser.isRole());
 				session.setAttribute("user", daoUser);
 				ans = "home";
 			} else {
 				ans = "register";
 			}
 		}
-
 		return ans;
 	}
 
@@ -159,6 +159,6 @@ public class UserController {
 	@RequestMapping("updateAUser")
 	public String updateAUser(Integer userId, Model model) {
 		model.addAttribute("user", dao.findById(userId));
-		return "updateAUser";
+		return "updatAUser";
 	}
 }
