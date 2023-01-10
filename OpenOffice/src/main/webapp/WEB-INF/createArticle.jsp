@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,20 +19,29 @@
 				<div class="card-title">
 					<h3>Articles</h3>
 				</div>
-							</div>
-							<hr>
-				<div class="yellow-containers" style="width: 500px; margin: 0 auto;">
+				<div class="card-body">
 					<form action="createArticle">
-						<input type="hidden" name="jobId" value="${jobId }" /> <br />
-						Title: <br> <input type="text" name="title" /> <br /> What
-						was their interview process like? <br> <input type="text"
-							name="process" /> <br /> 
-						 <br /> <input type="submit" value="Add Article" />
-					</form>
-				</div>
 
+						<br /> Title: <br /> <input type="text" name="title" />
+						<br /> Description: <br /> <input type="text" name="description" />
+						<br />Date: <br /> <input type="text" name="description" />
+						<br /> URL: <br /> <input type="text" name="articleUrl" />
+						<br /> Industry: <br /> <select name="industryId">
+							<c:forEach var="industry" items="${industryList }">
+								<option value="${industry.id}">"${industry.name }"</option>
+								<!-- <option value="industry.id">name</option>
+    <option value="industry.id">name</option> -->
+							</c:forEach>
+						</select> <br> <br />
+						
+							<button type="submit">Add Article</button>
+						</form>
+				</div>
+			</div>
 		</div>
+
 	</div>
+
 
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>

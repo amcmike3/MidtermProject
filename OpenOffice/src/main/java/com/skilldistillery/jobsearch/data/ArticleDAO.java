@@ -2,6 +2,8 @@ package com.skilldistillery.jobsearch.data;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import com.skilldistillery.jobsearch.entities.Article;
 import com.skilldistillery.jobsearch.entities.User;
 
@@ -13,8 +15,12 @@ public interface ArticleDAO {
 
 	List<Article> findAllArticles();
 
+<<<<<<< HEAD
+	Article createArticle(Article article, HttpSession session);
+=======
 	Article updateArticle(Article article);
 	
 	boolean deleteArticle(Integer articleId);
  
+>>>>>>> 35cea5e70953b2018e20910b6585d1f2e39de545
 }
