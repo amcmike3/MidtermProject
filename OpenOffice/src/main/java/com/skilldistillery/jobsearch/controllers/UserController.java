@@ -137,7 +137,6 @@ public class UserController {
 
 	@RequestMapping(path = { "viewSubscription.do" })
 	public ModelAndView goToViewSubscriptions(Integer userId, HttpSession session) {
-
 		ModelAndView mv = new ModelAndView();
 		User user = dao.findById(userId);
 		mv.addObject("user", user);
@@ -145,5 +144,11 @@ public class UserController {
 		mv.setViewName("viewSubscription");
 		return mv;
 
+	}
+	
+	@RequestMapping("adminCenter")
+	public String adminCenter(Integer userId, HttpSession session) {
+		return "adminCenter";
+		
 	}
 }
