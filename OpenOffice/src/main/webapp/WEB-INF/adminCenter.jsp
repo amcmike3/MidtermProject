@@ -26,9 +26,10 @@
 						value="Create Company" />
 				</form>
 			</div>
+			
 			<div class="">
 
-				<form action="updateCompany" method="GET">
+				<form action="updateACompany" method="GET">
 					<input type="text" placeholder="search by company id"
 						name="companyId" required />
 					<div class="btn">
@@ -36,6 +37,7 @@
 					</div>
 				</form>
 			</div>
+			
 			<div class="">
 
 				<form action="updateUser" method="GET">
@@ -46,6 +48,7 @@
 					</div>
 				</form>
 			</div>
+			
 			<div class="">
 
 				<form action="updateJob" method="GET">
@@ -56,6 +59,7 @@
 					</div>
 				</form>
 			</div>
+			
 			<div class="">
 
 				<form action="updateInterview" method="GET">
@@ -66,6 +70,7 @@
 					</div>
 				</form>
 			</div>
+			
 			<div class="">
 
 				<form action="updateArticle" method="GET">
@@ -76,6 +81,7 @@
 					</div>
 				</form>
 			</div>
+			
 			<div class="">
 
 				<form action="updateReview" method="GET">
@@ -85,7 +91,6 @@
 						<input id="btnDisplay" type="submit" value="Update Review" />
 					</div>
 				</form>
-
 			</div>
 		</div>
 	</div>
