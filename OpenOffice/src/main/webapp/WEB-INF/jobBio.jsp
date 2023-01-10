@@ -51,7 +51,9 @@
 				</div>
 			</div>
 		</c:forEach>
-		<input type="submit" formaction="createArticle" value="Add Article" />
+		<form action="createArticle.do" method="get">
+  					<button type="submit" style="center">Add Article</button>
+ 					 </form>
 		<hr>
 	</div>
 

@@ -1,10 +1,12 @@
 package com.skilldistillery.jobsearch.data;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
@@ -40,6 +42,14 @@ public class ArticleDAOImpl implements ArticleDAO {
 
 		ans = em.createQuery(jpql, Article.class).setParameter("title", "%" + title + "%").getResultList();
 		return ans;
+	}
+
+	@Override
+	public Article createArticle(Article article, HttpSession session) {
+		article.setDatePosted(LocalDateTime.now());
+		article.setUser((User) session.getAttribute("user"));
+		em.persist(article);
+		return article;
 	}
 	
 	

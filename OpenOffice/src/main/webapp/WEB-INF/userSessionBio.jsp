@@ -52,7 +52,9 @@
 						</div>
 
 					</c:forEach>
-				<input type="submit" formaction="createArticle" value="Add Article" />
+					<form action="createArticle.do" method="get">
+  					<button type="submit">Add Article</button>
+ 					 </form>
 				</div>
 			</div>
 		</div>
