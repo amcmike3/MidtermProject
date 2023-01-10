@@ -24,10 +24,22 @@
 				<a href="companyJobs?companyId=${company.id }">${company.name}
 					Jobs </a>
 			</div>
+			<c:choose>
+			<c:when test="${sessionScope.user != null }">
 			<div class="col card text-center white-containers">
 				<a href="review.do?companyId=${company.id }">Leave a review of
 					${company.name } </a>
+					
 			</div>
+			</c:when>
+			<c:otherwise>
+			<div class="col card text-center white-containers">
+				<a href="reviewLogin?companyId=${company.id }">Leave a review of
+					${company.name } </a>
+			</div>
+			
+			</c:otherwise>
+			</c:choose>
 		</div>
 		<hr>
 			<div class="white-containers text-center">

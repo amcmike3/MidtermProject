@@ -11,13 +11,22 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.skilldistillery.jobsearch.data.CompanyReviewDAO;
+import com.skilldistillery.jobsearch.data.IndustryDAO;
+import com.skilldistillery.jobsearch.data.IndustryDAOImpl;
+import com.skilldistillery.jobsearch.data.UserDAO;
+import com.skilldistillery.jobsearch.data.UserDaoImpl;
 import com.skilldistillery.jobsearch.entities.Company;
 import com.skilldistillery.jobsearch.entities.CompanyReview;
 import com.skilldistillery.jobsearch.entities.User;
 
 @Controller
 public class CompanyReviewController {
-
+	@Autowired
+	private UserDAO userDao;
+	
+	@Autowired
+	private IndustryDAO industryDao;
+	
 	@Autowired
 	private CompanyReviewDAO dao;
 
@@ -73,6 +82,33 @@ public class CompanyReviewController {
 		model.addAttribute("company", dao.findCompanyById(companyId));
 		
 		return "companyBio";
+	}
+	
+	@RequestMapping("reviewLogin")
+	public ModelAndView reviewLogin(Integer companyId) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("reviewLogin");
+		mv.addObject("companyId", companyId);
+		return mv;
+	}
+	
+	@RequestMapping("reviewLoggingIn")
+	public String reviewLoggingIn(String username, String password, HttpSession session, Model model, Integer companyId) {
+		String ans = "";
+		User user = userDao.login(username, password);
+		if (user == null) {
+			model.addAttribute("companyId", companyId);
+			ans = "reviewLogin";
+		} else {
+			model.addAttribute("company", dao.findCompanyById(companyId));
+			model.addAttribute("industryList", industryDao.getAll());
+			user.getReviews().size();
+			user.getArticles().size();
+			session.setAttribute("user", user);
+			ans = "pageForInterviewJobType";
+		}
+
+		return ans;
 	}
 
 }
