@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -23,7 +24,7 @@ public class ArticleController {
 
 	@Autowired
 	private ArticleDAO dao;
-	
+
 	@Autowired
 	private IndustryDAO industryDao;
 
@@ -41,7 +42,7 @@ public class ArticleController {
 		return "results";
 
 	}
-	
+
 	@RequestMapping("allArticles")
 	public String allArticles(Model model) {
 		model.addAttribute("articles", dao.findAllArticles());
@@ -51,8 +52,8 @@ public class ArticleController {
 	@RequestMapping("createArticle.do")
 	public String createArticle(Model model) {
 		model.addAttribute("industryList", industryDao.getAll());
-		
-			return "createArticle";
+
+		return "createArticle";
 	}
 
 	@RequestMapping("updateArticle")
@@ -60,34 +61,43 @@ public class ArticleController {
 		model.addAttribute("article", dao.findArticleById(articleId));
 		return "updateArticle";
 	}
-	
+
 	@RequestMapping("updatingArticle")
 	public String updatingArticle(Article article, Model model) {
 		System.out.println("-----------------------------" + article);
 		model.addAttribute("article", dao.updateArticle(article));
 		return "articleBio";
 	}
-	
+
 	@RequestMapping("deleteArticle")
 	public String deleteArticle(Integer articleId, Model model, HttpSession session) {
 		User user = dao.findArticleById(articleId).getUser();
-		
+
 		model.addAttribute("success", dao.deleteArticle(articleId));
 		GeneralController.refreshUser(user, session);
 		return "articleDeletedSuccess";
 	}
 
-	
-	@RequestMapping("createArticle")
+	@RequestMapping(path = "createArticle", method = RequestMethod.POST)
 	public ModelAndView createArticle(Integer industryId, Article article, HttpSession session) {
 		ModelAndView mv = new ModelAndView();
 		article.setIndustry(industryDao.findById(industryId));
-		
-		mv.addObject("article", dao.createArticle( article, session));
+		Article newArticle = dao.createArticle(article, session);
+
+		mv.addObject("article", newArticle);
+		mv.addObject("articleId", newArticle.getId());
+		mv.setViewName("redirect:createArticle?articleId=" + newArticle.getId());
+		return mv;
+	}
+
+	@RequestMapping(path = "createArticle", method = RequestMethod.GET)
+	public ModelAndView createArticleGet(Integer articleId) {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("article", dao.findArticleById(articleId));
 		mv.setViewName("articleBio");
 		return mv;
 	}
-	
+
 	@RequestMapping("updateAArticle")
 	public String updateAArticle(Integer articleId, Model model) {
 		model.addAttribute("article", dao.findArticleById(articleId));
