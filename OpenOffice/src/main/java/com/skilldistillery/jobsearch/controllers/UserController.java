@@ -151,4 +151,10 @@ public class UserController {
 		return "adminCenter";
 		
 	}
+	
+	@RequestMapping("updateAUser")
+	public String updateAUser(Integer userId, Model model) {
+		model.addAttribute("user", dao.findById(userId));
+		return "updateAUser";
+	}
 }

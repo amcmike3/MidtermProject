@@ -39,6 +39,9 @@
 						</c:forEach>
 					</tbody>
 				</table>
+				<c:if test="${sessionScope.user.role }">
+					<a href="updateAUser?userId=${user.id }"><button>Update</button></a>
+				</c:if>
 			</c:when>
 			<c:when test="${jobList != null}">
 				<table class="table table-striped table-hover">
@@ -79,6 +82,9 @@
 						</c:forEach>
 					</tbody>
 				</table>
+				<c:if test="${sessionScope.user.role }">
+					<a href="updateACompany"><button>Update</button></a>
+				</c:if>
 			</c:when>
 			<c:when test="${articles != null }">
 				<table class="table table-striped table-hover">
