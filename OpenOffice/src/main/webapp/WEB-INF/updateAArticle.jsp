@@ -13,7 +13,21 @@
 <body>
 	<%@include file="navbar.jsp"%>
 
-	<h1>Fix Me!!</h1>
+	<form action="updatingArticle" method="POST">
+					<input type="hidden" name="id" value="${article.id}"> <input
+						type="hidden" name="articleUrl" value="${article.articleUrl}">
+					<input type="hidden" name="articleId" value="${article.id }">
+					<label>Title</label> 
+					<br> 
+					<input type="text" name="title"
+						value="${article.title}"> 
+						<br> 
+						<label>Description</label>
+					<br> 
+					<input type="text" name="description" value="${article.description}"> 
+						<br> 
+						<input type="submit" value="Update Article" />
+				</form>
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
 </body>
