@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.skilldistillery.jobsearch.data.InterviewDAO;
 import com.skilldistillery.jobsearch.data.JobDAO;
 import com.skilldistillery.jobsearch.entities.Interview;
+import com.skilldistillery.jobsearch.entities.Job;
 import com.skilldistillery.jobsearch.entities.User;
 
 @Controller
@@ -84,6 +85,12 @@ public class InterviewController {
 	public String updateAInterview(Integer interviewId, Model model) {
 		model.addAttribute("interview", dao.findInterviewById(interviewId));
 		return "updateAInterview";
+	}
+	
+	@RequestMapping("updatingAInterview")
+	public String updatingAInterview(Interview interview, Model model) {
+		model.addAttribute("interview", dao.updateInterview(interview.getId(), interview));
+		return "adminCenter";
 	}
 	
 }

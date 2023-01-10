@@ -103,4 +103,10 @@ public class ArticleController {
 		model.addAttribute("article", dao.findArticleById(articleId));
 		return "updateAArticle";
 	}
+	
+	@RequestMapping("updatingAArticle")
+	public String updatingAArticle(Article article, Model model) {
+		model.addAttribute("article", dao.updateArticle(article));
+		return "adminCenter";
+	}
 }

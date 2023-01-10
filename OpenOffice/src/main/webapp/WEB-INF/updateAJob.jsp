@@ -24,33 +24,33 @@
 
 <h4>Please supply us with information about the job you interviewed for? </h4>
 
-<form action="updateAJob.do" method="POST">
+<form action="updatingAJob" method="POST">
 
-<input type="hidden" name="companyId" value="${company.id }">
+<input type="hidden" name="id" value="${job.id }">
 
   <label for="title">What is the title of the job you are applying for?</label><br>
   
-  <input type="text"  name="title"><br>
+  <input type="text"  name="title" value="${job.title }"><br>
   
   <label for="salary">What is the salary for this job?</label><br>
   
-  <input type="text" name="salary"><br>
+  <input type="text" name="salary" value="${job.salary }"><br>
   
   <label for="yearsOfExperience">Years of experience required?</label><br>
   
-  <input type="text"  name="yearsOfExperience"><br>
+  <input type="text"  name="yearsExperience" value="${job.yearsExperience }"><br>
   
   <label for="skills">Skills required for position?</label><br>
   
-  <input type="text"  name="skills"><br>
+  <input type="text"  name="skills" value="${job.skills }"><br>
   
   <label for="education">Education required?</label><br>
   
-  <input type="text" name="education"><br>
+  <input type="text" name="education" value="${job.education }"><br>
   
   <label for="certifications">Certifications required?</label><br>
   
-  <input type="text" name="certifications"><br>
+  <input type="text" name="certifications" value="${job.certifications }"><br>
  
 <!--   <label for="enabled">Is this company active?</label><br>
   
@@ -58,7 +58,7 @@
   
   <label for="description">Please provide a brief description of job being offered.</label><br>
   
-  <input type="text" name="description"><br>
+  <input type="text" name="description" value="${job.description }"><br>
   
   <select name="industryId">
   <c:forEach var="industry" items="${industryList }">

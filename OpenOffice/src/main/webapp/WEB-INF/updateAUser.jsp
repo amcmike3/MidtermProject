@@ -16,22 +16,22 @@
 	<div class="container">
 		<div class="row">
 			<div class="col card card-body matcha">
-			<form action="updateAUser">
+			<form action="updatingAUser">
 			<input type="hidden" name="id" value="${user.id }"/>
 			Description: <br>
-			<input type="text" name="description" placeholder="${user.description }"/>
+			<input type="text" name="description" value="${user.description }"/>
 			<br>
 			First Name: <br>
-			<input type="text" name="firstName" placeholder="${user.firstName }"/>
+			<input type="text" name="firstName" value="${user.firstName }"/>
 			<br>
 			Last Name: <br>
-			<input type="text" name="lastName" placeholder="${user.lastName }"/>
+			<input type="text" name="lastName" value="${user.lastName }"/>
 			<br>
 			UserName: <br>
-			<input type="text" name="username" placeholder="${user.username }"/>
+			<input type="text" name="username" value="${user.username }"/>
 			<br>
 			Email: <br>
-			<input type="text" name="email" placeholder="${user.email }"/>
+			<input type="text" name="email" value="${user.email }"/>
 			<br>
 			Profile Picture:(image url) <br>
 			<input type="text" name="imgUrl" value="${user.imgUrl }"/>

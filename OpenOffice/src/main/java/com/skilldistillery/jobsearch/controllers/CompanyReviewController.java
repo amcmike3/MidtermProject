@@ -125,5 +125,12 @@ public class CompanyReviewController {
 		model.addAttribute("review", dao.findReviewById(reviewId));
 		return "updateACompanyReview";
 	}
+	
+	@RequestMapping("updatingACompanyReview")
+	public String updatingACompanyReview(CompanyReview companyReview, Model model) {
+		model.addAttribute("companyReview", dao.updateCompanyReview(companyReview.getId(), companyReview));
+		return "adminCenter";
+	}
+	
 
 }
