@@ -94,6 +94,11 @@ public class CompanyController {
 		return "pageForInterviewJobType";
 		
 	}
+	
+	@RequestMapping("updateACompany")
+	public String updateACompnay() {
+		return "updateACompany";
+	}
 }
 
 

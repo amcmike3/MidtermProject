@@ -45,6 +45,7 @@ public class ArticleDAOImpl implements ArticleDAO {
 	}
 
 	@Override
+
 	public Article createArticle(Article article, HttpSession session) {
 		article.setDatePosted(LocalDateTime.now());
 		article.setUser((User) session.getAttribute("user"));
@@ -53,6 +54,8 @@ public class ArticleDAOImpl implements ArticleDAO {
 		
 	}
 	
+	
+
 	public Article updateArticle(Article article) {
 		Article updateArticle = em.find(Article.class, article.getId());
 		updateArticle.setTitle(article.getTitle());
@@ -68,6 +71,7 @@ public class ArticleDAOImpl implements ArticleDAO {
 			return true;
 		}
 		return false;
+
 	}
 	
 	

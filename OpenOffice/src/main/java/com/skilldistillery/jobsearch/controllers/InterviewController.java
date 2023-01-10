@@ -67,7 +67,6 @@ public class InterviewController {
 	
 	@RequestMapping("updatingInterview")
 	public String updatingInterview(Integer companyId, Interview interview, Model model) {
-		System.out.println("----------------------------" + interview);
 		dao.updateInterview(interview.getId(), interview);
 		model.addAttribute("company", dao.findCompanyById(companyId));
 		
