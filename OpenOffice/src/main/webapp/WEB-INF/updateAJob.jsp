@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Open Office Baseline</title>
+<title>Update A Job</title>
 <%@ include file="bootstrapHead.jsp"%>
 </head>
 
@@ -18,7 +18,7 @@
 				type="text" value="${job.id}" placeholder="${job.id }"><br>
 			
 			<label for="salary">Salary:</label><br> <input
-				type="text" id="salary" name="name" value="${company.salary}"><br>
+				type="text" id="salary" name="name" value="${job.salary}"><br>
 
 			<label for="yearsExperience">Years of Experience Required:</label><br> <input type="text"
 				id="location" name="yearsExperience" value="${job.yearsExperience}"><br>
@@ -37,15 +37,21 @@
 			<label for="description">Description:</label><br>
 			<input type="text" id="description" name="description" value="${job.description}"><br> <br>
 			
-			<label for="industry">Industry:</label><br> <input type="text" id="jobs"
-				name="industry" value="${job.industry}"><br> <br>
+			<%-- <%-- abel for="industry">Industry:</label><br> <input type="text" id="jobs"
+				name="industry" value="${job.industry}"> --%>
+				<select name="industryId">
+  			<c:forEach var="industry" items="${industryList }">
+    			<option value="${industry.id}">"${industry.name }"</option>
+
+  			</c:forEach>
+			</select> <br>
+				
+				<br> <br>
 				
 			 <label for="company">Company:</label><br>
 			<input type="text" id="company" name="company" value="${job.company}"><br> <br>
 			<br> 
-			 <label for="interviews">Interviews:</label><br>
-			<input type="text" id="interviews" name="interviews" value="${job.interviews}"><br> <br>
-			<br> 
+			
 			 <label for="Title">title:</label><br>
 			<input type="text" id="title" name="title" value="${job.title}"><br> <br>
 			<br> 

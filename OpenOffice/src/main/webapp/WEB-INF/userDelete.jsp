@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Open Office Baseline</title>
+<title>User Delete</title>
 <%@ include file="bootstrapHead.jsp"%>
 </head>
 

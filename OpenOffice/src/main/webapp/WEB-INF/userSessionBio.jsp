@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>UserBio</title>
+<title>User Bio</title>
 <%@ include file="bootstrapHead.jsp"%>
 </head>
 <body>

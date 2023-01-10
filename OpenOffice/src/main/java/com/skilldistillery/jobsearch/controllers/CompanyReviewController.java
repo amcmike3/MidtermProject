@@ -92,7 +92,7 @@ public class CompanyReviewController {
 		return mv;
 	}
 	
-	@RequestMapping("reviewLoggingIn")
+	@RequestMapping(path = "reviewLoggingIn", method = RequestMethod.POST)
 	public String reviewLoggingIn(String username, String password, HttpSession session, Model model, Integer companyId) {
 		String ans = "";
 		User user = userDao.login(username, password);
@@ -105,16 +105,32 @@ public class CompanyReviewController {
 			user.getReviews().size();
 			user.getArticles().size();
 			session.setAttribute("user", user);
-			ans = "pageForInterviewJobType";
+			ans = "redirect:reviewLoggingInGet?companyId=" + companyId;
 		}
 
 		return ans;
 	}
 	
-	@RequestMapping("updateAReview")
-	public String updateAReview(Integer reviewId, Model model) {
-		model.addAttribute("review", dao.findReviewById(reviewId));
-		return "updaeAReview";
+	@RequestMapping(path = "reviewLoggingInGet", method = RequestMethod.GET)
+	public String reviewLoggingInGet( Model model, Integer companyId) {
+		model.addAttribute("company", dao.findCompanyById(companyId));
+		model.addAttribute("industryList", industryDao.getAll());
+		return "pageForInterviewJobType";
 	}
+		
+	
+	
+	@RequestMapping("updateACompanyReview")
+	public String updateACompanyReview(Integer reviewId, Model model) {
+		model.addAttribute("review", dao.findReviewById(reviewId));
+		return "updateACompanyReview";
+	}
+	
+	@RequestMapping("updatingACompanyReview")
+	public String updatingACompanyReview(CompanyReview companyReview, Model model) {
+		model.addAttribute("companyReview", dao.updateCompanyReview(companyReview.getId(), companyReview));
+		return "adminCenter";
+	}
+	
 
 }

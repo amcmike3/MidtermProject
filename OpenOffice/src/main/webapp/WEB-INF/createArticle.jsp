@@ -20,7 +20,7 @@
 					<h3>Articles</h3>
 				</div>
 				<div class="card-body">
-					<form action="createArticle">
+					<form action="createArticle" method="post">
 
 						<br /> Title: <br /> <input type="text" name="title" />
 						<br /> Description: <br /> <input type="text" name="description" />

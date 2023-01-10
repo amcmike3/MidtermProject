@@ -11,4 +11,6 @@ public interface CompanyDAO {
 	List<Company> findAllCompanies();
 
 	Company findCompanyById(Integer companyId);
+	
+	Company updateCompany(Integer companyId, Company company);
 }

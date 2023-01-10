@@ -6,34 +6,35 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>User Bio</title>
+<title>Update A User</title>
 <%@ include file="bootstrapHead.jsp"%>
 </head>
+
 <body>
 	<%@include file="navbar.jsp"%>
+
 	<div class="container">
 		<div class="row">
 			<div class="col card card-body matcha">
-			<form action="updatingUser">
-			<input type="hidden" name="id" value="${sessionScope.user.id }"/>
-			<br>
+			<form action="updatingAUser">
+			<input type="hidden" name="id" value="${user.id }"/>
 			Description: <br>
-			<input type="text" name="description" placeholder="${sessionScope.user.description }"/>
+			<input type="text" name="description" value="${user.description }"/>
 			<br>
 			First Name: <br>
-			<input type="text" name="firstName" placeholder="${sessionScope.user.firstName }"/>
+			<input type="text" name="firstName" value="${user.firstName }"/>
 			<br>
 			Last Name: <br>
-			<input type="text" name="lastName" placeholder="${sessionScope.user.lastName }"/>
+			<input type="text" name="lastName" value="${user.lastName }"/>
 			<br>
 			UserName: <br>
-			<input type="text" name="username" placeholder="${sessionScope.user.username }"/>
+			<input type="text" name="username" value="${user.username }"/>
 			<br>
 			Email: <br>
-			<input type="text" name="email" placeholder="${sessionScope.user.email }"/>
+			<input type="text" name="email" value="${user.email }"/>
 			<br>
 			Profile Picture:(image url) <br>
-			<input type="text" name="imgUrl" value="${sessionScope.user.imgUrl }"/>
+			<input type="text" name="imgUrl" value="${user.imgUrl }"/>
 			<br>
 			<input type="submit" value="Update"/>
 			</form>
@@ -42,8 +43,8 @@
 		<div>
 			<div class="col card-body text-center cream" style="margin-top: 75px;">
 				<form action="deleteUser">
-				<input type="submit" value="Delete Profile"/>
-				<input type="hidden" name="id" value="${sessionScope.user.id }"/>
+				<input type="submit" value="Delete This Profile"/>
+				<input type="hidden" name="id" value="${user.id }"/>
 				</form>
 			</div>
 		</div>

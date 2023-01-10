@@ -15,6 +15,8 @@ public interface JobDAO {
 	Job findJobById(Integer jobId);
 
 	Job createJob(Job job);
+	
+	Job updateJob(Job job);
 
 
 		

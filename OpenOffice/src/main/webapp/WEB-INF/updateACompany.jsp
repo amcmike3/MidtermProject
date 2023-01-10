@@ -51,7 +51,9 @@
 			</select> <br> <input type="submit">
 
 		</form>
+
 	</div>
+
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
 </body>

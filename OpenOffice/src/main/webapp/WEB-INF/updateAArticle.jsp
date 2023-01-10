@@ -14,9 +14,11 @@
 	<%@include file="navbar.jsp"%>
 	<div class="container">
 		<div class="row">
+
 			<div class="col card card-body text-center">
 
 	<form action="updatingArticle" method="POST">
+
 					<input type="hidden" name="id" value="${article.id}"> <input
 						type="hidden" name="articleUrl" value="${article.articleUrl}">
 					<input type="hidden" name="articleId" value="${article.id }">
@@ -48,6 +50,7 @@
 				</div>
 				</div>
 				</div>
+
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
 </body>

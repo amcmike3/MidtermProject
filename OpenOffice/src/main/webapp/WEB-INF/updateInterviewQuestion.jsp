@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>UpdateInterviewQuestions</title>
+<title>Update Interview Questions</title>
 <%@ include file="bootstrapHead.jsp"%>
 </head>
 <body>
