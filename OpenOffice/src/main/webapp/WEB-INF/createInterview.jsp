@@ -23,7 +23,7 @@
 							</div>
 							<hr>
 				<div class="yellow-containers" style="width: 500px; margin: 0 auto;">
-					<form action="createInterview">
+					<form action="createInterview" method="post">
 						<input type="hidden" name="jobId" value="${jobId }" /> <br />
 						Title: <br> <input type="text" name="title" /> <br /> What
 						was their interview process like? <br> <input type="text"

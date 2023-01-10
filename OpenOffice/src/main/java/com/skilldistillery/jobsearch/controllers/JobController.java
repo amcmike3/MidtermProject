@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -75,9 +76,16 @@ public class JobController {
 		newJob.setCompany(company);
 
 		mv.addObject("jobId", newJob.getId());
-		mv.setViewName("redirect:createInterview?title=\"\"&process=\"\"&jobOffered=false");
+		mv.setViewName("redirect:createJob.do?jobId=" + newJob.getId());
 		return mv;
 	}
+	
+	@GetMapping("createJob.do")
+	public String jobTypeCreatedForInterviewGet( Integer jobId, Model model) {
+		model.addAttribute("jobId", jobId);
+		return "createInterview";
+	}
+	
 	
 	@RequestMapping("reviewJobLogin")
 	public ModelAndView reviewJobLogin(Integer jobId) {
@@ -98,12 +106,18 @@ public class JobController {
 			user.getReviews().size();
 			user.getArticles().size();
 			session.setAttribute("user", user);
-			ans = "createInterview";
+			ans = "redirect:reviewJobLoggingInGet?jobId=" + jobId;
 		}
 
 		return ans;
 	}
-	
+	@RequestMapping(path = "reviewJobLoggingInGet", method = RequestMethod.GET)
+	public String reviewJobLoggingInGET( Model model, Integer jobId) {
+		model.addAttribute("jobId", jobId);
+		
+		return "createInterview";
+	}
+		
 	@RequestMapping("updateAJob")
 	public String updateAJob(Integer jobId, Model model) {
 		model.addAttribute("job", dao.findJobById(jobId));
