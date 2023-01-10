@@ -52,6 +52,11 @@
 						</div>
 
 					</c:forEach>
+<<<<<<< HEAD
+					<form action="createArticle.do" method="get">
+  					<button type="submit">Add Article</button>
+ 					 </form>
+=======
 					<input type="submit" formaction="createArticle" value="Add Article" />
 					<h4>Articles written by ${sessionScope.user.username}</h4>
 					<c:forEach var="article" items="${sessionScope.user.articles }">
@@ -62,6 +67,7 @@
 							</p>
 						</div>
 					</c:forEach>
+>>>>>>> 35cea5e70953b2018e20910b6585d1f2e39de545
 				</div>
 				<div class="card-body title-container">
 						<h3>Subscription:</h3>
