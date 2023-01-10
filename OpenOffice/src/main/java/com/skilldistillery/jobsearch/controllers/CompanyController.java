@@ -106,8 +106,8 @@ public class CompanyController {
 	
 	@RequestMapping("creatingCompany")
 	public String creatingCompany(Company company, Model model) {
-		
-		return "adminCenter";
+		dao.createCompany(company);
+		return "redirect:adminCenter";
 	}
 	
 	@RequestMapping("updateACompany")
@@ -119,7 +119,7 @@ public class CompanyController {
 	@RequestMapping("updatingACompany")
 	public String updatingACompany(Company company, Model model) {
 		model.addAttribute("company", dao.updateCompany(company.getId(), company));
-		return "adminCenter";
+		return "redirect:adminCenter";
 	}
 	
 }

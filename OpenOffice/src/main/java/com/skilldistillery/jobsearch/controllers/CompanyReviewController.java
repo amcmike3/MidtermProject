@@ -129,7 +129,7 @@ public class CompanyReviewController {
 	@RequestMapping("updatingACompanyReview")
 	public String updatingACompanyReview(CompanyReview companyReview, Model model) {
 		model.addAttribute("companyReview", dao.updateCompanyReview(companyReview.getId(), companyReview));
-		return "adminCenter";
+		return "redirect:adminCenter";
 	}
 	
 

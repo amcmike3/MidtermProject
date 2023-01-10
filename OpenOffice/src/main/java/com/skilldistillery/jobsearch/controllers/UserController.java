@@ -164,7 +164,7 @@ public class UserController {
 	@RequestMapping("updatingAUser")
 	public String updatingAUser(User user, Model model) {
 		model.addAttribute("user", dao.update(user));
-		return "adminCenter";
+		return "redirect:adminCenter";
 	}
 	
 

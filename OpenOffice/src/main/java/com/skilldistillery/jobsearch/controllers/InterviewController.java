@@ -78,7 +78,7 @@ public class InterviewController {
 		dao.updateInterview(interview.getId(), interview);
 		model.addAttribute("company", dao.findCompanyById(companyId));
 		
-		return "companyBio";
+		return "redirect:companyBio";
 	}
 	
 	@RequestMapping("updateAInterview")
@@ -90,7 +90,7 @@ public class InterviewController {
 	@RequestMapping("updatingAInterview")
 	public String updatingAInterview(Interview interview, Model model) {
 		model.addAttribute("interview", dao.updateInterview(interview.getId(), interview));
-		return "adminCenter";
+		return "redirect:adminCenter";
 	}
 	
 }

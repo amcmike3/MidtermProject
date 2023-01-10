@@ -13,4 +13,6 @@ public interface CompanyDAO {
 	Company findCompanyById(Integer companyId);
 	
 	Company updateCompany(Integer companyId, Company company);
+	
+	Company createCompany(Company company);
 }

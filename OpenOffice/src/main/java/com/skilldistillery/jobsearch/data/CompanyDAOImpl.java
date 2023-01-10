@@ -59,4 +59,12 @@ public class CompanyDAOImpl implements CompanyDAO{
 		return oldCompany;
 	}
 
+
+	@Override
+	public Company createCompany(Company company) {
+		em.persist(company);
+		company = em.find(Company.class, company.getId());
+		return company;
+	}
+
 }
