@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-	<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
-	
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,13 +35,13 @@
 								<td>${user.firstName}</td>
 								<td>${user.lastName}</td>
 								<td>${user.description}</td>
+								<td><c:if test="${sessionScope.user.role }">
+										<a href="updateAUser?userId=${user.id }"><button>Update</button></a>
+									</c:if></td>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
-				<c:if test="${sessionScope.user.role }">
-					<a href="updateAUser?userId=${user.id }"><button>Update</button></a>
-				</c:if>
 			</c:when>
 			<c:when test="${jobList != null}">
 				<table class="table table-striped table-hover">
@@ -58,6 +58,9 @@
 								<td>${job.id}</td>
 								<td><a href="jobBio?jobId=${job.id}">${job.title}</a></td>
 								<td>${job.salary}</td>
+								<td><c:if test="${sessionScope.user.role }">
+										<a href="updateAJob?jobId=${job.id }"><button>Update</button></a>
+									</c:if></td>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -78,13 +81,13 @@
 								<td>${company.id}</td>
 								<td><a href="companyBio?companyId=${company.id}">${company.name}</a></td>
 								<td>${company.location }</td>
+								<td><c:if test="${sessionScope.user.role }">
+										<a href="updateACompany?companyId=${company.id }"><button>Update</button></a>
+									</c:if></td>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
-				<c:if test="${sessionScope.user.role }">
-					<a href="updateACompany"><button>Update</button></a>
-				</c:if>
 			</c:when>
 			<c:when test="${articles != null }">
 				<table class="table table-striped table-hover">
@@ -99,19 +102,22 @@
 							<tr>
 								<td>${article.id}</td>
 								<td><a href="articleBio?articleId=${article.id}">${article.title}</a></td>
+								<td><c:if test="${sessionScope.user.role }">
+										<a href="updateAArticle?articleId=${article.id }"><button>Update</button></a>
+									</c:if></td>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
-			
+
 			</c:when>
-			
+
 			<c:otherwise>
 				<h2>No results found</h2>
 			</c:otherwise>
 		</c:choose>
 	</div>
-	
+
 	<%@include file="footer.jsp"%>
 	<%@include file="bootstrapFoot.jsp"%>
 </body>

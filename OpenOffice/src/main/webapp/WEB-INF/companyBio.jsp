@@ -18,6 +18,9 @@
 			<p>${company.description }
 				<br>
 			</p>
+			<c:if test="${sessionScope.user.role }">
+				<a href="updateACompany?companyId=${company.id }"><button>Update</button></a>
+			</c:if>
 		</div>
 		<div class="row">
 			<div class="col card text-center white-containers">

@@ -18,6 +18,11 @@
 				<div class="card-title">
 					<h1>${article.title }</h1>
 					<br />
+					<c:if test="${sessionScope.user.role }">
+						<a href="updateAArticle?articleId=${article.id }"><button>Update</button></a>
+					</c:if>
+					<br />
+
 					<p>
 						${article.datePosted.dayOfMonth }, ${article.datePosted.month },
 						${article.datePosted.year} <br /> <a
