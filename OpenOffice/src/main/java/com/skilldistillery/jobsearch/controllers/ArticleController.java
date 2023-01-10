@@ -107,6 +107,6 @@ public class ArticleController {
 	@RequestMapping("updatingAArticle")
 	public String updatingAArticle(Article article, Model model) {
 		model.addAttribute("article", dao.updateArticle(article));
-		return "adminCenter";
+		return "redirect:adminCenter";
 	}
 }

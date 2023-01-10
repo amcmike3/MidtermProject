@@ -127,9 +127,8 @@ public class JobController {
 	
 	@RequestMapping("updatingAJob")
 	public String updatingAJob(Job job, Model model) {
-		System.out.println("--------------------------------------------" + job);
 		model.addAttribute("job", dao.updateJob(job));
-		return "adminCenter";
+		return "redirect:adminCenter";
 	}
 	
 
