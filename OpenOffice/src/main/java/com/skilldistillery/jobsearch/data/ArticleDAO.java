@@ -17,10 +17,9 @@ public interface ArticleDAO {
 
 	Article createArticle(Article article, HttpSession session);
 	
+	Article updateArticle(Article article);
+	
 	boolean deleteArticle(Integer articleId);
 
-	Object updateArticle(Article article);
-
-	
  
 }

@@ -146,12 +146,14 @@ public class UserController {
 
 	}
 	
+	
 	@RequestMapping("adminCenter")
-	public String adminCenter(Integer userId, HttpSession session) {
+	public String adminCenter(Integer userId, HttpSession session, Model model, User user) {
+		
 		return "adminCenter";
 		
 	}
-	
+		
 	@RequestMapping("updateAUser")
 	public String updateAUser(Integer userId, Model model) {
 		model.addAttribute("user", dao.findById(userId));

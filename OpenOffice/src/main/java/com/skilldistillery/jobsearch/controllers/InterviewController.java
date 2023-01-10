@@ -73,4 +73,10 @@ public class InterviewController {
 		return "companyBio";
 	}
 	
+	@RequestMapping("updateAInterview")
+	public String updateAInterview(Integer interviewId, Model model) {
+		model.addAttribute("interview", dao.findInterviewById(interviewId));
+		return "updateAInterview";
+	}
+	
 }

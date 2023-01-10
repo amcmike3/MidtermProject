@@ -17,6 +17,9 @@
 			<h1>${job.title }at${job.company.name }</h1>
 			<p>${job.description }
 				<br>
+				<c:if test="${sessionScope.user.role }">
+					<a href="updateAJob?jobId=${job.id }"><button>Update</button></a>
+				</c:if>
 			</p>
 		</div>
 		<div class="row">
@@ -67,8 +70,8 @@
 			</div>
 		</c:forEach>
 		<form action="createArticle.do" method="get">
-  					<button type="submit" style="center">Add Article</button>
- 					 </form>
+			<button type="submit" style="">Add Article</button>
+		</form>
 		<hr>
 	</div>
 

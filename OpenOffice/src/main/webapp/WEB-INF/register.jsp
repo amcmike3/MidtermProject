@@ -21,13 +21,13 @@
 			<c:choose>
 				<c:when test="${notUniqueUsername}">
 					<form action="registering" method="post">
-						<input type="text" value="${user.email }" name="email"> <input
+						<input type="text" value="${user.email }" name="email"> <input style="border-color: red; color: red; !important"
 							type="text" placeholder="${user.username } is not unique"
 							name="username"> <input type="password"
 							placeholder="password" name="password"> <input
 							type="text" value="${user.firstName }" name="firstName">
 						<input type="text" value="${user.lastName }" name="lastName">
-						<input type="hidden" value="user" name="role"> <input
+						<input type="hidden" value="${0 }" name="role"> <input
 							type="hidden" value="true" name="enabled"> <input
 							type="submit" value="Register">
 
@@ -36,7 +36,7 @@
 				</c:when>
 				<c:when test="${notUniqueEmail}">
 					<form action="registering" method="post">
-						<input style="border-color: red; !important" type="text"
+						<input style="border-color: red; color: red; !important" type="text"
 							placeholder="${user.email } is not unique" name="email">
 						<br> <input type="text" value="${user.username }"
 							name="username"> <br> <input type="password"
@@ -44,7 +44,7 @@
 							type="text" value="${user.firstName }" name="firstName">
 						<br> <input type="text" value="${user.lastName }"
 							name="lastName"> <br> <input type="hidden"
-							value="user" name="role"> <input type="hidden"
+							value="${0 }" name="role"> <input type="hidden"
 							value="true" name="enabled"> <input type="submit"
 							value="Register"> <br>
 
@@ -60,7 +60,7 @@
 							name="password"> <br> <input type="text"
 							placeholder="first name" name="firstName"> <br> <input
 							type="text" placeholder="last name" name="lastName"> <br>
-						<input type="hidden" value="user" name="role"> <input
+						<input type="hidden" value="${0 }" name="role"> <input
 							type="hidden" value="true" name="enabled"> <input
 							type="submit" value="Register"> <br>
 
