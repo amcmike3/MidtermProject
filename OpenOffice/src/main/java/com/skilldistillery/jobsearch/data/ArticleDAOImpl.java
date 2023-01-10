@@ -51,7 +51,10 @@ public class ArticleDAOImpl implements ArticleDAO {
 		article.setUser((User) session.getAttribute("user"));
 		em.persist(article);
 		return article;
+		
 	}
+	
+	
 
 	public Article updateArticle(Article article) {
 		Article updateArticle = em.find(Article.class, article.getId());
