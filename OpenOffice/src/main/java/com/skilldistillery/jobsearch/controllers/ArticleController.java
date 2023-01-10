@@ -87,4 +87,10 @@ public class ArticleController {
 		mv.setViewName("articleBio");
 		return mv;
 	}
+	
+	@RequestMapping("updateAArticle")
+	public String updateAArticle(Integer articleId, Model model) {
+		model.addAttribute("article", dao.findArticleById(articleId));
+		return "updateAArticle";
+	}
 }

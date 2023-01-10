@@ -102,4 +102,11 @@ public class JobController {
 
 		return ans;
 	}
+	
+	@RequestMapping("updateAJob")
+	public String updateAJob(Integer jobId, Model model) {
+		model.addAttribute("job", dao.findJobById(jobId));
+		return "updateAJob";
+	}
+	
 }

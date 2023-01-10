@@ -21,6 +21,9 @@
 					<img class="user-bio-pic zoom" src="${user.imgUrl }">
 				</div>
 
+				<c:if test="${sessionScope.user.role }">
+					<a href="updateAUser?userId=${user.id }"><button>Update</button></a>
+				</c:if>
 			</div>
 			<div class="col matcha">
 				<div class="card-body title-container">
@@ -53,19 +56,18 @@
 					<h3>Subscription:</h3>
 					<br>
 					<c:forEach var="company" varStatus="loop" items="${user.companies}">
-					<c:if test="${loop.index <= 1 }">
-						<div class="card white-containers">
-							<p>
-								<a href="companyBio?companyId=${company.id}">${company.name }</a>
-							</p>
-						</div>
+						<c:if test="${loop.index <= 1 }">
+							<div class="card white-containers">
+								<p>
+									<a href="companyBio?companyId=${company.id}">${company.name }</a>
+								</p>
+							</div>
 						</c:if>
 					</c:forEach>
 					<form action="viewSubscription.do" method="get">
-						<input type="hidden" name="userId" value="${user.id }">
-						<input type="hidden" name="companyId" value="${company.id }">
-						<button type="submit" >View
-							Subscriptions</button>
+						<input type="hidden" name="userId" value="${user.id }"> <input
+							type="hidden" name="companyId" value="${company.id }">
+						<button type="submit">View Subscriptions</button>
 					</form>
 
 				</div>
