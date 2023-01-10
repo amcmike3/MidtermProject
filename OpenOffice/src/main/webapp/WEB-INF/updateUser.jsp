@@ -16,6 +16,7 @@
 			<div class="col card card-body matcha">
 			<form action="updatingUser">
 			<input type="hidden" name="id" value="${sessionScope.user.id }"/>
+			<br>
 			Description: <br>
 			<input type="text" name="description" placeholder="${sessionScope.user.description }"/>
 			<br>

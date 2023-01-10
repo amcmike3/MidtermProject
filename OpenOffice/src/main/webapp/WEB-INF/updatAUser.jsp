@@ -16,8 +16,9 @@
 		<div class="row">
 			<div class="col card card-body matcha">
 			<form action="updatingUser">
-			<label>User ID:</label>
+			<label>User ID:</label><br>
 			<input type="text" name="id" value="${user.id }"/>
+			<br>
 			Description: <br>
 			<input type="text" name="description" placeholder="${user.description }"/>
 			<br>
@@ -40,22 +41,27 @@
 			Email: <br>
 			<input type="text" name="email" placeholder="${user.email }"/>
 			<br>
+			
 			Profile Picture:(image url) <br>
-			<input type="text" name="imgUrl" value="${user.imgUrl }"/>
+			<input type="text" name="imgUrl" placeholder="${user.imgUrl }"/>
 			<br>
+			
 			Articles: <br>
 			<input type="text" name="articles" placeholder="${user.articles }"/>
 			<br>
+			
 			Reviews: <br>
 			<input type="text" name="reviews" placeholder="${user.reviews }"/>
 			<br>
+			
 			Interviews: <br>
 			<input type="text" name="interviews" placeholder="${user.interviews }"/>
 			<br>
+			
 			Subscriptions: <br>
 			<input type="text" name="companies" placeholder="${user.companies }"/>
 			<br>
-			 <label for="">Enable?</label> <select
+			 <label for="enabled">Enable?</label> <select
 				id="enabled" name="enabled">
 				<option value="true">Yes</option>
 				<option value="false">No</option>

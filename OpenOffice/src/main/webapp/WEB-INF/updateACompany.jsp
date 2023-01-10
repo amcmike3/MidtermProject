@@ -15,7 +15,7 @@
 	<div>
 		<form>
 			<label for="id">Company ID:</label> <input id="id" name="id"
-				type="text" value="${company.id}" placeholder="${company.id }">
+				type="hidden" value="${company.id}"><br>
 			
 			<label for="name">Name of Company:</label><br> <input
 				type="text" id="name" name="name" value="${company.name}"><br>
