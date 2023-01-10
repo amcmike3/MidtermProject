@@ -96,10 +96,18 @@ public class CompanyController {
 	}
 	
 	@RequestMapping("updateACompany")
-	public String updateACompnay(Integer companyId, Model model) {
+	public String updateACompany(Integer companyId, Model model) {
 		model.addAttribute("company", dao.findCompanyById(companyId));
-		return "updateACompany";
+		return "updateCompany";
 	}
+	
+	@RequestMapping("createCompany")
+	public String createCompany(Integer userId, HttpSession session, Model model, User user) {
+		
+		return "createCompany";
+		
+	}
+	
 }
 
 

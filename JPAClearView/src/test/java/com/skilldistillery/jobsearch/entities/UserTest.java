@@ -44,7 +44,7 @@ class UserTest {
 		assertNotNull(user);
 		assertEquals(1, user.getId());
 		assertEquals("openadmin", user.getPassword());
-		assertEquals("admin", user.getRole());
+		assertTrue( user.isRole());
 	}
 
 	@Test

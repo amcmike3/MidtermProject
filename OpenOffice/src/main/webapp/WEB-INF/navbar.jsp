@@ -12,7 +12,7 @@
 		<div class="collapse navbar-collapse" id="navbar1">
 			<ul class="navbar-nav ms-auto" style="vertical-align: middle;">
 				<c:choose>
-					<c:when test="${sessionScope.user != null && sessionScope.user.role == 1 }">
+					<c:when test="${sessionScope.user != null && sessionScope.user.role }">
 						<li class="nav-item active"><a class="nav-link zoom"
 							href="userSessionBio?userId=${sessionScope.user.id }"><img
 								class="user-profile-pic" src="${sessionScope.user.imgUrl }"></a></li>

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Open Office Baseline</title>
+<title>Admin Update Company Page</title>
 <%@ include file="bootstrapHead.jsp"%>
 </head>
 
@@ -49,6 +49,7 @@
 				<option value="true">Yes</option>
 				<option value="false">No</option>
 			</select> <br> <input type="submit">
+
 		</form>
 	</div>
 	<%@include file="footer.jsp"%>

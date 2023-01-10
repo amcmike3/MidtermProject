@@ -17,8 +17,8 @@
 			<h1>${company.name }reviews</h1>
 		</div>
 
-		
-<c:choose>
+
+		<c:choose>
 			<c:when test="${!empty company.reviews }">
 				<c:forEach var="review" items="${company.reviews }">
 					<div class="row col card">
@@ -27,6 +27,9 @@
 								${review.user.username }</a> rated this company ${review.rating }
 							out of 10 <br> this is what they had to say about
 							${company.name}: <br> ${review.content }
+							<c:if test="${sessionScope.user.role }">
+								<a href="updateAreview?reviewId=${review.id }"><button>Update</button></a>
+							</c:if>
 							<c:choose>
 								<c:when test="${sessionScope.user.id == review.user.id}">
 									<form action="deleteReview.do" method="POST">
@@ -46,20 +49,20 @@
 							</c:choose>
 					</div>
 				</c:forEach>
-	</c:when>
-	<c:otherwise>
-		<div class="row">
-			<div class="col card white-containers">
-				<p>
-					<a href="review.do?companyId=${company.id }">Be the first to
-						contribute</a>
-				</p>
-			</div>
-		</div>
+			</c:when>
+			<c:otherwise>
+				<div class="row">
+					<div class="col card white-containers">
+						<p>
+							<a href="review.do?companyId=${company.id }">Be the first to
+								contribute</a>
+						</p>
+					</div>
+				</div>
 
-	</c:otherwise>
+			</c:otherwise>
 
-	</c:choose>
+		</c:choose>
 	</div>
 
 	<%@include file="footer.jsp"%>

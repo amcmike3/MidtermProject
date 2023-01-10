@@ -34,13 +34,13 @@ public class UserController {
 			user.getReviews().size();
 			user.getArticles().size();
 			session.setAttribute("user", user);
-			ans = "home";
+			ans = "redirect:home";
 		}
 
 		return ans;
 	}
 
-	@RequestMapping("registering")
+	@RequestMapping(path = "registering", method = RequestMethod.POST)
 	public String register(User user, Model model, HttpSession session) {
 		String ans = "";
 		// if username is unique and email is unique then register user otherwise
@@ -58,13 +58,13 @@ public class UserController {
 		} else {
 			User daoUser = dao.register(user);
 			if (daoUser != null) {
+				System.out.println("-----------------" + daoUser.isRole());
 				session.setAttribute("user", daoUser);
-				ans = "home";
+				ans = "redirect:home";
 			} else {
 				ans = "register";
 			}
 		}
-
 		return ans;
 	}
 
@@ -157,6 +157,6 @@ public class UserController {
 	@RequestMapping("updateAUser")
 	public String updateAUser(Integer userId, Model model) {
 		model.addAttribute("user", dao.findById(userId));
-		return "updateAUser";
+		return "updatAUser";
 	}
 }

@@ -33,7 +33,7 @@ public class User {
 	@Column(name = "last_name")
 	private String lastName;
 
-	private String role;
+	private Boolean role;
 
 	private String email;
 
@@ -215,13 +215,16 @@ public class User {
 		this.lastName = lastName;
 	}
 
-	public String getRole() {
+
+	public boolean isRole() {
 		return role;
 	}
 
-	public void setRole(String role) {
+
+	public void setRole(boolean role) {
 		this.role = role;
 	}
+
 
 	public String getEmail() {
 		return email;

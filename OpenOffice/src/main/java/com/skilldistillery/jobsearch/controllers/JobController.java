@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.jobsearch.data.CompanyDAO;
@@ -86,7 +87,7 @@ public class JobController {
 		return mv;
 	}
 	
-	@RequestMapping("reviewJobLoggingIn")
+	@RequestMapping(path = "reviewJobLoggingIn", method = RequestMethod.POST)
 	public String reviewJobLoggingIn(String username, String password, HttpSession session, Model model, Integer jobId) {
 		String ans = "";
 		User user = userDao.login(username, password);

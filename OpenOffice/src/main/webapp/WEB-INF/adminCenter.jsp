@@ -26,39 +26,70 @@
 						value="Create Company" />
 				</form>
 			</div>
+			
 			<div class="">
 
-				<form action="updateCompany" method="GET">
-					<input id="btnDisplay" class="btn" type="submit"
-						value="Update Company" />
+				<form action="updateACompany" method="GET">
+					<input type="text" placeholder="search by company id"
+						name="companyId" required />
+					<div class="btn">
+						<input id="btnDisplay" type="submit" value="Update Company" />
+					</div>
 				</form>
 			</div>
+			
 			<div class="">
 
 				<form action="updateUser" method="GET">
-					<input id="btnDisplay" class="btn" type="submit"
-						value="Update User" />
+					<input type="text" placeholder="search by user id" name="userId"
+						required />
+					<div class="btn">
+						<input id="btnDisplay" type="submit" value="Update User" />
+					</div>
 				</form>
 			</div>
+			
 			<div class="">
 
 				<form action="updateJob" method="GET">
-					<input id="btnDisplay" class="btn" type="submit"
-						value="Update Job" />
+					<input type="text" placeholder="search by job id" name="jobId"
+						required />
+					<div class="btn">
+						<input id="btnDisplay" type="submit" value="Update Job" />
+					</div>
 				</form>
 			</div>
+			
 			<div class="">
 
 				<form action="updateInterview" method="GET">
-					<input id="btnDisplay" class="btn" type="submit"
-						value="Update Interview"/>
+					<input type="text" placeholder="search by interview id"
+						name="interviewId" required />
+					<div class="btn">
+						<input id="btnDisplay" type="submit" value="Update Interview" />
+					</div>
 				</form>
 			</div>
+			
 			<div class="">
 
 				<form action="updateArticle" method="GET">
-					<input id="btnDisplay" class="btn" type="submit"
-						value="Update Article" />
+					<input type="text" placeholder="search by article id"
+						name="articleId" required />
+					<div class="btn">
+						<input id="btnDisplay" type="submit" value="Update Article" />
+					</div>
+				</form>
+			</div>
+			
+			<div class="">
+
+				<form action="updateReview" method="GET">
+					<input type="text" placeholder="search by review id"
+						name="reviewId" required />
+					<div class="btn">
+						<input id="btnDisplay" type="submit" value="Update Review" />
+					</div>
 				</form>
 			</div>
 		</div>
