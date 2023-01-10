@@ -19,7 +19,7 @@
 					<h5>Step 3/3</h5>
 				</div>
 				<div class="card-body">
-					<form action="createInterviewQuestion">
+					<form action="createInterviewQuestion" method="post">
 						<input type="hidden" name="interviewId" value="${interviewId }" />
 						<br /> Title: <br /> <input type="text" name="title"
 							value="${question.title }" /> <br /> Question: <br /> <input
@@ -27,7 +27,7 @@
 						Description: <br /> <input type="text" name="description"
 							value="${question.description }" /> <br /> <input type="submit"
 							value="Finish" /> <br /> <input type="submit"
-							formaction="addAnotherInterviewQuestion"
+							formaction="addAnotherInterviewQuestion?interviewId=${interviewId }"
 							value="Add Another Question" />
 					</form>
 				</div>
