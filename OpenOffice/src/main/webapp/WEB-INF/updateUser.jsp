@@ -41,7 +41,7 @@
 		<div>
 			<div class="col card-body text-center cream" style="margin-top: 75px;">
 				<form action="deleteUser">
-				<input type="submit" value="Delete My Profile"/>
+				<input type="submit" value="Delete Profile"/>
 				<input type="hidden" name="id" value="${sessionScope.user.id }"/>
 				</form>
 			</div>
