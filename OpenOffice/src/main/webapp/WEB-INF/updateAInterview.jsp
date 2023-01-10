@@ -29,10 +29,10 @@
 					<br /> What was their interview process like? <input type="text"
 						name="process" value="${interview.process}" /> <br /> Did you get
 					a job offer? <select id="jobOffered" name="jobOffered">
-						<option value="false"
-							${interview.jobOffered == 'false' ? 'select="selected"' : '' }>No</option>
-						<option value="true"
-							${interview.jobOffered == 'true' ? 'select="selected"' : '' }>Yes</option>
+						<option value="false" <c:if test="${!interview.jobOffered}">selected</c:if>
+							>No</option>
+						<option value="true" <c:if test="${interview.jobOffered}">selected</c:if>
+							>Yes</option>
 					</select> <br /> <input type="submit" value="Next" />
 				</form>
 			</div>
