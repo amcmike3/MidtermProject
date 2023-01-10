@@ -1,17 +1,18 @@
 package com.skilldistillery.jobsearch.controllers;
 
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 import com.skilldistillery.jobsearch.data.ArticleDAO;
 import com.skilldistillery.jobsearch.data.IndustryDAO;
 import com.skilldistillery.jobsearch.entities.Article;
+import com.skilldistillery.jobsearch.entities.Interview;
 import com.skilldistillery.jobsearch.entities.Interview;
 import com.skilldistillery.jobsearch.entities.User;
 
@@ -45,13 +46,14 @@ public class ArticleController {
 		return "allArticles";
 	}
 	
+
 	@RequestMapping("createArticle.do")
 	public String createArticle(Model model) {
 		model.addAttribute("industryList", industryDao.getAll());
 		
 			return "createArticle";
 	}
-	
+
 	@RequestMapping("updateArticle")
 	public String updateArticle(Integer articleId, Model model) {
 		model.addAttribute("article", dao.findArticleById(articleId));
@@ -73,6 +75,7 @@ public class ArticleController {
 		GeneralController.refreshUser(user, session);
 		return "articleDeletedSuccess";
 	}
+
 	
 	@RequestMapping("createArticle")
 	public ModelAndView createArticle(Integer industryId, Article article, HttpSession session) {
