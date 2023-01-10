@@ -150,8 +150,6 @@ public class UserController {
 	@RequestMapping("adminCenter")
 	public String adminCenter(Integer userId, HttpSession session, Model model, User user) {
 		
-		session.setAttribute("user", dao.findById(userId));
-
 		return "adminCenter";
 		
 	}
