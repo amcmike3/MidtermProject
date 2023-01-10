@@ -13,9 +13,9 @@
 <body>
 	<%@include file="navbar.jsp"%>
 <div>
-		<form>
-			<label for="id">Job ID:</label> <input id="id" name="id"
-				type="text" value="${job.id}" placeholder="${job.id }"><br>
+		<form action="UpdateAJob">
+			<input id="id" name="id"
+				type="hidden" value="${job.id}" placeholder="${job.id }"><br>
 			
 			<label for="salary">Salary:</label><br> <input
 				type="text" id="salary" name="name" value="${job.salary}"><br>
@@ -41,18 +41,19 @@
 				name="industry" value="${job.industry}"> --%>
 				<select name="industryId">
   			<c:forEach var="industry" items="${industryList }">
-    			<option value="${industry.id}">"${industry.name }"</option>
+    			<option value="${industry.id}" <c:if test="${industry.id ==job.industry.id }">selected</c:if>
+    			>"${industry.name }"</option>
 
   			</c:forEach>
 			</select> <br>
 				
 				<br> <br>
-				
+
 			 <label for="company">Company:</label><br>
 			<input type="text" id="company" name="company" value="${job.company}"><br> <br>
 			<br> 
 			
-			 <label for="Title">title:</label><br>
+			 <label for="Title">Title:</label><br>
 			<input type="text" id="title" name="title" value="${job.title}"><br> <br>
 			<br> 
 			
