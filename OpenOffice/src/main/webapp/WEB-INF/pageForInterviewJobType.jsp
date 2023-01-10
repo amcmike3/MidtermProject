@@ -64,7 +64,6 @@
   
   <input type="text" name="${industry.name }"><br> --%>
 
-  <input id="companyId" value="${company.id}" type="hidden">
   
   <button type="submit">Submit</button>
 
