@@ -52,6 +52,7 @@ public class ArticleDAOImpl implements ArticleDAO {
 		em.persist(article);
 		return article;
 	}
+
 	public Article updateArticle(Article article) {
 		Article updateArticle = em.find(Article.class, article.getId());
 		System.out.println("--------------------------------------" + article);
