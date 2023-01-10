@@ -75,7 +75,7 @@ public class JobController {
 		newJob.setCompany(company);
 
 		mv.addObject("jobId", newJob.getId());
-		mv.setViewName("createInterview");
+		mv.setViewName("redirect:createInterview?title=\"\"&process=\"\"&jobOffered=false");
 		return mv;
 	}
 	
