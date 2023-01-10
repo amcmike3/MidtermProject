@@ -27,8 +27,6 @@
 								${review.user.username }</a> rated this company ${review.rating }
 							out of 10 <br> this is what they had to say about
 							${company.name}: <br> ${review.content }
-							<!-- 					if review.user.id == user.id then a delete button 
- -->
 							<c:choose>
 								<c:when test="${sessionScope.user.id == review.user.id}">
 									<form action="deleteReview.do" method="POST">

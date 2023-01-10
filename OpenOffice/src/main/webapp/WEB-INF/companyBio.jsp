@@ -24,11 +24,35 @@
 				<a href="companyJobs?companyId=${company.id }">${company.name}
 					Jobs </a>
 			</div>
+			<c:choose>
+			<c:when test="${sessionScope.user != null }">
 			<div class="col card text-center white-containers">
 				<a href="review.do?companyId=${company.id }">Leave a review of
 					${company.name } </a>
+					
 			</div>
+			</c:when>
+			<c:otherwise>
+			<div class="col card text-center white-containers">
+				<a href="reviewLogin?companyId=${company.id }">Leave a review of
+					${company.name } </a>
+			</div>
+			
+			</c:otherwise>
+			</c:choose>
 		</div>
+		<hr>
+			<div class="white-containers text-center">
+		<c:choose>
+			<c:when test="${sessionScope.user.id == user.id}">
+				<form action="subscribe.do" method="GET">
+					<input name="userId" value="${user.id}" type="hidden" />
+					<input name="companyId" value="${company.id}" type="hidden" />
+					<button type="submit" >Subscribe</button>
+				</form>
+			</c:when>
+		</c:choose>
+	</div>
 		<hr>
 		<div class="row col">
 			<img class="company-pic" alt="A fancy company picture should be here"
@@ -143,6 +167,7 @@
 		</c:forEach>
 
 	</div>
+
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
 </body>

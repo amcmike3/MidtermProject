@@ -6,13 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+=======
+>>>>>>> 35cea5e70953b2018e20910b6585d1f2e39de545
 
 import com.skilldistillery.jobsearch.data.ArticleDAO;
 import com.skilldistillery.jobsearch.data.IndustryDAO;
 import com.skilldistillery.jobsearch.entities.Article;
+<<<<<<< HEAD
 import com.skilldistillery.jobsearch.entities.Interview;
+=======
+>>>>>>> 35cea5e70953b2018e20910b6585d1f2e39de545
 import com.skilldistillery.jobsearch.entities.User;
 
 @Controller
@@ -44,11 +50,35 @@ public class ArticleController {
 		return "allArticles";
 	}
 	
+<<<<<<< HEAD
 	@RequestMapping("createArticle.do")
 	public String createArticle(Model model) {
 		model.addAttribute("industryList", industryDao.getAll());
 		
 			return "createArticle";
+=======
+	@RequestMapping("updateArticle")
+	public String updateArticle(Integer articleId, Model model) {
+		model.addAttribute("article", dao.findArticleById(articleId));
+		return "updateArticle";
+	}
+	
+	@RequestMapping("updatingArticle")
+	public String updatingArticle(Article article, Model model) {
+		System.out.println("-----------------------------" + article);
+		model.addAttribute("article", dao.updateArticle(article));
+		return "articleBio";
+	}
+	
+	@RequestMapping("deleteArticle")
+	public String deleteArticle(Integer articleId, Model model, HttpSession session) {
+		User user = dao.findArticleById(articleId).getUser();
+		
+		model.addAttribute("success", dao.deleteArticle(articleId));
+		GeneralController.refreshUser(user, session);
+		return "articleDeletedSuccess";
+	}
+>>>>>>> 35cea5e70953b2018e20910b6585d1f2e39de545
 }
 	
 	@RequestMapping("createArticle")

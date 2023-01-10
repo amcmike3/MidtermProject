@@ -15,5 +15,12 @@ public interface ArticleDAO {
 
 	List<Article> findAllArticles();
 
+<<<<<<< HEAD
 	Article createArticle(Article article, HttpSession session);
+=======
+	Article updateArticle(Article article);
+	
+	boolean deleteArticle(Integer articleId);
+ 
+>>>>>>> 35cea5e70953b2018e20910b6585d1f2e39de545
 }

@@ -7,11 +7,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.jobsearch.entities.Company;
 import com.skilldistillery.jobsearch.entities.CompanyReview;
-import com.skilldistillery.jobsearch.entities.Job;
 import com.skilldistillery.jobsearch.entities.User;
 
 @Service
@@ -20,6 +20,9 @@ public class UserDaoImpl implements UserDAO {
 
 	@PersistenceContext
 	private EntityManager em;
+
+	@Autowired
+	private CompanyDAO compDao;
 
 	@Override
 	public User findById(int userId) {
@@ -98,8 +101,6 @@ public class UserDaoImpl implements UserDAO {
 		return em.createQuery(jpql, User.class).getResultList();
 	}
 
-
-
 	@Override
 	public List<User> findUsers(String username) {
 		List<User> ans = new ArrayList<>();
@@ -112,7 +113,7 @@ public class UserDaoImpl implements UserDAO {
 	@Override
 	public User update(User user) {
 		User oldUser = em.find(User.class, user.getId());
-		
+
 		if (user.getDescription() != null && user.getDescription() != "") {
 			oldUser.setDescription(user.getDescription());
 		}
@@ -122,7 +123,7 @@ public class UserDaoImpl implements UserDAO {
 		if (user.getLastName() != null && user.getLastName() != "") {
 			oldUser.setLastName(user.getLastName());
 		}
-		if ( user.getEmail() != null && user.getEmail() != "" && isEmailUnique(user.getEmail())) {
+		if (user.getEmail() != null && user.getEmail() != "" && isEmailUnique(user.getEmail())) {
 			oldUser.setEmail(user.getEmail());
 		}
 		if (user.getUsername() != null && user.getUsername() != "" && isUsernameUnique(user.getUsername())) {
@@ -132,7 +133,7 @@ public class UserDaoImpl implements UserDAO {
 			oldUser.setImgUrl(user.getImgUrl());
 		}
 		oldUser.getReviews().size();
-		
+
 		return oldUser;
 	}
 
@@ -146,16 +147,28 @@ public class UserDaoImpl implements UserDAO {
 	public boolean deleteUser(Integer id) {
 		User user = em.find(User.class, id);
 		boolean ans = false;
-		
+
 		user.setEnabled(false);
 		if (!user.getEnabled()) {
 			ans = true;
 		}
-		
+
 		return ans;
 	}
 
+	@Override
+	public User addSubscrCompToUserBio(Integer companyId, Integer userId) {
+		User foundUser = em.find(User.class, userId);
+		List<Company> userCompanies = foundUser.getCompanies();
+		Company company = compDao.findCompanyById(companyId);
 
+		if (!userCompanies.contains(company)) {
+			userCompanies.add(company);
+			foundUser.setCompanies(userCompanies);
+			em.persist(foundUser);
 
+		}
+		return foundUser;
+	}
 
 }
