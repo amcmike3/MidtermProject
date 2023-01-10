@@ -41,7 +41,8 @@
 				name="industry" value="${job.industry}"> --%>
 				<select name="industryId">
   			<c:forEach var="industry" items="${industryList }">
-    			<option value="${industry.id}">"${industry.name }"</option>
+    			<option value="${industry.id}" <c:if test="${industry.id ==job.industry.id }">selected</c:if>
+    			>"${industry.name }"</option>
 
   			</c:forEach>
 			</select> <br>
