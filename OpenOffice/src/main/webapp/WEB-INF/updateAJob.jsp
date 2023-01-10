@@ -12,73 +12,57 @@
 
 <body>
 	<%@include file="navbar.jsp"%>
+<div>
+		<form>
+			<label for="id">Job ID:</label> <input id="id" name="id"
+				type="text" value="${job.id}" placeholder="${job.id }"><br>
+			
+			<label for="salary">Salary:</label><br> <input
+				type="text" id="salary" name="name" value="${job.salary}"><br>
 
-	<div class="containers text-center">
-		<div class="row">
-			<div class="col title-container text-center">
-				<div class="card-title">
-					<h3>Update a Job</h3>
-				</div>
-				<div class="row col card text-center">
-<h1>${company.name }</h1>
+			<label for="yearsExperience">Years of Experience Required:</label><br> <input type="text"
+				id="location" name="yearsExperience" value="${job.yearsExperience}"><br>
+			
+			
+			<label for="skills">Skills:</label><br> <input
+				type="text" id="skills" name="skills"
+				value="${job.skills}"><br> 
+				
+			<label for="education">Education:</label><br>
+			<input type="text" id="education" name="education" value="${job.education}"><br>
+			
+			<label for="certifications">Certifications:</label><br> <input type="text"
+				id="benefits" name="certifications" value="${job.certifications}"><br> 
+				
+			<label for="description">Description:</label><br>
+			<input type="text" id="description" name="description" value="${job.description}"><br> <br>
+			
+			<%-- <%-- abel for="industry">Industry:</label><br> <input type="text" id="jobs"
+				name="industry" value="${job.industry}"> --%>
+				<select name="industryId">
+  			<c:forEach var="industry" items="${industryList }">
+    			<option value="${industry.id}">"${industry.name }"</option>
 
-<h4>Please supply us with information about the job you interviewed for? </h4>
+  			</c:forEach>
+			</select> <br>
+				
+				<br> <br>
+				
+			 <label for="company">Company:</label><br>
+			<input type="text" id="company" name="company" value="${job.company}"><br> <br>
+			<br> 
+			
+			 <label for="Title">title:</label><br>
+			<input type="text" id="title" name="title" value="${job.title}"><br> <br>
+			<br> 
+			
+			<label for="enabled">Enable?</label> <select id="enabled"
+				name="enabled" value="${job.enabled}">
+				<option value="true">Yes</option>
+				<option value="false">No</option>
+			</select> <br> <input type="submit">
 
-<form action="updatingAJob" method="POST">
-
-<input type="hidden" name="id" value="${job.id }">
-
-  <label for="title">What is the title of the job you are applying for?</label><br>
-  
-  <input type="text"  name="title" value="${job.title }"><br>
-  
-  <label for="salary">What is the salary for this job?</label><br>
-  
-  <input type="text" name="salary" value="${job.salary }"><br>
-  
-  <label for="yearsOfExperience">Years of experience required?</label><br>
-  
-  <input type="text"  name="yearsExperience" value="${job.yearsExperience }"><br>
-  
-  <label for="skills">Skills required for position?</label><br>
-  
-  <input type="text"  name="skills" value="${job.skills }"><br>
-  
-  <label for="education">Education required?</label><br>
-  
-  <input type="text" name="education" value="${job.education }"><br>
-  
-  <label for="certifications">Certifications required?</label><br>
-  
-  <input type="text" name="certifications" value="${job.certifications }"><br>
- 
-<!--   <label for="enabled">Is this company active?</label><br>
-  
-  <input type="text" name="enabled"><br> -->
-  
-  <label for="description">Please provide a brief description of job being offered.</label><br>
-  
-  <input type="text" name="description" value="${job.description }"><br>
-  
-  <select name="industryId">
-  <c:forEach var="industry" items="${industryList }">
-    <option value="${industry.id}">"${industry.name }"</option>
-    <!-- <option value="industry.id">name</option>
-    <option value="industry.id">name</option> -->
-  </c:forEach>
-</select> <br>
-  
- <%--  <label for="name">Industry type?</label><br>
-  
-  <input type="text" name="${industry.name }"><br> --%>
-
-  
-  <button type="submit">Submit</button>
-
-</form>
-</div>
-			</div>
-		</div>
+		</form>
 	</div>
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>

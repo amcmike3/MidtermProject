@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +13,8 @@
 <body>
 	<%@include file="navbar.jsp"%>
 
-<div class="containers text-center">
+
+	<div class="containers text-center">
 		<div class="row">
 			<div class="col title-container text-center">
 				<div class="card-title">
@@ -37,30 +38,28 @@
 				</form>
 			</div>
 		</div>
+			<c:forEach var="question" items="${interview.interviewQuestions }">
+				<div class="row">
+					<div class="col card">
 
-		<c:forEach var="question" items="${interview.interviewQuestions }">
-			<div class="row">
-				<div class="col card">
+						<div class="card-title">
+							<h3>${question.title }</h3>
+						</div>
+						<p>
+							${question.name } <br> ${question.description }
 
-					<div class="card-title">
-						<h3>${question.title }</h3>
+						</p>
+						<form action="updateInterviewQuestion?questionId=${question.id }">
+							<input type="hidden" name="companyId" value="${companyId }">
+							<input type="hidden" name="interviewId" value="${interview.id }">
+							<input type="submit" value="update"> <input
+								name="questionId" type="hidden" value="${question.id }">
+						</form>
 					</div>
-					<p>
-						${question.name } <br> ${question.description }
-
-					</p>
-					<form action="updateInterviewQuestion?questionId=${question.id }">
-						<input type="hidden" name="companyId" value="${companyId }">
-						<input type="hidden" name="interviewId" value="${interview.id }">
-						<input type="submit" value="update">
-						<input name="questionId" type="hidden" value="${question.id }">
-					</form>
 				</div>
-			</div>
-		</c:forEach>
-	</div>
-			</div>
+			</c:forEach>
 		</div>
+
 	</div>
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>

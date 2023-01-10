@@ -14,10 +14,11 @@
 	<%@include file="navbar.jsp"%>
 	<div class="container">
 		<div class="row">
-			<div class="col card card-body">
 
+			<div class="col card card-body text-center">
 
-				<form action="updatingAArticle" method="POST">
+	<form action="updatingArticle" method="POST">
+
 					<input type="hidden" name="id" value="${article.id}"> <input
 						type="hidden" name="articleUrl" value="${article.articleUrl}">
 					<input type="hidden" name="articleId" value="${article.id }">
@@ -27,15 +28,29 @@
 						value="${article.title}"> 
 						<br> 
 					<label>Description</label>
-					<br> 
 					<input type="text" name="description" value="${article.description}"> 
 						<br> 
+					 <label>Date Posted</label>
+					<input type="text" name="datePosted" value="${article.datePosted}"> 
+						<br> 
+					 <label>Industry for Article</label>
+					<input type="text" name="industry" value="${article.industry}"> 
+						<br> 
+				
+						
+						<label for="enabled">Enable?</label> <select
+				id="enabled" name="enabled">
+				<option value="true">Yes</option>
+				<option value="false">No</option>
+				</select> <br> 
+						
+						
 						<input type="submit" value="Update Article" />
 				</form>
-			</div>
+				</div>
+				</div>
+				</div>
 
-		</div>
-	</div>
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
 </body>
