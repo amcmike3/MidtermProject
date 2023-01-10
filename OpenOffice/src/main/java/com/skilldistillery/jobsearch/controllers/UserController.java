@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.jobsearch.data.CompanyDAO;
 import com.skilldistillery.jobsearch.data.UserDAO;
+import com.skilldistillery.jobsearch.entities.Article;
 import com.skilldistillery.jobsearch.entities.User;
 
 @Controller
@@ -159,4 +160,12 @@ public class UserController {
 		model.addAttribute("user", dao.findById(userId));
 		return "updateAUser";
 	}
+	
+	@RequestMapping("updatingAUser")
+	public String updatingAUser(User user, Model model) {
+		model.addAttribute("user", dao.update(user));
+		return "adminCenter";
+	}
+	
+
 }

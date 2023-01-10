@@ -10,6 +10,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.jobsearch.entities.Job;
+import com.skilldistillery.jobsearch.entities.User;
 
 @Service
 @Transactional
@@ -60,6 +61,32 @@ public class JobDAOImpl implements JobDAO {
 		companyJobs = em.createQuery(jpql, Job.class).setParameter("comapnyId", companyId).getResultList();
 
 		return companyJobs;
+	}
+
+	@Override
+	public Job updateJob(Job job) {
+		Job oldJob = em.find(Job.class, job.getId());
+
+		if (job.getTitle() != null && job.getTitle() != "") {
+			oldJob.setTitle(job.getTitle());
+		}
+		if (job.getSalary() != null && job.getSalary() >= 0) {
+			oldJob.setSalary(job.getSalary());
+		}
+		if (job.getYearsExperience() != null && job.getYearsExperience() >= 0) {
+			oldJob.setYearsExperience(job.getYearsExperience());
+		}
+		if (job.getSkills() != null && job.getSkills() != ""){
+			oldJob.setSkills(job.getSkills());
+		}
+		if (job.getEducation() != null && job.getEducation() != "") {
+			oldJob.setEducation(job.getEducation());
+		}
+		if (job.getCertifications() != null && job.getCertifications() != "") {
+			oldJob.setCertifications(job.getCertifications());
+		}
+
+		return oldJob;
 	}
 
 }

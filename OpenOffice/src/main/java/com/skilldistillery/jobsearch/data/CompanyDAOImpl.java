@@ -10,6 +10,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.jobsearch.entities.Company;
+import com.skilldistillery.jobsearch.entities.Job;
 
 @Service
 @Transactional
@@ -37,6 +38,25 @@ public class CompanyDAOImpl implements CompanyDAO{
 	public List<Company> findAllCompanies() {
 		String jpql = "SELECT company FROM Company company";
 		return em.createQuery(jpql, Company.class).getResultList();
+	}
+
+
+	@Override
+	public Company updateCompany(Integer companyId, Company company) {
+		Company oldCompany = em.find(Company.class, company.getId());
+
+		if (company.getName() != null && company.getName() != "") {
+			oldCompany.setName(company.getName());
+		}
+
+		if (company.getDescription() != null && company.getDescription() != ""){
+			oldCompany.setDescription(company.getDescription());
+		}
+		if (company.getLocation() != null && company.getLocation() != "") {
+			oldCompany.setLocation(company.getLocation());
+		}
+
+		return oldCompany;
 	}
 
 }

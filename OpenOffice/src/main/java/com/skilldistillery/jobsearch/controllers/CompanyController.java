@@ -16,6 +16,7 @@ import com.skilldistillery.jobsearch.data.IndustryDAO;
 import com.skilldistillery.jobsearch.data.InterviewDAO;
 import com.skilldistillery.jobsearch.entities.Company;
 import com.skilldistillery.jobsearch.entities.Industry;
+import com.skilldistillery.jobsearch.entities.Interview;
 import com.skilldistillery.jobsearch.entities.Job;
 import com.skilldistillery.jobsearch.entities.User;
 
@@ -95,17 +96,30 @@ public class CompanyController {
 		
 	}
 	
+	
+	@RequestMapping("createCompany")
+	public String createCompany() {
+		
+		return "createCompany";
+		
+	}
+	
+	@RequestMapping("creatingCompany")
+	public String creatingCompany(Company company, Model model) {
+		
+		return "adminCenter";
+	}
+	
 	@RequestMapping("updateACompany")
 	public String updateACompany(Integer companyId, Model model) {
 		model.addAttribute("company", dao.findCompanyById(companyId));
 		return "updateACompany";
 	}
 	
-	@RequestMapping("createCompany")
-	public String createCompany(Integer userId, HttpSession session, Model model, User user) {
-		
-		return "createCompany";
-		
+	@RequestMapping("updatingACompany")
+	public String updatingACompany(Company company, Model model) {
+		model.addAttribute("company", dao.updateCompany(company.getId(), company));
+		return "adminCenter";
 	}
 	
 }

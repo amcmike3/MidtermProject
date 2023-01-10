@@ -107,7 +107,17 @@ public class JobController {
 	@RequestMapping("updateAJob")
 	public String updateAJob(Integer jobId, Model model) {
 		model.addAttribute("job", dao.findJobById(jobId));
+		model.addAttribute("industryList", inDao.getAll());
 		return "updateAJob";
 	}
+	
+	@RequestMapping("updatingAJob")
+	public String updatingAJob(Job job, Model model) {
+		System.out.println("--------------------------------------------" + job);
+		model.addAttribute("job", dao.updateJob(job));
+		return "adminCenter";
+	}
+	
+
 	
 }

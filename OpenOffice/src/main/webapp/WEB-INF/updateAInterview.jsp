@@ -22,7 +22,7 @@
 				<div class="container">
 		<div class="row">
 			<div class="col card card-body text-center">
-				<form action="updateAInterview">
+				<form action="updatingAInterview">
 					<input type="hidden" name="id" value="${interview.id }">
 					<input type="hidden" name="companyId" value="${companyId }" /> <br />
 					Title: <input type="text" name="title" value="${interview.title}" />

@@ -20,14 +20,14 @@
 					<h3>Update a Company</h3>
 				</div>
 				<div class="card-body">
-					<form action="updateACompany">
+					<form action="updatingACompany">
 						<input type="hidden" name="companyId" value="${company.id }">
 						<br /> Name: <br /> 
-						<input type="text" name="name" placeholder="${company.name }"/> 
+						<input type="text" name="name" value="${company.name }"/> 
 						<br />Description<br />
-						<input type="text" name="description" placeholder="${company.description }"/> 
+						<input type="text" name="description" value="${company.description }"/> 
 						<br />Location<br /> 
-						<input type="text" name="location" placeholder="${company.location }"/>
+						<input type="text" name="location" value="${company.location }"/>
 						<br />
 						<br />
 						<button type="submit">Update Company</button>

@@ -20,10 +20,10 @@
 					<h3>Update a Company Review</h3>
 				</div>
 				<div class="containers">
-		<form action="updateAReview" method="POST">
+		<form action="updatingACompanyReview" method="POST">
 			<div>
 				<label for="title"><strong>Title:</strong></label> 
-				<input type="text" name="title" required>
+				<input type="text" name="title" value="${company.review.title }" required>
 			</div>
 			<div>
 				<label for="content"><strong>Content:</strong></label> 
