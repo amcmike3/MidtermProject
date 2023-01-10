@@ -14,7 +14,7 @@
 	<%@include file="navbar.jsp"%>
 	<div class="yellow-containers">
 		<div class="row col card text-center title-container">
-			<h1>${job.title }at ${job.company.name }</h1>
+			<h1>${job.title }at${job.company.name }</h1>
 			<p>${job.description }
 				<br>
 			</p>
@@ -24,10 +24,25 @@
 				<a href="allInterviews?jobId=${job.id }">${job.title} Interview
 					experiences </a>
 			</div>
-			<div class="col text-center white-containers">
-				<a href="sendToCreateInterview?jobId=${job.id }">Leave an
-					interview experience at ${job.company.name } </a>
-			</div>
+			<c:choose>
+				<c:when test="${sessionScope.user != null }">
+					<div class="col card text-center white-containers">
+						<div class="col text-center white-containers">
+							<a href="sendToCreateInterview?jobId=${job.id }">Leave an
+								interview experience at ${job.company.name } </a>
+						</div>
+
+					</div>
+				</c:when>
+				<c:otherwise>
+					<div class="col card text-center white-containers">
+						<a href="reviewJobLogin?jobId=${job.id }">Leave an interview
+							experience at ${job.company.name }</a>
+					</div>
+
+				</c:otherwise>
+			</c:choose>
+
 		</div>
 		<hr>
 		<div class="title-container text-center">
@@ -38,7 +53,7 @@
 				<div class="col text-center" style="margin: 10px;">
 					<c:if test="${sessionScope.user.id == interview.user.id }">
 						<h4 class="bg-danger">Your Contribution:</h4>
-						<form action="updateInterview" >
+						<form action="updateInterview">
 							<input type="hidden" name="companyId" value="${job.company.id}" />
 							<input type="hidden" name="interviewId" value="${interview.id }" />
 							<input type="submit" value="update" />

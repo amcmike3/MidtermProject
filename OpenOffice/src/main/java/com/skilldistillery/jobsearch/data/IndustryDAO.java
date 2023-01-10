@@ -11,4 +11,6 @@ public interface IndustryDAO {
 
 	public Industry findById(Integer industryId);
 	
+	
+	
 }

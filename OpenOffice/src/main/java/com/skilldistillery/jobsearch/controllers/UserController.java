@@ -120,5 +120,7 @@ public class UserController {
 		
 		return "userDelete";
 	}
+	
+	
 
 }
