@@ -15,7 +15,7 @@
 	<div class="containers text-center">
 		<div class="title-container text-center"
 			style="max-width: 1000px; min-width: 300px; margin: 0 auto;">
-			<h1>Admin Privileges</h1>
+			<h1>Administrator Privileges</h1>
 		</div>
 		<hr>
 		<div class="" id="admin-privileges-btn"
@@ -30,7 +30,7 @@
 			<div class="">
 
 				<form action="updateACompany" method="GET">
-					<input type="text" placeholder="search by company id"
+					<input type="text" placeholder="company id"
 						name="companyId" required />
 					<div class="btn">
 						<input id="btnDisplay" type="submit" value="Update Company" />
@@ -40,8 +40,8 @@
 			
 			<div class="">
 
-				<form action="updateUser" method="GET">
-					<input type="text" placeholder="search by user id" name="userId"
+				<form action="updateAUser" method="GET">
+					<input type="text" placeholder="user id" name="userId"
 						required />
 					<div class="btn">
 						<input id="btnDisplay" type="submit" value="Update User" />
@@ -51,8 +51,8 @@
 			
 			<div class="">
 
-				<form action="updateJob" method="GET">
-					<input type="text" placeholder="search by job id" name="jobId"
+				<form action="updateAJob" method="GET">
+					<input type="text" placeholder="job id" name="jobId"
 						required />
 					<div class="btn">
 						<input id="btnDisplay" type="submit" value="Update Job" />
@@ -62,8 +62,8 @@
 			
 			<div class="">
 
-				<form action="updateInterview" method="GET">
-					<input type="text" placeholder="search by interview id"
+				<form action="updateAInterview" method="GET">
+					<input type="text" placeholder="interview id"
 						name="interviewId" required />
 					<div class="btn">
 						<input id="btnDisplay" type="submit" value="Update Interview" />
@@ -73,8 +73,8 @@
 			
 			<div class="">
 
-				<form action="updateArticle" method="GET">
-					<input type="text" placeholder="search by article id"
+				<form action="updateAArticle" method="GET">
+					<input type="text" placeholder="article id"
 						name="articleId" required />
 					<div class="btn">
 						<input id="btnDisplay" type="submit" value="Update Article" />
@@ -84,11 +84,11 @@
 			
 			<div class="">
 
-				<form action="updateReview" method="GET">
-					<input type="text" placeholder="search by review id"
+				<form action="updateACompanyReview" method="GET">
+					<input type="text" placeholder="company review id"
 						name="reviewId" required />
 					<div class="btn">
-						<input id="btnDisplay" type="submit" value="Update Review" />
+						<input id="btnDisplay" type="submit" value="Update Company Review" />
 					</div>
 				</form>
 			</div>

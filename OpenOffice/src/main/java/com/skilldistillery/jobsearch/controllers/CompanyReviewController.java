@@ -111,10 +111,10 @@ public class CompanyReviewController {
 		return ans;
 	}
 	
-	@RequestMapping("updateAReview")
-	public String updateAReview(Integer reviewId, Model model) {
+	@RequestMapping("updateACompanyReview")
+	public String updateACompanyReview(Integer reviewId, Model model) {
 		model.addAttribute("review", dao.findReviewById(reviewId));
-		return "updaeAReview";
+		return "updateACompanyReview";
 	}
 
 }
