@@ -13,9 +13,9 @@
 <body>
 	<%@include file="navbar.jsp"%>
 <div>
-		<form>
-			<label for="id">Job ID:</label> <input id="id" name="id"
-				type="text" value="${job.id}" placeholder="${job.id }"><br>
+		<form action="UpdateAJob">
+			<input id="id" name="id"
+				type="hidden" value="${job.id}" placeholder="${job.id }"><br>
 			
 			<label for="salary">Salary:</label><br> <input
 				type="text" id="salary" name="name" value="${job.salary}"><br>
@@ -47,12 +47,12 @@
 			</select> <br>
 				
 				<br> <br>
-				
+
 			 <label for="company">Company:</label><br>
 			<input type="text" id="company" name="company" value="${job.company}"><br> <br>
 			<br> 
 			
-			 <label for="Title">title:</label><br>
+			 <label for="Title">Title:</label><br>
 			<input type="text" id="title" name="title" value="${job.title}"><br> <br>
 			<br> 
 			

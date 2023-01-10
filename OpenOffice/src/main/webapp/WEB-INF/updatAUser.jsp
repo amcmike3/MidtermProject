@@ -15,9 +15,9 @@
 <div class="container">
 		<div class="row">
 			<div class="col card card-body matcha">
-			<form action="updatingUser">
-			<label>User ID:</label><br>
-			<input type="text" name="id" value="${user.id }"/>
+			<form action="updatingAUser">
+		
+			<input type="hidden" name="id" value="${user.id }"/>
 			<br>
 			Description: <br>
 			<input type="text" name="description" placeholder="${user.description }"/>

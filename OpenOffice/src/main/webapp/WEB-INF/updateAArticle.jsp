@@ -17,7 +17,7 @@
 
 			<div class="col card card-body text-center">
 
-	<form action="updatingArticle" method="POST">
+	<form action="updatingAArticle" method="POST">
 
 					<input type="hidden" name="id" value="${article.id}"> <input
 						type="hidden" name="articleUrl" value="${article.articleUrl}">
