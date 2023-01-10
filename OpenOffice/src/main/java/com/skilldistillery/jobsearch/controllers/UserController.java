@@ -147,8 +147,13 @@ public class UserController {
 	}
 	
 	@RequestMapping("adminCenter")
-	public String adminCenter(Integer userId, HttpSession session) {
-		return "adminCenter";
+	public String adminCenter(Integer userId, HttpSession session, Model model) {
+		
+		User user = dao.findById(userId);
+		if(user.getRole().equals("1")) {
+			return "adminCenter";
+		}
+		return "home";
 		
 	}
 }
