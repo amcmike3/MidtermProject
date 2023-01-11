@@ -44,10 +44,15 @@
 			<input type="text" name="imgUrl" placeholder="${user.imgUrl }"/>
 			<br>
 			
-			 <label for="enabled">Enable Admin Role?</label> <select
+			 <label for="enabled">Enabled?</label> <select
 				id="enabled" name="enabled">
 				<option value="true" <c:if test="${user.enabled}">selected</c:if>>Yes</option>
 					<option value="false" <c:if test="${!user.enabled}">selected</c:if>>No</option>
+				</select> <br> 
+			 <label for="enabled">Admin?</label> <select
+				id="enabled" name="enabled">
+				<option value="true" <c:if test="${user.role}">selected</c:if>>Yes</option>
+					<option value="false" <c:if test="${!user.role}">selected</c:if>>No</option>
 				</select> <br> 
 			<input type="submit" value="Update"/>
 			</form>
