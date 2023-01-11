@@ -17,7 +17,6 @@
 		<div class="row">
 			<div class="col title-container text-center">
 				<div class="card-title">
-				<h1>This needs to have an option to change enabled</h1>
 					<h3>Update a Company Review</h3>
 				</div>
 				<div class="containers">
@@ -55,17 +54,16 @@
 					name="cons" value="${review.cons }">
 			</div>
 
-			<label for="recommendation">Recommended:</label> <select
-				id="recommendation" name="recommendation">
-				<option value="true" <c:if test="${review.recommendation }">selected</c:if>>Yes</option>
-				<option value="false" <c:if test="${!review.recommendation }">selected</c:if>>No</option>
-			</select>
 
 			<div>
 				<label for="advice"><strong>Advice:</strong></label> <input
 					type="text" name="advice" value="${review.advice }">
 			</div>
-
+			<label for="recommendation">Recommended:</label> <select
+				id="recommendation" name="recommendation">
+				<option value="true" <c:if test="${review.recommendation }">selected</c:if>>Yes</option>
+				<option value="false" <c:if test="${!review.recommendation }">selected</c:if>>No</option>
+			</select>
 			<div>
 				<button type="submit" class="btn btn-outline-warning">Submit</button>
 			</div>
