@@ -56,7 +56,6 @@ public class ArticleDAOImpl implements ArticleDAO {
 	public Article updateArticle(Article article) {
 		Article updateArticle = em.find(Article.class, article.getId());
 		Industry industry = em.find(Industry.class, article.getIndustry().getId());
-		System.out.println(industry + "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 		updateArticle.setTitle(article.getTitle());
 		updateArticle.setDescription(article.getDescription());
 		updateArticle.setIndustry(industry);

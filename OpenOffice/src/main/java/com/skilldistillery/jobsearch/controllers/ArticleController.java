@@ -80,6 +80,12 @@ public class ArticleController {
 		GeneralController.refreshUser(user, session);
 		return "articleDeletedSuccess";
 	}
+	
+	@RequestMapping("deletedArticle")
+	public String deletedArticle(Integer articleId) {
+		dao.deleteArticle(articleId);
+		return "adminCenter";
+	}
 
 	@RequestMapping(path = "createArticle", method = RequestMethod.POST)
 	public ModelAndView createArticle(Integer industryId, Article article, HttpSession session) {

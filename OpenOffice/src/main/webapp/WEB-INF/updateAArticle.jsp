@@ -36,16 +36,13 @@
 					 <label>Industry for Article</label>
 					<input type="text" name="industry" value="${article.industry}"> 
 						<br> 
-				
-						
-						<label for="enabled">Enable?</label> <select
-				id="enabled" name="enabled">
-				<option value="true" <c:if test="${article.enabled}">selected</c:if>>Yes</option>
-					<option value="false" <c:if test="${!article.enabled}">selected</c:if>>No</option>
-				</select> <br> 
-						
 						
 						<input type="submit" value="Update Article" />
+				</form>
+				
+				<form action="deletedArticle" method="post">
+					<input type="hidden" name="articleId" value="${article.id }">
+					<input type="submit" value="Delete Article"/>
 				</form>
 				</div>
 				</div>
