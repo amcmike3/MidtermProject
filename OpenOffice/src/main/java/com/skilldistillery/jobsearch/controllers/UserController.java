@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.skilldistillery.jobsearch.data.CompanyDAO;
 import com.skilldistillery.jobsearch.data.UserDAO;
@@ -26,16 +27,22 @@ public class UserController {
 	private CompanyDAO compDao;
 
 	@RequestMapping(path = "loggingIn", method = RequestMethod.POST)
-	public String login(String username, String password, HttpSession session) {
+	public String login(String username, String password, HttpSession session, RedirectAttributes redir) {
 		String ans = "";
 		User user = dao.login(username, password);
 		if (user == null) {
 			ans = "login";
 		} else {
+			if(user.getEnabled()) {
 			user.getReviews().size();
 			user.getArticles().size();
 			session.setAttribute("user", user);
 			ans = "redirect:home";
+			} else {
+				redir.addFlashAttribute("user", user);
+				ans = "redirect:reactivateAccount";
+			}
+			
 		}
 
 		return ans;
@@ -165,6 +172,18 @@ public class UserController {
 	public String updatingAUser(User user, Model model) {
 		model.addAttribute("user", dao.update(user));
 		return "redirect:adminCenter";
+	}
+	
+	@RequestMapping("reactivateUser")
+	public String reactivateUser(Integer userId, Model model) {
+		model.addAttribute("user", dao.findById(userId));
+		return "reactivateUser";
+	}
+	
+	@RequestMapping("reactivatingUser")
+	public String reactivatingUser(User user, Model model) {
+		model.addAttribute("user", dao.reactivate(user));
+		return "login";
 	}
 	
 

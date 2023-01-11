@@ -171,4 +171,11 @@ public class UserDaoImpl implements UserDAO {
 		return foundUser;
 	}
 
+	@Override
+	public User reactivate(User inactiveUser) {
+		User activeUser = em.find(User.class, inactiveUser.getId());
+		activeUser.setEnabled(true);
+		return activeUser;
+	}
+
 }
