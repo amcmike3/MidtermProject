@@ -13,12 +13,12 @@
 <body>
 	<%@include file="navbar.jsp"%>
 	<div class="containers ">
-		<div class="title-container text-center"
+		<div class="title-container text-center zoom"
 			style="max-width: 1000px; min-width: 300px; margin: 0 auto;">
 			<h1>SEARCH BY USER, COMPANY, OR JOB</h1>
 		</div>
 		<hr>
-		<div class="yellow-containers"
+		<div class="yellow-containers zoom"
 			style="width: 600px; min-height: 100px; margin: 0 auto;">
 			<div id="search-form" style="margin-left: 100px;">
 
@@ -61,7 +61,7 @@
 			</div>
 		</div>
 		<hr>
-		<div class="" id="show-all-btn-container"
+		<div class="zoom" id="show-all-btn-container"
 			style="width: 700px; margin: 0 auto;">
 			<div class="">
 				<form action="allUser.do" method="GET">

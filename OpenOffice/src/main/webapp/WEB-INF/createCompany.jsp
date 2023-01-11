@@ -16,10 +16,10 @@
 	<div class="containers text-center">
 		<div class="row">
 			<div class="col text-center">
-				<div class="card-title title-container">
+				<div class="card-title title-container zoom">
 					<h3>Create a Company</h3>
 				</div>
-				<div class="card-body yellow-containers">
+				<div class="card-body yellow-containers zoom">
 					<form action="creatingCompany" method="post">
 
 						<br /> Name: <br /> <input type="text" name="name" />

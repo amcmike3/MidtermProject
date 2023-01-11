@@ -17,11 +17,11 @@
 	<div class="containers">
 		<div class="row">
 			<div class="col-12 py-4">
-			<div class="title-container" style="text-align: center;">
+			<div class="title-container zoom" style="text-align: center;">
 				<h1>WELCOME TO OPEN OFFICE</h1>
 			</div>
 				<hr>
-				<div class="white-containers">
+				<div class="yellow-containers zoom">
 				<p>Sriracha biodiesel taxidermy organic post-ironic,
 					Intelligentsia salvia mustache <mark class="peach">90's code editing brunch.</mark> Butcher
 					polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal
@@ -34,7 +34,7 @@
 					Williamsburg master cleanse <mark class="peach">hella DIY 90's blog.</mark></p>
 				</div>
 				<hr>
-				<div class="white-containers">
+				<div class="yellow-containers zoom">
 
 				<p>Ethical Kickstarter PBR asymmetrical lo-fi. Dreamcatcher
 					street art Carles, stumptown gluten-free Kickstarter artisan Wes
@@ -47,7 +47,7 @@
 					occupy YOLO Pitchfork fixie iPhone fanny pack art party Portland.</p>
 				</div>
 				<hr>
-				<div class="white-containers">
+				<div class="yellow-containers zoom">
 
 				<p>Sriracha biodiesel taxidermy organic post-ironic,
 					Intelligentsia salvia mustache 90's code editing brunch. Butcher
@@ -61,7 +61,7 @@
 					Williamsburg master cleanse hella DIY 90's blog.</p>
 				</div>
 				<hr>
-				<div class="white-containers">
+				<div class="yellow-containers zoom">
 
 				<p>Ethical Kickstarter PBR asymmetrical lo-fi. Dreamcatcher
 					street art Carles, stumptown gluten-free Kickstarter artisan Wes

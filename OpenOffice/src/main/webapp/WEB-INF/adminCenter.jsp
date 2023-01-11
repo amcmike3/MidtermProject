@@ -13,21 +13,21 @@
 <body>
 	<%@include file="navbar.jsp"%>
 	<div class="containers text-center">
-		<div class="title-container text-center"
+		<div class="title-container text-center zoom"
 			style="max-width: 1000px; min-width: 300px; margin: 0 auto;">
 			<h1>Administrator Privileges</h1>
 		</div>
 		<hr>
 		<div class="row" id="admin-privileges-btn"
 			style="width: 700px; margin: 0 auto;">
-			<div class="col-4 card matcha" style="display: flex; align-items: center; justify-content: center;">
+			<div class="col-4 card matcha zoom" style="display: flex; align-items: center; justify-content: center;">
 				<form action="createCompany" method="GET">
 					<input id="btnDisplay" class="btn" type="submit"
 						value="Create Company" />
 				</form>
 			</div>
 
-			<div class="col card matcha" style="text-align: left;">
+			<div class="col card matcha zoom" style="text-align: left; margin-left: 10px;">
 				<div class="">
 
 

@@ -3,7 +3,7 @@
 </div>
 <div class="footer-container text-center" style="margin: 0;">
 	<div class="row">
-		<div class="col small-footer-containers">
+		<div class="col small-footer-containers zoom">
 			<h5>Technologies:</h5>
 			<ul>
 				<li>Java</li>
@@ -17,14 +17,14 @@
 				<li>JPQL</li>
 			</ul>
 		</div>
-		<div class="col small-footer-containers">
+		<div class="col small-footer-containers zoom">
 			<h5>Description:</h5>
 			<br>
 			<p>This site makes it easy for those searching for a job to do
 				research on companies they wish to join in the future.
 			</p>
 		</div>
-		<div class="col small-footer-containers">
+		<div class="col small-footer-containers zoom">
 			<h5>Contributors:</h5>
 			<br>
 			<ul>

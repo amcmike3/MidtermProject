@@ -22,15 +22,12 @@
 					<c:when test="${!empty company.reviews }">
 						<c:forEach var="review" items="${company.reviews }">
 							<c:if test="${review.enabled }">
-								<div class="row col card matcha" style="margin: 15px;">
+								<div class="row col card yellow-containers zoom" style="margin: 15px;">
 									<p>
 										<a href="userBio?userId=${review.user.id }">
 											${review.user.username }</a> rated this company ${review.rating }
 										out of 10 <br> this is what they had to say about
 										${company.name}: <br> ${review.content }
-										<c:if test="${sessionScope.user.role }">
-											<a href="updateAreview?reviewId=${review.id }"><button>Update</button></a>
-										</c:if>
 										<c:choose>
 											<c:when test="${sessionScope.user.id == review.user.id}">
 												<form action="deleteReview.do" method="POST">
@@ -41,7 +38,7 @@
 											</c:when>
 										</c:choose>
 										<c:choose>
-											<c:when test="${sessionScope.user.id == review.user.id}">
+											<c:when test="${sessionScope.user.id == review.user.id || sessionScope.user.role }">
 												<form action="updateCompanyReview.do" method="post">
 													<input type="hidden" name="companyId"
 														value="${company.id }">
@@ -56,7 +53,7 @@
 					</c:when>
 					<c:otherwise>
 						<div class="row">
-							<div class="col card white-containers">
+							<div class="col card yellow-containers zoom">
 								<p>
 									<a href="review.do?companyId=${company.id }">Be the first
 										to contribute</a>

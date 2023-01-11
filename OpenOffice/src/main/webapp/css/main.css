@@ -229,6 +229,12 @@ button:hover {
 	max-width: 200px;
 }
 
+#reactivate {
+	 height:100px; 
+	 width:250px; 
+	 font-size: 100;
+}
+
 .matcha {
 	background-color: #81B29A;
 }
@@ -304,4 +310,8 @@ company-bio-hr {
 #add-company-btn:hover {
 	background-color: #F2CC8F !important;
 	color: black !important;
+}
+
+#user-bio-containers:hover {
+	border-width: 2px;
 }

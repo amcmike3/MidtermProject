@@ -13,7 +13,7 @@
 <body>
 	<%@include file="navbar.jsp"%>
 	<div class="yellow-containers">
-		<div class="row col card text-center title-container">
+		<div class="row col card text-center title-container zoom">
 			<h1>${fn:toUpperCase(job.title) } at
 				${fn:toUpperCase(job.company.name) }</h1>
 			<p>${job.description }
@@ -26,14 +26,14 @@
 			</p>
 		</div>
 		<div class="row">
-			<div class="col text-center white-containers">
+			<div class="col text-center yellow-containers zoom">
 				<a href="allInterviews?jobId=${job.id }">${job.title} Interview
 					experiences </a>
 			</div>
 			<c:choose>
 				<c:when test="${sessionScope.user != null }">
-					<div class="col card text-center white-containers">
-						<div class="col text-center white-containers">
+					<div class="col card text-center yellow-containers zoom">
+						<div class="col text-center yellow-containers">
 							<a href="sendToCreateInterview?jobId=${job.id }">Leave an
 								interview experience at ${job.company.name } </a>
 						</div>
@@ -41,7 +41,7 @@
 					</div>
 				</c:when>
 				<c:otherwise>
-					<div class="col card text-center white-containers">
+					<div class="col card text-center yellow-containers zoom">
 						<a href="reviewJobLogin?jobId=${job.id }">Leave an interview
 							experience at ${job.company.name }</a>
 					</div>
@@ -51,11 +51,11 @@
 
 		</div>
 		<hr>
-		<div class="title-container text-center">
+		<div class="title-container text-center zoom">
 			<h1>Interviews</h1>
 		</div>
 		<c:forEach var="interview" items="${job.interviews }">
-			<div class="row white-containers">
+			<div class="row yellow-containers zoom">
 				<div class="col text-center" style="margin: 10px;">
 					<c:if test="${sessionScope.user.id == interview.user.id }">
 						<h4 class="" style="background-color: #E07A5F;">Your
@@ -75,9 +75,11 @@
 				</div>
 			</div>
 		</c:forEach>
+		<div class="card yellow-containers zoom">
 		<form action="createArticle.do" method="get">
 			<button type="submit" style="">Add Article</button>
 		</form>
+		</div>
 		<hr>
 	</div>
 

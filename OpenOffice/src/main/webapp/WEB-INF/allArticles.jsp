@@ -12,10 +12,13 @@
 
 <body>
 	<%@include file="navbar.jsp"%>
+	<div class="yellow-containers zoom">
 	<h1>All Articles</h1>
+	</div>
+	<div class="yellow-containers">
 	<c:forEach var="article" items="${articles }">
 		<div class="row">
-			<div class="col card matcha">
+			<div class="col card matcha zoom">
 
 				<div class="card-title">
 					<h3>
@@ -32,6 +35,7 @@
 			</div>
 		</div>
 	</c:forEach>
+	</div>
 
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>

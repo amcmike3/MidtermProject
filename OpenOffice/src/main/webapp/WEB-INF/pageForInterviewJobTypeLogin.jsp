@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
@@ -18,9 +18,8 @@
 		</div>
 		<hr>
 		<div class="yellow-containers zoom" style="max-width: 500px; min-width: 250px; min-height: 100px; margin: 0 auto;">
-			
-
-			<form action="loggingIn" method="post">
+			<form action="pageForInterviewJobTypeLoggingIn?companyId=${companyId }" method="post">
+			<input type="hidden" value="${companyId }" name="companyId">
 				<input type="text" placeholder="username" name="username"> <br>
 				<input type="password" placeholder="password" name="password">
 				<br> <input type="submit" value="Log In">

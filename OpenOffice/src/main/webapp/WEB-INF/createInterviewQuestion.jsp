@@ -14,11 +14,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col card text-center">
-				<div class="card-title">
+				<div class="card-title title-container zoom">
 					<h3>Interview:</h3>
 					<h5>Step 3/3</h5>
 				</div>
-				<div class="card-body">
+				<div class="card-body yellow-containers zoom">
 					<form action="createInterviewQuestion" method="post">
 						<input type="hidden" name="interviewId" value="${interviewId }" />
 						<br /> Title: <br /> <input type="text" name="title"
