@@ -27,7 +27,7 @@ public class UserController {
 	private CompanyDAO compDao;
 
 	@RequestMapping(path = "loggingIn", method = RequestMethod.POST)
-	public String login(String username, String password, HttpSession session, RedirectAttributes redir) {
+	public String login(String username, String password, HttpSession session, Model model) {
 		String ans = "";
 		User user = dao.login(username, password);
 		if (user == null) {
@@ -39,8 +39,8 @@ public class UserController {
 			session.setAttribute("user", user);
 			ans = "redirect:home";
 			} else {
-				redir.addFlashAttribute("user", user);
-				ans = "redirect:reactivateAccount";
+				model.addAttribute("userId", user.getId());
+				ans = "redirect:reactivateAccount?userId=" + user.getId();
 			}
 			
 		}
@@ -174,14 +174,14 @@ public class UserController {
 		return "redirect:adminCenter";
 	}
 	
-	@RequestMapping("reactivateUser")
+	@RequestMapping("reactivateAccount")
 	public String reactivateUser(Integer userId, Model model) {
 		model.addAttribute("user", dao.findById(userId));
-		return "reactivateUser";
+		return "reactivateAccount";
 	}
 	
-	@RequestMapping("reactivatingUser")
-	public String reactivatingUser(User user, Model model) {
+	@RequestMapping("reactivatingAccount")
+	public String reactivatingAccount(User user, Model model) {
 		model.addAttribute("user", dao.reactivate(user));
 		return "login";
 	}
