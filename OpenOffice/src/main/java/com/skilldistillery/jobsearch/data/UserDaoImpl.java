@@ -132,6 +132,7 @@ public class UserDaoImpl implements UserDAO {
 		if (user.getImgUrl() != null && user.getImgUrl() != "") {
 			oldUser.setImgUrl(user.getImgUrl());
 		}
+		oldUser.setEnabled(user.getEnabled());
 		oldUser.getReviews().size();
 
 		return oldUser;

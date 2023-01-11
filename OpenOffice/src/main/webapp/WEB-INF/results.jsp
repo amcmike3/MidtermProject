@@ -36,7 +36,7 @@
 								<td>${user.lastName}</td>
 								<td>${user.description}</td>
 								<td><c:if test="${sessionScope.user.role }">
-										<a href="updateAUser?userId=${user.id }"><button>Update</button></a>
+										<a href="updatAUser?userId=${user.id }"><button>Update</button></a>
 									</c:if></td>
 							</tr>
 						</c:forEach>

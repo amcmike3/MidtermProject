@@ -37,8 +37,6 @@
 			<label for="description">Description:</label><br>
 			<input type="text" id="description" name="description" value="${job.description}"><br> <br>
 			
-			<%-- <%-- abel for="industry">Industry:</label><br> <input type="text" id="jobs"
-				name="industry" value="${job.industry}"> --%>
 				<select name="industryId">
   			<c:forEach var="industry" items="${industryList }">
     			<option value="${industry.id}" <c:if test="${industry.id ==job.industry.id }">selected</c:if>
@@ -48,10 +46,6 @@
 			</select> <br>
 				
 				<br> <br>
-<%-- 
-			 <label for="company">Company:</label><br>
-			<input type="text" id="company" name="company" value="${job.company.name}"><br> <br>
-			<br>  --%>
 			
 			 <label for="Title">Title:</label><br>
 			<input type="text" id="title" name="title" value="${job.title}"><br> <br>
