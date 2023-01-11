@@ -15,18 +15,19 @@
 
 	<div class="containers text-center">
 		<div class="row">
-			<div class="col title-container text-center">
-				<div class="card-title">
+			<div class="col text-center">
+				<div class="card-title title-container">
 					<h3>Create a Company</h3>
 				</div>
-				<div class="card-body">
+				<div class="card-body yellow-containers">
 					<form action="creatingCompany" method="post">
 
 						<br /> Name: <br /> <input type="text" name="name" />
 						<br />Description<br /> <input type="text" name="description" />
-						<br />Location<br /> <input type="text" name="location" />
+						<br />Location<br /> <input type="text" name="location" /> <br />
 						<!-- Maybe implement google maps api if we have enough time -->
-							<button type="submit">Add Company</button>
+							<br> <button type="submit">Add Company</button> <br>
+							<br />
 						</form>
 				</div>
 			</div>
