@@ -18,7 +18,7 @@
 				type="hidden" value="${job.id}" placeholder="${job.id }"><br>
 			
 			<label for="salary">Salary:</label><br> <input
-				type="text" id="salary" name="name" value="${job.salary}"><br>
+				type="text" id="salary" name="salary" value="${job.salary}"><br>
 
 			<label for="yearsExperience">Years of Experience Required:</label><br> <input type="text"
 				id="location" name="yearsExperience" value="${job.yearsExperience}"><br>
@@ -39,7 +39,7 @@
 			
 				<select name="industryId">
   			<c:forEach var="industry" items="${industryList }">
-    			<option value="${industry.id}" <c:if test="${industry.id ==job.industry.id }">selected</c:if>
+    			<option value="${industry.id}" <c:if test="${industry.id == job.industry.id }">selected</c:if>
     			>"${industry.name }"</option>
 
   			</c:forEach>
