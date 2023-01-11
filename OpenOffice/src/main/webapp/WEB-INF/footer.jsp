@@ -30,10 +30,13 @@
 			<ul>
 				<li><a href="https://github.com/amcmike3" target="_blank">Alex
 						McMichael</a></li>
+						<br/>
 				<li><a href="https://github.com/mdharr" target="_blank">Michael
 						Harrington</a></li>
+						<br/>
 				<li><a href="https://github.com/djlynchy" target="_blank">Derek
 						Lynch</a></li>
+						<br/>
 				<li><a href="https://github.com/" target="_blank">Sandra
 						Harpole</a></li>
 
