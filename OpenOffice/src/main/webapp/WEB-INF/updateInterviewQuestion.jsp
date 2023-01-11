@@ -11,27 +11,40 @@
 </head>
 <body>
 	<%@include file="navbar.jsp"%>
-	<div>
-		<form action="updatingInterviewQuestion" method="POST">
-			<input type="hidden" name="id" value="${question.id}"> <input
-				type="hidden" name="interviewId" value="${interviewId }"> <input
-				type="hidden" name="companyId" value="${companyId }">
-			<div>
-				<label>Title</label> <input type="text" name="title"
-					value="${question.title}">
-			</div>
-			<div>
-				<label>Name</label> <input type="text" name="name"
-					value="${question.name}">
-			</div>
-			<div>
-				<label>Description</label> <input type="text" name="description"
-					value="${question.description}">
-			</div>
+	<div class="container text-center">
 
-			<button type="submit" class="btn btn-success">Submit</button>
-			<input type="submit" formaction="addAnotherInterviewQuestionFromUpdate" value="Add Another Question" />
-		</form>
+		<div class="row">
+			<div class="col card text-center">
+				<div class="card-title title-container">
+					<h2>Update Questions</h2>
+				</div>
+				<div class="col card card-body text-center matcha">
+					<form action="updatingInterviewQuestion" method="POST">
+						<input type="hidden" name="id" value="${question.id}"> <input
+							type="hidden" name="interviewId" value="${interviewId }">
+						<input type="hidden" name="companyId" value="${companyId }">
+						<div>
+							<label>Title: </label> <br/>  <input type="text" name="title"
+								value="${question.title}">
+						</div>
+						<div>
+							<label>Name: </label> <br/> <input type="text" name="name"
+								value="${question.name}">
+						</div>
+						<div>
+							Description: <br/>
+							<textarea name="description" rows="4" cols="40">${question.description}</textarea>
+						</div>
+
+						<input type="submit" class="btn btn-success" value="Submit">
+						<br/>
+						<input type="submit"
+							formaction="addAnotherInterviewQuestionFromUpdate"
+							value="Add Another Question" />
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 <%@include file="footer.jsp"%>

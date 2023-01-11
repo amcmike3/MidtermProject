@@ -20,7 +20,7 @@
 		<hr>
 		<div class="row" id="admin-privileges-btn"
 			style="width: 700px; margin: 0 auto;">
-			<div class="col-4 card matcha">
+			<div class="col-4 card matcha" style="display: flex; align-items: center; justify-content: center;">
 				<form action="createCompany" method="GET">
 					<input id="btnDisplay" class="btn" type="submit"
 						value="Create Company" />

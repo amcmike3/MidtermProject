@@ -14,20 +14,12 @@
 	<%@include file="navbar.jsp"%>
 	<div class="yellow-containers">
 		<div class="row col card text-center title-container">
-			<h1>
-				  ${fn:toUpperCase(job.title) }
-				at
-				${fn:toUpperCase(job.company.name) } 
-			</h1>
+			<h1>${fn:toUpperCase(job.title) } at
+				${fn:toUpperCase(job.company.name) }</h1>
 			<p>${job.description }
-			<br/>
-				Salary:
-				<br/>
-				${job.salary }
-				<br> Certifications: <br /> ${job.certifications } <br />
-				Education: <br /> ${job.education }
-				Skills:
-				${job.skills }
+				<br /> Salary: <br /> ${job.salary } <br> Certifications: <br />
+				${job.certifications } <br /> Education: <br /> ${job.education }
+				Skills: ${job.skills }
 				<c:if test="${sessionScope.user.role }">
 					<a href="updateAJob?jobId=${job.id }"><button>Update</button></a>
 				</c:if>
@@ -66,17 +58,20 @@
 			<div class="row white-containers">
 				<div class="col text-center" style="margin: 10px;">
 					<c:if test="${sessionScope.user.id == interview.user.id }">
-						<h4 class="bg-danger">Your Contribution:</h4>
+						<h4 class="" style="background-color: #E07A5F;">Your
+							Contribution:</h4>
+					</c:if>
+					<p>
+						<a href="interviewBio?interviewId=${interview.id }">
+							${interview.title }</a>
+					</p>
+					<c:if test="${sessionScope.user.id == interview.user.id }">
 						<form action="updateInterview">
 							<input type="hidden" name="companyId" value="${job.company.id}" />
 							<input type="hidden" name="interviewId" value="${interview.id }" />
 							<input type="submit" value="update" />
 						</form>
 					</c:if>
-					<p>
-						<a href="interviewBio?interviewId=${interview.id }">
-							${interview.title }</a>
-					</p>
 				</div>
 			</div>
 		</c:forEach>
