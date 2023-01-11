@@ -170,5 +170,17 @@ public class UserDaoImpl implements UserDAO {
 		}
 		return foundUser;
 	}
+	@Override
+	public boolean accountDisabled(Integer id) {
+		User user = em.find(User.class, id);
+		boolean ans = false;
+
+		user.setEnabled(false);
+		if (!user.getEnabled()) {
+			ans = true;
+		}
+
+		return ans;
+	}
 
 }
