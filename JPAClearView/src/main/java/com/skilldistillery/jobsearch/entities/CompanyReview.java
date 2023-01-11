@@ -36,6 +36,16 @@ public class CompanyReview {
 	
 	private String advice;
 	
+	private Boolean enabled;
+	
+	public Boolean getEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+	}
+
 	@ManyToOne
 	@JoinColumn(name="company_id")
 	private Company company;

@@ -179,7 +179,7 @@ button:hover {
 	background-color: #81B29A;
 	border: 1px solid;
 	box-shadow: 5px 10px 18px #888888;
-	padding: 25px;
+	padding: 25px 100px 25px 100px;
 	justify-content: space-evenly;
 }
 
