@@ -22,13 +22,14 @@
 				</div>
 				<div class="containers">
 		<form action="updatingACompanyReview" method="POST">
+		<input type="hidden" name="id" value="${review.id }">
 			<div>
 				<label for="title"><strong>Title:</strong></label> 
-				<input type="text" name="title" value="${company.review.title }" required>
+				<input type="text" name="title" value="${review.title }" >
 			</div>
 			<div>
 				<label for="content"><strong>Content:</strong></label> 
-				<input type="text" name="content" required>
+				<input type="text" name="content" value="${review.content }">
 			</div>
 
 			<label for="rating">Rating:</label> <select id="rating" name="rating">
@@ -46,12 +47,12 @@
 			
 			<div>
 				<label for="pros"><strong>Pros:</strong></label> <input type="text"
-					name="pros" required>
+					name="pros" value="${review.pros }">
 			</div>
 
 			<div>
 				<label for="cons"><strong>Cons:</strong></label> <input type="text"
-					name="cons" required>
+					name="cons" value="${review.cons }">
 			</div>
 
 			<label for="recommendation">Recommended:</label> <select
@@ -62,7 +63,7 @@
 
 			<div>
 				<label for="advice"><strong>Advice:</strong></label> <input
-					type="text" name="advice" required>
+					type="text" name="advice" value="${review.advice }">
 			</div>
 
 			<div>
