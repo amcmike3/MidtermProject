@@ -57,5 +57,10 @@ class CompanyReviewTest {
 		assertNotNull(review);
 		assertEquals(1, review.getUser().getId());
 	}
-
+	
+	@Test
+	void test_enabled_CompanyReview() {
+		assertTrue(review.getEnabled());
+	}
+ 
 }
