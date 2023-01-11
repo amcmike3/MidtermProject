@@ -92,6 +92,8 @@ public class CompanyReviewController {
 		return mv;
 	}
 	
+	
+
 	@RequestMapping(path = "reviewLoggingIn", method = RequestMethod.POST)
 	public String reviewLoggingIn(String username, String password, HttpSession session, Model model, Integer companyId) {
 		String ans = "";
@@ -115,7 +117,7 @@ public class CompanyReviewController {
 	public String reviewLoggingInGet( Model model, Integer companyId) {
 		model.addAttribute("company", dao.findCompanyById(companyId));
 		model.addAttribute("industryList", industryDao.getAll());
-		return "pageForInterviewJobType";
+		return "createUserReview";
 	}
 		
 	

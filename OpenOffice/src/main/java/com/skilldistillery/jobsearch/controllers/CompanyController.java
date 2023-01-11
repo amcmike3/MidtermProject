@@ -9,14 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.jobsearch.data.CompanyDAO;
 import com.skilldistillery.jobsearch.data.IndustryDAO;
 import com.skilldistillery.jobsearch.data.InterviewDAO;
+import com.skilldistillery.jobsearch.data.UserDAO;
 import com.skilldistillery.jobsearch.entities.Company;
 import com.skilldistillery.jobsearch.entities.Industry;
-import com.skilldistillery.jobsearch.entities.Interview;
 import com.skilldistillery.jobsearch.entities.Job;
 import com.skilldistillery.jobsearch.entities.User;
 
@@ -31,6 +32,9 @@ public class CompanyController {
 	
 	@Autowired 
 	private IndustryDAO inDao;
+	
+	@Autowired
+	private UserDAO userDao;
 	
 	@RequestMapping("getCompany.do")
 	public String getCompanyByKeyword(String name, Model model) {
@@ -87,7 +91,11 @@ public class CompanyController {
 		return "allReviews";
 	}
 	@RequestMapping("pageForInterviewJobType.do")
-	public String gotToInterviewJobType(Integer companyId, Model model) {
+	public String gotToInterviewJobType(Integer companyId, Model model, HttpSession session) {
+		User user = ( User) session.getAttribute("user");
+		if (user == null) {
+			return "redirect:pageForInterviewJobTypeLogin?companyId=" + companyId;
+		}
 		Company company = dao.findCompanyById(companyId);
 		List<Industry> industryList = inDao.getAll();
 		model.addAttribute("industryList", industryList);
@@ -96,6 +104,37 @@ public class CompanyController {
 		
 	}
 	
+	@RequestMapping("pageForInterviewJobTypeLogin")
+	public String sendToLoginPage(Integer companyId, Model model) {
+		model.addAttribute("companyId", companyId);
+		return "pageForInterviewJobTypeLogin";
+	}
+	
+	@RequestMapping(path = "pageForInterviewJobTypeLoggingIn", method = RequestMethod.POST)
+		private String pageForInterviewJobTypeLoggingIn(Model model, HttpSession session, Integer companyId, String username, String password) {
+		String ans = "";
+		User user = userDao.login(username, password);
+		if (user == null) {
+			model.addAttribute("companyId", companyId);
+			ans = "reviewLogin";
+		} else {
+			model.addAttribute("company", dao.findCompanyById(companyId));
+			model.addAttribute("industryList", inDao.getAll());
+			user.getReviews().size();
+			user.getArticles().size();
+			session.setAttribute("user", user);
+			ans = "redirect:pageForInterviewJobTypeLoggingInGet?companyId=" + companyId;
+		}
+
+		return ans;
+	}
+	
+	@RequestMapping(path = "pageForInterviewJobTypeLoggingInGet", method = RequestMethod.GET)
+	public String pageForInterviewJobTypeLoggingInGet( Model model, Integer companyId) {
+		model.addAttribute("company", dao.findCompanyById(companyId));
+		model.addAttribute("industryList", inDao.getAll());
+		return "pageForInterviewJobType";
+	}
 	
 	@RequestMapping("createCompany")
 	public String createCompany() {
