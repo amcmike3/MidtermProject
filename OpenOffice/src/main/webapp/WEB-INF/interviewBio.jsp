@@ -12,33 +12,47 @@
 
 <body>
 	<%@include file="navbar.jsp"%>
+	<div class="containers text-center">
+		<div class="row">
+			<div class="col  text-center">
+				<div class="card-title title-container">
+					<div class=" card card-title matcha">
 
-	<div class="container">
-		<div class="row col card text-center">
-			<h1>${interview.title }for${interview.job.title }</h1>
-			<p>${interview.process }
-				<br>
-			</p>
-			<c:if test="${sessionScope.user.role }">
-				<a href="updateAInterview?interviewId=${interview.id }"><button>Update</button></a>
-			</c:if>
-		</div>
-
-		<c:forEach var="question" items="${interview.interviewQuestions }">
-			<div class="row">
-				<div class="col card">
-
-					<div class="card-title">
-						<h3>${question.title }</h3>
+						<h1>${interview.job.title }</h1>
 					</div>
-					<p>
-						${question.name } <br> ${question.description }
-
-					</p>
-
+					<div class="card-title title-container">
+						<br />
+						<h3>${interview.title }</h3>
+					</div>
+					<div class="card-title title-container">
+						<h1 style="text-align: left;">Description:</h1>
+						<p>${interview.process }
+							<br>
+						</p>
+						<c:if test="${sessionScope.user.role }">
+							<a href="updateAInterview?interviewId=${interview.id }"><button>Update</button></a>
+						</c:if>
+					</div>
 				</div>
+
+				<c:forEach var="question" items="${interview.interviewQuestions }">
+					<div class="row">
+						<div class="col card">
+
+							<div class="card-title">
+								<h3>${question.title }</h3>
+							</div>
+							<p>
+								${question.name } <br> ${question.description }
+
+							</p>
+
+						</div>
+					</div>
+					<br />
+				</c:forEach>
 			</div>
-		</c:forEach>
+		</div>
 	</div>
 
 	<%@include file="footer.jsp"%>
