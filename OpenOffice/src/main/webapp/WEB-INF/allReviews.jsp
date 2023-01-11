@@ -28,9 +28,6 @@
 											${review.user.username }</a> rated this company ${review.rating }
 										out of 10 <br> this is what they had to say about
 										${company.name}: <br> ${review.content }
-										<c:if test="${sessionScope.user.role }">
-											<a href="updateAreview?reviewId=${review.id }"><button>Update</button></a>
-										</c:if>
 										<c:choose>
 											<c:when test="${sessionScope.user.id == review.user.id}">
 												<form action="deleteReview.do" method="POST">
@@ -41,7 +38,7 @@
 											</c:when>
 										</c:choose>
 										<c:choose>
-											<c:when test="${sessionScope.user.id == review.user.id}">
+											<c:when test="${sessionScope.user.id == review.user.id || sessionScope.user.role }">
 												<form action="updateCompanyReview.do" method="post">
 													<input type="hidden" name="companyId"
 														value="${company.id }">

@@ -12,12 +12,23 @@
 
 <body>
 	<%@include file="navbar.jsp"%>
-	<h1>Reactivate Account</h1>
-	<br>
-	<form action="reactivatingAccount">
-		<input type="submit" value="Reactivate Account" /> <input
-			type="hidden" name="id" value="${user.id }" />
-	</form>
+
+	<div class="containers text-center">
+		<div class="row">
+			<div class="col  text-center">
+				<div class="card-title title-container">
+					<h3>Account has been deactivated</h3>
+				</div>
+				<div class="col card card-body text-center matcha">
+					<br>
+					<form action="reactivatingAccount">
+						<input id="reactivate" type="submit" value="Reactivate Account"/> <input
+							type="hidden" name="id" value="${user.id }" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
