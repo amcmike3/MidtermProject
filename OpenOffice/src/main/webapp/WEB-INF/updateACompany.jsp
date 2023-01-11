@@ -27,7 +27,7 @@
 
 
 				<label for="description">Description:</label><br> 
-				<textarea type="text" id="description" name="description" rows="5" cols="40"
+				<textarea id="description" name="description" rows="5" cols="40"
 					>${company.description}</textarea>
 				<br> <label for="enabled">Enable?</label> <select id="enabled"
 					name="enabled" >
