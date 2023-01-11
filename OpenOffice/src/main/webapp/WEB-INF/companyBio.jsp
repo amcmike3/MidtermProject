@@ -160,7 +160,7 @@
 
 				<c:forEach var="interview" items="${job.interviews }">
 						<div class="col">
-							<li><a id="interview-job-link"
+							<a id="interview-job-link"
 								href="interviewBio?interviewId=${interview.id}">${interview.title }</a>
 								<c:if test="${interview.user.id == sessionScope.user.id }">
 									<form
@@ -170,9 +170,9 @@
 											name="companyId" value="${company.id }"> <input
 											type="submit" value="update">
 									</form>
-								</li>
-						</div>
-					</c:if>
+
+								</c:if>
+							</div>
 				</c:forEach>
 			</div>
 		</c:forEach>

@@ -12,28 +12,35 @@
 
 <body>
 	<%@include file="navbar.jsp"%>
-	<h1>All Interview Experiences for ${job.title }</h1>
-	<c:forEach var="interview" items="${interviews }">
+	<div class="containers text-center">
 		<div class="row">
-			<div class="col card matcha">
-
-				<div class="card-title">
-					<h3>
-						<a href="userBio?userId=${ interview.user.id}">${interview.user.username }</a>
-						wrote: <br> <a
-							href="interviewBio?interviewId=${interview.id }">${interview.title }</a>
-					</h3>
+			<div class="col text-center ">
+				<div class="card-title title-container zoom">
+					<h3>All Interview Experiences for ${job.title }</h3>
 				</div>
-				<div class="card-body"></div>
-				<p>${interview.process }</p>
-				<br />
-				<c:if test="${sessionScope.user.role }">
-					<a href="updateAInterview?interviewId=${interview.id }"><button>Update</button></a>
-				</c:if>
 			</div>
 		</div>
-	</c:forEach>
+		<c:forEach var="interview" items="${interviews }">
+			<div class="row">
+				<div class="col card matcha zoom">
+					<div class="card card-body yellow-containers ">
 
+						<h3>
+							<a href="userBio?userId=${ interview.user.id}">${interview.user.username }</a>
+							wrote: <br> <a
+								href="interviewBio?interviewId=${interview.id }">${interview.title }</a>
+						</h3>
+					</div>
+					<div class="card-body"></div>
+					<p>${interview.process }</p>
+					<br />
+					<c:if test="${sessionScope.user.role }">
+						<a href="updateAInterview?interviewId=${interview.id }"><button>Update</button></a>
+					</c:if>
+				</div>
+			</div>
+		</c:forEach>
+	</div>
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
 </body>
