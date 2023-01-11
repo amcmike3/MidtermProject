@@ -40,7 +40,7 @@
 			
 			<div class="">
 
-				<form action="updatAUser" method="GET">
+				<form action="updateAUser" method="GET">
 					<input type="text" placeholder="user id" name="userId"
 						required />
 					<div class="btn">
