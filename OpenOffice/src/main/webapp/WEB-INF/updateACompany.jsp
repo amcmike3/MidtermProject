@@ -13,11 +13,8 @@
 <body>
 	<%@include file="navbar.jsp"%>
 	<div>
-<<<<<<< HEAD
 		<form action="updatingACompany" method="post">
-=======
-		<form action="updatingACompany">
->>>>>>> e753194089415174971ac98600b57e5332149485
+
 			 <input id="id" name="id"
 				type="hidden" value="${company.id}"><br>
 			
