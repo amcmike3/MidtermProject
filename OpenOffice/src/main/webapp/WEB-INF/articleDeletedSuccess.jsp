@@ -12,7 +12,7 @@
 
 <body>
 	<%@include file="navbar.jsp"%>
-	
+	<div class="yellow-containers card zoom">
 	<c:choose>
 	<c:when test="${success }">
 	<h1>Article deleted</h1>
@@ -21,7 +21,7 @@
 	<h1>Article not deleted</h1>
 	</c:otherwise>
 	</c:choose>
-
+	</div>
 
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>

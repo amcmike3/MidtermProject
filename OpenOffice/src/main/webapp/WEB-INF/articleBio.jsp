@@ -14,7 +14,7 @@
 	<%@include file="navbar.jsp"%>
 	<div class="container">
 		<div class="row">
-			<div class="col card text-center yellow-containers">
+			<div class="col card text-center yellow-containers zoom">
 				<div class="card-title title-container">
 					<h1>${article.title }</h1>
 					<br />
@@ -31,7 +31,7 @@
 					</p>
 
 				</div>
-				<div class="card-body yellow-containers">
+				<div class="card-body yellow-containers zoom">
 					<p>${article.description }</p>
 					<a href="${article.articleUrl }" target="_blank">Read more</a>
 					<c:choose>

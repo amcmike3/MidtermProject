@@ -13,7 +13,7 @@
 	<%@include file="navbar.jsp"%>
 	<div class="containers text-center">
 		<div class="row">
-			<div class="col title-container text-center title-container">
+			<div class="col title-container text-center title-container zoom">
 				<div class="card-title">
 					<h3>${company.name }</h3>
 				</div>

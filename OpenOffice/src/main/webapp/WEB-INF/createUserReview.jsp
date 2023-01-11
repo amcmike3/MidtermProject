@@ -14,10 +14,10 @@
 	<%@include file="navbar.jsp"%>
 	<div class="container">
 		<div class="row">
-			<div class="col card text-center title-container">
+			<div class="col card text-center title-container zoom">
 				<h3>Review A Company</h3>
 			</div>
-			<div class="title-container matcha card text-center">
+			<div class="title-container matcha card text-center zoom">
 				<form action="createUserReview.do" method="POST">
 					<div>
 						<label for="title"><strong>Title:</strong></label> <br /> <input

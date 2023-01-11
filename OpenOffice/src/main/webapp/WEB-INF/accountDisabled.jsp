@@ -12,7 +12,7 @@
 
 <body>
 	<%@include file="navbar.jsp"%>
-
+<div class="yellow-containers zoom">
 	<c:choose>
 		<c:when test="${success }">
 			<h1>Account has been Disabled</h1>
@@ -26,6 +26,7 @@
   					<button type="submit">Re-Enable</button>
  					 </form>
 	</c:choose>
+	</div>
 
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>

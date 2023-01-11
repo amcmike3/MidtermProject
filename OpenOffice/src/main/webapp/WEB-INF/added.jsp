@@ -13,10 +13,10 @@
 <body>
 	<%@include file="navbar.jsp"%>
 
-<div>
+<div class="yellow-containers zoom">
 <h2><strong>Company Review Added</strong></h2>
 </div>
-<div class="containers">
+<div class="yellow-containers zoom">
  <c:choose>
     <c:when test="${! empty companyReview}">
       <ul style="list-style-type: square;">

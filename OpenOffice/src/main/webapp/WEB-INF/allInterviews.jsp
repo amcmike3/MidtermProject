@@ -15,7 +15,7 @@
 	<h1>All Interview Experiences for ${job.title }</h1>
 	<c:forEach var="interview" items="${interviews }">
 		<div class="row">
-			<div class="col card matcha">
+			<div class="col card matcha zoom">
 
 				<div class="card-title">
 					<h3>

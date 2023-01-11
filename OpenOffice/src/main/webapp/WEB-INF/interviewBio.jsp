@@ -15,7 +15,7 @@
 	<div class="containers text-center">
 		<div class="row">
 			<div class="col  text-center">
-				<div class="card-title title-container">
+				<div class="card-title title-container zoom">
 					<div class=" card card-title matcha">
 
 						<h1>${interview.job.title }</h1>
@@ -37,7 +37,7 @@
 
 				<c:forEach var="question" items="${interview.interviewQuestions }">
 					<div class="row">
-						<div class="col card">
+						<div class="col card yellow-containers zoom">
 
 							<div class="card-title">
 								<h3>${question.title }</h3>

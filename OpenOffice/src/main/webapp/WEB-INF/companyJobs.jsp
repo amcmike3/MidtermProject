@@ -6,20 +6,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>${company.name }jobs</title>
+<title>${company.name } Jobs</title>
 <%@ include file="bootstrapHead.jsp"%>
 </head>
 
 <body>
 	<%@include file="navbar.jsp"%>
 	<div class="container">
-		<div class="row col card">
-			<h1>${company.name }jobs</h1>
+	<div class="yellow-containers">
+		<div class="row col card zoom text-center title-container">
+			<h1>${company.name } Jobs</h1>
 		</div>
 
 		<c:forEach var="job" items="${ companyJobs}">
 			<c:if test="${job.enabled }">
-				<div class="row col card">
+				<div class="row col card zoom yellow-containers">
 					<h3>
 						<a href="jobBio?jobId=${job.id }">${job.title }</a>
 					</h3>
@@ -27,8 +28,8 @@
 				</div>
 			</c:if>
 		</c:forEach>
+		</div>
 	</div>
-
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
 </body>
