@@ -58,7 +58,7 @@
 			<label for="recommendation">Recommended:</label> <select
 				id="recommendation" name="recommendation">
 				<option value="true" <c:if test="${review.recommendation }">selected</c:if>>Yes</option>
-				<option value="false" <c:if test="${review.recommendation }">selected</c:if>>No</option>
+				<option value="false" <c:if test="${!review.recommendation }">selected</c:if>>No</option>
 			</select>
 
 			<div>
