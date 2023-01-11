@@ -34,7 +34,7 @@
 					<input type="text" name="datePosted" value="${article.datePosted}"> 
 						<br> 
 					 <label>Industry for Article</label>
-					<input type="text" name="industry" value="${article.industry}"> 
+					<input type="text" name="industry" value="${article.industry.name}"> 
 						<br> 
 						
 						<input type="submit" value="Update Article" />
