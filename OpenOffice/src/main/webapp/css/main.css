@@ -166,16 +166,16 @@ a:active {
 }
 
 .button {
-	background-color: #3D405B;
+	background-color: #3D405B !important;
 }
 
 button {
-	background-color: #3D405B;
+	background-color: #3D405B !important;
 }
 
 button:hover {
-	background-color: #F2CC8F;
-	color: black;
+	background-color: #F2CC8F !important;
+	color: black !important;
 }
 
 #show-all-btn-container {
@@ -287,11 +287,11 @@ company-bio-hr {
 }
 
 #add-company-btn:active {
-	background-color: #3D405B;
-	color: white;
+	background-color: #3D405B !important;
+	color: white !important;
 }
 
 #add-company-btn:hover {
-	background-color: #F2CC8F;
-	color: black;
+	background-color: #F2CC8F !important;
+	color: black !important;
 }
