@@ -16,8 +16,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col card card-body matcha">
-			<form action="updatingAUser" method="post">
+			<form action="updatingAUser">
 			<input type="hidden" name="id" value="${user.id }"/>
+			<h1>This needs to have an option to change the enabled field!!!</h1>
 			Description: <br>
 			<input type="text" name="description" value="${user.description }"/>
 			<br>
