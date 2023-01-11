@@ -13,11 +13,13 @@
 <body>
 	<%@include file="navbar.jsp"%>
 	<div class="container">
-		<div class="text-center matcha card" style="align-items: center; padding-top: 15px; padding-bottom: 35px;">
+		<div class="text-center matcha card"
+			style="align-items: center; padding-top: 15px; padding-bottom: 35px;">
 			<div class="title-container">
 				<h2>Update ${fn:toUpperCase(company.name) }</h2>
 			</div>
-			<div class="col-8 yellow-containers card" style="padding-bottom: 35px;" >
+			<div class="col-8 yellow-containers card"
+				style="padding-bottom: 35px;">
 				<form action="updatingACompany" method="post">
 
 					<input id="id" name="id" type="hidden" value="${company.id}"><br>
@@ -27,11 +29,8 @@
 
 					<label for="location">Location:</label><br> <input type="text"
 						id="location" name="location" value="${company.location}"><br>
-
-
 					<label for="description">Description:</label><br>
-					<textarea type="text" id="description" name="description" rows="5"
-						cols="40">${company.description}</textarea>
+					<textarea id="description" name="description" rows="5" cols="40">${company.description}</textarea>
 					<br> <label for="enabled">Enable?</label> <select id="enabled"
 						name="enabled">
 						<option value="true"
@@ -39,6 +38,7 @@
 						<option value="false"
 							<c:if test="${!company.enabled}">selected</c:if>>No</option>
 					</select> <br> <input type="submit">
+
 
 				</form>
 			</div>
