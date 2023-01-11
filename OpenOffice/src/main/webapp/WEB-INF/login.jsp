@@ -13,11 +13,11 @@
 <body>
 	<%@include file="navbar.jsp"%>
 	<div class="containers text-center">
-		<div class="title-container text-center" style="max-width: 1000px; min-width: 300px; margin: 0 auto;">
+		<div class="title-container text-center zoom" style="max-width: 1000px; min-width: 300px; margin: 0 auto;">
 			<h1>LOGIN TO AN EXISTING ACCOUNT</h1>
 		</div>
 		<hr>
-		<div class="yellow-containers" style="max-width: 500px; min-width: 250px; min-height: 100px; margin: 0 auto;">
+		<div class="yellow-containers zoom" style="max-width: 500px; min-width: 250px; min-height: 100px; margin: 0 auto;">
 			
 
 			<form action="loggingIn" method="post">

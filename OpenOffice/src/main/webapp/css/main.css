@@ -311,3 +311,7 @@ company-bio-hr {
 	background-color: #F2CC8F !important;
 	color: black !important;
 }
+
+#user-bio-containers:hover {
+	border-width: 2px;
+}
