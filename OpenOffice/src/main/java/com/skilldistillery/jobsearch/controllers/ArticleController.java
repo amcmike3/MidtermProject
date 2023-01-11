@@ -30,7 +30,7 @@ public class ArticleController {
 
 	@Autowired
 	private IndustryDAO industryDao;
-	//Test...................
+	//Test.................
 
 	@RequestMapping("articleBio")
 	public String articleBio(HttpSession session, Integer articleId, Model model) {
@@ -50,7 +50,7 @@ public class ArticleController {
 	@RequestMapping("allArticles")
 	public String allArticles(Model model) {
 		model.addAttribute("articles", dao.findAllArticles());
-		return "results";
+		return "allArticles";
 	}
 
 	@RequestMapping("createArticle.do")

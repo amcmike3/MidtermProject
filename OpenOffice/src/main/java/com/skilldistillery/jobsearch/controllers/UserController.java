@@ -144,11 +144,16 @@ public class UserController {
 	}
 
 	@RequestMapping(path = { "viewSubscription.do" })
-	public ModelAndView goToViewSubscriptions(Integer userId, HttpSession session) {
+	public ModelAndView goToViewSubscriptions(Integer userId, HttpSession session, Model model) {
 		ModelAndView mv = new ModelAndView();
 		User user = dao.findById(userId);
-		mv.addObject("user", user);
-		session.setAttribute("user", user);
+		User loggedInUser = (User) session.getAttribute("user");
+		model.addAttribute("user", user);
+		
+		if(loggedInUser != null && loggedInUser.getId() == user.getId()) {
+			mv.addObject("user", user);
+			session.setAttribute("user", user);
+		}
 		mv.setViewName("viewSubscription");
 		return mv;
 

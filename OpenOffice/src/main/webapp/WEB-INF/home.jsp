@@ -23,7 +23,7 @@
 				<hr>
 				<div class="white-containers">
 				<p>Sriracha biodiesel taxidermy organic post-ironic,
-					Intelligentsia salvia mustache 90's code editing brunch. Butcher
+					Intelligentsia salvia mustache <mark class="peach">90's code editing brunch.</mark> Butcher
 					polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal
 					sustainable mixtape swag wolf squid tote bag. Tote bag cronut
 					semiotics, raw denim deep v taxidermy messenger bag. Tofu YOLO
@@ -31,7 +31,7 @@
 					Shoreditch tousled aesthetic irony, street art organic Bushwick
 					artisan cliche semiotics ugh synth chillwave meditation. Shabby
 					chic lomo plaid vinyl chambray Vice. Vice sustainable cardigan,
-					Williamsburg master cleanse <mark class="matcha">hella DIY 90's blog.</mark></p>
+					Williamsburg master cleanse <mark class="peach">hella DIY 90's blog.</mark></p>
 				</div>
 				<hr>
 				<div class="white-containers">
