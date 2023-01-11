@@ -20,7 +20,7 @@
 					<h3>Create a Company</h3>
 				</div>
 				<div class="card-body">
-					<form action="createCompany">
+					<form action="creatingCompany" method="post">
 
 						<br /> Name: <br /> <input type="text" name="name" />
 						<br />Description<br /> <input type="text" name="description" />

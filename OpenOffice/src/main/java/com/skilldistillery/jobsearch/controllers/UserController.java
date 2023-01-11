@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.skilldistillery.jobsearch.data.CompanyDAO;
 import com.skilldistillery.jobsearch.data.UserDAO;
@@ -26,16 +27,22 @@ public class UserController {
 	private CompanyDAO compDao;
 
 	@RequestMapping(path = "loggingIn", method = RequestMethod.POST)
-	public String login(String username, String password, HttpSession session) {
+	public String login(String username, String password, HttpSession session, Model model) {
 		String ans = "";
 		User user = dao.login(username, password);
 		if (user == null) {
 			ans = "login";
 		} else {
+			if(user.getEnabled()) {
 			user.getReviews().size();
 			user.getArticles().size();
 			session.setAttribute("user", user);
 			ans = "redirect:home";
+			} else {
+				model.addAttribute("userId", user.getId());
+				ans = "redirect:reactivateAccount?userId=" + user.getId();
+			}
+			
 		}
 
 		return ans;
@@ -155,16 +162,28 @@ public class UserController {
 		
 	}
 		
-	@RequestMapping("updateAUser")
+	@RequestMapping("updatAUser")
 	public String updateAUser(Integer userId, Model model) {
 		model.addAttribute("user", dao.findById(userId));
-		return "updateAUser";
+		return "updatAUser";
 	}
 	
 	@RequestMapping("updatingAUser")
 	public String updatingAUser(User user, Model model) {
 		model.addAttribute("user", dao.update(user));
-		return "adminCenter";
+		return "redirect:adminCenter";
+	}
+	
+	@RequestMapping("reactivateAccount")
+	public String reactivateUser(Integer userId, Model model) {
+		model.addAttribute("user", dao.findById(userId));
+		return "reactivateAccount";
+	}
+	
+	@RequestMapping("reactivatingAccount")
+	public String reactivatingAccount(User user, Model model) {
+		model.addAttribute("user", dao.reactivate(user));
+		return "login";
 	}
 	
 

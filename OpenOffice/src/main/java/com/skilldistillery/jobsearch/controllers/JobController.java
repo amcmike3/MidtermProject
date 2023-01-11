@@ -126,10 +126,10 @@ public class JobController {
 	}
 	
 	@RequestMapping("updatingAJob")
-	public String updatingAJob(Job job, Model model) {
-		System.out.println("--------------------------------------------" + job);
+	public String updatingAJob(Job job, Model model, Integer industryId) {
+		job.setIndustry(inDao.findById(industryId));
 		model.addAttribute("job", dao.updateJob(job));
-		return "adminCenter";
+		return "redirect:adminCenter";
 	}
 	
 

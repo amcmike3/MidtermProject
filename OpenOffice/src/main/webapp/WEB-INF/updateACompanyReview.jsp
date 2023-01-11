@@ -21,49 +21,49 @@
 				</div>
 				<div class="containers">
 		<form action="updatingACompanyReview" method="POST">
+		<input type="hidden" name="id" value="${review.id }">
 			<div>
 				<label for="title"><strong>Title:</strong></label> 
-				<input type="text" name="title" value="${company.review.title }" required>
+				<input type="text" name="title" value="${review.title }" >
 			</div>
 			<div>
 				<label for="content"><strong>Content:</strong></label> 
-				<input type="text" name="content" required>
+				<input type="text" name="content" value="${review.content }">
 			</div>
 
 			<label for="rating">Rating:</label> <select id="rating" name="rating">
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
+					<option value="1" <c:if test="${review.rating == 1}">selected</c:if>>1</option>
+				<option value="2"<c:if test="${review.rating == 2}">selected</c:if>>2</option>
+				<option value="3"<c:if test="${review.rating == 3}">selected</c:if>>3</option>
+				<option value="4"<c:if test="${review.rating == 4}">selected</c:if>>4</option>
+				<option value="5"<c:if test="${review.rating == 5}">selected</c:if>>5</option>
+				<option value="6"<c:if test="${review.rating == 6}">selected</c:if>>6</option>
+				<option value="7"<c:if test="${review.rating == 7}">selected</c:if>>7</option>
+				<option value="8"<c:if test="${review.rating == 8}">selected</c:if>>8</option>
+				<option value="9"<c:if test="${review.rating == 9}">selected</c:if>>9</option>
+				<option value="10"<c:if test="${review.rating == 10}">selected</c:if>>10</option>
 			</select>
 			
 			<div>
 				<label for="pros"><strong>Pros:</strong></label> <input type="text"
-					name="pros" required>
+					name="pros" value="${review.pros }">
 			</div>
 
 			<div>
 				<label for="cons"><strong>Cons:</strong></label> <input type="text"
-					name="cons" required>
+					name="cons" value="${review.cons }">
 			</div>
 
-			<label for="recommendation">Recommended:</label> <select
-				id="recommendation" name="recommendation">
-				<option value="true">Yes</option>
-				<option value="false">No</option>
-			</select>
 
 			<div>
 				<label for="advice"><strong>Advice:</strong></label> <input
-					type="text" name="advice" required>
+					type="text" name="advice" value="${review.advice }">
 			</div>
-
+			<label for="recommendation">Recommended:</label> <select
+				id="recommendation" name="recommendation">
+				<option value="true" <c:if test="${review.recommendation }">selected</c:if>>Yes</option>
+				<option value="false" <c:if test="${!review.recommendation }">selected</c:if>>No</option>
+			</select>
 			<div>
 				<button type="submit" class="btn btn-outline-warning">Submit</button>
 			</div>

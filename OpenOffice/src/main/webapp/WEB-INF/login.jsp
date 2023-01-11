@@ -19,8 +19,7 @@
 		<hr>
 		<div class="yellow-containers" style="max-width: 500px; min-width: 250px; min-height: 100px; margin: 0 auto;">
 			
-			
-			
+
 			<form action="loggingIn" method="post">
 				<input type="text" placeholder="username" name="username"> <br>
 				<input type="password" placeholder="password" name="password">

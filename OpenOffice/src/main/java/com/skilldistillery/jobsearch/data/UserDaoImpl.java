@@ -132,6 +132,7 @@ public class UserDaoImpl implements UserDAO {
 		if (user.getImgUrl() != null && user.getImgUrl() != "") {
 			oldUser.setImgUrl(user.getImgUrl());
 		}
+		oldUser.setEnabled(user.getEnabled());
 		oldUser.getReviews().size();
 
 		return oldUser;
@@ -181,6 +182,13 @@ public class UserDaoImpl implements UserDAO {
 		}
 
 		return ans;
+	}
+
+	@Override
+	public User reactivate(User inactiveUser) {
+		User activeUser = em.find(User.class, inactiveUser.getId());
+		activeUser.setEnabled(true);
+		return activeUser;
 	}
 
 }

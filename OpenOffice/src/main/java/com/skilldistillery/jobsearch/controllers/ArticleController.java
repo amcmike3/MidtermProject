@@ -1,5 +1,7 @@
 package com.skilldistillery.jobsearch.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.skilldistillery.jobsearch.data.ArticleDAO;
 import com.skilldistillery.jobsearch.data.IndustryDAO;
 import com.skilldistillery.jobsearch.entities.Article;
+import com.skilldistillery.jobsearch.entities.Industry;
 import com.skilldistillery.jobsearch.entities.Interview;
 import com.skilldistillery.jobsearch.entities.Interview;
 import com.skilldistillery.jobsearch.entities.User;
@@ -77,6 +80,12 @@ public class ArticleController {
 		GeneralController.refreshUser(user, session);
 		return "articleDeletedSuccess";
 	}
+	
+	@RequestMapping("deletedArticle")
+	public String deletedArticle(Integer articleId) {
+		dao.deleteArticle(articleId);
+		return "adminCenter";
+	}
 
 	@RequestMapping(path = "createArticle", method = RequestMethod.POST)
 	public ModelAndView createArticle(Integer industryId, Article article, HttpSession session) {
@@ -100,13 +109,20 @@ public class ArticleController {
 
 	@RequestMapping("updateAArticle")
 	public String updateAArticle(Integer articleId, Model model) {
+		
+		List<Industry> industryList = industryDao.getAll();
+		model.addAttribute("industryList", industryList);
 		model.addAttribute("article", dao.findArticleById(articleId));
 		return "updateAArticle";
 	}
 	
 	@RequestMapping("updatingAArticle")
-	public String updatingAArticle(Article article, Model model) {
+	public String updatingAArticle(Article article, Integer industryId, Model model) {
+		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + industryId);
+		Industry industry = new Industry();
+		industry.setId(industryId);
+		article.setIndustry(industry);
 		model.addAttribute("article", dao.updateArticle(article));
-		return "adminCenter";
+		return "redirect:adminCenter";
 	}
 }

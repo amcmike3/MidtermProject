@@ -21,33 +21,35 @@
 		<c:choose>
 			<c:when test="${!empty company.reviews }">
 				<c:forEach var="review" items="${company.reviews }">
-					<div class="row col card">
-						<p>
-							<a href="userBio?userId=${review.user.id }">
-								${review.user.username }</a> rated this company ${review.rating }
-							out of 10 <br> this is what they had to say about
-							${company.name}: <br> ${review.content }
-							<c:if test="${sessionScope.user.role }">
-								<a href="updateAreview?reviewId=${review.id }"><button>Update</button></a>
-							</c:if>
-							<c:choose>
-								<c:when test="${sessionScope.user.id == review.user.id}">
-									<form action="deleteReview.do" method="POST">
-										<input name="userId" value="${sessionScope.user.id}"
-											type="hidden" />
-										<button type="submit" name="reviewId" value="${review.id}">Delete</button>
-									</form>
-								</c:when>
-							</c:choose>
-							<c:choose>
-								<c:when test="${sessionScope.user.id == review.user.id}">
-									<form action="updateCompanyReview.do" method="post">
-										<input type="hidden" name="companyId" value="${company.id }">
-										<button type="submit" name="reviewId" value="${review.id}">Update</button>
-									</form>
-								</c:when>
-							</c:choose>
-					</div>
+					<c:if test="${review.enabled }">
+						<div class="row col card">
+							<p>
+								<a href="userBio?userId=${review.user.id }">
+									${review.user.username }</a> rated this company ${review.rating }
+								out of 10 <br> this is what they had to say about
+								${company.name}: <br> ${review.content }
+								<c:if test="${sessionScope.user.role }">
+									<a href="updateAreview?reviewId=${review.id }"><button>Update</button></a>
+								</c:if>
+								<c:choose>
+									<c:when test="${sessionScope.user.id == review.user.id}">
+										<form action="deleteReview.do" method="POST">
+											<input name="userId" value="${sessionScope.user.id}"
+												type="hidden" />
+											<button type="submit" name="reviewId" value="${review.id}">Delete</button>
+										</form>
+									</c:when>
+								</c:choose>
+								<c:choose>
+									<c:when test="${sessionScope.user.id == review.user.id}">
+										<form action="updateCompanyReview.do" method="post">
+											<input type="hidden" name="companyId" value="${company.id }">
+											<button type="submit" name="reviewId" value="${review.id}">Update</button>
+										</form>
+									</c:when>
+								</c:choose>
+						</div>
+					</c:if>
 				</c:forEach>
 			</c:when>
 			<c:otherwise>

@@ -57,7 +57,6 @@ public class User {
 	inverseJoinColumns=@JoinColumn(name="company_id"))
 	private List<Company> companies;
 
-
 	public User() {
 	}
 	

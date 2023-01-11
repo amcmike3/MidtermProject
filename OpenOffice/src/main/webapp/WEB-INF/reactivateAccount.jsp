@@ -6,28 +6,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>${company.name }jobs</title>
+<title>Reactivate Account</title>
 <%@ include file="bootstrapHead.jsp"%>
 </head>
 
 <body>
 	<%@include file="navbar.jsp"%>
-	<div class="container">
-		<div class="row col card">
-			<h1>${company.name }jobs</h1>
-		</div>
-
-		<c:forEach var="job" items="${ companyJobs}">
-			<c:if test="${job.enabled }">
-				<div class="row col card">
-					<h3>
-						<a href="jobBio?jobId=${job.id }">${job.title }</a>
-					</h3>
-					<p>${ job.description }</p>
-				</div>
-			</c:if>
-		</c:forEach>
-	</div>
+	<h1>Reactivate Account</h1>
+	<br>
+	<form action="reactivatingAccount">
+		<input type="submit" value="Reactivate Account" /> <input
+			type="hidden" name="id" value="${user.id }" />
+	</form>
 
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>

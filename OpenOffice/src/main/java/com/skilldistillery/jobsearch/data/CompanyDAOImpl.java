@@ -55,8 +55,17 @@ public class CompanyDAOImpl implements CompanyDAO{
 		if (company.getLocation() != null && company.getLocation() != "") {
 			oldCompany.setLocation(company.getLocation());
 		}
+		oldCompany.setEnabled(company.isEnabled());
 
 		return oldCompany;
+	}
+
+
+	@Override
+	public Company createCompany(Company company) {
+		em.persist(company);
+		company = em.find(Company.class, company.getId());
+		return company;
 	}
 
 }

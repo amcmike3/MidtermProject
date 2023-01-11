@@ -14,9 +14,20 @@
 	<%@include file="navbar.jsp"%>
 	<div class="yellow-containers">
 		<div class="row col card text-center title-container">
-			<h1>${job.title }at${job.company.name }</h1>
+			<h1>
+				  ${fn:toUpperCase(job.title) }
+				at
+				${fn:toUpperCase(job.company.name) } 
+			</h1>
 			<p>${job.description }
-				<br>
+			<br/>
+				Salary:
+				<br/>
+				${job.salary }
+				<br> Certifications: <br /> ${job.certifications } <br />
+				Education: <br /> ${job.education }
+				Skills:
+				${job.skills }
 				<c:if test="${sessionScope.user.role }">
 					<a href="updateAJob?jobId=${job.id }"><button>Update</button></a>
 				</c:if>

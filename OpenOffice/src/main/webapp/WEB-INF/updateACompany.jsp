@@ -6,37 +6,37 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Update A Company</title>
+<title>Admin Update Company Page</title>
 <%@ include file="bootstrapHead.jsp"%>
 </head>
 
 <body>
 	<%@include file="navbar.jsp"%>
+	<div>
+		<form action="updatingACompany" method="post">
 
-	<div class="containers text-center">
-		<div class="row">
-			<div class="col title-container text-center">
-				<div class="card-title">
-					<h3>Update a Company</h3>
-				</div>
-				<div class="card-body">
-					<form action="updatingACompany">
-						<input type="hidden" name="companyId" value="${company.id }">
-						<br /> Name: <br /> 
-						<input type="text" name="name" value="${company.name }"/> 
-						<br />Description<br />
-						<input type="text" name="description" value="${company.description }"/> 
-						<br />Location<br /> 
-						<input type="text" name="location" value="${company.location }"/>
-						<br />
-						<br />
-						<button type="submit">Update Company</button>
-						<br />
-						<br />
-					</form>
-				</div>
-			</div>
-		</div>
+			 <input id="id" name="id"
+				type="hidden" value="${company.id}"><br>
+			
+			<label for="name">Name of Company:</label><br> <input
+				type="text" id="name" name="name" value="${company.name}"><br>
+
+			<label for="location">Location:</label><br> <input type="text"
+				id="location" name="location" value="${company.location}"><br>
+			
+			
+			<label for="description">Description:</label><br> <input
+				type="text" id="description" name="description"
+				value="${company.description}"><br> 
+
+			<label for="enabled">Enable?</label> <select id="enabled"
+				name="enabled" value="${company.enabled}">
+				<option value="true" <c:if test="${company.enabled}">selected</c:if>>Yes</option>
+					<option value="false" <c:if test="${!company.enabled}">selected</c:if>>No</option>
+			</select> <br> <input type="submit">
+
+		</form>
+
 	</div>
 
 	<%@include file="footer.jsp"%>
