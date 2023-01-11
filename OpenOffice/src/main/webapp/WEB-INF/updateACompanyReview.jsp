@@ -17,6 +17,7 @@
 		<div class="row">
 			<div class="col title-container text-center">
 				<div class="card-title">
+				<h1>This needs to have an option to change enabled</h1>
 					<h3>Update a Company Review</h3>
 				</div>
 				<div class="containers">
@@ -31,16 +32,16 @@
 			</div>
 
 			<label for="rating">Rating:</label> <select id="rating" name="rating">
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
+					<option value="1" <c:if test="${review.rating == 1}">selected</c:if>>1</option>
+				<option value="2"<c:if test="${review.rating == 2}">selected</c:if>>2</option>
+				<option value="3"<c:if test="${review.rating == 3}">selected</c:if>>3</option>
+				<option value="4"<c:if test="${review.rating == 4}">selected</c:if>>4</option>
+				<option value="5"<c:if test="${review.rating == 5}">selected</c:if>>5</option>
+				<option value="6"<c:if test="${review.rating == 6}">selected</c:if>>6</option>
+				<option value="7"<c:if test="${review.rating == 7}">selected</c:if>>7</option>
+				<option value="8"<c:if test="${review.rating == 8}">selected</c:if>>8</option>
+				<option value="9"<c:if test="${review.rating == 9}">selected</c:if>>9</option>
+				<option value="10"<c:if test="${review.rating == 10}">selected</c:if>>10</option>
 			</select>
 			
 			<div>
@@ -55,8 +56,8 @@
 
 			<label for="recommendation">Recommended:</label> <select
 				id="recommendation" name="recommendation">
-				<option value="true">Yes</option>
-				<option value="false">No</option>
+				<option value="true" <c:if test="${review.recommendation }">selected</c:if>>Yes</option>
+				<option value="false" <c:if test="${review.recommendation }">selected</c:if>>No</option>
 			</select>
 
 			<div>

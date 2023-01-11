@@ -63,8 +63,8 @@
 			<br>
 			 <label for="enabled">Enable?</label> <select
 				id="enabled" name="enabled">
-				<option value="true">Yes</option>
-				<option value="false">No</option>
+				<option value="true" <c:if test="${user.enabled}">selected</c:if>>Yes</option>
+					<option value="false" <c:if test="${!user.enabled}">selected</c:if>>No</option>
 				</select> <br> 
 			<input type="submit" value="Update"/>
 			</form>

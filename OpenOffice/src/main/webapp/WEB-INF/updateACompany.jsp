@@ -30,8 +30,8 @@
 
 			<label for="enabled">Enable?</label> <select id="enabled"
 				name="enabled" value="${company.enabled}">
-				<option value="true">Yes</option>
-				<option value="false">No</option>
+				<option value="true" <c:if test="${company.enabled}">selected</c:if>>Yes</option>
+					<option value="false" <c:if test="${!company.enabled}">selected</c:if>>No</option>
 			</select> <br> <input type="submit">
 
 		</form>
