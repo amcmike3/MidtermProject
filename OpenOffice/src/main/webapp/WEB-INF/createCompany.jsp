@@ -26,7 +26,7 @@
 						<br />Description<br /> <input type="text" name="description" />
 						<br />Location<br /> <input type="text" name="location" /> <br />
 						<!-- Maybe implement google maps api if we have enough time -->
-							<br> <button type="submit">Add Company</button> <br>
+							<br> <button id="add-company-btn" type="submit">Add Company</button> <br>
 							<br />
 						</form>
 				</div>

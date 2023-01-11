@@ -13,14 +13,13 @@
 <body>
 	<%@include file="navbar.jsp"%>
 
-	<div class="container">
+	<div class="container text-center">
 		<div class="row">
-			<div class="col card card-body matcha">
+			<div class="col card card-body matcha text-center">
 			<form action="updatingAUser">
 			<input type="hidden" name="id" value="${user.id }"/>
-			<h1>This needs to have an option to change the enabled field!!!</h1>
 			Description: <br>
-			<input type="text" name="description" value="${user.description }"/>
+			<textarea name="description" rows="4" cols="40">${user.description }</textarea>
 			<br>
 			First Name: <br>
 			<input type="text" name="firstName" value="${user.firstName }"/>

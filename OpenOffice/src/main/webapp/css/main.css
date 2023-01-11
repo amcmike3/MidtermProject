@@ -166,20 +166,22 @@ a:active {
 }
 
 .button {
-	background-color: #3D405B;
+	background-color: #3D405B !important;
 }
 
 button {
-	background-color: #3D405B;
+	background-color: #3D405B !important;
 }
 
 button:hover {
-	background-color: #F2CC8F;
+	background-color: #F2CC8F !important;
+	color: black !important;
 }
 
 #show-all-btn-container {
 	display: flex;
-	flex-wrap: wrap; background-color : #81B29A;
+	flex-wrap: wrap;
+	background-color: #81B29A;
 	border: 1px solid;
 	box-shadow: 5px 10px 18px #888888;
 	padding: 25px 100px 25px 100px;
@@ -224,7 +226,7 @@ button:hover {
 	padding: 5px;
 	margin-top: 25px;
 	height: auto;
-	max-width: 100%;
+	max-width: 200px;
 }
 
 .matcha {
@@ -241,7 +243,7 @@ button:hover {
 }
 
 #user-profile-pic-container {
-	background-color: #F2CC8F;
+	background-color: #81B29A;
 	border: 1px solid;
 	box-shadow: 5px 10px 18px #888888;
 	padding: 50px;
@@ -276,4 +278,20 @@ company-bio-hr {
 	margin: 10px;
 	border-width: 1px;
 	border-color: #333;
+}
+
+#add-company-btn {
+	
+	background-color: #3D405B;
+	color: white;
+}
+
+#add-company-btn:active {
+	background-color: #3D405B !important;
+	color: white !important;
+}
+
+#add-company-btn:hover {
+	background-color: #F2CC8F !important;
+	color: black !important;
 }

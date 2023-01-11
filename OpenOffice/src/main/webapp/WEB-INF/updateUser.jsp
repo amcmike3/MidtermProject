@@ -12,8 +12,11 @@
 <body>
 	<%@include file="navbar.jsp"%>
 	<div class="container">
+	
 		<div class="row">
-			<div class="col card card-body matcha">
+		<div class="col card card-body matcha" style="align-items: center;">
+		<div class="title-container text-center" style="padding-left: 50px; padding-right: 50px;"><h1>Update User</h1></div>
+		<div class="yellow-containers text-center col-8">
 			<form action="updatingUser">
 			<input type="hidden" name="id" value="${sessionScope.user.id }"/>
 			<br>
@@ -35,18 +38,21 @@
 			Profile Picture:(image url) <br>
 			<input type="text" name="imgUrl" value="${sessionScope.user.imgUrl }"/>
 			<br>
+			<br />
 			<input type="submit" value="Update"/>
+			<br />
+			<br />
 			</form>
 			</div>
-		</div>
-		<div>
-			<div class="col card-body text-center cream" style="margin-top: 75px;">
+			<div class="yellow-containers text-center col-8">
 				<form action="deleteUser">
-				<input type="submit" value="Delete Profile"/>
-				<input type="hidden" name="id" value="${sessionScope.user.id }"/>
+					<input type="submit" value="Delete Profile"/>
+					<input type="hidden" name="id" value="${sessionScope.user.id }"/>
 				</form>
 			</div>
+			</div>
 		</div>
+
 	</div>
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
