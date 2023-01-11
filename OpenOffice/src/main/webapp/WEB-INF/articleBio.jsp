@@ -14,8 +14,8 @@
 	<%@include file="navbar.jsp"%>
 	<div class="container">
 		<div class="row">
-			<div class="col card text-center">
-				<div class="card-title">
+			<div class="col card text-center yellow-containers">
+				<div class="card-title title-container">
 					<h1>${article.title }</h1>
 					<br />
 					<c:if test="${sessionScope.user.role }">
@@ -23,7 +23,7 @@
 					</c:if>
 					<br />
 
-					<p>
+					<p class="peach">
 						${article.datePosted.dayOfMonth }, ${article.datePosted.month },
 						${article.datePosted.year} <br /> <a
 							href="userBio?userId=${article.user.id }">Author:
@@ -31,7 +31,7 @@
 					</p>
 
 				</div>
-				<div class="card-body">
+				<div class="card-body yellow-containers">
 					<p>${article.description }</p>
 					<a href="${article.articleUrl }" target="_blank">Read more</a>
 					<c:choose>
