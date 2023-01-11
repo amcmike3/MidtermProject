@@ -30,6 +30,7 @@ public class ArticleController {
 
 	@Autowired
 	private IndustryDAO industryDao;
+	//Test...................
 
 	@RequestMapping("articleBio")
 	public String articleBio(HttpSession session, Integer articleId, Model model) {
