@@ -172,6 +172,26 @@ public class UserDaoImpl implements UserDAO {
 		return foundUser;
 	}
 	@Override
+	public boolean removeSubscrCompToUserBio(Integer companyId, Integer userId) {
+
+		boolean isDeleted = false;
+		User loggedInUser = findById(userId);
+		Company cmp = compDao.findCompanyById(companyId);
+		if (loggedInUser != null && loggedInUser.getEnabled() == true) {
+			
+			cmp = em.find(Company.class, companyId);
+
+			if (cmp != null) {
+				loggedInUser.removeCompany(cmp);
+				
+			}
+
+		}
+		return isDeleted;
+	}
+	
+	
+	@Override
 	public boolean accountDisabled(Integer id) {
 		User user = em.find(User.class, id);
 		boolean ans = false;

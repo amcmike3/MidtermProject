@@ -17,6 +17,11 @@
 					<p>
 						<a href="companyBio?companyId=${company.id}">${company.name }</a>
 					</p>
+					<form action="unsubscribe.do" method="post">
+					<input type="submit" value="Unsubscribe"/>
+					<input type="hidden" name="userId" value="${user.id }"/>
+					<input type="hidden" name="companyId" value="${company.id }"/>
+				</form>
 				</div>
 			</c:forEach>
 		</div>

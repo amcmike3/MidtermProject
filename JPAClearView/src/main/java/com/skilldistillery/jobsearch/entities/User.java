@@ -85,9 +85,9 @@ public class User {
 		if (interviews != null && interviews.contains(interview)) {
 			interviews.remove(interview);
 			interview.setUser(null);
+			
 		}
 	}
-
 	public List<CompanyReview> getReviews() {
 		return reviews;
 	}

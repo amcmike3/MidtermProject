@@ -158,6 +158,16 @@ public class UserController {
 		return mv;
 
 	}
+	@RequestMapping("unsubscribe.do")
+	public ModelAndView unsubscribeToCompany(Integer companyId, Integer userId, HttpSession session) {
+		ModelAndView mv = new ModelAndView();
+		dao.removeSubscrCompToUserBio(companyId, userId);
+		GeneralController.refreshUser(dao.findById(userId), session);
+		mv.setViewName("viewSubscription");
+
+		return mv;
+	}
+	
 	
 	
 	@RequestMapping("adminCenter")
