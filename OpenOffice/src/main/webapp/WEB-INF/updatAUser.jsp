@@ -15,7 +15,7 @@
 <div class="container">
 		<div class="row">
 			<div class="col card card-body matcha">
-			<form action="updatingAUser">
+			<form action="updatingAUser" method="post">
 		
 			<input type="hidden" name="id" value="${user.id }"/>
 			<br>
@@ -28,9 +28,7 @@
 			Password: <br>
 			<input type="text" name="password" placeholder="${user.password }"/>
 			<br>
-			Role: <br>
-			<input type="text" name="role" placeholder="${user.role }"/>
-			<br>
+		
 			First Name: <br>
 			<input type="text" name="firstName" placeholder="${user.firstName }"/>
 			<br>
@@ -46,22 +44,7 @@
 			<input type="text" name="imgUrl" placeholder="${user.imgUrl }"/>
 			<br>
 			
-			Articles: <br>
-			<input type="text" name="articles" placeholder="${user.articles }"/>
-			<br>
-			
-			Reviews: <br>
-			<input type="text" name="reviews" placeholder="${user.reviews }"/>
-			<br>
-			
-			Interviews: <br>
-			<input type="text" name="interviews" placeholder="${user.interviews }"/>
-			<br>
-			
-			Subscriptions: <br>
-			<input type="text" name="companies" placeholder="${user.companies }"/>
-			<br>
-			 <label for="enabled">Enable?</label> <select
+			 <label for="enabled">Enable Admin Role?</label> <select
 				id="enabled" name="enabled">
 				<option value="true" <c:if test="${user.enabled}">selected</c:if>>Yes</option>
 					<option value="false" <c:if test="${!user.enabled}">selected</c:if>>No</option>
@@ -79,7 +62,6 @@
 				</form>
 			</div>
 		</div>
-	</div>
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
 </body>

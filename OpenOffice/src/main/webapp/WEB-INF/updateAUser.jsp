@@ -16,7 +16,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col card card-body matcha">
-			<form action="updatingAUser">
+			<form action="updatingAUser" method="post">
 			<input type="hidden" name="id" value="${user.id }"/>
 			Description: <br>
 			<input type="text" name="description" value="${user.description }"/>

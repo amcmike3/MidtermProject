@@ -12,12 +12,13 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.jobsearch.entities.Article;
+import com.skilldistillery.jobsearch.entities.Industry;
 import com.skilldistillery.jobsearch.entities.User;
 
 @Service
 @Transactional
 public class ArticleDAOImpl implements ArticleDAO {
- 
+
 	@PersistenceContext
 	private EntityManager em;
 
@@ -26,14 +27,12 @@ public class ArticleDAOImpl implements ArticleDAO {
 		Article article = em.find(Article.class, articleId);
 		return article;
 	}
-	
+
 	@Override
 	public List<Article> findAllArticles() {
 		String jpql = "SELECT article FROM Article article";
 		return em.createQuery(jpql, Article.class).getResultList();
 	}
-
-
 
 	@Override
 	public List<Article> findArticle(String title) {
@@ -51,28 +50,28 @@ public class ArticleDAOImpl implements ArticleDAO {
 		article.setUser((User) session.getAttribute("user"));
 		em.persist(article);
 		return article;
-		
+
 	}
-	
-	
 
 	public Article updateArticle(Article article) {
 		Article updateArticle = em.find(Article.class, article.getId());
+		Industry industry = em.find(Industry.class, article.getIndustry().getId());
+		System.out.println(industry + "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 		updateArticle.setTitle(article.getTitle());
 		updateArticle.setDescription(article.getDescription());
-		
+		updateArticle.setIndustry(industry);
+
 		return updateArticle;
 	}
 
 	@Override
 	public boolean deleteArticle(Integer articleId) {
 		em.remove(findArticleById(articleId));
-		if(findArticleById(articleId) == null) {
+		if (findArticleById(articleId) == null) {
 			return true;
 		}
 		return false;
 
 	}
-	
-	
+
 }

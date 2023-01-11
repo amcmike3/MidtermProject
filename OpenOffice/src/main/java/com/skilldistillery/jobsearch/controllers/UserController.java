@@ -155,10 +155,10 @@ public class UserController {
 		
 	}
 		
-	@RequestMapping("updateAUser")
+	@RequestMapping("updatAUser")
 	public String updateAUser(Integer userId, Model model) {
 		model.addAttribute("user", dao.findById(userId));
-		return "updateAUser";
+		return "updatAUser";
 	}
 	
 	@RequestMapping("updatingAUser")

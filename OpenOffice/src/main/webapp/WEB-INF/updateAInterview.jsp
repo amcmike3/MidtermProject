@@ -20,24 +20,24 @@
 				<div class="card-title">
 					<h3>Update a Interview</h3>
 				</div>
-				<div class="container">
-		<div class="row">
-			<div class="col card card-body text-center">
-				<form action="updatingAInterview">
-					<input type="hidden" name="id" value="${interview.id }">
-					<input type="hidden" name="companyId" value="${companyId }" /> <br />
-					Title: <input type="text" name="title" value="${interview.title}" />
-					<br /> What was their interview process like? <input type="text"
-						name="process" value="${interview.process}" /> <br /> Did you get
-					a job offer? <select id="jobOffered" name="jobOffered">
-						<option value="false" <c:if test="${!interview.jobOffered}">selected</c:if>
-							>No</option>
-						<option value="true" <c:if test="${interview.jobOffered}">selected</c:if>
-							>Yes</option>
-					</select> <br /> <input type="submit" value="Next" />
-				</form>
+				<div class="col card card-body text-center">
+					<form action="updatingAInterview" method="post">
+						<input type="hidden" name="id" value="${interview.id }"> <input
+							type="hidden" name="companyId" value="${companyId }" /> <br />
+						Title: <input type="text" name="title" value="${interview.title}" />
+						<br /> What was their interview process like? <input type="text"
+							name="process" value="${interview.process}" /> <br /> Did you
+						get a job offer? <select id="jobOffered" name="jobOffered">
+							<option value="false"
+								${interview.jobOffered == 'false' ? 'select="selected"' : '' }>No</option>
+							<option value="true"
+								${interview.jobOffered == 'true' ? 'select="selected"' : '' }>Yes</option>
+
+						</select> <br /> <input type="submit" value="Next" />
+					</form>
+				</div>
 			</div>
-		</div>
+
 			<c:forEach var="question" items="${interview.interviewQuestions }">
 				<div class="row">
 					<div class="col card">
