@@ -67,8 +67,8 @@
 				<option value="false">No</option>
 				</select> <br> 
 			<input type="submit" value="Update"/>
-			</div>
 			</form>
+			</div>
 			</div>
 		</div>
 		<div>

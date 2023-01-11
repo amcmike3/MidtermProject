@@ -13,7 +13,7 @@
 <body>
 	<%@include file="navbar.jsp"%>
 <div>
-		<form action="UpdateAJob">
+		<form action="updatingAJob">
 			<input id="id" name="id"
 				type="hidden" value="${job.id}" placeholder="${job.id }"><br>
 			
