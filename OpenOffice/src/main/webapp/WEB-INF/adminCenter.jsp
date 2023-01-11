@@ -31,7 +31,7 @@
 				<div class="">
 
 
-				<form action="updateAUser" method="GET">
+<!-- 				<form action="updateAUser" method="GET">
 					<input type="text" placeholder="user id" name="userId"
 						required />
 					<div class="btn">
@@ -41,7 +41,7 @@
 			</div>
 			
 			<div class="">
-
+ -->
 
 					<form action="updateACompany" method="GET">
 						<input type="text" placeholder="company id" name="companyId"
