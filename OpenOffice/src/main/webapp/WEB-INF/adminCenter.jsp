@@ -18,23 +18,22 @@
 			<h1>Administrator Privileges</h1>
 		</div>
 		<hr>
-		<div class="" id="admin-privileges-btn"
+		<div class="row" id="admin-privileges-btn"
 			style="width: 700px; margin: 0 auto;">
-			<div class="" style="text-align: left;">
-			<div class="">
+			<div class="col-4 card matcha">
 				<form action="createCompany" method="GET">
-				<input type="text"  disabled placeholder="→→→→→→→→→→→→→→→→→→→→→→→→"/>
 					<input id="btnDisplay" class="btn" type="submit"
 						value="Create Company" />
 				</form>
 			</div>
 
+			<div class="col card matcha" style="text-align: left;">
 				<div class="">
 
 
 					<form action="updateACompany" method="GET">
 						<input type="text" placeholder="company id" name="companyId"
-							required />
+							required  size="20"/>
 						<div class="btn">
 							<input id="btnDisplay" type="submit" value="Update Company" />
 						</div>
@@ -44,7 +43,7 @@
 				<div class="">
 
 					<form action="updatAUser" method="GET">
-						<input type="text" placeholder="user id" name="userId" required />
+						<input type="text" placeholder="user id" name="userId" required size="20"/>
 						<div class="btn">
 							<input id="btnDisplay" type="submit" value="Update User" />
 						</div>
@@ -54,7 +53,7 @@
 				<div class="">
 
 					<form action="updateAJob" method="GET">
-						<input type="text" placeholder="job id" name="jobId" required />
+						<input type="text" placeholder="job id" name="jobId" required size="20" />
 						<div class="btn">
 							<input id="btnDisplay" type="submit" value="Update Job" />
 						</div>
@@ -65,7 +64,7 @@
 
 					<form action="updateAInterview" method="GET">
 						<input type="text" placeholder="interview id" name="interviewId"
-							required />
+							required size="20"/>
 						<div class="btn">
 							<input id="btnDisplay" type="submit" value="Update Interview" />
 						</div>
@@ -76,7 +75,7 @@
 
 					<form action="updateAArticle" method="GET">
 						<input type="text" placeholder="article id" name="articleId"
-							required />
+							required size="20"/>
 						<div class="btn">
 							<input id="btnDisplay" type="submit" value="Update Article" />
 						</div>
@@ -87,10 +86,10 @@
 
 					<form action="updateACompanyReview" method="GET">
 						<input type="text" placeholder="company review id" name="reviewId"
-							required />
+							required size="20"/>
 						<div class="btn">
 							<input id="btnDisplay" type="submit"
-								value="Update Company Review" />
+								value="Update Review" />
 						</div>
 					</form>
 				</div>
