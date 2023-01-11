@@ -14,7 +14,7 @@
 	<div class="containers text-center">
 		<div class="row text-center">
 			<div class="yellow-containers" style="display: flex; flex-direction: row; flex-wrap: wrap; padding-left: 25px;">
-			<div class="matcha" style="display: flex; flex-direction: column; flex-wrap: wrap;">
+			<div class="card yellow-containers" style="display: flex; flex-direction: column; flex-wrap: wrap;">
 				<div class="card-title title-container">${sessionScope.user.firstName }
 					${sessionScope.user.lastName }</div>
 				<div class="card-body">
@@ -28,8 +28,9 @@
 			</div>	
 			<div class="card-body card yellow-containers" style="padding-left: 100px; padding-right: 100px;">
 				
-					<div class="title-container"><h3>Description:</h3></div>
+					<div class="title-container" style="margin-top: 50px;"><h3>Description:</h3></div>
 					<br>
+					<div class="card yellow-containers" style="min-height: 400px; padding: 75px;">
 					<c:choose>
 						<c:when test="${sessionScope.user.description != null}">
 							<p>${sessionScope.user.description}</p>
@@ -38,13 +39,14 @@
 							<a href="updateUser">Add a description</a>
 						</c:otherwise>
 					</c:choose>
+					</div>
 				</div>
 
 			</div>
 			<div class="col">
 				
 				<div class="card-body yellow-containers" style="min-width: 210px;">
-					<div class="title-container"><h3>Contributions:</h3></div>
+					<div class="title-container" style="margin-top: 50px;"><h3>Contributions:</h3></div>
 					
 					<br>
 					<c:forEach var="review" items="${sessionScope.user.reviews }">
@@ -58,9 +60,9 @@
 
 					</c:forEach>
 					</div>
-				<div class="card-body yellow-containers" style="min-width: 210px;">
+				<div class="card-body yellow-containers" style="min-width: 210px; margin-top: 50px;">
  					
-					<div class="title-container"><h3>Articles written by ${sessionScope.user.username}</h3></div>
+					<div class="title-container" style="margin-top: 50px;"><h3>Articles written by ${sessionScope.user.username}</h3></div>
 					<br>
 					<c:forEach var="article" items="${sessionScope.user.articles }">
 						<div class="card yellow-containers">
@@ -78,8 +80,8 @@
  					 </form>
  					 <br />
 				</div>
-				<div class="card-body yellow-containers" style="min-width: 210px;">
-						<div class="title-container"><h3>Subscription:</h3></div>
+				<div class="card-body yellow-containers" style="min-width: 210px; margin-top: 50px;">
+						<div class="title-container" style="margin-top: 50px;"><h3>Subscription:</h3></div>
 						<br>
 						<c:forEach var="company" varStatus="loop" items="${user.companies}">
 						<c:if test="${loop.index <= 1 }">
