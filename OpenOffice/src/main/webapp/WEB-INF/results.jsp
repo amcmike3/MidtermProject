@@ -29,6 +29,7 @@
 					</thead>
 					<tbody>
 						<c:forEach var="user" items="${userList}">
+						<c:if test="${user.enabled }">
 							<tr>
 								<td>${user.id}</td>
 								<td><a href="userBio?userId=${user.id}">${user.username}</a></td>
@@ -36,9 +37,10 @@
 								<td>${user.lastName}</td>
 								<td>${user.description}</td>
 								<td><c:if test="${sessionScope.user.role }">
-										<a href="updateAUser?userId=${user.id }"><button>Update</button></a>
+										<a href="updatAUser?userId=${user.id }"><button>Update</button></a>
 									</c:if></td>
 							</tr>
+							</c:if>
 						</c:forEach>
 					</tbody>
 				</table>
@@ -54,6 +56,7 @@
 					</thead>
 					<tbody>
 						<c:forEach var="job" items="${jobList}">
+						<c:if test="${job.enabled }">
 							<tr>
 								<td>${job.id}</td>
 								<td><a href="jobBio?jobId=${job.id}">${job.title}</a></td>
@@ -62,6 +65,7 @@
 										<a href="updateAJob?jobId=${job.id }"><button>Update</button></a>
 									</c:if></td>
 							</tr>
+							</c:if>
 						</c:forEach>
 					</tbody>
 				</table>
@@ -77,6 +81,7 @@
 					</thead>
 					<tbody>
 						<c:forEach var="company" items="${companyList}">
+						<c:if test="${company.enabled }">
 							<tr>
 								<td>${company.id}</td>
 								<td><a href="companyBio?companyId=${company.id}">${company.name}</a></td>
@@ -85,6 +90,7 @@
 										<a href="updateACompany?companyId=${company.id }"><button>Update</button></a>
 									</c:if></td>
 							</tr>
+							</c:if>
 						</c:forEach>
 					</tbody>
 				</table>

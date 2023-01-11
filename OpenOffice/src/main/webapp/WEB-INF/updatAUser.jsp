@@ -60,12 +60,6 @@
 			</div>
 		</div>
 		<div>
-			<div class="col card-body text-center cream" style="margin-top: 75px;">
-				<form action="deleteUser">
-				<input type="submit" value="Delete My Profile"/>
-				<input type="hidden" name="id" value="${user.id }"/>
-				</form>
-			</div>
 		</div>
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
