@@ -28,10 +28,10 @@
 
 			<label for="salary">What is the salary for this job?</label><br>
 
-			<input type="text" name="salary"><br> <label
+			<input type="number" name="salary"><br> <label
 				for="yearsOfExperience">Years of experience required?</label><br>
 
-			<input type="text" name="yearsOfExperience"><br> <label
+			<input type="number" name="yearsOfExperience"><br> <label
 				for="skills">Skills required for position?</label><br> <input
 				type="text" name="skills"><br> <label for="education">Education
 				required?</label><br> <input type="text" name="education"><br>
