@@ -50,7 +50,7 @@ public class ArticleController {
 	@RequestMapping("allArticles")
 	public String allArticles(Model model) {
 		model.addAttribute("articles", dao.findAllArticles());
-		return "allArticles";
+		return "results";
 	}
 
 	@RequestMapping("createArticle.do")

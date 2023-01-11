@@ -12,6 +12,8 @@
 
 <body>
 	<%@include file="navbar.jsp"%>
+	<c:choose>
+	<c:when test="${company.enabled }">
 	<div class="containers">
 		<div class="row col card text-center title-container">
 			<h1>${company.name }</h1>
@@ -82,17 +84,19 @@
 
 
 				<c:forEach var="review" items="${company.reviews }">
-					<div class="row">
-						<div class="col card white-containers">
+					<c:if test="${company.enabled }">
+						<div class="row">
+							<div class="col card white-containers">
 
-							<p>
-								<a href="userBio?userId=${review.user.id }">
-									${review.user.username }</a> rated this company ${review.rating }
-								out of 10 <br> this is what they had to say about
-								${company.name}: <br> ${review.content }
-							</p>
+								<p>
+									<a href="userBio?userId=${review.user.id }">
+										${review.user.username }</a> rated this company ${review.rating }
+									out of 10 <br> this is what they had to say about
+									${company.name}: <br> ${review.content }
+								</p>
+							</div>
 						</div>
-					</div>
+					</c:if>
 				</c:forEach>
 			</c:otherwise>
 
@@ -117,11 +121,13 @@
 						<div class="row">
 							<c:forEach var="job" items="${company.jobs }" begin="${i }"
 								end="${i + 3 }">
-								<div class="col ">
-									<p>
-										<a href="jobBio?jobId=${job.id}"> ${job.title }</a>
-									</p>
-								</div>
+								<c:if test="${job.enabled }">
+									<div class="col ">
+										<p>
+											<a href="jobBio?jobId=${job.id}"> ${job.title }</a>
+										</p>
+									</div>
+								</c:if>
 							</c:forEach>
 						</div>
 					</c:forEach>
@@ -153,24 +159,35 @@
 				<hr class="company-bio-hr">
 
 				<c:forEach var="interview" items="${job.interviews }">
-					<div class="col">
-						<li><a id="interview-job-link"
-							href="interviewBio?interviewId=${interview.id}">${interview.title }</a>
-							<c:if test="${interview.user.id == sessionScope.user.id }">
-								<form
-									action="updateInterview?interviewId=${interview.id}&companyId=${company.id}">
-									<input type="hidden" name="interviewId"
-										value="${interview.id }"> <input type="hidden"
-										name="companyId" value="${company.id }"> <input
-										type="submit" value="update">
-								</form>
-							</c:if></li>
-					</div>
+						<div class="col">
+							<li><a id="interview-job-link"
+								href="interviewBio?interviewId=${interview.id}">${interview.title }</a>
+								<c:if test="${interview.user.id == sessionScope.user.id }">
+									<form
+										action="updateInterview?interviewId=${interview.id}&companyId=${company.id}">
+										<input type="hidden" name="interviewId"
+											value="${interview.id }"> <input type="hidden"
+											name="companyId" value="${company.id }"> <input
+											type="submit" value="update">
+									</form>
+								</li>
+						</div>
+					</c:if>
 				</c:forEach>
 			</div>
 		</c:forEach>
 
 	</div>
+	</c:when>
+	<c:otherwise>
+	<div class="containers">
+		<div class="row col card text-center title-container">
+		<h1>This Company has been Deactivated</h1>
+		</div>
+		</div>
+	</c:otherwise>
+	</c:choose>
+	
 
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>

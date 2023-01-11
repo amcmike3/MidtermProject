@@ -18,79 +18,81 @@
 			<h1>Administrator Privileges</h1>
 		</div>
 		<hr>
-		<div class="" id="admin-privileges-btn"
+		<div class="row" id="admin-privileges-btn"
 			style="width: 700px; margin: 0 auto;">
-			<div class="">
+			<div class="col-4 card matcha">
 				<form action="createCompany" method="GET">
 					<input id="btnDisplay" class="btn" type="submit"
 						value="Create Company" />
 				</form>
 			</div>
-			
-			<div class="">
 
-				<form action="updateACompany" method="GET">
-					<input type="text" placeholder="company id"
-						name="companyId" required />
-					<div class="btn">
-						<input id="btnDisplay" type="submit" value="Update Company" />
-					</div>
-				</form>
-			</div>
-			
-			<div class="">
+			<div class="col card matcha" style="text-align: left;">
+				<div class="">
 
-				<form action="updatAUser" method="GET">
-					<input type="text" placeholder="user id" name="userId"
-						required />
-					<div class="btn">
-						<input id="btnDisplay" type="submit" value="Update User" />
-					</div>
-				</form>
-			</div>
-			
-			<div class="">
 
-				<form action="updateAJob" method="GET">
-					<input type="text" placeholder="job id" name="jobId"
-						required />
-					<div class="btn">
-						<input id="btnDisplay" type="submit" value="Update Job" />
-					</div>
-				</form>
-			</div>
-			
-			<div class="">
+					<form action="updateACompany" method="GET">
+						<input type="text" placeholder="company id" name="companyId"
+							required  size="20"/>
+						<div class="btn">
+							<input id="btnDisplay" type="submit" value="Update Company" />
+						</div>
+					</form>
+				</div>
 
-				<form action="updateAInterview" method="GET">
-					<input type="text" placeholder="interview id"
-						name="interviewId" required />
-					<div class="btn">
-						<input id="btnDisplay" type="submit" value="Update Interview" />
-					</div>
-				</form>
-			</div>
-			
-			<div class="">
+				<div class="">
 
-				<form action="updateAArticle" method="GET">
-					<input type="text" placeholder="article id"
-						name="articleId" required />
-					<div class="btn">
-						<input id="btnDisplay" type="submit" value="Update Article" />
-					</div>
-				</form>
-			</div>
-			
-			<div class="">
+					<form action="updatAUser" method="GET">
+						<input type="text" placeholder="user id" name="userId" required size="20"/>
+						<div class="btn">
+							<input id="btnDisplay" type="submit" value="Update User" />
+						</div>
+					</form>
+				</div>
 
-				<form action="updateACompanyReview" method="GET">
-					<input type="text" placeholder="company review id"
-						name="reviewId" required />
-					<div class="btn">
-						<input id="btnDisplay" type="submit" value="Update Company Review" />
-					</div>
-				</form>
+				<div class="">
+
+					<form action="updateAJob" method="GET">
+						<input type="text" placeholder="job id" name="jobId" required size="20" />
+						<div class="btn">
+							<input id="btnDisplay" type="submit" value="Update Job" />
+						</div>
+					</form>
+				</div>
+
+				<div class="">
+
+					<form action="updateAInterview" method="GET">
+						<input type="text" placeholder="interview id" name="interviewId"
+							required size="20"/>
+						<div class="btn">
+							<input id="btnDisplay" type="submit" value="Update Interview" />
+						</div>
+					</form>
+				</div>
+
+				<div class="">
+
+					<form action="updateAArticle" method="GET">
+						<input type="text" placeholder="article id" name="articleId"
+							required size="20"/>
+						<div class="btn">
+							<input id="btnDisplay" type="submit" value="Update Article" />
+						</div>
+					</form>
+				</div>
+
+				<div class="">
+
+					<form action="updateACompanyReview" method="GET">
+						<input type="text" placeholder="company review id" name="reviewId"
+							required size="20"/>
+						<div class="btn">
+							<input id="btnDisplay" type="submit"
+								value="Update Review" />
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>
