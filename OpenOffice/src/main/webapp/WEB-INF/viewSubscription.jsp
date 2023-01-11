@@ -11,7 +11,7 @@
 	<%@include file="navbar.jsp"%>
 	<div class="containers text-center">
 		<div class="row">
-			<div class="col  text-center">
+			<div class="col  text-center zoom">
 				<div class="card-title title-container">
 					<h3>Companies <a href="userBio?userId=${user.id }">${fn:toUpperCase(user.username) }</a> Is Subscribed To:</h3>
 				</div>
