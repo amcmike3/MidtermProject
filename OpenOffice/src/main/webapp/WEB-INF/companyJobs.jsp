@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>${company.name } jobs</title>
+<title>${company.name }jobs</title>
 <%@ include file="bootstrapHead.jsp"%>
 </head>
 
@@ -14,15 +14,19 @@
 	<%@include file="navbar.jsp"%>
 	<div class="container">
 		<div class="row col card">
-			<h1>${company.name } jobs</h1>
+			<h1>${company.name }jobs</h1>
 		</div>
-	
-	<c:forEach var="job" items="${ companyJobs}">
-		<div class="row col card">
-			<h3><a href="jobBio?jobId=${job.id }">${job.title }</a></h3>
-			<p>${ job.description }</p>
-		</div>
-	</c:forEach>
+
+		<c:forEach var="job" items="${ companyJobs}">
+			<c:if test="${job.enabled }">
+				<div class="row col card">
+					<h3>
+						<a href="jobBio?jobId=${job.id }">${job.title }</a>
+					</h3>
+					<p>${ job.description }</p>
+				</div>
+			</c:if>
+		</c:forEach>
 	</div>
 
 	<%@include file="footer.jsp"%>

@@ -55,7 +55,7 @@ public class CompanyDAOImpl implements CompanyDAO{
 		if (company.getLocation() != null && company.getLocation() != "") {
 			oldCompany.setLocation(company.getLocation());
 		}
-		// need to add enabled here
+		oldCompany.setEnabled(company.isEnabled());
 
 		return oldCompany;
 	}
