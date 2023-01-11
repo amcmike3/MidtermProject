@@ -13,7 +13,7 @@
 <body>
 	<%@include file="navbar.jsp"%>
 <div>
-		<form action="UpdateAJob">
+		<form action="updatingAJob">
 			<input id="id" name="id"
 				type="hidden" value="${job.id}" placeholder="${job.id }"><br>
 			
@@ -48,10 +48,10 @@
 			</select> <br>
 				
 				<br> <br>
-
+<%-- 
 			 <label for="company">Company:</label><br>
-			<input type="text" id="company" name="company" value="${job.company}"><br> <br>
-			<br> 
+			<input type="text" id="company" name="company" value="${job.company.name}"><br> <br>
+			<br>  --%>
 			
 			 <label for="Title">Title:</label><br>
 			<input type="text" id="title" name="title" value="${job.title}"><br> <br>
