@@ -18,7 +18,7 @@
 			<div class="containers text-center">
 				<div class="row text-center">
 					<div class="yellow-containers"
-						style="display: flex; flex-direction: row; padding-left: 25px;">
+						style="display: flex; flex-direction: row; flex-wrap: wrap; padding-left: 25px; padding-right: 25px;">
 						<div class="card yellow-containers"
 							style="display: flex; flex-direction: column; flex-wrap: wrap; max-height: 500px; width: 350px; justify-content: center;">
 							<div class="card-title title-container">${user.firstName }
@@ -32,14 +32,14 @@
 							</c:if>
 						</div>
 						<div class="card-body card yellow-containers"
-							style="padding-left: 100px; padding-right: 100px;">
+							style="min-width: 200px; padding-left: 50px; padding-right: 50px;">
 
-							<div class="title-container" style="margin-top: 50px;">
+							<div class="title-container" style="margin-top: 50px; min-width: 250px;">
 								<h3>Description:</h3>
 							</div>
 							<br>
 							<div class="card yellow-containers"
-								style="min-height: 400px; padding: 75px;">
+								style="min-height: 400px; min-width: 250px; padding: 75px;">
 								<c:choose>
 									<c:when test="${user.description != null}">
 										<p>${user.description}</p>
