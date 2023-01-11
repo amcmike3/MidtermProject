@@ -14,7 +14,7 @@
 	<div class="containers text-center">
 		<div class="row text-center">
 			<div class="yellow-containers" style="display: flex; flex-direction: row; flex-wrap: wrap; padding-left: 25px;">
-			<div class="card yellow-containers" style="display: flex; flex-direction: column; flex-wrap: wrap;">
+			<div class="card yellow-containers" style="display: flex; flex-direction: column; flex-wrap: wrap; width: 350px;">
 				<div class="card-title title-container">${sessionScope.user.firstName }
 					${sessionScope.user.lastName }</div>
 				<div class="card-body">
