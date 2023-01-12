@@ -16,49 +16,49 @@
 	<div class="containers text-center">
 		<div class="row">
 			<div class="col text-center">
-				<div class="card-title title-container">
+				<div class="card-title title-container zoom">
 					<h3>Update a Company Review</h3>
 				</div>
-				<div class="containers">
+				<div class="containers zoom">
 					<form action="updatingACompanyReview" method="POST">
 						<input type="hidden" name="id" value="${review.id }">
 						<div>
 							<label for="title"><strong>Title:</strong></label> <input
-								type="text" name="title" value="${review.title }">
+								class="zoom" type="text" name="title" value="${review.title }">
 						</div>
 						<br />
 
 						<div>
 							<label for="content"><strong>Content:</strong></label> <input
-								type="text" name="content" value="${review.content }">
+								class="zoom" type="text" name="content" value="${review.content }">
 						</div>
 						<br />
 
 						<div>
 							<label for="pros"><strong>Pros:</strong></label> <input
-								type="text" name="pros" value="${review.pros }">
+								class="zoom" type="text" name="pros" value="${review.pros }">
 						</div>
 						<br />
 
 
 						<div>
 							<label for="cons"><strong>Cons:</strong></label> <input
-								type="text" name="cons" value="${review.cons }">
+								class="zoom" type="text" name="cons" value="${review.cons }">
 						</div>
 						<br />
 
 						<div>
 							<label for="advice"><strong>Advice:</strong></label> <input
-								type="text" name="advice" value="${review.advice }">
+								class="zoom" type="text" name="advice" value="${review.advice }">
 						</div>
 						<br /> <label for="recommendation">Recommended:</label> <select
-							id="recommendation" name="recommendation">
+							class="zoom" id="recommendation" name="recommendation">
 							<option value="true"
 								<c:if test="${review.recommendation }">selected</c:if>>Yes</option>
 							<option value="false"
 								<c:if test="${!review.recommendation }">selected</c:if>>No</option>
 						</select> <br /> <br /> <label for="rating">Rating:</label> <select
-							id="rating" name="rating">
+							class="zoom" id="rating" name="rating">
 							<option value="1"
 								<c:if test="${review.rating == 1}">selected</c:if>>1</option>
 							<option value="2"
@@ -81,7 +81,7 @@
 								<c:if test="${review.rating == 10}">selected</c:if>>10</option>
 						</select> <br /> <br />
 						<div>
-							<button type="submit" id="add-company-btn">Submit</button>
+							<button class="zoom btn" type="submit" id="add-company-btn">Submit</button>
 						</div>
 					</form>
 				</div>
