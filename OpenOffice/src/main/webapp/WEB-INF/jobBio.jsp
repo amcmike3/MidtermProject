@@ -13,9 +13,12 @@
 <body>
 	<%@include file="navbar.jsp"%>
 	<div class="yellow-containers">
-		<div class="row col card text-center title-container zoom">
-			<h1>${fn:toUpperCase(job.title) } at
+	<div class="title-container zoom text-center">
+				<h1>${fn:toUpperCase(job.title) } at
 				${fn:toUpperCase(job.company.name) }</h1>
+				</div>
+		<div class="row col card text-center yellow-containers zoom">
+
 			<p>${job.description }
 				<br /> Salary: <br /> ${job.salary } <br> Certifications: <br />
 				${job.certifications } <br /> Education: <br /> ${job.education }
