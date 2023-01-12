@@ -17,11 +17,11 @@
 	<div class="containers">
 		<div class="row">
 			<div class="col-12 py-4">
-				<div class="title-container zoom" style="text-align: center;">
+				<div class="title-container zoom typed-out" style="text-align: center;">
 					<h1>WELCOME TO OPEN OFFICE</h1>
 				</div>
 				<hr>
-				<div class="yellow-containers zoom">
+				<div class="yellow-containers zoom typed-out">
 					<p>
 
 						<mark class="peach">Market yourself.</mark>
@@ -61,7 +61,7 @@
 					</p>
 				</div>
 				<hr>
-				<div class="yellow-containers zoom">
+				<div class="yellow-containers zoom typed-out">
 
 					<p>
 						<mark class="peach">Apply even if you’re not fully
@@ -70,6 +70,30 @@
 							have all the requisite qualifications, but you’ll never get a job
 							if you don’t try.”</em> <br> <strong> – Nargis</strong>
 					</p>
+				</div>
+				<hr>
+				<div class="yellow-containers zoom typed-out">
+
+					<p>
+						<mark class="peach">Job search like it’s your job.</mark> <br/>
+						“Approach your job search like it is a 9 to 5 job. Put in the time
+						each day. Think about yourself in terms of skill sets, not as a
+						title: teacher, lawyer, etc.” – Mary Lou
+					</p>
+				</div>
+				<hr>
+				<div class="yellow-containers zoom typed-out">
+
+					<p>Ethical Kickstarter PBR asymmetrical lo-fi. Dreamcatcher
+						street art Carles, stumptown gluten-free Kickstarter artisan Wes
+						Anderson wolf pug. Godard sustainable you probably haven't heard
+						of them, vegan farm-to-table Williamsburg slow-carb readymade
+						disrupt deep v. Meggings seitan Wes Anderson semiotics, cliche
+						American Apparel whatever. Helvetica cray plaid, vegan brunch
+						Banksy leggings +1 direct trade. Wayfarers codeply PBR selfies.
+						Banh mi McSweeney's Shoreditch selfies, forage fingerstache food
+						truck occupy YOLO Pitchfork fixie iPhone fanny pack art party
+						Portland.</p>
 				</div>
 
 			</div>
