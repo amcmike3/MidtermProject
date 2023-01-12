@@ -89,12 +89,21 @@ This website is meant to be make it easy for those on a job search to do researc
 -		[JSTL]
 -		[HTML]
 -		[CSS]
+-   [BootStrap]
 -		[MySQL]
 -		[SQL]
 -		[JPQL]
+-   [MYSQL Database]
+-   [MYSQL WorkBench]
+-   [DAO: Database Accessor Objects]
 -		[Hibernate]
 -		[Spring Boot]
+-   [JPA]
+-   [JSP Files]
 -   [Eclipse]
+-   [Gradle]
+-   [Tomcat Server]
+-   [Terminal]
 -   [GITHUB](https://github.com)
 -   [Debugger-Oracle](https://docs.oracle.com/javase/7/docs/technotes/tools/windows/jdb.html)  
 
