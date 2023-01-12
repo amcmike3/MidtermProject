@@ -53,7 +53,7 @@ h1 {
 
 .zoom:hover {
 	transform: scale(1.15);
-	color: #F4F1DE !important;
+	color: black !important;
 }
 
 .containers {
@@ -125,6 +125,11 @@ input[type="text"], textarea {
 }
 
 input[type="password"], textarea {
+	background-color: #F4F1DE;
+	color: black;
+	margin: 5px;
+}
+input[type="number"], textarea {
 	background-color: #F4F1DE;
 	color: black;
 	margin: 5px;

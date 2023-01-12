@@ -17,25 +17,26 @@
 	<div class="containers text-center">
 		<div class="row">
 			<div class="col  text-center">
-				<div class="card-title title-container">
+				<div class="card-title title-container zoom">
 					<h3>Update a Interview</h3>
 				</div>
-				<div class="col card card-body text-center matcha">
+				<div class="text-center yellow-containers zoom">
 					<form action="updatingAInterview" method="post">
 						<input type="hidden" name="id" value="${interview.id }"> <input
 							type="hidden" name="companyId" value="${companyId }" /> <br />
-						Title: <input type="text" name="title" value="${interview.title}" />
-						<br /> What was their interview process like? <br />
-							<textarea name="process" rows="4" cols="40">${interview.process}</textarea>
-							 <br />
-						Did they get a job offer? <br /> <select id="jobOffered"
+						Title: <input class="zoom" type="text" name="title" value="${interview.title}" />
+						<br /> <br> What was their interview process like? <br /> <br>
+							<textarea class="zoom" name="process" rows="4" cols="40">${interview.process}</textarea>
+							 <br /> <br>
+						Did they get a job offer? <br /> <br> <select class="zoom" id="jobOffered"
 							name="jobOffered">
 							<option value="false"
 								<c:if test="${interview.jobOffered }">selected</c:if>>No</option>
 							<option value="true"
 								<c:if test="${interview.jobOffered }">selected</c:if>>Yes</option>
 
-						</select> <br /> <input type="submit" value="Update" />
+						</select> <br><br /> <input class="zoom btn" type="submit" value="Update" />
+						<br>
 					</form>
 				</div>
 				<br/>
@@ -43,7 +44,7 @@
 
 				<c:forEach var="question" items="${interview.interviewQuestions }">
 					<div class="row">
-						<div class="col card">
+						<div class="yellow-containers zoom text-center">
 
 							<div class="card-title">
 								<h3>${question.title }</h3>
@@ -52,12 +53,15 @@
 								${question.name } <br> ${question.description }
 
 							</p>
+							<br>
 							<form action="updateInterviewQuestion?questionId=${question.id }">
 								<input type="hidden" name="companyId" value="${companyId }">
 								<input type="hidden" name="interviewId" value="${interview.id }">
-								<input type="submit" value="update"> <input
+								<br>
+								<input class="zoom btn" type="submit" value="Update"> <input
 									name="questionId" type="hidden" value="${question.id }">
 							</form>
+							<br>
 						</div>
 					</div>
 					<br/>
