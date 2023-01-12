@@ -18,7 +18,7 @@
 			<div class="title-container zoom">
 				<h2>Update ${fn:toUpperCase(company.name) }</h2>
 			</div>
-			<div class="col-8 yellow-containers card"
+			<div class="col-8 yellow-containers card zoom"
 				style="padding-bottom: 35px;">
 				<form action="updatingACompany" method="post">
 
