@@ -23,7 +23,7 @@
 			<div id="search-form" style="margin-left: 100px;">
 
 				<form action="getUser.do" method="GET">
-					<input type="text" placeholder="search by username" name="username"
+					<input class="zoom" type="text" placeholder="search by username" name="username"
 						required />
 					<div class="btn">
 						<input class="zoom" id="btnDisplay" type="submit" value="Show User" />
@@ -32,7 +32,7 @@
 			</div>
 			<div style="margin-left: 100px;">
 				<form action="getCompany.do" method="GET">
-					<input type="text" placeholder="search by company" name="name"
+					<input class="zoom" type="text" placeholder="search by company" name="name"
 						required />
 					<div class="btn">
 						<input class="zoom" id="btnDisplay" type="submit" value="Show Company" />
@@ -42,7 +42,7 @@
 			<div style="margin-left: 100px;">
 
 				<form action="getJob.do" method="GET">
-					<input type="text" placeholder="search by job title" name="title"
+					<input class="zoom" type="text" placeholder="search by job title" name="title"
 						required />
 					<div class="btn">
 						<input class="zoom" id="btnDisplay" type="submit" value="Show Job" />
@@ -52,7 +52,7 @@
 			<div style="margin-left: 100px;">
 
 				<form action="getArticle" method="GET">
-					<input type="text" placeholder="search by article title" name="title"
+					<input class="zoom" type="text" placeholder="search by article title" name="title"
 						required />
 					<div class="btn">
 						<input class="zoom" id="btnDisplay" type="submit" value="Show Article" />

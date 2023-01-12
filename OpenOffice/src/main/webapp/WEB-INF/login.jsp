@@ -21,10 +21,10 @@
 			
 
 			<form action="loggingIn" method="post">
-				<input type="text" placeholder="username" name="username"> <br>
-				<input type="password" placeholder="password" name="password">
-				<br> <input type="submit" value="Log In">
-				<input formaction="register" id="register-button" type="submit" name="register" value="Register" >
+				<input class="zoom" type="text" placeholder="username" name="username"> <br>
+				<input class="zoom" type="password" placeholder="password" name="password">
+				<br> <input class="zoom" type="submit" value="Log In">
+				<input class="zoom" formaction="register" id="register-button" type="submit" name="register" value="Register" >
 				<br>
 			</form>
 		</div>
