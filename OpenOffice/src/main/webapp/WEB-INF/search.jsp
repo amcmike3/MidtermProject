@@ -26,7 +26,7 @@
 					<input type="text" placeholder="search by username" name="username"
 						required />
 					<div class="btn">
-						<input id="btnDisplay" type="submit" value="Show User" />
+						<input class="zoom" id="btnDisplay" type="submit" value="Show User" />
 					</div>
 				</form>
 			</div>
@@ -35,7 +35,7 @@
 					<input type="text" placeholder="search by company" name="name"
 						required />
 					<div class="btn">
-						<input id="btnDisplay" type="submit" value="Show Company" />
+						<input class="zoom" id="btnDisplay" type="submit" value="Show Company" />
 					</div>
 				</form>
 			</div>
@@ -45,7 +45,7 @@
 					<input type="text" placeholder="search by job title" name="title"
 						required />
 					<div class="btn">
-						<input id="btnDisplay" type="submit" value="Show Job" />
+						<input class="zoom" id="btnDisplay" type="submit" value="Show Job" />
 					</div>
 				</form>
 			</div>
@@ -55,7 +55,7 @@
 					<input type="text" placeholder="search by article title" name="title"
 						required />
 					<div class="btn">
-						<input id="btnDisplay" type="submit" value="Show Article" />
+						<input class="zoom" id="btnDisplay" type="submit" value="Show Article" />
 					</div>
 				</form>
 			</div>
@@ -65,28 +65,28 @@
 			style="width: 700px; margin: 0 auto;">
 			<div class="">
 				<form action="allUser.do" method="GET">
-					<input id="btnDisplay" class="btn" type="submit"
+					<input class="zoom" id="btnDisplay" class="btn" type="submit"
 						value="Show All Users" />
 				</form>
 			</div>
 			<div class="">
 
 				<form action="allCompanies.do" method="GET">
-					<input id="btnDisplay" class="btn" type="submit"
+					<input class="zoom" id="btnDisplay" class="btn" type="submit"
 						value="Show All Companies" />
 				</form>
 			</div>
 			<div class="">
 
 				<form action="allJobs.do" method="GET">
-					<input id="btnDisplay" class="btn" type="submit"
+					<input class="zoom" id="btnDisplay" class="btn" type="submit"
 						value="Show All Jobs" />
 				</form>
 			</div>
 			<div class="">
 
 				<form action="allArticles" method="GET">
-					<input id="btnDisplay" class="btn" type="submit"
+					<input class="zoom" id="btnDisplay" class="btn" type="submit"
 						value="Show All Articles"/>
 				</form>
 			</div>
