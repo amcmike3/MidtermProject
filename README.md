@@ -105,7 +105,7 @@ How a developer would download and set up, install DB, etc.
 Blah Blah
 </p>
 
-## Contact
+## Team Members
 
 <strong>Developers on Project</strong>
 
@@ -119,7 +119,7 @@ LinkedIn
 <li><a href="https://github.com/">Github</a></li>
 <li> E-mail:</li>
 </ul>
-<h4>Michael Harrington</h4>
+<h4>Michael Harrington Developer, Scrum Master</h4>
 <ul>
 <li>
 <a href="">
@@ -129,7 +129,7 @@ LinkedIn
 <li><a href="https://github.com/">Github</a></li>
 <li> E-mail:</li>
 </ul>
-<h4>Alex MicMichael</h4>
+<h4>Alex MicMichael Developer, DataBase Administrator</h4>
 <ul>
 <li>
 <a href="https://www.linkedin.com/in/alexander-mcmichael-8812aa138/">
