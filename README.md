@@ -120,20 +120,15 @@ How it works, what the user can do:
 
 Link to deployed app
 
-How to login, username/password, etc.
-
 
 </P>
+Credentials to login:
 <ol>
-
-
 <li>
 Admin username: openadmin | Admin password: openadmin
 <li>
 username: cool_man007 | password: cool_man007
-
 </li>
-
 </ol>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
