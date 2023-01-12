@@ -24,8 +24,6 @@
 
 						<br /> Title: <br /> <input type="text" name="title" />
 						<br /> Description: <br /> <input type="text" name="description" />
-						<br />Date: <br /> <input type="text" name="description" />
-						<br /> URL: <br /> <input type="text" name="articleUrl" />
 						<br /> Industry: <br /> <select name="industryId">
 							<c:forEach var="industry" items="${industryList }">
 								<option value="${industry.id}">"${industry.name }"</option>

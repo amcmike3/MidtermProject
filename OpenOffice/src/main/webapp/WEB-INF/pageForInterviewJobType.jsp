@@ -17,11 +17,13 @@
 				<div class="card-title">
 					<h3>${company.name }</h3>
 				</div>
+				</div>
 				<div class="card-body yellow-containers">
 					<h4>Tell us about the job you interviewed for?</h4>
 					<form action="createJob.do" method="POST">
 
 			<input type="hidden" name="companyId" value="${company.id }">
+			<input type="hidden" name="enabled" value="1">
 
 			<label for="title">What is the title of the job you are
 				applying for?</label><br> <input type="text" name="title"><br>
@@ -51,10 +53,10 @@
 				</c:forEach>
 			</select> <br> <br>
 
-			<button type="submit">Submit</button>
+			<button class="zoom btn" style="color: white;" type="submit">Submit</button>
 
 		</form></div>
-			</div>
+			
 		</div>
 	</div>
 	<%@include file="footer.jsp"%>
