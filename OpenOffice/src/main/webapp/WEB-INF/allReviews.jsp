@@ -12,17 +12,18 @@
 
 <body>
 	<%@include file="navbar.jsp"%>
-	<div class="containers text-center">
-		<div class="row">
-			<div class="col title-container text-center title-container card">
+	<div class="yellow-containers text-center">
+		<div class="yellow-containers" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+			<div class="text-center title-container zoom" style="max-width: 700px !important; min-width: 300px;">
 				<div class="card-title">
 					<h3>${company.name } reviews</h3>
 				</div>
+			</div>
 				<c:choose>
 					<c:when test="${!empty company.reviews }">
 						<c:forEach var="review" items="${company.reviews }">
 							<c:if test="${review.enabled }">
-								<div class="row col card yellow-containers zoom" style="margin: 15px;">
+								<div class="yellow-containers zoom" style="margin: 15px;">
 									<p>
 										<a href="userBio?userId=${review.user.id }">
 											${review.user.username }</a> rated this company ${review.rating }
@@ -64,7 +65,7 @@
 					</c:otherwise>
 
 				</c:choose>
-			</div>
+
 		</div>
 	</div>
 
