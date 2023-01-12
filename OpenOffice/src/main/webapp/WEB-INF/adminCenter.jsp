@@ -22,7 +22,7 @@
 			style="width: 700px; margin: 0 auto;">
 			<div class="col-4 card matcha zoom" style="display: flex; align-items: center; justify-content: center;">
 				<form action="createCompany" method="GET">
-					<input id="btnDisplay" class="btn" type="submit"
+					<input id="btnDisplay" class="zoom btn" type="submit"
 						value="Create Company" />
 				</form>
 			</div>
@@ -44,10 +44,10 @@
  -->
 
 					<form action="updateACompany" method="GET">
-						<input type="text" placeholder="company id" name="companyId"
+						<input class="zoom" type="text" placeholder="company id" name="companyId"
 							required  size="20"/>
 						<div class="btn">
-							<input id="btnDisplay" type="submit" value="Update Company" />
+							<input class="zoom" id="btnDisplay" type="submit" value="Update Company" />
 						</div>
 					</form>
 				</div>
@@ -55,9 +55,9 @@
 				<div class="">
 
 					<form action="updatAUser" method="GET">
-						<input type="text" placeholder="user id" name="userId" required size="20"/>
+						<input class="zoom" type="text" placeholder="user id" name="userId" required size="20"/>
 						<div class="btn">
-							<input id="btnDisplay" type="submit" value="Update User" />
+							<input class="zoom" id="btnDisplay" type="submit" value="Update User" />
 						</div>
 					</form>
 				</div>
@@ -65,9 +65,9 @@
 				<div class="">
 
 					<form action="updateAJob" method="GET">
-						<input type="text" placeholder="job id" name="jobId" required size="20" />
+						<input class="zoom" type="text" placeholder="job id" name="jobId" required size="20" />
 						<div class="btn">
-							<input id="btnDisplay" type="submit" value="Update Job" />
+							<input class="zoom" id="btnDisplay" type="submit" value="Update Job" />
 						</div>
 					</form>
 				</div>
@@ -75,10 +75,10 @@
 				<div class="">
 
 					<form action="updateAInterview" method="GET">
-						<input type="text" placeholder="interview id" name="interviewId"
+						<input class="zoom" type="text" placeholder="interview id" name="interviewId"
 							required size="20"/>
 						<div class="btn">
-							<input id="btnDisplay" type="submit" value="Update Interview" />
+							<input class="zoom" id="btnDisplay" type="submit" value="Update Interview" />
 						</div>
 					</form>
 				</div>
@@ -86,10 +86,10 @@
 				<div class="">
 
 					<form action="updateAArticle" method="GET">
-						<input type="text" placeholder="article id" name="articleId"
+						<input class="zoom" type="text" placeholder="article id" name="articleId"
 							required size="20"/>
 						<div class="btn">
-							<input id="btnDisplay" type="submit" value="Update Article" />
+							<input class="zoom" id="btnDisplay" type="submit" value="Update Article" />
 						</div>
 					</form>
 				</div>
@@ -97,10 +97,10 @@
 				<div class="">
 
 					<form action="updateACompanyReview" method="GET">
-						<input type="text" placeholder="company review id" name="reviewId"
+						<input class="zoom" type="text" placeholder="company review id" name="reviewId"
 							required size="20"/>
 						<div class="btn">
-							<input id="btnDisplay" type="submit"
+							<input class="zoom" id="btnDisplay" type="submit"
 								value="Update Review" />
 						</div>
 					</form>
