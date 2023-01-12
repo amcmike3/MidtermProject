@@ -21,7 +21,7 @@
 						style="display: flex; flex-direction: row; flex-wrap: wrap; padding-left: 25px; padding-right: 25px;">
 						<div class="card yellow-containers zoom"
 							style="display: flex; flex-direction: column; flex-wrap: wrap; max-height: 500px; width: 350px; justify-content: center;">
-							<div class="card-title title-container">${user.firstName }
+							<div class="card-title title-container zoom">${user.firstName }
 								${user.lastName }</div>
 							<div class="card-body">
 								<img class="user-bio-pic zoom" src="${user.imgUrl }">
@@ -34,11 +34,11 @@
 						<div class="card-body card yellow-containers zoom"
 							style="min-width: 200px; padding-left: 50px; padding-right: 50px;">
 
-							<div class="title-container" style="margin-top: 50px; min-width: 250px;">
+							<div class="title-container zoom" style="margin-top: 50px; min-width: 250px;">
 								<h3>Description:</h3>
 							</div>
 							<br>
-							<div class="card yellow-containers"
+							<div class="card yellow-containers zoom"
 								style="min-height: 400px; min-width: 250px; padding: 75px;">
 								<c:choose>
 									<c:when test="${user.description != null}">
@@ -55,13 +55,13 @@
 					<div class="col">
 
 						<div class="card-body yellow-containers zoom" style="min-width: 210px;">
-							<div class="title-container" style="margin-top: 50px;">
+							<div class="title-container zoom" style="margin-top: 50px;">
 								<h3>Contributions:</h3>
 							</div>
 
 							<br>
 							<c:forEach var="review" items="${user.reviews }">
-								<div class="card yellow-containers">
+								<div class="card yellow-containers zoom">
 									<p>
 										<a href="companyBio?companyId=${review.company.id }">
 											${review.company.name }</a> rating: ${review.rating } out of 10 <br>
@@ -74,12 +74,12 @@
 						<div class="card-body yellow-containers zoom"
 							style="min-width: 210px; margin-top: 50px;">
 
-							<div class="title-container" style="margin-top: 50px;">
+							<div class="title-container zoom" style="margin-top: 50px;">
 								<h3>Articles written by ${user.username}</h3>
 							</div>
 							<br>
 							<c:forEach var="article" items="${user.articles }">
-								<div class="card yellow-containers">
+								<div class="card yellow-containers zoom">
 									<p>
 										<a href="articleBio?articleId=${article.id }">
 											${article.title }</a>
@@ -89,21 +89,21 @@
 							<br />
 							<form action="createArticle.do" method="get">
 								<br>
-								<button id="add-company-btn" type="submit">Add Article</button>
+								<button class="zoom "id="add-company-btn" type="submit">Add Article</button>
 								<br>
 							</form>
 							<br />
 						</div>
 						<div class="card-body yellow-containers zoom"
 							style="min-width: 210px; margin-top: 50px;">
-							<div class="title-container" style="margin-top: 50px;">
+							<div class="title-container zoom" style="margin-top: 50px;">
 								<h3>Subscription:</h3>
 							</div>
 							<br>
 							<c:forEach var="company" varStatus="loop"
 								items="${user.companies}">
 								<c:if test="${loop.index <= 1 }">
-									<div class="card yellow-containers">
+									<div class="card yellow-containers zoom">
 										<p>
 											<a href="companyBio?companyId=${company.id}">${company.name }</a>
 										</p>
@@ -114,7 +114,7 @@
 								<input type="hidden" name="userId" value="${user.id }">
 								<input type="hidden" name="companyId" value="${company.id }">
 								<br>
-								<button id="add-company-btn" type="submit">View
+								<button class="zoom" id="add-company-btn" type="submit">View
 									Subscriptions</button>
 								<br> <br>
 							</form>

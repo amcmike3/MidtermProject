@@ -15,7 +15,7 @@
 
 	<div class="containers text-center">
 		<div class="row">
-			<div class="col  text-center">
+			<div class="col yellow-containers text-center">
 				<div class="card-title title-container zoom">
 					<c:choose>
 						<c:when test="${success }">

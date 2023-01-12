@@ -14,7 +14,7 @@
 	<div class="container">
 
 		<div class="row">
-			<div class="col card card-body matcha " style="align-items: center;">
+			<div class="col card card-body matcha" style="align-items: center;">
 				<div class="title-container text-center zoom"
 					style="padding-left: 50px; padding-right: 50px;">
 					<h1>Update User</h1>
@@ -34,13 +34,13 @@
 						<br> <input type="text" name="email"
 							placeholder="${sessionScope.user.email }" /> <br> Profile
 						Picture:(image url) <br> <input type="text" name="imgUrl"
-							value="${sessionScope.user.imgUrl }" /> <br> <br /> <input
+							value="${sessionScope.user.imgUrl }" /> <br> <br /> <input class="zoom"
 							type="submit" value="Update" /> <br /> <br />
 					</form>
 				</div>
-				<div class="yellow-containers text-center col-8">
+				<div class="yellow-containers text-center zoom col-8">
 					<form action="deleteUser">
-						<input type="submit" value="Delete Profile" /> <input
+						<input class="zoom" type="submit" value="Delete Profile" /> <input
 							type="hidden" name="id" value="${sessionScope.user.id }" />
 					</form>
 				</div>
