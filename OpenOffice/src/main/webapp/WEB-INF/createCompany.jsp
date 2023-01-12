@@ -22,11 +22,11 @@
 				<div class="card-body yellow-containers zoom">
 					<form action="creatingCompany" method="post">
 
-						<br /> Name: <br /> <input type="text" name="name" />
-						<br />Description<br /> <input type="text" name="description" />
-						<br />Location<br /> <input type="text" name="location" /> <br />
+						<br /> Name: <br /> <input class="zoom" type="text" name="name" />
+						<br />Description<br /> <input class="zoom" type="text" name="description" />
+						<br />Location<br /> <input class="zoom" type="text" name="location" /> <br />
 						<!-- Maybe implement google maps api if we have enough time -->
-							<br> <button id="add-company-btn" type="submit">Add Company</button> <br>
+							<br> <button class="zoom" id="add-company-btn" type="submit">Add Company</button> <br>
 							<br />
 						</form>
 				</div>
