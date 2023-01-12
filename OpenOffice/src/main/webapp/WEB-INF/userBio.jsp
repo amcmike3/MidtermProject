@@ -28,16 +28,17 @@
 							</div>
 
 							<c:if test="${sessionScope.user.role }">
-							<br>
-								<a href="updatAUser?userId=${user.id }"><button class="zoom btn"
-							style="color: white; margin-bottom: 70px;">Update</button></a>
-							<br>
+								<br>
+								<a href="updatAUser?userId=${user.id }"><button
+										class="zoom btn" style="color: white; margin-bottom: 70px;">Update</button></a>
+								<br>
 							</c:if>
 						</div>
-						<div class="card-body card yellow-containers zoom"
+						<div class="card-body matcha"
 							style="min-width: 200px; max-width: 600px; padding-left: 50px; padding-right: 50px;">
 
-							<div class="title-container zoom" style="margin-top: 50px; min-width: 200px;">
+							<div class="title-container zoom"
+								style="margin-top: 50px; min-width: 200px;">
 								<h3>Description:</h3>
 							</div>
 							<br>
@@ -57,7 +58,8 @@
 
 					<div class="col">
 
-						<div class="card-body yellow-containers zoom" style="min-width: 210px;">
+						<div class="card-body yellow-containers zoom"
+							style="min-width: 210px;">
 							<div class="title-container zoom" style="margin-top: 50px;">
 								<h3>Contributions:</h3>
 							</div>
@@ -65,27 +67,25 @@
 							<br>
 							<!-- Need a second look at the logic below -->
 							<c:choose>
-							<c:when test="${!empty user.reviews }">
-							<c:forEach var="review" items="${user.reviews }">
-								<div class="card yellow-containers zoom">
-									<p>
-										<a href="companyBio?companyId=${review.company.id }">
-											${review.company.name }</a> rating: ${review.rating } out of 10 <br>
-										you said: <br> ${review.content }
-									</p>
-								</div>
+								<c:when test="${!empty user.reviews }">
+									<c:forEach var="review" items="${user.reviews }">
+										<div class="card yellow-containers zoom">
+											<p>
+												<a href="companyBio?companyId=${review.company.id }">
+													${review.company.name }</a> rating: ${review.rating } out of 10
+												<br> you said: <br> ${review.content }
+											</p>
+										</div>
 
-							</c:forEach>
-							</c:when>
-							<c:otherwise>
-							<div class="card yellow-containers zoom">
-									<p>
-										No contributions at this time
-									</p>
-								</div>
-							</c:otherwise>
+									</c:forEach>
+								</c:when>
+								<c:otherwise>
+									<div class="card yellow-containers zoom">
+										<p>No contributions at this time</p>
+									</div>
+								</c:otherwise>
 							</c:choose>
-							
+
 						</div>
 						<div class="card-body yellow-containers zoom"
 							style="min-width: 210px; margin-top: 50px;">
@@ -94,18 +94,31 @@
 								<h3>Articles written by ${user.username}</h3>
 							</div>
 							<br>
-							<c:forEach var="article" items="${user.articles }">
-								<div class="card yellow-containers zoom">
-									<p>
-										<a href="articleBio?articleId=${article.id }">
-											${article.title }</a>
-									</p>
-								</div>
-							</c:forEach>
+							<c:choose>
+								<c:when test="${!empty user.articles }">
+									<c:forEach var="article" items="${user.articles }">
+										<div class="card yellow-containers zoom">
+											<p>
+												<a href="articleBio?articleId=${article.id }">
+													${article.title }</a>
+											</p>
+										</div>
+									</c:forEach>
+
+								</c:when>
+								<c:otherwise>
+									<div class="card yellow-containers zoom">
+										<p>
+											No articles written by this user at this time
+										</p>
+									</div>
+								</c:otherwise>
+							</c:choose>
 							<br />
 							<form action="createArticle.do" method="get">
 								<br>
-								<button class="zoom "id="add-company-btn" type="submit">Add Article</button>
+								<button class="zoom btn" id="add-company-btn" type="submit">Add
+									Article</button>
 								<br>
 							</form>
 							<br />
@@ -130,7 +143,7 @@
 								<input type="hidden" name="userId" value="${user.id }">
 								<input type="hidden" name="companyId" value="${company.id }">
 								<br>
-								<button class="zoom" id="add-company-btn" type="submit">View
+								<button class="zoom btn" id="add-company-btn" type="submit">View
 									Subscriptions</button>
 								<br> <br>
 							</form>
