@@ -24,11 +24,13 @@
 							<p>
 								<a href="companyBio?companyId=${company.id}">${company.name }</a>
 							</p>
+							<c:if test="${sessionScope.user.id == user.id }">
 							<form action="unsubscribe.do" method="post">
 								<input class="zoom" type="submit" value="Unsubscribe" /> <input type="hidden"
 									name="userId" value="${user.id }" /> <input type="hidden"
 									name="companyId" value="${company.id }" />
 							</form>
+							</c:if>
 						</div>
 
 
