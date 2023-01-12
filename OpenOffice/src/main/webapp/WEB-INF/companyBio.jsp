@@ -13,155 +13,173 @@
 <body>
 	<%@include file="navbar.jsp"%>
 	<c:choose>
-	<c:when test="${company.enabled }">
-	<div class="containers">
-		<div class="row col card text-center title-container zoom">
-			<h1>${company.name }</h1>
-			<p>${company.description }
-				<br>
-			</p>
-			<c:if test="${sessionScope.user.role }">
-				<a href="updateACompany?companyId=${company.id }"><button>Update</button></a>
-			</c:if>
-		</div>
-		<div class="row">
-			<div class="col card text-center yellow-containers zoom">
-				<a href="companyJobs?companyId=${company.id }">${company.name}
-					Jobs </a>
-			</div>
-			<c:choose>
-				<c:when test="${sessionScope.user != null }">
-					<div class="col card text-center yellow-containers zoom">
-						<a href="review.do?companyId=${company.id }">Leave a review of
-							${company.name } </a>
-
-					</div>
-				</c:when>
-				<c:otherwise>
-					<div class="col card text-center yellow-containers zoom">
-						<a href="reviewLogin?companyId=${company.id }">Leave a review
-							of ${company.name } </a>
-					</div>
-
-				</c:otherwise>
-			</c:choose>
-		</div>
-		<hr>
-			<c:choose>
-				<c:when test="${sessionScope.user.id != null}">
-		<div class="yellow-containers text-center zoom">
-					<input name="userId" value="${sessionScope.user.id}" type="hidden" />
-					<form action="subscribe.do" method="GET">
-						<input name="userId" value="${user.id}" type="hidden" /> <input
-							name="companyId" value="${company.id}" type="hidden" />
-						<button type="submit">Subscribe</button>
-					</form>
-		</div>
-		<hr>
-				</c:when>
-			</c:choose>
-		<div class="row col">
-			<img class="company-pic zoom" alt="A fancy company picture should be here"
-				src="${company.images.get(0).imgUrl }">
-		</div>
-		<hr>
-		<div class="row col card text-center title-container zoom">
-			<h1>Reviews</h1>
-		</div>
-		<c:choose>
-			<c:when test="${empty company.reviews }">
-				<div class="row">
-					<div class="col card yellow-containers zoom">
-						<p>
-							<a href="review.do?companyId=${company.id }">Be the first to
-								contribute</a>
-						</p>
-					</div>
+		<c:when test="${company.enabled }">
+			<div class="containers">
+				<div class="row col card text-center title-container zoom">
+					<h1>${company.name }</h1>
+					<p>${company.description }
+						<br>
+					</p>
+					<c:if test="${sessionScope.user.role }">
+						<a href="updateACompany?companyId=${company.id }"><button>Update</button></a>
+					</c:if>
 				</div>
+				<div class="row">
+					<div class="col card text-center yellow-containers zoom">
+						<a href="companyJobs?companyId=${company.id }">${company.name}
+							Jobs </a>
+					</div>
+					<c:choose>
+						<c:when test="${sessionScope.user != null }">
+							<div class="col card text-center yellow-containers zoom">
+								<a href="review.do?companyId=${company.id }">Leave a review
+									of ${company.name } </a>
 
-			</c:when>
-			<c:otherwise>
+							</div>
+						</c:when>
+						<c:otherwise>
+							<div class="col card text-center yellow-containers zoom">
+								<a href="reviewLogin?companyId=${company.id }">Leave a
+									review of ${company.name } </a>
+							</div>
 
-
-				<c:forEach var="review" items="${company.reviews }">
-					<c:if test="${company.enabled }">
+						</c:otherwise>
+					</c:choose>
+				</div>
+				<hr>
+				<c:choose>
+					<c:when test="${sessionScope.user.id != null}">
+						<div class="yellow-containers text-center zoom">
+							<input name="userId" value="${sessionScope.user.id}"
+								type="hidden" />
+							<form action="subscribe.do" method="GET">
+								<input name="userId" value="${user.id}" type="hidden" /> <input
+									name="companyId" value="${company.id}" type="hidden" />
+								<button type="submit">Subscribe</button>
+							</form>
+						</div>
+						<hr>
+					</c:when>
+				</c:choose>
+				<div class="row col">
+					<img class="company-pic zoom"
+						alt="A fancy company picture should be here"
+						src="${company.images.get(0).imgUrl }">
+				</div>
+				<hr>
+				<div class="row col card text-center title-container zoom">
+					<h1>Reviews</h1>
+				</div>
+				<c:choose>
+					<c:when test="${empty company.reviews }">
 						<div class="row">
-							<div class="col card yellow-containers zoom">
 
-								<p>
-									<a href="userBio?userId=${review.user.id }">
-										${review.user.username }</a> rated this company ${review.rating }
-									out of 10 <br> this is what they had to say about
-									${company.name}: <br> ${review.content }
-								</p>
+
+							<div class="col card yellow-containers zoom">
+								<c:choose>
+									<c:when test="${sessionScope.user == null}">
+										<p>
+											<a href="reviewLogin?companyId=${company.id }">Be the first
+												to contribute</a>
+										</p>
+
+									</c:when>
+									<c:otherwise>
+
+										<p>
+											<a href="review.do?companyId=${company.id }">Be the first
+												to contribute</a>
+										</p>
+
+									</c:otherwise>
+								</c:choose>
+
 							</div>
 						</div>
-					</c:if>
-				</c:forEach>
-			</c:otherwise>
 
-		</c:choose>
+					</c:when>
+					<c:otherwise>
 
-		<hr>
 
-		<div class="row col card yellow-containers text-center zoom">
-			<a href="allReviews?companyId=${company.id }"> See all reviews of
-				${company.name }</a>
-		</div>
+						<c:forEach var="review" items="${company.reviews }">
+							<c:if test="${company.enabled }">
+								<div class="row">
+									<div class="col card yellow-containers zoom">
 
-		<hr>
-		<div class="row col card text-center title-container zoom">
-			<h1>Jobs</h1>
-		</div>
-
-		<div class="row col card text-center yellow-containers zoom">
-			<c:choose>
-				<c:when test="${!empty company.jobs}">
-					<c:forEach var="i" begin="0" end="5" step="3">
-						<div class="row">
-							<c:forEach var="job" items="${company.jobs }" begin="${i }"
-								end="${i + 3 }">
-								<c:if test="${job.enabled }">
-									<div class="col ">
 										<p>
-											<a href="jobBio?jobId=${job.id}"> ${job.title }</a>
+											<a href="userBio?userId=${review.user.id }">
+												${review.user.username }</a> rated this company ${review.rating }
+											out of 10 <br> this is what they had to say about
+											${company.name}: <br> ${review.content }
 										</p>
 									</div>
-								</c:if>
+								</div>
+							</c:if>
+						</c:forEach>
+					</c:otherwise>
+
+				</c:choose>
+
+				<hr>
+
+				<div class="row col card yellow-containers text-center zoom">
+					<a href="allReviews?companyId=${company.id }"> See all reviews
+						of ${company.name }</a>
+				</div>
+
+				<hr>
+				<div class="row col card text-center title-container zoom">
+					<h1>Jobs</h1>
+				</div>
+
+				<div class="row col card text-center yellow-containers zoom">
+					<c:choose>
+						<c:when test="${!empty company.jobs}">
+							<c:forEach var="i" begin="0" end="5" step="3">
+								<div class="row">
+									<c:forEach var="job" items="${company.jobs }" begin="${i }"
+										end="${i + 3 }">
+										<c:if test="${job.enabled }">
+											<div class="col ">
+												<p>
+													<a href="jobBio?jobId=${job.id}"> ${job.title }</a>
+												</p>
+											</div>
+										</c:if>
+									</c:forEach>
+								</div>
 							</c:forEach>
-						</div>
-					</c:forEach>
-				</c:when>
-				<c:otherwise>
-					<div class="row">
-						<div class="col ">
-							<p>No interviews have been published for this company at this
-								time.</p>
-						</div>
-					</div>
-				</c:otherwise>
-			</c:choose>
-		</div>
-		<hr>
-		<div class="row col card yellow-containers text-center zoom">
-			<a href="pageForInterviewJobType.do?companyId=${company.id}">
-				Tell us about your interview experience with ${company.name }</a>
-		</div>
-		<hr>
-		<div class="row col card text-center title-container zoom">
-			<h1>Interviews</h1>
-		</div>
+						</c:when>
+						<c:otherwise>
+							<div class="row">
+								<div class="col ">
+									<p>No interviews have been published for this company at
+										this time.</p>
+								</div>
+							</div>
+						</c:otherwise>
+					</c:choose>
+				</div>
+				<hr>
+				<div class="row col card yellow-containers text-center zoom">
+					<a href="pageForInterviewJobType.do?companyId=${company.id}">
+						Tell us about your interview experience with ${company.name }</a>
+				</div>
+				<hr>
+				<div class="row col card text-center title-container zoom">
+					<h1>Interviews</h1>
+				</div>
 
-		<c:forEach var="job" items="${company.jobs }">
-			<div class="yellow-containers text-center zoom">
-				<c:set var="jobTitle" value="${fn:toUpperCase(job.title)}" />
-				<a href="jobBio?jobId=${job.id}">${jobTitle}</a>
-				<hr class="company-bio-hr">
+				<c:forEach var="job" items="${company.jobs }">
+					<div class="yellow-containers text-center zoom">
+						<c:set var="jobTitle" value="${fn:toUpperCase(job.title)}" />
+						<a href="jobBio?jobId=${job.id}">${jobTitle}</a>
+						<hr class="company-bio-hr">
 
-				<c:forEach var="interview" items="${job.interviews }">
-						<div class="col">
-							<a id="interview-job-link"
-								href="interviewBio?interviewId=${interview.id}">${interview.title }</a>
+						<c:forEach var="interview" items="${job.interviews }">
+							<div class="col">
+								<a id="interview-job-link"
+									href="interviewBio?interviewId=${interview.id}">${interview.title }</a>
 								<c:if test="${interview.user.id == sessionScope.user.id }">
 									<form
 										action="updateInterview?interviewId=${interview.id}&companyId=${company.id}">
@@ -174,21 +192,21 @@
 
 								</c:if>
 							</div>
+						</c:forEach>
+					</div>
 				</c:forEach>
-			</div>
-		</c:forEach>
 
-	</div>
-	</c:when>
-	<c:otherwise>
-	<div class="containers">
-		<div class="row col card text-center title-container zoom">
-		<h1>This Company has been Deactivated</h1>
-		</div>
-		</div>
-	</c:otherwise>
+			</div>
+		</c:when>
+		<c:otherwise>
+			<div class="containers">
+				<div class="row col card text-center title-container zoom">
+					<h1>This Company has been Deactivated</h1>
+				</div>
+			</div>
+		</c:otherwise>
 	</c:choose>
-	
+
 
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>

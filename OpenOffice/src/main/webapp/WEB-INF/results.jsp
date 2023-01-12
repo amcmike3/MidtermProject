@@ -29,8 +29,9 @@
 					</thead>
 					<tbody>
 						<c:forEach var="user" items="${userList}">
-						<c:if test="${user.enabled }">
-							<tr>
+						<c:if test="${user.enabled || sessionScope.user.role }">
+							<tr <c:if test="${!user.enabled }">style="background-color:#E07A5F"</c:if>>
+							
 								<td>${user.id}</td>
 								<td><a href="userBio?userId=${user.id}">${user.username}</a></td>
 								<td>${user.firstName}</td>
