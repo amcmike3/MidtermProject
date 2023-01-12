@@ -34,7 +34,7 @@
 							</c:forEach>
 						</select> <br> <br />
 						
-							<button type="submit">Add Article</button>
+							<button class="zoom btn" type="submit">Add Article</button>
 						</form>
 				</div>
 			</div>

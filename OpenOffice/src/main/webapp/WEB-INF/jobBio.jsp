@@ -20,11 +20,14 @@
 				<br /> Salary: <br /> ${job.salary } <br> Certifications: <br />
 				${job.certifications } <br /> Education: <br /> ${job.education }
 				Skills: ${job.skills }
-				<c:if test="${sessionScope.user.role }">
-					<a href="updateAJob?jobId=${job.id }"><button class="zoom btn button">Update</button></a>
-				</c:if>
 			</p>
 		</div>
+		<div class="text-center">
+				<c:if test="${sessionScope.user.role }">
+				<br />
+					<a href="updateAJob?jobId=${job.id }"><button class="zoom btn button" style="color: white;">Update</button></a>
+				</c:if>
+				</div>
 		<div class="row">
 			<div class="col text-center yellow-containers zoom">
 				<a href="allInterviews?jobId=${job.id }">${job.title} Interview
@@ -33,10 +36,8 @@
 			<c:choose>
 				<c:when test="${sessionScope.user != null }">
 					<div class="col card text-center yellow-containers zoom">
-						<div class="col text-center yellow-containers">
 							<a href="sendToCreateInterview?jobId=${job.id }">Leave an
 								interview experience at ${job.company.name } </a>
-						</div>
 
 					</div>
 				</c:when>
@@ -58,7 +59,7 @@
 			<div class="row yellow-containers zoom">
 				<div class="col text-center" style="margin: 10px;">
 					<c:if test="${sessionScope.user.id == interview.user.id }">
-						<h4 class="" style="background-color: #E07A5F;">Your
+						<h4 class="">Your
 							Contribution:</h4>
 					</c:if>
 					<p>
@@ -69,7 +70,7 @@
 						<form action="updateInterview">
 							<input type="hidden" name="companyId" value="${job.company.id}" />
 							<input type="hidden" name="interviewId" value="${interview.id }" />
-							<input class="zoom btn button" type="submit" value="update" />
+							<input class="zoom btn" type="submit" value="Update" />
 						</form>
 					</c:if>
 				</div>
@@ -79,7 +80,7 @@
 		<c:choose>
 		<c:when test="${sessionScope.user != null }">
 		<form action="createArticle.do" method="get">
-			<button class="zoom btn button" type="submit" style="">Add Article</button>
+			<button class="zoom btn" type="submit" style="color: white;">Add Article</button>
 		</form>
 		
 		</c:when>

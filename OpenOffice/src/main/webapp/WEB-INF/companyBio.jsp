@@ -21,7 +21,7 @@
 						<br>
 					</p>
 					<c:if test="${sessionScope.user.role }">
-						<a href="updateACompany?companyId=${company.id }"><button>Update</button></a>
+						<a href="updateACompany?companyId=${company.id }"><button class="zoom button btn">Update</button></a>
 					</c:if>
 				</div>
 				<div class="row">
@@ -55,7 +55,7 @@
 							<form action="subscribe.do" method="GET">
 								<input name="userId" value="${user.id}" type="hidden" /> <input
 									name="companyId" value="${company.id}" type="hidden" />
-								<button type="submit">Subscribe</button>
+								<button class="zoom button btn" type="submit">Subscribe</button>
 							</form>
 						</div>
 						<hr>
