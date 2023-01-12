@@ -39,7 +39,7 @@ lkgadjijgsdrotj
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-### Technologies Used
+### Technologies and Methodologies Used
 
 -   [Eclipse](https://spring.io/tools)
 -   [Atom Text Editor](https://atom.io/)
@@ -51,10 +51,16 @@ lkgadjijgsdrotj
 
 ## How It Works
 
-
-
 <p>
-jhafdlfhafdioue
+How it works, what the user can do
+
+screenshot1.png screenshot2.png
+
+Link to deployed app
+
+How to login, username/password, etc.
+
+
 </P>
 <ol>
 
@@ -72,12 +78,23 @@ agahfgflkjjlfa
 </ol>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## Implementaion
+
+<p>
+Description of overall project structure
+
+ERDiagram.png
+ </p>
+
 ## What I Learned
 <p>
-WHAT I BLAHHHHH BLAHHHH
+How a developer would download and set up, install DB, etc.
 </p>
 
-
+##How to Download and Run
+<p>
+Blah Blah
+</p>
 
 ## Contact
 
@@ -131,7 +148,7 @@ Project Link: [Open Office](https://github.com/mdharr/MidtermProject)
 
 <!-- ACKNOWLEDGMENTS -->
 
-## Acknowledgments
+## Acknowledgments and Resources
 
 
 -   [Stack Overflow](https://stackoverflow.com/)
