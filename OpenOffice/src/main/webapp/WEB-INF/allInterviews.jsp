@@ -33,7 +33,7 @@
 					<p>${interview.process }</p>
 					<br />
 					<c:if test="${sessionScope.user.role }">
-						<a href="updateAInterview?interviewId=${interview.id }"><button>Update</button></a>
+						<a href="updateAInterview?interviewId=${interview.id }"><button class="zoom btn" style="color: white;">Update</button></a>
 					</c:if>
 				</div>
 			</div>

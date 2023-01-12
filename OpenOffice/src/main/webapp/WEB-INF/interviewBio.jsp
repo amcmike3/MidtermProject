@@ -14,18 +14,18 @@
 	<%@include file="navbar.jsp"%>
 	<div class="containers text-center">
 		<div class="row">
-			<div class="col  text-center">
-				<div class="card-title title-container zoom">
-					<div class=" card card-title matcha">
+			<div class="col text-center">
+				<div class="yellow-containers text-center">
+					<div class="title-container zoom text-center">
 
 						<h1>${interview.job.title }</h1>
 					</div>
-					<div class="card-title title-container">
+					<div class="card-title yellow-containers text-center zoom">
 						<br />
 						<h3>${interview.title }</h3>
 					</div>
-					<div class="card-title title-container">
-						<h1 style="text-align: left;">Description:</h1>
+					<div class="card-title yellow-containers text-center zoom">
+						<h1>Description</h1>
 						<p>${interview.process }
 							<br>
 						</p>
@@ -37,7 +37,7 @@
 
 				<c:forEach var="question" items="${interview.interviewQuestions }">
 					<div class="row">
-						<div class="col card yellow-containers zoom">
+						<div class="col card yellow-containers text-center zoom">
 
 							<div class="card-title">
 								<h3>${question.title }</h3>

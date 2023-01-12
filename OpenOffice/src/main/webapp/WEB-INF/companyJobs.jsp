@@ -19,17 +19,25 @@
 				<div class="card-title title-container zoom">
 					<h3>${company.name } jobs</h3>
 				</div>
-
+				<c:choose>
+				<c:when test="${job.enabled }">
 				<c:forEach var="job" items="${ companyJobs}">
-					<c:if test="${job.enabled }">
-						<div class="card card-body yellow-containers zoom">
+					<div class="card card-body yellow-containers zoom">
 							<h3>
 								<a href="jobBio?jobId=${job.id }">${job.title }</a>
 							</h3>
 							<p>${ job.description }</p>
 						</div>
-					</c:if>
-				</c:forEach>
+						</c:forEach>
+				</c:when>
+				<c:otherwise>
+				<div class="card card-body yellow-containers zoom">
+							<h3>
+								No jobs posted at this time
+							</h3>
+						</div>
+				</c:otherwise>
+				</c:choose>
 			</div>
 		</div>
 	</div>
