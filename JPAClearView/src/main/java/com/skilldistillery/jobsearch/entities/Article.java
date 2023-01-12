@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Article {
- 
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;

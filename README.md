@@ -44,6 +44,15 @@ lkgadjijgsdrotj
 -   [Eclipse](https://spring.io/tools)
 -   [Atom Text Editor](https://atom.io/)
 -   [Java](https://www.java.com/en/)
+-		[JSTL]
+-		[HTML]
+-		[CSS]
+-		[MySQL]
+-		[SQL]
+-		[JPQL]
+-		[Hibernate]
+-		[Spring Boot]
+-   [Eclipse]
 -   [GITHUB](https://github.com)
 -   [Debugger-Oracle](https://docs.oracle.com/javase/7/docs/technotes/tools/windows/jdb.html)  
 
@@ -123,12 +132,11 @@ LinkedIn
 <h4>Alex MicMichael</h4>
 <ul>
 <li>
-<a href="">
+<a href="https://www.linkedin.com/in/alexander-mcmichael-8812aa138/">
 LinkedIn
 </a>
 </li>
-<li><a href="https://github.com/">Github</a></li>
-<li> E-mail:</li>
+<li><a href="https://github.com/amcmike3">Github</a></li>
 </ul>
 <h4>Sandra Harpole</h4>
 <ul>
@@ -142,7 +150,7 @@ LinkedIn
 </ul>
 
 
-Project Link: [Open Office](https://github.com/mdharr/MidtermProject)
+Project Github Link: [Open Office](https://github.com/mdharr/MidtermProject)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
