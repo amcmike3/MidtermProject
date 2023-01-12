@@ -55,10 +55,23 @@
 					<c:otherwise>
 						<div class="row">
 							<div class="col card yellow-containers zoom">
-								<p>
-									<a href="review.do?companyId=${company.id }">Be the first
-										to contribute</a>
-								</p>
+								<c:choose>
+									<c:when test="${sessionScope.user == null}">
+										<p>
+											<a href="reviewLogin?companyId=${company.id }">Be the first
+												to contribute</a>
+										</p>
+
+									</c:when>
+									<c:otherwise>
+
+										<p>
+											<a href="review.do?companyId=${company.id }">Be the first
+												to contribute</a>
+										</p>
+
+									</c:otherwise>
+								</c:choose>
 							</div>
 						</div>
 
