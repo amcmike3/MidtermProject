@@ -32,7 +32,7 @@
 
 
 <p>
-lkgadjijgsdrotj
+This website is meant to be make it easy for those on a job search to do research on companies they are interested in joining
  </p>
 
  ## Team Members
@@ -103,8 +103,10 @@ lkgadjijgsdrotj
 ## How It Works
 
 <p>
-How it works, what the user can do
+How it works, what the user can do:
 
+- A user on this site can create a profile, contribute experiences they have had interviewing for a specific company, add jobs to companies, and leave reviews of a company.
+- A user can read information about companies see what jobs have been filled at that company see what interviews were like there and even go into greater detail seeing what questions were asked in an interview.
 screenshot1.png screenshot2.png
 
 Link to deployed app
@@ -134,7 +136,7 @@ agahfgflkjjlfa
 <p>
 Description of overall project structure
 
-ERDiagram.png
+<![https://github.com/mdharr/MidtermProject/blob/main/DB/openofficediagram.png]()
  </p>
 
 ## What I Learned
