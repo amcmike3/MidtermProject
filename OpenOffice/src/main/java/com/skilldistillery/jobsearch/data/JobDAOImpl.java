@@ -71,7 +71,6 @@ public class JobDAOImpl implements JobDAO {
 			oldJob.setTitle(job.getTitle());
 		}
 		if (job.getSalary() != null && job.getSalary() >= 0) {
-			System.out.println("-------------------------------------" + job.getSalary());
 			oldJob.setSalary(job.getSalary());
 		}
 		if (job.getYearsExperience() != null && job.getYearsExperience() >= 0) {
@@ -92,6 +91,7 @@ public class JobDAOImpl implements JobDAO {
 		if (job.getIndustry() != null) {
 			oldJob.setIndustry(job.getIndustry());
 		}
+		oldJob.setEnabled(job.isEnabled());
 
 		return oldJob;
 	}

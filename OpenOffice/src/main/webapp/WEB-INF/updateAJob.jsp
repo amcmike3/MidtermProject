@@ -58,7 +58,7 @@
 				<br> <br>
 						
 			<label for="enabled">Enable?</label> <select class="zoom" id="enabled"
-				name="enabled" value="${job.enabled}">
+				name="enabled">
 				<option value="true" <c:if test="${job.enabled}">selected</c:if>>Yes</option>
 				<option value="false" <c:if test="${!job.enabled}">selected</c:if>>No</option>
 			</select> <br> <input class="zoom btn" style="margin-top: 30px;" type="submit">
