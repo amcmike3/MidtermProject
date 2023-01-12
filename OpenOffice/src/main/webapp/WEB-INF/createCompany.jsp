@@ -21,7 +21,7 @@
 				</div>
 				<div class="card-body yellow-containers zoom">
 					<form action="creatingCompany" method="post">
-
+						<input type="hidden" name="enabled" value="${true }">
 						<br /> Name: <br /> <input class="zoom" type="text" name="name" />
 						<br />Description<br /> <input class="zoom" type="text" name="description" />
 						<br />Location<br /> <input class="zoom" type="text" name="location" /> <br />
