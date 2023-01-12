@@ -20,16 +20,18 @@
 					<div class="yellow-containers"
 						style="display: flex; flex-direction: row; flex-wrap: wrap; padding-left: 25px; padding-right: 25px;">
 						<div class="card yellow-containers zoom"
-							style="display: flex; flex-direction: column; flex-wrap: wrap; max-height: 500px; width: 350px; justify-content: center;">
-							<div class="card-title title-container zoom">${user.firstName }
+							style="max-height: 550px; width: 350px; justify-content: center; padding-top: 40px;">
+							<div class="title-container zoom">${user.firstName }
 								${user.lastName }</div>
 							<div class="card-body">
 								<img class="user-bio-pic zoom" src="${user.imgUrl }">
 							</div>
 
 							<c:if test="${sessionScope.user.role }">
-								<a href="updatAUser?userId=${user.id }"><button class="zoom button btn"
+							<br>
+								<a href="updatAUser?userId=${user.id }"><button class="zoom btn"
 							style="color: white; margin-bottom: 70px;">Update</button></a>
+							<br>
 							</c:if>
 						</div>
 						<div class="card-body card yellow-containers zoom"
