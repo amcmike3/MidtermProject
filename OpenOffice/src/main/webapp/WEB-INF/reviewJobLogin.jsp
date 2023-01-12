@@ -13,17 +13,17 @@
 <body>
 	<%@include file="navbar.jsp"%>
 	<div class="containers text-center">
-		<div class="title-container text-center" style="max-width: 1000px; min-width: 300px; margin: 0 auto;">
+		<div class="title-container text-center zoom" style="max-width: 1000px; min-width: 300px; margin: 0 auto;">
 			<h1>LOGIN TO AN EXISTING ACCOUNT</h1>
 		</div>
 		<hr>
-		<div class="yellow-containers" style="max-width: 500px; min-width: 250px; min-height: 100px; margin: 0 auto;">
+		<div class="yellow-containers zoom" style="max-width: 500px; min-width: 250px; min-height: 100px; margin: 0 auto;">
 			<form action="reviewJobLoggingIn" method="post">
 			<input type="hidden" value="${jobId }" name="jobId">
-				<input type="text" placeholder="username" name="username"> <br>
-				<input type="password" placeholder="password" name="password">
-				<br> <input type="submit" value="Log In">
-				<input formaction="register" id="register-button" type="submit" name="register" value="Register" >
+				<input class="zoom" type="text" placeholder="username" name="username"> <br>
+				<input class="zoom" type="password" placeholder="password" name="password">
+				<br> <input class="zoom btn" type="submit" value="Log In">
+				<input class="zoom btn" formaction="register" id="register-button" type="submit" name="register" value="Register" >
 				<br>
 			</form>
 		</div>
