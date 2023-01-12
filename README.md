@@ -132,7 +132,8 @@ username: cool_man007 | password: cool_man007
 
 <p>
 Description of overall project structure
-
+<br/>
+DataBase Schema
 <img src="https://github.com/mdharr/MidtermProject/blob/main/DB/openofficediagram.png"/>
  </p>
 
