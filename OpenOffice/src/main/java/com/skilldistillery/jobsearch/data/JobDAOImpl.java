@@ -58,7 +58,7 @@ public class JobDAOImpl implements JobDAO {
 		List<Job> companyJobs = new ArrayList<>();
 
 		String jpql = "select job from Job job where Company company.id = :companyId";
-		companyJobs = em.createQuery(jpql, Job.class).setParameter("comapnyId", companyId).getResultList();
+		companyJobs = em.createQuery(jpql, Job.class).setParameter("companyId", companyId).getResultList();
 
 		return companyJobs;
 	}
