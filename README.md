@@ -97,7 +97,7 @@ This website is meant to be make it easy for those on a job search to do researc
 -   MYSQL WorkBench
 -   DAO: Database Accessor Objects
 -		Hibernate
--		Spring Boot
+-   Spring Boot
 -   JPA
 -   JSP Files
 -   Eclipse
