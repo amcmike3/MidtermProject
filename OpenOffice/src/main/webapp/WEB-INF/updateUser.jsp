@@ -22,18 +22,18 @@
 				<div class="yellow-containers text-center col-8 zoom">
 					<form action="updatingUser">
 						<input type="hidden" name="id" value="${sessionScope.user.id }" />
-						<br> Description: <br> <input type="text"
+						<br> Description: <br> <input class="zoom" type="text"
 							name="description"
 							placeholder="${sessionScope.user.description }" /> <br>
-						First Name: <br> <input type="text" name="firstName"
+						First Name: <br> <input class="zoom" type="text" name="firstName"
 							placeholder="${sessionScope.user.firstName }" /> <br> Last
-						Name: <br> <input type="text" name="lastName"
+						Name: <br> <input class="zoom" type="text" name="lastName"
 							placeholder="${sessionScope.user.lastName }" /> <br>
-						UserName: <br> <input type="text" name="username"
+						UserName: <br> <input class="zoom" type="text" name="username"
 							placeholder="${sessionScope.user.username }" /> <br> Email:
-						<br> <input type="text" name="email"
+						<br> <input class="zoom" type="text" name="email"
 							placeholder="${sessionScope.user.email }" /> <br> Profile
-						Picture:(image url) <br> <input type="text" name="imgUrl"
+						Picture:(image url) <br> <input class="zoom" type="text" name="imgUrl"
 							value="${sessionScope.user.imgUrl }" /> <br> <br /> <input class="zoom"
 							type="submit" value="Update" /> <br /> <br />
 					</form>
