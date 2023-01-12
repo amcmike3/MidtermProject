@@ -25,10 +25,10 @@
 			<label for="Title">Title:</label><br>
 			<input type="text" id="title" name="title" value="${job.title}"><br> <br>
 			
-			<label for="salary">Salary:</label><br> <input
-				type="text" id="salary" name="salary" value="${job.salary}"><br>
+			<label for="salary">Salary:</label><br> $<input
+				type="number" id="salary" name="salary" value="${job.salary}"><br>
 			<br>
-			<label for="yearsExperience">Years of Experience Required:</label><br> <input type="text"
+			<label for="yearsExperience">Years of Experience Required:</label><br> <input type="number"
 				id="location" name="yearsExperience" value="${job.yearsExperience}"><br>
 			
 			<br>
