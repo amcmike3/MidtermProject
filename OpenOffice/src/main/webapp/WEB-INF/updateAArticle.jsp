@@ -15,7 +15,7 @@
 	<div class="containers text-center">
 		<div class="row">
 			<div class="col  text-center">
-				<div class="card-title title-container">
+				<div class="card-title title-container zoom">
 					<h3>Update a Article</h3>
 				</div>
 
@@ -26,21 +26,21 @@
 						<input type="hidden" name="id" value="${article.id}"> <input
 							type="hidden" name="articleUrl" value="${article.articleUrl}">
 						<input type="hidden" name="articleId" value="${article.id }">
-						<label>Title:</label> <br> <input type="text" name="title"
+						<label>Title:</label> <br> <input class="zoom btn" type="text" name="title"
 							value="${article.title}"> <br> Industry: <br /> <select
-							name="industryId">
+							class="zoom" name="industryId">
 							<c:forEach var="industry" items="${industryList }">
 								<option value="${industry.id}" <c:if test="${article.industry.id == industry.id }">selected</c:if>>"${industry.name }"</option>
 							</c:forEach>
 						</select> <br> <label>Description:</label> <br />
-						<textarea name="description" rows="4" cols="40">${article.description}</textarea>
-						<input type="submit" value="Update" />
+						<textarea class="zoom" name="description" rows="4" cols="40">${article.description}</textarea>
+						<input class="zoom btn" type="submit" value="Update" />
 					</form>
 
-					<div class="card card-body text-center matcha">
+					<div class="card card-body text-center matcha zoom">
 						<form action="deletedArticle" method="post">
 							<input type="hidden" name="articleId" value="${article.id }">
-							<input type="submit" value="Delete Article" />
+							<input class="zoom btn" type="submit" value="Delete Article" />
 						</form>
 					</div>
 				</div>
