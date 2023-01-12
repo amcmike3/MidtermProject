@@ -134,7 +134,11 @@ input[type="number"], textarea {
 	color: black;
 	margin: 5px;
 }
-
+input[type="email"], textarea {
+	background-color: #F4F1DE;
+	color: black;
+	margin: 5px;
+}
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus,
 	input:-webkit-autofill:active {
 	-webkit-box-shadow: 0 0 0 30px #F4F1DE inset !important;
