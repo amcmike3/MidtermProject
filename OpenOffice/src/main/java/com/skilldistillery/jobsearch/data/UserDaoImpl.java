@@ -28,6 +28,7 @@ public class UserDaoImpl implements UserDAO {
 	public User findById(int userId) {
 		return em.find(User.class, userId);
 	}
+	
 
 	@Override
 	public User login(String username, String password) {
