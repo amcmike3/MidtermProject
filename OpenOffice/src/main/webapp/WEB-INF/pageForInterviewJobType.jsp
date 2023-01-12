@@ -17,6 +17,7 @@
 				<div class="card-title">
 					<h3>${company.name }</h3>
 				</div>
+				</div>
 				<div class="card-body yellow-containers">
 					<h4>Tell us about the job you interviewed for?</h4>
 					<form action="createJob.do" method="POST">
@@ -51,10 +52,10 @@
 				</c:forEach>
 			</select> <br> <br>
 
-			<button type="submit">Submit</button>
+			<button class="zoom btn" style="color: white;" type="submit">Submit</button>
 
 		</form></div>
-			</div>
+			
 		</div>
 	</div>
 	<%@include file="footer.jsp"%>
