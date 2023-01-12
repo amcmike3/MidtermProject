@@ -25,13 +25,39 @@
 					<p>
 
 						<mark class="peach">Market yourself.</mark>
-						<br /> “Be proactive—market yourself as if you were marketing a
-						business (brand you!). Take time to quantify your talents and
-						learn to speak comfortably regarding accomplishments. Create a job
-						search system for introducing, applying, and following up on
-						leads/interviews. Plan your work, work your plan—a job search IS a
-						job. Treat yourself to free or low-cost perks to reward effort,
-						you earned it!” – Cindy
+						<br /> <em>“Be proactive, market yourself as if you were
+							marketing a business (brand you!). Take time to quantify your
+							talents and learn to speak comfortably regarding accomplishments.
+							Create a job search system for introducing, applying, and
+							following up on leads/interviews. Plan your work, work your
+							plan. A job search IS a job. Treat yourself to free or low-cost
+							perks to reward effort, you earned it!”</em> <strong> – Cindy
+						</strong>
+					</p>
+				</div>
+				
+				
+				<hr>
+				<div class="yellow-containers zoom">
+
+					<p><mark class="peach">Know yourself and what you want.</mark><br/> <em>“Be authentic, know
+						yourself, strengths and weaknesses. Be aware of the kinds of job
+						responsibilities and tasks you enjoy and those that you don’t
+						enjoy so much. Know what you are looking for in an employer and
+						position. Focus on opportunities that are a good fit. Be congruent
+						in expressing who you are and your accomplishments on your cover
+						letter, resume, and during the interview. The whole while, be
+						yourself!”</em> <br> <strong>– Karen</strong></p>
+				</div>
+				<hr>
+				<div class="yellow-containers zoom">
+
+					<p>
+						<mark class="peach">Job search like it’s your job.</mark>
+						<br /> <em>“Approach your job search like it is a 9 to 5 job.
+							Put in the time each day. Think about yourself in terms of skill
+							sets, not as a title: teacher, lawyer, etc.”</em> <br> <strong>–
+							Mary Lou</strong>
 					</p>
 				</div>
 				<hr>
@@ -39,10 +65,10 @@
 
 					<p>
 						<mark class="peach">Apply even if you’re not fully
-							qualified.</mark> <br/>
-						“Just apply. You may not be the best candidate or have all the
-						requisite qualifications, but you’ll never get a job if you don’t
-						try.” – Nargis
+							qualified.</mark>
+						<br /> <em>“Just apply. You may not be the best candidate or
+							have all the requisite qualifications, but you’ll never get a job
+							if you don’t try.”</em> <br> <strong> – Nargis</strong>
 					</p>
 				</div>
 				<hr>
