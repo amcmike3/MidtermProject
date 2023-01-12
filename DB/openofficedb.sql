@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `last_name` VARCHAR(45) NULL DEFAULT 'Doughboy',
   `role` TINYINT NOT NULL DEFAULT 0,
   `email` VARCHAR(45) NOT NULL,
-  `img_url` VARCHAR(200) NULL,
+  `img_url` VARCHAR(200) NULL DEFAULT 'https://img1.picmix.com/output/stamp/normal/9/2/9/0/180929_2e51a.png',
   `description` TEXT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `username_UNIQUE` (`username` ASC))
