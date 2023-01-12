@@ -44,6 +44,6 @@ public class GeneralController {
 			user.getArticles().size();
 			session.setAttribute("user", user);
 			return user;
-}
+	}
 
 }
