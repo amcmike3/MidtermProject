@@ -17,11 +17,11 @@
 	<div class="containers">
 		<div class="row">
 			<div class="col-12 py-4">
-				<div class="title-container zoom" style="text-align: center;">
+				<div class="title-container zoom typed-out" style="text-align: center;">
 					<h1>WELCOME TO OPEN OFFICE</h1>
 				</div>
 				<hr>
-				<div class="yellow-containers zoom">
+				<div class="yellow-containers zoom typed-out">
 					<p>
 
 						<mark class="peach">Market yourself.</mark>
@@ -35,7 +35,7 @@
 					</p>
 				</div>
 				<hr>
-				<div class="yellow-containers zoom">
+				<div class="yellow-containers zoom typed-out">
 
 					<p>
 						<mark class="peach">Apply even if you’re not fully
@@ -46,7 +46,7 @@
 					</p>
 				</div>
 				<hr>
-				<div class="yellow-containers zoom">
+				<div class="yellow-containers zoom typed-out">
 
 					<p>
 						<mark class="peach">Job search like it’s your job.</mark> <br/>
@@ -56,7 +56,7 @@
 					</p>
 				</div>
 				<hr>
-				<div class="yellow-containers zoom">
+				<div class="yellow-containers zoom typed-out">
 
 					<p>Ethical Kickstarter PBR asymmetrical lo-fi. Dreamcatcher
 						street art Carles, stumptown gluten-free Kickstarter artisan Wes
