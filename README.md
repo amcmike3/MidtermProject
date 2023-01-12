@@ -35,7 +35,49 @@
 lkgadjijgsdrotj
  </p>
 
+ ## Team Members
 
+ <strong>Developers on Project</strong>
+
+ <h4>Derek Lynch</h4>
+ <ul>
+ <li>
+ <a href="">
+ LinkedIn
+ </a>
+ </li>
+ <li><a href="https://github.com/">Github</a></li>
+ <li> E-mail:</li>
+ </ul>
+ <h4>Michael Harrington Developer, Scrum Master</h4>
+ <ul>
+ <li>
+ <a href="">
+ LinkedIn
+ </a>
+ </li>
+ <li><a href="https://github.com/">Github</a></li>
+ <li> E-mail:</li>
+ </ul>
+ <h4>Alex MicMichael Developer, DataBase Administrator</h4>
+ <ul>
+ <li>
+ <a href="https://www.linkedin.com/in/alexander-mcmichael-8812aa138/">
+ LinkedIn
+ </a>
+ </li>
+ <li><a href="https://github.com/amcmike3">Github</a></li>
+ </ul>
+ <h4>Sandra Harpole</h4>
+ <ul>
+ <li>
+ <a href="https://www.linkedin.com/in/sandra-harpole/">
+ LinkedIn
+ </a>
+ </li>
+ <li><a href="https://github.com/SandraLeAnn">Github</a></li>
+ <li> E-mail:</li>
+ </ul>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -105,49 +147,7 @@ How a developer would download and set up, install DB, etc.
 Blah Blah
 </p>
 
-## Team Members
 
-<strong>Developers on Project</strong>
-
-<h4>Derek Lynch</h4>
-<ul>
-<li>
-<a href="">
-LinkedIn
-</a>
-</li>
-<li><a href="https://github.com/">Github</a></li>
-<li> E-mail:</li>
-</ul>
-<h4>Michael Harrington Developer, Scrum Master</h4>
-<ul>
-<li>
-<a href="">
-LinkedIn
-</a>
-</li>
-<li><a href="https://github.com/">Github</a></li>
-<li> E-mail:</li>
-</ul>
-<h4>Alex MicMichael Developer, DataBase Administrator</h4>
-<ul>
-<li>
-<a href="https://www.linkedin.com/in/alexander-mcmichael-8812aa138/">
-LinkedIn
-</a>
-</li>
-<li><a href="https://github.com/amcmike3">Github</a></li>
-</ul>
-<h4>Sandra Harpole</h4>
-<ul>
-<li>
-<a href="https://www.linkedin.com/in/sandra-harpole/">
-LinkedIn
-</a>
-</li>
-<li><a href="https://github.com/SandraLeAnn">Github</a></li>
-<li> E-mail:</li>
-</ul>
 
 
 Project Github Link: [Open Office](https://github.com/mdharr/MidtermProject)
