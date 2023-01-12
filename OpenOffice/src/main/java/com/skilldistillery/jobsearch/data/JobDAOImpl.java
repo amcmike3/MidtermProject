@@ -92,6 +92,7 @@ public class JobDAOImpl implements JobDAO {
 		if (job.getIndustry() != null) {
 			oldJob.setIndustry(job.getIndustry());
 		}
+		oldJob.setEnabled(job.isEnabled());
 
 		return oldJob;
 	}
