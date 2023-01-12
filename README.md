@@ -136,7 +136,7 @@ agahfgflkjjlfa
 <p>
 Description of overall project structure
 
-<![https://github.com/mdharr/MidtermProject/blob/main/DB/openofficediagram.png]()
+<img src="https://github.com/mdharr/MidtermProject/blob/main/DB/openofficediagram.png"/>
  </p>
 
 ## What I Learned
