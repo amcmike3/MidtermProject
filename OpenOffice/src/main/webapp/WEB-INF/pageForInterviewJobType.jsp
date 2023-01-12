@@ -23,6 +23,7 @@
 					<form action="createJob.do" method="POST">
 
 			<input type="hidden" name="companyId" value="${company.id }">
+			<input type="hidden" name="enabled" value="1">
 
 			<label for="title">What is the title of the job you are
 				applying for?</label><br> <input type="text" name="title"><br>
