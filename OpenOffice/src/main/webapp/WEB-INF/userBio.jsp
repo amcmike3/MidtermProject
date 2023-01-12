@@ -28,19 +28,19 @@
 							</div>
 
 							<c:if test="${sessionScope.user.role }">
-								<a href="updatAUser?userId=${user.id }"><button class="zoom button"
-							style="color: white;">Update</button></a>
+								<a href="updatAUser?userId=${user.id }"><button class="zoom button btn"
+							style="color: white; margin-bottom: 70px;">Update</button></a>
 							</c:if>
 						</div>
 						<div class="card-body card yellow-containers zoom"
-							style="min-width: 200px; padding-left: 50px; padding-right: 50px;">
+							style="min-width: 200px; max-width: 600px; padding-left: 50px; padding-right: 50px;">
 
-							<div class="title-container zoom" style="margin-top: 50px; min-width: 250px;">
+							<div class="title-container zoom" style="margin-top: 50px; min-width: 200px;">
 								<h3>Description:</h3>
 							</div>
 							<br>
 							<div class="card yellow-containers zoom"
-								style="min-height: 400px; min-width: 250px; padding: 75px;">
+								style="min-height: 400px; min-width: 200px; padding: 75px;">
 								<c:choose>
 									<c:when test="${user.description != null}">
 										<p>${user.description}</p>
@@ -61,6 +61,9 @@
 							</div>
 
 							<br>
+							<!-- Need a second look at the logic below -->
+							<c:choose>
+							<c:when test="${!empty user.reviews }">
 							<c:forEach var="review" items="${user.reviews }">
 								<div class="card yellow-containers zoom">
 									<p>
@@ -71,6 +74,16 @@
 								</div>
 
 							</c:forEach>
+							</c:when>
+							<c:otherwise>
+							<div class="card yellow-containers zoom">
+									<p>
+										No contributions at this time
+									</p>
+								</div>
+							</c:otherwise>
+							</c:choose>
+							
 						</div>
 						<div class="card-body yellow-containers zoom"
 							style="min-width: 210px; margin-top: 50px;">
