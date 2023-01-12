@@ -14,7 +14,7 @@
 	<%@include file="navbar.jsp"%>
 	<div class="container">
 		<div class="row">
-			<div class="col card text-center yellow-containers zoom">
+			<div class="col card text-center yellow-containers">
 				<div class="card-title title-container zoom">
 					<h1>${article.title }</h1>
 					<br />
