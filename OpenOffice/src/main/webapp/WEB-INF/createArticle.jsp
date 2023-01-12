@@ -15,11 +15,11 @@
 
 	<div class="containers text-center">
 		<div class="row">
-			<div class="col title-container text-center">
-				<div class="card-title zoom">
+			<div class="col yellow-containers text-center">
+				<div class="title-container zoom">
 					<h3>Articles</h3>
 				</div>
-				<div class="card-body yellow-container zoom">
+				<div class="card-body yellow-containers zoom">
 					<form action="createArticle" method="post">
 
 						<br /> Title: <br /> <input type="text" name="title" />
@@ -34,7 +34,7 @@
 							</c:forEach>
 						</select> <br> <br />
 						
-							<button class="zoom btn" type="submit">Add Article</button>
+							<button class="zoom btn" style="color: white;" type="submit">Add Article</button>
 						</form>
 				</div>
 			</div>

@@ -11,9 +11,9 @@
 </head>
 <body>
 	<%@include file="navbar.jsp"%>
-	<div class="container">
+	<div class="containers">
 		<div class="row">
-			<div class="col card text-center">
+			<div class="text-center yellow-containers">
 				<div class="card-title title-container zoom">
 					<h3>Interview:</h3>
 					<h5>Step 3/3</h5>
