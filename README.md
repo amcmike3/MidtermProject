@@ -81,8 +81,38 @@ WHAT I BLAHHHHH BLAHHHH
 
 ## Contact
 
-<strong>Developer on Project</strong>
+<strong>Developers on Project</strong>
 
+<h4>Derek Lynch</h4>
+<ul>
+<li>
+<a href="">
+LinkedIn
+</a>
+</li>
+<li><a href="https://github.com/">Github</a></li>
+<li> E-mail:</li>
+</ul>
+<h4>Michael Harrington</h4>
+<ul>
+<li>
+<a href="">
+LinkedIn
+</a>
+</li>
+<li><a href="https://github.com/">Github</a></li>
+<li> E-mail:</li>
+</ul>
+<h4>Alex MicMichael</h4>
+<ul>
+<li>
+<a href="">
+LinkedIn
+</a>
+</li>
+<li><a href="https://github.com/">Github</a></li>
+<li> E-mail:</li>
+</ul>
 <h4>Sandra Harpole</h4>
 <ul>
 <li>
