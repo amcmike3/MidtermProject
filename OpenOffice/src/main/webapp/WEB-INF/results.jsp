@@ -30,7 +30,7 @@
 					<tbody>
 						<c:forEach var="user" items="${userList}">
 						<c:if test="${user.enabled || sessionScope.user.role }">
-							<tr <c:if test="${!user.enabled }">style="background-color:#E07A5F"</c:if>>
+							<tr <c:if test="${!user.enabled }">style="background-color:#E07A5F"</c:if> class="zoom">
 							
 								<td>${user.id}</td>
 								<td><a href="userBio?userId=${user.id}">${user.username}</a></td>
@@ -38,7 +38,8 @@
 								<td>${user.lastName}</td>
 								<td>${user.description}</td>
 								<td><c:if test="${sessionScope.user.role }">
-										<a href="updatAUser?userId=${user.id }"><button>Update</button></a>
+										<a href="updatAUser?userId=${user.id }"><button class="zoom button"
+							style="color: white;">Update</button></a>
 									</c:if></td>
 							</tr>
 							</c:if>
@@ -58,12 +59,13 @@
 					<tbody>
 						<c:forEach var="job" items="${jobList}">
 						<c:if test="${job.enabled }">
-							<tr>
+							<tr class="zoom">
 								<td>${job.id}</td>
 								<td><a href="jobBio?jobId=${job.id}">${job.title}</a></td>
 								<td>${job.salary}</td>
 								<td><c:if test="${sessionScope.user.role }">
-										<a href="updateAJob?jobId=${job.id }"><button>Update</button></a>
+										<a href="updateAJob?jobId=${job.id }"><button class="zoom button"
+							style="color: white;">Update</button></a>
 									</c:if></td>
 							</tr>
 							</c:if>
@@ -83,12 +85,13 @@
 					<tbody>
 						<c:forEach var="company" items="${companyList}">
 						<c:if test="${company.enabled }">
-							<tr>
+							<tr class="zoom">
 								<td>${company.id}</td>
 								<td><a href="companyBio?companyId=${company.id}">${company.name}</a></td>
 								<td>${company.location }</td>
 								<td><c:if test="${sessionScope.user.role }">
-										<a href="updateACompany?companyId=${company.id }"><button>Update</button></a>
+										<a href="updateACompany?companyId=${company.id }"><button class="zoom button"
+							style="color: white;">Update</button></a>
 									</c:if></td>
 							</tr>
 							</c:if>
@@ -106,11 +109,12 @@
 					</thead>
 					<tbody>
 						<c:forEach var="article" items="${articles}">
-							<tr>
+							<tr class="zoom">
 								<td>${article.id}</td>
 								<td><a href="articleBio?articleId=${article.id}">${article.title}</a></td>
 								<td><c:if test="${sessionScope.user.role }">
-										<a href="updateAArticle?articleId=${article.id }"><button>Update</button></a>
+										<a href="updateAArticle?articleId=${article.id }"><button class="zoom button"
+							style="color: white;">Update</button></a>
 									</c:if></td>
 							</tr>
 						</c:forEach>
@@ -120,7 +124,9 @@
 			</c:when>
 
 			<c:otherwise>
+			<div class="zoom title-container">
 				<h2>No results found</h2>
+			</div>
 			</c:otherwise>
 		</c:choose>
 	</div>

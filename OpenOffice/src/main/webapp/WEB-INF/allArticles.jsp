@@ -12,30 +12,41 @@
 
 <body>
 	<%@include file="navbar.jsp"%>
-	<div class="yellow-containers zoom">
-	<h1>All Articles</h1>
-	</div>
-	<div class="yellow-containers">
-	<c:forEach var="article" items="${articles }">
-		<div class="row">
-			<div class="col card matcha zoom">
+	<div class="containers">
 
-				<div class="card-title">
-					<h3>
-						<a href="articleBio?articleId=${ article.id}">${article.title }</a>
-						<br>
-					</h3>
+		<c:choose>
+			<c:when test="${articles != null }">
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>Article ID</th>
+							<th>Article Title</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="article" items="${articles}">
+							<tr class="zoom">
+								<td>${article.id}</td>
+								<td><a href="articleBio?articleId=${article.id}">${article.title}</a></td>
+								<td><c:if test="${sessionScope.user.role }">
+										<a href="updateAArticle?articleId=${article.id }"><button
+												class="zoom button" style="color: white;">Update</button></a>
+									</c:if></td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+
+			</c:when>
+			<c:otherwise>
+				<div class="zoom title-container">
+					<h2>No articles found</h2>
 				</div>
-				<div class="card-body"></div>
-				<p>${article.description }</p>
-				<br />
-				<c:if test="${sessionScope.user.role }">
-					<a href="updateAArticle?articleId=${article.id }"><button>Update</button></a>
-				</c:if>
-			</div>
-		</div>
-	</c:forEach>
+			</c:otherwise>
+		</c:choose>
 	</div>
+
+
 
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>

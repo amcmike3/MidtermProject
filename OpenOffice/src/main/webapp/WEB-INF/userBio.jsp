@@ -28,7 +28,8 @@
 							</div>
 
 							<c:if test="${sessionScope.user.role }">
-								<a href="updatAUser?userId=${user.id }"><button>Update</button></a>
+								<a href="updatAUser?userId=${user.id }"><button class="zoom button"
+							style="color: white;">Update</button></a>
 							</c:if>
 						</div>
 						<div class="card-body card yellow-containers zoom"
