@@ -21,7 +21,7 @@
 				${job.certifications } <br /> Education: <br /> ${job.education }
 				Skills: ${job.skills }
 				<c:if test="${sessionScope.user.role }">
-					<a href="updateAJob?jobId=${job.id }"><button>Update</button></a>
+					<a href="updateAJob?jobId=${job.id }"><button class="zoom btn button">Update</button></a>
 				</c:if>
 			</p>
 		</div>
@@ -42,7 +42,7 @@
 				</c:when>
 				<c:otherwise>
 					<div class="col card text-center yellow-containers zoom">
-						<a href="reviewJobLogin?jobId=${job.id }">Leave an interview
+						<a href="reviewJobLogin?jobId=${job.id }">Login to leave an interview
 							experience at ${job.company.name }</a>
 					</div>
 
@@ -69,19 +69,27 @@
 						<form action="updateInterview">
 							<input type="hidden" name="companyId" value="${job.company.id}" />
 							<input type="hidden" name="interviewId" value="${interview.id }" />
-							<input type="submit" value="update" />
+							<input class="zoom btn button" type="submit" value="update" />
 						</form>
 					</c:if>
 				</div>
 			</div>
 		</c:forEach>
-		<div class="card yellow-containers zoom">
+		<div class="card yellow-containers zoom text-center">
+		<c:choose>
+		<c:when test="${sessionScope.user != null }">
 		<form action="createArticle.do" method="get">
-			<button type="submit" style="">Add Article</button>
+			<button class="zoom btn button" type="submit" style="">Add Article</button>
 		</form>
+		
+		</c:when>
+		<c:otherwise>
+		<a href="login">Login to add an article</a>
+		</c:otherwise>
+		</c:choose>
+	    </div>
 		</div>
 		<hr>
-	</div>
 
 	<%@include file="footer.jsp"%>
 	<%@ include file="bootstrapFoot.jsp"%>
