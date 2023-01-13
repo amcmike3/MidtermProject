@@ -29,7 +29,7 @@
 <!-- ABOUT THE PROJECT -->
 
 ## About Open Office Project
-
+Project Link to Active Website: [Open Office](http://3.22.143.76:8080/OpenOffice/home)
 
 <p>
 This website is meant to be make it easy for those on a job search to do research on companies they are interested in joining
@@ -104,6 +104,7 @@ This website is meant to be make it easy for those on a job search to do researc
 -   Gradle
 -   Tomcat Server
 -   Terminal
+-   AWS
 -   [GITHUB](https://github.com)
 -   [Debugger-Oracle](https://docs.oracle.com/javase/7/docs/technotes/tools/windows/jdb.html)  
 
@@ -168,7 +169,7 @@ How a developer would download and set up, install DB, etc.
 
 
 
-Project Github Link: [Open Office](https://github.com/mdharr/MidtermProject)
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
