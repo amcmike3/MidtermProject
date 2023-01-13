@@ -100,6 +100,7 @@ This website is meant to be make it easy for those on a job search to do researc
 -   Spring Boot
 -   JPA
 -   JSP Files
+-   J-unit
 -   Eclipse
 -   Gradle
 -   Tomcat Server
@@ -142,6 +143,9 @@ DataBase Schema
  </p>
 
 ## What I Learned
+
+### Alex McMichael
+This Application gave me experience planning application layout with limited system design. I was the database administrator and was solely in charge of the database schema and database design. This project used the Object-relational persistence and query service, Hibernate to map all of the database tables to Plain Old Java Objects (POJO). The various mappings were tested using J-unit tests to ensure that all connections through hibernate to the database were properly designed. Writing all the J-unit tests and mappings helped me to visualize the needs of the project better. Looking back at the existing project things I would have done different is had some type of code review within the team to prevent conflict. This project tested my interpersonal skills and gave me experience with managing expectations and resolving conflict within a diverse group of team members. The most beneficial part of this project for me was working on the front end. My previous experience re 
 
 #### Sandra Harpole
 This full stack application allowed me to learn and retain a vast amount of core java logic and implement crud requests coming from the front end. There were points where I would have to create complex logic for a crud operation that would require me to access multiple data accessor objects and the methods that lie within them, like subscribe,  in order to add a company to a users list of companies. I learned to work as a team to implement functioning crud operations across our application for different types of user requests.
