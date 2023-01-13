@@ -59,7 +59,7 @@ This website is meant to be make it easy for those on a job search to do researc
  <li><a href="https://github.com/">Github</a></li>
  <li> E-mail:</li>
  </ul>
- <h4>Alex MicMichael <em> Full-Stack Developer, DataBase Administrator</em></h4>
+ <h4>Alex McMichael <em> Full-Stack Developer, DataBase Administrator</em></h4>
  <ul>
  <li>
  <a href="https://www.linkedin.com/in/alexander-mcmichael-8812aa138/">
@@ -145,8 +145,8 @@ DataBase Schema
 ## What I Learned
 
 ### Alex McMichael
-- This Application gave me experience planning application layout with limited system design. I was the database administrator and was solely in charge of the database schema and database design. This project used the Object-relational persistence and query service, Hibernate to map all of the database tables to Plain Old Java Objects (POJO). The various mappings were tested using J-unit tests to ensure that all connections through hibernate to the database were properly implemented and designed. Writing all the J-unit tests and mappings helped me to visualize the needs of the project better.
-- Looking back at the existing project, things I would have done different is had some type of code review within the team to prevent conflict. This project tested my interpersonal skills and gave me experience with managing expectations and resolving conflict within a diverse group of team members. The most beneficial part of this project for me was working on the front end. My previous experience has been heavily skewed toward the backend. So working with front-end technologies like HTML, CSS, JSTL, JSP's, and Bootstrap was a nice change of pace.
+- This Application gave me experience planning application layout with limited system design. As database administrator, I was in charge of the database schema and database design. This project used the Object-relational persistence and query service, Hibernate to map all of the database tables to Plain Old Java Objects (POJO). The various mappings were tested using J-unit tests to ensure that all connections through hibernate to the database were properly implemented and designed. Writing all the J-unit tests and mappings helped me to visualize the needs of the project better.
+- Looking back at the existing project, things I would have done different is had some type of code review before allowing code to be pushed into main to prevent conflict and ensure bugs and broken code were not inadvertently introduced. This project tested my interpersonal skills and gave me experience with managing expectations and resolving conflict within a diverse group of team members. The most beneficial part of this project for me was working on the front end. My previous experience has been heavily skewed toward the backend. So working with front-end technologies like HTML, CSS, JSTL, JSP's, and Bootstrap was a nice change of pace.
 
 #### Derek Lynch
 In this full stack application, I learned how multiple pairs, or even single developers can design anything and even while working on separate parts, come up with a working viable product. It was eye-opening to see how different members of the team think and program, while gaining valuable experience in both back end and front end developing. The most important take away from this project is communication. Knowing what we all worked on the day before, what our stumbling blocks of the day were, and what we wish to work on that day was vital. It also was good to know that if we ever needed help, we had each other to call upon and either we could figure it out, or sometimes just having a fresh set of eyes to view issues and gentle reminders what we were forgetting helped.
