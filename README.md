@@ -143,7 +143,7 @@ DataBase Schema
 
 ## What I Learned
 
-#### Sandra Harpole
+###### Sandra Harpole
 This full stack application allowed me to learn and retain a vast amount of core java logic and implement crud requests coming from the front end. There were points where I would have to create complex logic for a crud operation that would require me to access multiple data accessor objects and the methods that lie within them, like subscribe,  in order to add a company to a users list of companies. I learned to work as a team to implement functioning crud operations across our application for different types of user requests.
 This project offered me the opportunity to get more hands on experience with writing JSPs and creating logic within them that utilized the java standard tag library(JSTL). Though I am not fond of creating JSPs I feel like I am leaving this project with a greater understanding of the overall importance and construction of java server pages. This allowed me to gain more experience passing data from controllers to JSPs and so forth.  
 Another major milestone for me was learning how to enable and disable data. This would prevent non administrator user from being able to see disabled data. We also implemented features that would check the security level of a user and only allow a user of a certain security level to have access to the functions that allow a user to disable data. We also implemented logic that would only allow a user to preform crud functions on the data that they supplied while they were is session. However, because of the our security logic, administrators have access to full crud operations site wide regardless of whoever created the data.
