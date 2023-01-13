@@ -59,7 +59,7 @@ This website is meant to be make it easy for those on a job search to do researc
  <li><a href="https://github.com/">Github</a></li>
  <li> E-mail:</li>
  </ul>
- <h4>Alex MicMichael</h4> <h3><em> Full-Stack Developer, DataBase Administrator</em></h3>
+ <h4>Alex MicMichael <em> Full-Stack Developer, DataBase Administrator</em></h4>
  <ul>
  <li>
  <a href="https://www.linkedin.com/in/alexander-mcmichael-8812aa138/">
