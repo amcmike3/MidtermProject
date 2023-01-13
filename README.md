@@ -32,6 +32,7 @@
 Project Link to Active Website: [Open Office](http://3.22.143.76:8080/OpenOffice/home)
 
 <p>
+TESTTTTTTTTT!!!!!!!!!!!
 This website is meant to be make it easy for those on a job search to do research on companies they are interested in joining
  </p>
 
@@ -42,11 +43,11 @@ This website is meant to be make it easy for those on a job search to do researc
  <h4>Derek Lynch</h4>
  <ul>
  <li>
- <a href="">
+ <a href="https://www.linkedin.com/in/derek-lynch-/">
  LinkedIn
  </a>
  </li>
- <li><a href="https://github.com/">Github</a></li>
+ <li><a href="https://github.com/djlynchy">Github</a></li>
  <li> E-mail:</li>
  </ul>
  <h4>Michael Harrington Developer, Scrum Master</h4>
@@ -152,14 +153,12 @@ DataBase Schema
 In this full stack application, I learned how multiple pairs, or even single developers can design anything and even while working on separate parts, come up with a working viable product. It was eye-opening to see how different members of the team think and program, while gaining valuable experience in both back end and front end developing. The most important take away from this project is communication. Knowing what we all worked on the day before, what our stumbling blocks of the day were, and what we wish to work on that day was vital. It also was good to know that if we ever needed help, we had each other to call upon and either we could figure it out, or sometimes just having a fresh set of eyes to view issues and gentle reminders what we were forgetting helped.
 in the end, us coming together as a team and pushing through differences are what made this project something we are proud to showcase.
 
-#### Sandra Harpole
-<p>
-This full stack application allowed me to learn and retain a vast amount of core java logic and implement crud requests coming from the front end. There were points where I would have to create complex logic for a crud operation that would require me to access multiple data accessor objects and the methods that lie within them, like subscribe,  in order to add a company to a users list of companies. I learned to work as a team to implement functioning crud operations across our application for different types of user requests.
-This project offered me the opportunity to get more hands on experience with writing JSPs and creating logic within them that utilized the java standard tag library(JSTL). Though I am not fond of creating JSPs I feel like I am leaving this project with a greater understanding of the overall importance and construction of java server pages. This allowed me to gain more experience passing data from controllers to JSPs and so forth.  
-Another major milestone for me was learning how to enable and disable data. This would prevent non administrator user from being able to see disabled data. We also implemented features that would check the security level of a user and only allow a user of a certain security level to have access to the functions that allow a user to disable data. We also implemented logic that would only allow a user to preform crud functions on the data that they supplied while they were is session. However, because of the our security logic, administrators have access to full crud operations site wide regardless of whoever created the data.
-All in all this was an incredibly complex project that gave me a chance to grow as a developer and I feel much more confident creating a full stack project going forward.
-<p>
+#### Michael Harrington
+My experience working on Open Office helped to deepen my understanding of how each piece of a full-stack project work together. From structuring and styling HTML, CSS, and BootStrap on the front-end, to building out entities that were inserted into the database by our database manager. Within the entities, I was able to work with a fellow team member to get additional practice mapping relationships between our schema tables using annotations such as @JoinColumn, and depending on the relationship type, @ManyToOne, @OneToMany, @ManyToMany, etc. I then used JUnit Testing to test each of these mappings was correctly implemented by first asserting an object not null, then asserting certain entity fields (such as an id, title, or name) properly reflect the data stored in our database for the specific object passed during the @BeforeEach setUp. In order to retrieve data from the database, I collaborated with my team on the DAO Design Pattern to declare the methods we would need in our DAO (Database Access Object) and then wrote out the logic for each of these methods in their corresponding DAOImpl (DAO Implementation). These methods allowed us to incorporate CRUD (Create, Read, Update, Delete) operations into our full-stack application which allows users to add and manipulate data in the database. Finally, we built out all of our JSPs (Jakarta Server Page) and entity-specific Controllers. In our controllers, I practiced using @Autowired and @RequestMapping annotations to autowire database access objects make Hibernate aware of them, as well as writing the logic within each controller method, such as adding attributes to the model and assigning them variable names for later use in our JSPs using JSTL (JavaServer Standard Tag Library). This is all possible through the use of our autowired DAO methods. Finally, by returning a ModelAndView or simply a String, we were able map the specific page that would be retrieved for the client upon submitting forms. I walk away from Open Office a more confident developer, knowing that I can now build a full-stack application.
 
+#### Sandra Harpole
+This full stack application allowed me to learn and retain a vast amount of core java logic and implement crud requests coming from the front end. There were points where I would have to create complex logic for a crud operation that would require me to access multiple data accessor objects and the methods that lie within them, like subscribe, in order to add a company to a users list of companies. I learned to work as a team to implement functioning crud operations across our application for different types of user requests. This project offered me the opportunity to get more hands on experience with writing JSPs and creating logic within them that utilized the java standard tag library(JSTL). Though I am not fond of creating JSPs I feel like I am leaving this project with a greater understanding of the overall importance and construction of java server pages. This allowed me to gain more experience passing data from controllers to JSPs and so forth.
+Another major milestone for me was learning how to enable and disable data. This would prevent non administrator user from being able to see disabled data. We also implemented features that would check the security level of a user and only allow a user of a certain security level to have access to the functions that allow a user to disable data. We also implemented logic that would only allow a user to preform crud functions on the data that they supplied while they were is session. However, because of the our security logic, administrators have access to full crud operations site wide regardless of whoever created the data. All in all this was an incredibly complex project that gave me a chance to grow as a developer and I feel much more confident creating a full stack project going forward.
 
 ##How to Download and Run
 
