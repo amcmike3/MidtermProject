@@ -43,11 +43,11 @@ This website is meant to be make it easy for those on a job search to do researc
  <h4>Derek Lynch</h4>
  <ul>
  <li>
- <a href="">
+ <a href="https://www.linkedin.com/in/derek-lynch-/">
  LinkedIn
  </a>
  </li>
- <li><a href="https://github.com/">Github</a></li>
+ <li><a href="https://github.com/djlynchy">Github</a></li>
  <li> E-mail:</li>
  </ul>
  <h4>Michael Harrington Developer, Scrum Master</h4>
