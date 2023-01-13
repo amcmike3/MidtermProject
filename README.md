@@ -149,6 +149,12 @@ This project offered me the opportunity to get more hands on experience with wri
 Another major milestone for me was learning how to enable and disable data. This would prevent non administrator user from being able to see disabled data. We also implemented features that would check the security level of a user and only allow a user of a certain security level to have access to the functions that allow a user to disable data. We also implemented logic that would only allow a user to preform crud functions on the data that they supplied while they were is session. However, because of the our security logic, administrators have access to full crud operations site wide regardless of whoever created the data.
 All in all this was an incredibly complex project that gave me a chance to grow as a developer and I feel much more confident creating a full stack project going forward.
 
+#### Derek Lynch
+In this full stack application, I learned how multiple pairs, or even single developers can design anything and even while working on separate parts, come up with a working viable product. It was eye-opening to see how different members of the team think and program, while gaining valuable experience in both back end and front end developing. The most important take away from this project is communication. Knowing what we all worked on the day before, what our stumbling blocks of the day were, and what we wish to work on that day was vital. It also was good to know that if we ever needed help, we had each other to call upon and either we could figure it out, or sometimes just having a fresh set of eyes to view issues and gentle reminders what we were forgetting helped.
+in the end, us coming together as a team and pushing through differences are what made this project something we are proud to showcase.
+
+
+
 
 
 ##How to Download and Run
